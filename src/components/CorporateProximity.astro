@@ -1,0 +1,166 @@
+---
+const hubs = [
+  {
+    name: 'Century City',
+    drive: '8 min',
+    miles: '3.2 mi',
+    firms: ['CAA Creative Artists', 'Westfield Century City', 'Fox Corporation HQ', 'Major Law Firms'],
+    tag: 'Entertainment & Finance',
+    accent: true,
+  },
+  {
+    name: 'Beverly Hills',
+    drive: '10 min',
+    miles: '4.1 mi',
+    firms: ['Milken Institute', 'Relativity Capital', 'Iconic luxury retail', 'Private equity row'],
+    tag: 'Capital & Conferences',
+    accent: false,
+  },
+  {
+    name: 'Fox Studios',
+    drive: '7 min',
+    miles: '2.8 mi',
+    firms: ['Disney Television', 'Hulu HQ', 'National Geographic', 'Searchlight Pictures'],
+    tag: 'Media Production',
+    accent: false,
+  },
+  {
+    name: 'Cedars-Sinai',
+    drive: '9 min',
+    miles: '3.5 mi',
+    firms: ['#1 Hospital West Coast', 'Cedars-Sinai Research', 'Executive Health Concierge', 'Medical Leadership HQ'],
+    tag: 'Healthcare Leadership',
+    accent: false,
+  },
+  {
+    name: 'Culver City',
+    drive: '12 min',
+    miles: '4.8 mi',
+    firms: ['Amazon MGM Studios', 'Apple TV+ Campus', 'Sony Pictures', 'TikTok US HQ'],
+    tag: 'Tech & Streaming',
+    accent: false,
+  },
+  {
+    name: 'Santa Monica',
+    drive: '15 min',
+    miles: '7.2 mi',
+    firms: ['Google West Coast', 'Snap Inc. HQ', 'Hulu (satellite)', 'Lionsgate'],
+    tag: 'Tech Corridor',
+    accent: false,
+  },
+  {
+    name: 'LA Convention Center',
+    drive: '22 min',
+    miles: '10.4 mi',
+    firms: ['AWS Summit 2026', 'Display Week 2026', 'E3 (revival)', 'LA Tech Week'],
+    tag: 'Events & Conferences',
+    accent: false,
+  },
+  {
+    name: 'Inglewood / SoFi',
+    drive: '18 min',
+    miles: '8.1 mi',
+    firms: ['SoFi Stadium', 'FIFA World Cup 2026', 'Kia Forum', 'NFL / Super Bowl HQ'],
+    tag: 'Sports & Events',
+    accent: false,
+  },
+];
+
+const metrics = [
+  { label: 'Walk Score', value: '78', sub: 'Very Walkable' },
+  { label: 'Transit Score', value: '61', sub: 'Excellent Transit' },
+  { label: 'Bike Score', value: '54', sub: 'Bikeable' },
+  { label: 'ZIP Code', value: '90035', sub: 'Prime West LA' },
+];
+---
+
+<section class="py-28 bg-midnight-950">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-16">
+      <div>
+        <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4 flex items-center gap-3">
+          <span class="w-8 h-px bg-amber-400"></span>
+          Corporate Proximity
+        </p>
+        <h2 class="font-display text-4xl md:text-5xl text-white leading-tight">
+          Strategic Position<br />
+          <em class="text-gradient">90035 Command Hub</em>
+        </h2>
+      </div>
+      <div>
+        <p class="text-slate-400 leading-relaxed">
+          Beverlywood's 90035 ZIP code sits at the geographic centroid of Los Angeles's
+          most critical business corridors — placing executives within single-digit minutes
+          of every major entertainment studio, capital firm, medical institution, and
+          conference venue in the city.
+        </p>
+        <!-- Walk/Transit scores row -->
+        <div class="grid grid-cols-4 gap-px mt-8 bg-midnight-800/40">
+          {metrics.map(({ label, value, sub }) => (
+            <div class="glass-light p-4 text-center">
+              <p class="font-display text-2xl text-amber-400">{value}</p>
+              <p class="text-white text-xs mt-0.5">{label}</p>
+              <p class="text-slate-600 text-xs mt-0.5">{sub}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-px bg-midnight-800/30">
+      {hubs.map(({ name, drive, miles, firms, tag, accent }) => (
+        <div class={`relative p-6 flex flex-col gap-4 group transition-all duration-500 ${accent ? 'glass border border-amber-400/25 amber-glow' : 'glass-light border border-white/5 hover:border-amber-400/15'}`}>
+
+          {accent && (
+            <span class="absolute top-4 right-4 bg-amber-400 text-midnight-950 text-xs font-semibold px-2 py-0.5 tracking-widest uppercase">
+              Nearest
+            </span>
+          )}
+
+          <!-- Drive time badge -->
+          <div class="flex items-start justify-between">
+            <div>
+              <p class={`font-display text-xl ${accent ? 'text-amber-400' : 'text-white'}`}>{name}</p>
+              <p class="text-slate-500 text-xs tracking-widest uppercase mt-0.5">{tag}</p>
+            </div>
+            <div class="text-right shrink-0 ml-4">
+              <p class={`font-semibold text-lg tabular-nums ${accent ? 'text-amber-400' : 'text-white'}`}>{drive}</p>
+              <p class="text-slate-600 text-xs">{miles}</p>
+            </div>
+          </div>
+
+          <!-- Drive time bar -->
+          <div class="h-px bg-midnight-800 w-full overflow-hidden">
+            <div
+              class={`h-full ${accent ? 'bg-amber-400' : 'bg-slate-600 group-hover:bg-amber-400/40'} transition-all duration-700`}
+              style={`width: ${Math.min(100, (parseInt(drive) / 25) * 100)}%`}
+            ></div>
+          </div>
+
+          <!-- Firms list -->
+          <ul class="space-y-1.5">
+            {firms.map(firm => (
+              <li class="flex items-center gap-2 text-xs text-slate-400">
+                <span class={`w-1 h-1 rounded-full shrink-0 ${accent ? 'bg-amber-400' : 'bg-slate-600'}`}></span>
+                {firm}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom CTA bar -->
+    <div class="mt-px glass-light border border-white/5 px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-slate-500 text-sm">
+        <span class="text-white font-medium">9432 Oakmore Rd</span> — geographic center of LA's executive corridor. Zero commute penalty.
+      </p>
+      <a href="/contact" class="shrink-0 bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase px-7 py-3 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">
+        Schedule Site Visit
+      </a>
+    </div>
+  </div>
+</section>

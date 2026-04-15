@@ -1,0 +1,69 @@
+---
+const places = [
+  { cat: 'Dining & Lifestyle', items: ['Erewhon Market (Robertson)', 'Sugarfish Pico', 'Jon & Vinny\'s', 'Canter\'s Deli', 'Felix Trattoria', 'Pali Wine Co.'] },
+  { cat: 'Shopping', items: ['Westfield Century City', 'Rodeo Drive (5 min)', 'Robertson Blvd Boutiques', 'Pavilions Pico', 'The Grove (15 min)'] },
+  { cat: 'Parks & Recreation', items: ['Circle Park (walking)', 'Rancho Park Golf Course', 'Pan Pacific Park', 'La Cienega Park', 'Cheviot Hills Park'] },
+  { cat: 'Healthcare', items: ['Cedars-Sinai (9 min)', 'UCLA Medical (15 min)', 'Olympia Medical', 'Urgent Care Pico', 'Walgreens (2 min)'] },
+];
+---
+
+<section class="py-28 bg-midnight-950">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4 flex items-center justify-center gap-3">
+        <span class="w-8 h-px bg-amber-400"></span>
+        Neighborhood Intelligence
+        <span class="w-8 h-px bg-amber-400"></span>
+      </p>
+      <h2 class="font-display text-4xl md:text-5xl text-white">
+        Everything Within <em class="text-gradient">Reach</em>
+      </h2>
+      <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
+        Beverlywood 90035 — the only West LA neighborhood with walkable dining,
+        green space, and freeway-free access to every major business district.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 xl:grid-cols-3 gap-px bg-midnight-800/20">
+
+      <!-- Map embed (2 cols) -->
+      <div class="xl:col-span-2 relative overflow-hidden" style="min-height: 480px;">
+        <iframe
+          title="9432 Oakmore Rd neighborhood map — Beverlywood Los Angeles 90035"
+          src="https://maps.google.com/maps?q=9432+Oakmore+Rd,+Los+Angeles,+CA+90035&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          class="absolute inset-0 w-full h-full border-0 grayscale contrast-125 opacity-90"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+        <!-- Amber overlay pin badge -->
+        <div class="absolute top-5 left-5 glass border border-amber-400/30 px-4 py-2.5 z-10">
+          <p class="text-amber-400 text-xs font-semibold tracking-widest uppercase">9432 Oakmore Rd</p>
+          <p class="text-slate-400 text-xs mt-0.5">Beverlywood · LA 90035</p>
+        </div>
+        <!-- Corner decorators -->
+        <div class="absolute bottom-5 right-5 glass border border-white/10 px-3 py-2 z-10">
+          <p class="text-slate-500 text-xs">Walk Score <span class="text-amber-400 font-semibold">78</span> · Transit <span class="text-amber-400 font-semibold">61</span></p>
+        </div>
+      </div>
+
+      <!-- Nearby places panel (1 col) -->
+      <div class="glass border border-white/5 p-7 flex flex-col gap-7">
+        <p class="text-amber-400 text-xs tracking-widest uppercase">Nearby Highlights</p>
+        {places.map(({ cat, items }) => (
+          <div>
+            <p class="text-slate-500 text-xs tracking-widest uppercase mb-3 border-b border-white/5 pb-2">{cat}</p>
+            <ul class="space-y-2">
+              {items.map(item => (
+                <li class="flex items-center gap-2 text-sm text-slate-300">
+                  <span class="w-1 h-1 bg-amber-400 rounded-full shrink-0"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

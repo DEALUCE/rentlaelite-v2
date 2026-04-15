@@ -1,0 +1,53 @@
+---
+import property from '../data/property.json';
+const { agent } = property;
+---
+
+<footer class="bg-midnight-900 border-t border-amber-400/10 py-16 mt-0 mb-16 md:mb-0">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+
+    <div class="md:col-span-2">
+      <p class="font-display text-amber-400 text-xl tracking-widest uppercase italic mb-4">Rent LA Elite</p>
+      <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+        A rare gated luxury compound in the heart of Beverlywood —
+        5 bedrooms, 6 bathrooms, heated pool, steam sauna, and a fully
+        independent detached guest house.
+      </p>
+      <div class="mt-6 flex gap-4">
+        <a href={`tel:${agent.phone.replace(/-/g, '')}`} class="text-amber-400 text-sm hover:text-amber-300 transition-colors">
+          {agent.phone}
+        </a>
+        <span class="text-midnight-700">|</span>
+        <a href={`mailto:${agent.email}`} class="text-amber-400 text-sm hover:text-amber-300 transition-colors">
+          {agent.email}
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-xs tracking-widest uppercase text-slate-500 mb-5">Navigate</p>
+      <nav class="flex flex-col gap-3">
+        {[['Home','/'],['Property','/property'],['Gallery','/gallery'],['FAQ','/faq'],['About','/about'],['Contact','/contact']].map(([label,href]) => (
+          <a href={href} class="text-sm text-slate-400 hover:text-amber-400 transition-colors">{label}</a>
+        ))}
+      </nav>
+    </div>
+
+    <div>
+      <p class="text-xs tracking-widest uppercase text-slate-500 mb-5">Listing Agent</p>
+      <div class="space-y-2 text-sm text-slate-400">
+        <p class="text-white font-medium">{agent.name}</p>
+        <p>DRE# {agent.dre}</p>
+        <p class="mt-3">{agent.company}</p>
+        <p>DRE# {agent.companyDre}</p>
+        <p class="mt-3">{agent.phone}</p>
+        <p>{agent.email}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between gap-3 text-xs text-slate-600">
+    <p>Broker/Agent does not guarantee accuracy of square footage, lot size, or other property information. Tenant to independently verify all details.</p>
+    <p class="shrink-0">© {new Date().getFullYear()} Rent LA Elite</p>
+  </div>
+</footer>

@@ -1,0 +1,167 @@
+---
+const events = [
+  {
+    month: 'APR',
+    year: '2026',
+    name: 'Milken Institute Global Conference',
+    location: 'Beverly Hills Hilton · 4.1 mi',
+    desc: 'The world\'s most important gathering of capital allocators, sovereign wealth funds, and C-suite leaders. 4,000+ attendees. LA\'s highest corporate housing demand week of the year.',
+    demand: 'CRITICAL',
+    icon: '◈',
+    side: 'left',
+  },
+  {
+    month: 'MAY',
+    year: '2026',
+    name: 'FIFA World Cup — LA Operations Hub',
+    location: 'SoFi Stadium · Rose Bowl · 18 mi',
+    desc: 'Los Angeles hosts 10+ FIFA World Cup matches. Corporate hospitality units, FIFA logistics staff, broadcast executives, and sponsor VIPs require 30–90 day executive housing. Largest demand event in LA history.',
+    demand: 'EXTREME',
+    icon: '◉',
+    side: 'right',
+  },
+  {
+    month: 'JUN',
+    year: '2026',
+    name: 'Display Week 2026',
+    location: 'LA Convention Center · 10.4 mi',
+    desc: 'Society for Information Display annual flagship event. 12,000+ display technology engineers, executives, and investors. Prime corporate relocation window for tech sector.',
+    demand: 'HIGH',
+    icon: '◈',
+    side: 'left',
+  },
+  {
+    month: 'JUN',
+    year: '2026',
+    name: 'AWS Summit Los Angeles 2026',
+    location: 'LA Convention Center · 10.4 mi',
+    desc: 'Amazon Web Services flagship summit drawing 20,000+ cloud architects, CTOs, and enterprise buyers. Tech sector executives relocating to LA frequently source long-term rentals during this window.',
+    demand: 'HIGH',
+    icon: '◈',
+    side: 'right',
+  },
+  {
+    month: 'JUL',
+    year: '2026',
+    name: 'FIFA World Cup Finals',
+    location: 'Rose Bowl, Pasadena · 25 mi',
+    desc: 'World Cup Final match. Global broadcast, FIFA executives, heads of state, and corporate sponsors require premium private residences for 30–90 day extended stays. Supply is projected critically short.',
+    demand: 'EXTREME',
+    icon: '◉',
+    side: 'left',
+  },
+  {
+    month: 'AUG',
+    year: '2026',
+    name: 'Post-Event Corporate Relocation Wave',
+    location: 'LA Metro · Ongoing',
+    desc: 'Following the World Cup, multiple media, tech, and entertainment companies have announced LA expansion plans. Q3 2026 represents a sustained corporate housing demand surge driven by permanent relocations.',
+    demand: 'SUSTAINED',
+    icon: '◈',
+    side: 'right',
+  },
+];
+
+const demandColor: Record<string, string> = {
+  CRITICAL: 'text-orange-400 border-orange-400/30 bg-orange-400/10',
+  EXTREME: 'text-red-400 border-red-400/30 bg-red-400/10',
+  HIGH: 'text-amber-400 border-amber-400/30 bg-amber-400/10',
+  SUSTAINED: 'text-emerald-400 border-emerald-400/30 bg-emerald-400/10',
+};
+---
+
+<section class="py-28 bg-midnight-900 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="text-center mb-20">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4 flex items-center justify-center gap-3">
+        <span class="w-8 h-px bg-amber-400"></span>
+        Why 2026 Is Different
+        <span class="w-8 h-px bg-amber-400"></span>
+      </p>
+      <h2 class="font-display text-4xl md:text-5xl text-white mb-4">
+        2026 Executive <em class="text-gradient">Demand Timeline</em>
+      </h2>
+      <p class="text-slate-400 max-w-2xl mx-auto leading-relaxed">
+        Los Angeles faces an unprecedented convergence of macro-events in 2026.
+        Premium executive housing supply is critically limited. Secure now.
+      </p>
+
+      <!-- Demand legend -->
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        {Object.entries(demandColor).map(([label, cls]) => (
+          <span class={`text-xs tracking-widest uppercase px-3 py-1.5 border rounded-none font-medium ${cls}`}>
+            {label}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Center spine -->
+      <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-amber-400/0 via-amber-400/30 to-amber-400/0 -translate-x-1/2"></div>
+
+      <div class="space-y-8">
+        {events.map(({ month, year, name, location, desc, demand, icon, side }, i) => (
+          <div class={`flex gap-8 items-start ${side === 'right' ? 'md:flex-row-reverse' : 'md:flex-row'} flex-col`}>
+
+            <!-- Card -->
+            <div class="flex-1 glass border border-white/5 hover:border-amber-400/20 transition-all duration-500 p-7 group">
+              <div class="flex items-start justify-between gap-4 mb-4">
+                <div>
+                  <p class="text-slate-500 text-xs tracking-widest uppercase mb-1">{location}</p>
+                  <h3 class="font-display text-xl text-white group-hover:text-amber-400 transition-colors duration-300">{name}</h3>
+                </div>
+                <span class={`shrink-0 text-xs font-semibold tracking-widest uppercase px-2.5 py-1 border ${demandColor[demand]}`}>
+                  {demand}
+                </span>
+              </div>
+              <p class="text-slate-400 text-sm leading-relaxed">{desc}</p>
+            </div>
+
+            <!-- Center node -->
+            <div class="hidden md:flex flex-col items-center gap-1 shrink-0 w-20 pt-6">
+              <div class="w-10 h-10 rounded-full glass border border-amber-400/30 flex items-center justify-center text-amber-400 text-lg">
+                {icon}
+              </div>
+              <div class="text-center mt-2">
+                <p class="text-amber-400 font-semibold text-sm">{month}</p>
+                <p class="text-slate-600 text-xs">{year}</p>
+              </div>
+            </div>
+
+            <!-- Mobile date badge -->
+            <div class="md:hidden flex items-center gap-3">
+              <div class="w-8 h-8 glass border border-amber-400/30 flex items-center justify-center text-amber-400 text-sm">{icon}</div>
+              <span class="text-amber-400 text-xs font-semibold tracking-widest uppercase">{month} {year}</span>
+            </div>
+
+            <!-- Spacer (mirror card) -->
+            <div class="hidden md:block flex-1"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Bottom urgency bar -->
+    <div class="mt-16 glass border border-amber-400/20 amber-glow px-8 py-7 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div>
+        <p class="text-amber-400 text-xs tracking-widest uppercase mb-2">Executive Relocation Window</p>
+        <p class="font-display text-2xl text-white">Secure Before Peak Demand</p>
+        <p class="text-slate-400 text-sm mt-1">
+          9432 Oakmore Rd accommodates principals, their staff, and full household — simultaneously.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <a href="/contact" class="bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-all duration-300 amber-glow-hover text-center">
+          Secure This Property
+        </a>
+        <a href="tel:3107700552" class="border border-slate-600 text-slate-300 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 hover:text-amber-400 transition-all duration-300 text-center">
+          Call 310-770-0552
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

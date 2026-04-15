@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import property from '../data/property.json';
+
+const { agent } = property;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": agent.name,
+  "telephone": agent.phone,
+  "email": agent.email,
+  "identifier": `DRE# ${agent.dre}`,
+  "worksFor": {
+    "@type": "Organization",
+    "name": agent.company,
+    "identifier": `DRE# ${agent.companyDre}`
+  }
+};
+---
+
+<Layout
+  title="About the Agent | Daniel Issak — Real Estate Source Inc"
+  description="Daniel Issak, DRE# 02037760, Real Estate Source Inc. Listing agent for 9432 Oakmore Rd luxury rental in Beverlywood, Los Angeles."
+  jsonLd={jsonLd}
+>
+  <section class="bg-charcoal py-20 text-center">
+    <p class="text-gold text-xs tracking-[0.3em] uppercase mb-3">Listing Agent</p>
+    <h1 class="font-serif text-white text-4xl md:text-5xl">{agent.name}</h1>
+    <p class="text-white/40 mt-4 text-sm">DRE# {agent.dre}</p>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <div class="bg-charcoal/5 border border-charcoal/10 p-8">
+        <p class="text-xs tracking-widest uppercase text-charcoal/40 mb-6">Contact Info</p>
+        <dl class="space-y-4 text-sm">
+          {[
+            ['Name', agent.name],
+            ['License', `DRE# ${agent.dre}`],
+            ['Brokerage', agent.company],
+            ['Brokerage DRE', `DRE# ${agent.companyDre}`],
+            ['Cell', agent.phone],
+            ['Direct', agent.phoneAlt],
+            ['Email', agent.email],
+            ['Fax', agent.fax],
+          ].map(([label, val]) => (
+            <div class="flex justify-between border-b border-charcoal/10 pb-4">
+              <dt class="text-charcoal/50">{label}</dt>
+              <dd class="font-medium text-charcoal text-right">{val}</dd>
+            </div>
+          ))}
+        </dl>
+        <div class="mt-8 flex flex-col gap-3">
+          <a href={`tel:${agent.phone.replace(/-/g, '')}`} class="block text-center bg-gold text-charcoal font-bold text-xs tracking-widest uppercase px-6 py-4 hover:bg-gold-light transition-colors">
+            Call {agent.phone}
+          </a>
+          <a href={`mailto:${agent.email}`} class="block text-center border border-charcoal/20 text-charcoal text-xs tracking-widest uppercase px-6 py-4 hover:border-gold hover:text-gold transition-colors">
+            Email Agent
+          </a>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <h2 class="font-serif text-charcoal text-3xl">About the Listing</h2>
+        <p class="text-charcoal/60 leading-relaxed">
+          This exclusive listing is presented by {agent.name} of {agent.company},
+          specializing in luxury residential leasing in the greater Los Angeles market.
+        </p>
+        <p class="text-charcoal/60 leading-relaxed">
+          9432 Oakmore Rd is offered as an exclusive right listing. Showings are by
+          appointment only with a minimum 24-hour notice. The listing agent must accompany
+          all showings.
+        </p>
+        <div class="border-l-2 border-gold pl-6 space-y-2">
+          <p class="text-sm text-charcoal/50">Application Requirements</p>
+          <ul class="text-sm text-charcoal/70 space-y-2">
+            <li>CAR rental application</li>
+            <li>Full credit report (tenant pays $49.99)</li>
+            <li>Proof of income / funds</li>
+            <li>Supporting documents — submit as single PDF</li>
+            <li>Only complete applications reviewed</li>
+          </ul>
+        </div>
+        <a href="/contact" class="inline-block border-b border-gold text-gold text-xs tracking-widest uppercase pb-1 hover:text-gold-light transition-colors">
+          Schedule a Showing →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-charcoal py-12 text-center">
+    <p class="text-white/30 text-xs max-w-2xl mx-auto">
+      Broker/Agent does not guarantee the accuracy of square footage, lot size, or other information
+      concerning the conditions or features of the property provided by the seller or obtained from
+      public records or other sources. Tenant is advised to independently verify all information
+      through personal inspection and with appropriate professionals.
+    </p>
+  </section>
+</Layout>

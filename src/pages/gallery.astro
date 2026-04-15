@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import property from '../data/property.json';
+
+const sections = [
+  { label: 'Aerial Views', slug: 'aerial', images: property.images.aerial },
+  { label: 'Exterior', slug: 'exterior', images: property.images.exterior },
+  { label: 'Living Rooms', slug: 'living', images: property.images.living },
+  { label: 'Kitchen', slug: 'kitchen', images: property.images.kitchen },
+  { label: 'Dining', slug: 'dining', images: property.images.dining },
+  { label: 'Primary Suite', slug: 'primary', images: property.images.primarySuite },
+  { label: 'Bedrooms', slug: 'bedrooms', images: property.images.bedrooms },
+  { label: 'Bathrooms', slug: 'bathrooms', images: property.images.bathrooms },
+  { label: 'Office / Den', slug: 'office', images: property.images.office },
+  { label: 'Laundry', slug: 'laundry', images: property.images.laundry },
+  { label: 'Staircase', slug: 'staircase', images: property.images.staircase },
+  { label: 'Pool & Outdoor', slug: 'pool', images: property.images.outdoor },
+  { label: 'Guest House', slug: 'guest', images: property.images.guestHouse },
+];
+
+const totalPhotos = sections.reduce((sum, s) => sum + s.images.length, 0);
+---
+
+<Layout
+  title="Photo Gallery | 9432 Oakmore Rd Luxury Rental Beverlywood LA"
+  description={`${totalPhotos}+ professional photos of 9432 Oakmore Rd — aerial drone shots, interior, pool, chef's kitchen, primary suite, and detached guest house. Beverlywood, LA 90035.`}
+>
+  <section class="bg-charcoal py-20 text-center">
+    <p class="text-gold text-xs tracking-[0.3em] uppercase mb-3">9432 Oakmore Rd · Los Angeles, CA 90035</p>
+    <h1 class="font-serif text-white text-4xl md:text-5xl">Photo Gallery</h1>
+    <p class="text-white/40 mt-4 text-sm">{totalPhotos} professional photos · Aerial · Interior · Pool · Guest House</p>
+    <!-- Jump nav -->
+    <nav class="mt-8 flex flex-wrap justify-center gap-3 text-xs">
+      {sections.map(({ label, slug }) => (
+        <a
+          href={`#${slug}`}
+          class="text-white/40 hover:text-gold border border-white/10 hover:border-gold/40 px-3 py-1.5 transition-colors"
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+  </section>
+
+  {sections.map(({ label, slug, images }) => images.length > 0 && (
+    <section id={slug} class="py-12 bg-off-white border-b border-charcoal/10">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="font-serif text-charcoal text-2xl mb-6">
+          {label}
+          <span class="text-charcoal/30 text-base font-sans ml-2">({images.length})</span>
+        </h2>
+        <div class={`grid gap-2 ${images.length === 1 ? 'grid-cols-1 max-w-xl' : images.length === 2 ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4'}`}>
+          {images.map((src, i) => (
+            <div class="overflow-hidden bg-charcoal/5 group">
+              <img
+                src={src}
+                alt={`9432 Oakmore Rd ${label.toLowerCase()} — luxury rental Los Angeles 90035 photo ${i + 1}`}
+                class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="py-16 text-center bg-charcoal">
+    <p class="font-serif text-white text-2xl mb-3">Ready to see it in person?</p>
+    <p class="text-white/50 text-sm mb-8">Showings by appointment · 24-hour notice required</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="/contact" class="bg-gold text-charcoal font-bold text-xs tracking-widest uppercase px-10 py-4 hover:bg-gold-light transition-colors">
+        Schedule a Showing
+      </a>
+      <a href="#video-tour" onclick="window.location='/'" class="border border-white/30 text-white/70 text-xs tracking-widest uppercase px-10 py-4 hover:border-gold hover:text-gold transition-colors">
+        ▶ Watch Video Tour
+      </a>
+    </div>
+  </section>
+</Layout>

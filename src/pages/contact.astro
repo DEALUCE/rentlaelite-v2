@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+import property from '../data/property.json';
+const { agent } = property;
+---
+
+<Layout
+  title="Contact & Schedule a Showing | 9432 Oakmore Rd LA"
+  description="Schedule a private showing for 9432 Oakmore Rd, Beverlywood. Contact Daniel Issak at 310-770-0552. 24-hour notice required."
+>
+  <!-- HERO -->
+  <section class="relative py-28 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src={property.images.exterior[0]} alt="9432 Oakmore Rd contact" class="w-full h-full object-cover opacity-10" loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-b from-midnight-950/60 to-midnight-950"></div>
+    </div>
+    <div class="relative z-10 text-center max-w-2xl mx-auto px-6">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4 flex items-center justify-center gap-3">
+        <span class="w-8 h-px bg-amber-400"></span>
+        Private Showings
+        <span class="w-8 h-px bg-amber-400"></span>
+      </p>
+      <h1 class="font-display text-5xl text-white mb-4">Schedule a <em class="text-gradient">Showing</em></h1>
+      <p class="text-slate-400 text-sm">24-hour notice required · Listing agent accompanies all showings</p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-5 gap-12">
+
+    <!-- FORM (3 cols) -->
+    <div class="lg:col-span-3">
+      <h2 class="font-display text-2xl text-white mb-8">Inquiry Form</h2>
+      <form name="contact" method="POST" action="/contact?success=true" class="space-y-4">
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">First Name *</label>
+            <input type="text" name="first-name" required class="w-full bg-midnight-900 border border-slate-700 text-white placeholder-slate-600 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Last Name *</label>
+            <input type="text" name="last-name" required class="w-full bg-midnight-900 border border-slate-700 text-white placeholder-slate-600 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Email *</label>
+          <input type="email" name="email" required class="w-full bg-midnight-900 border border-slate-700 text-white placeholder-slate-600 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors" />
+        </div>
+        <div>
+          <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Phone</label>
+          <input type="tel" name="phone" class="w-full bg-midnight-900 border border-slate-700 text-white placeholder-slate-600 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors" />
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Desired Move-In</label>
+            <input type="date" name="move-in" class="w-full bg-midnight-900 border border-slate-700 text-white px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Lease Length</label>
+            <select name="lease-length" class="w-full bg-midnight-900 border border-slate-700 text-slate-400 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors">
+              <option value="">Select…</option>
+              <option>30–60 Days</option>
+              <option>6 Months</option>
+              <option>12 Months</option>
+              <option>12+ Months</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Message</label>
+          <textarea name="message" rows="4" placeholder="Questions, preferred showing times, intended use…" class="w-full bg-midnight-900 border border-slate-700 text-white placeholder-slate-600 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors resize-none"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase py-4 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">
+          Send Inquiry
+        </button>
+      </form>
+    </div>
+
+    <!-- SIDEBAR (2 cols) -->
+    <div class="lg:col-span-2 space-y-6">
+      <div class="glass border border-amber-400/10 p-7">
+        <p class="text-amber-400 text-xs tracking-widest uppercase mb-6">Direct Contact</p>
+        <div class="space-y-5 text-sm">
+          <div>
+            <p class="text-slate-500 text-xs mb-1">Agent</p>
+            <p class="text-white font-medium">{agent.name}</p>
+            <p class="text-slate-500 text-xs">DRE# {agent.dre}</p>
+          </div>
+          <div>
+            <p class="text-slate-500 text-xs mb-1">Cell</p>
+            <a href={`tel:${agent.phone.replace(/-/g,'')}`} class="text-amber-400 hover:text-amber-300 transition-colors font-medium">{agent.phone}</a>
+          </div>
+          <div>
+            <p class="text-slate-500 text-xs mb-1">Direct</p>
+            <a href={`tel:${agent.phoneAlt.replace(/-/g,'')}`} class="text-amber-400 hover:text-amber-300 transition-colors">{agent.phoneAlt}</a>
+          </div>
+          <div>
+            <p class="text-slate-500 text-xs mb-1">Email</p>
+            <a href={`mailto:${agent.email}`} class="text-amber-400 hover:text-amber-300 transition-colors">{agent.email}</a>
+          </div>
+          <div class="pt-2">
+            <p class="text-slate-500 text-xs mb-1">{agent.company}</p>
+            <p class="text-slate-400 text-xs">DRE# {agent.companyDre}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass border border-white/5 p-7 text-sm">
+        <p class="text-amber-400 text-xs tracking-widest uppercase mb-5">Showing Policy</p>
+        <ul class="space-y-3 text-slate-400">
+          <li class="flex gap-3"><span class="text-amber-400 shrink-0">→</span> By appointment only — 24-hour notice</li>
+          <li class="flex gap-3"><span class="text-amber-400 shrink-0">→</span> Agent accompanies all showings</li>
+          <li class="flex gap-3"><span class="text-amber-400 shrink-0">→</span> Via ShowingTime / ShowingsPlus</li>
+          <li class="flex gap-3"><span class="text-amber-400 shrink-0">→</span> CAR application + credit report + proof of income</li>
+          <li class="flex gap-3"><span class="text-amber-400 shrink-0">→</span> Submit all docs as a single PDF</li>
+        </ul>
+      </div>
+
+      <div class="glass border border-white/5 p-7">
+        <p class="text-amber-400 text-xs tracking-widest uppercase mb-3">Property</p>
+        <p class="font-display text-lg text-white">{property.address.street}</p>
+        <p class="text-slate-400 text-sm">{property.address.neighborhood}</p>
+        <p class="text-slate-400 text-sm">{property.address.city}, {property.address.state} {property.address.zip}</p>
+        <p class="text-slate-600 text-xs mt-2">MLS# {property.mlsNumber}</p>
+      </div>
+    </div>
+  </section>
+</Layout>

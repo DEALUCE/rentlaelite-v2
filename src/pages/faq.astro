@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+import property from '../data/property.json';
+
+const faqs = [
+  {
+    q: "What is the monthly rent for 9432 Oakmore Rd?",
+    a: "The monthly rent is $23,950. This is for the main 5-bedroom residence plus the detached guest house. Utilities, pool maintenance, gardener, and internet are not included."
+  },
+  {
+    q: "How many bedrooms and bathrooms does the property have?",
+    a: "The main residence has 5 bedrooms and 6 bathrooms (5 full, 1 half). The property also includes a detached approximately 400 sq ft guest house with a full kitchen and bathroom."
+  },
+  {
+    q: "Is the guest house included in the lease?",
+    a: "Yes. The detached guest house at 9430 is included in the lease and may not be separately sublet. It features a private entrance, full kitchen, and bathroom — ideal for a home office, live-in staff, extended family, or guests."
+  },
+  {
+    q: "What is the minimum lease term?",
+    a: "The minimum lease term is 6 months. Long-term leases of 12 months or more are preferred. No short-term, nightly, or transient use is permitted."
+  },
+  {
+    q: "Is the property furnished?",
+    a: "The property is offered unfurnished. Furnishings may be available for an additional monthly fee by separate agreement."
+  },
+  {
+    q: "Are pets allowed at 9432 Oakmore Rd?",
+    a: "Pets are considered with conditions. Please contact the listing agent to discuss your specific situation."
+  },
+  {
+    q: "What does the tenant pay?",
+    a: "The tenant is responsible for all utilities (electricity, gas, water, sewer, trash), internet/cable, pool maintenance, gardener, renter's insurance, and smart home subscriptions. Rent does not include any of these costs."
+  },
+  {
+    q: "Does the property have a pool?",
+    a: "Yes. The property features a private heated in-ground pool and spa, gas-heated and filtered, with a landscaped yard. Pool maintenance is the tenant's responsibility."
+  },
+  {
+    q: "What is the security deposit?",
+    a: "The security deposit is $26,850."
+  },
+  {
+    q: "What neighborhood is 9432 Oakmore Rd in?",
+    a: "The property is located in the Beverlywood / Pico-Robertson neighborhood of Los Angeles, CA 90035. It is near Circle Park and offers easy access to Century City, Beverly Hills, Fox Studios, and Cedars-Sinai Medical Center."
+  },
+  {
+    q: "How do I schedule a showing?",
+    a: "Showings are by appointment only with a minimum 24-hour notice. The listing agent must accompany all showings. Contact Daniel Issak at 310-770-0552 or dan.issak@gmail.com to schedule."
+  },
+  {
+    q: "What are the application requirements?",
+    a: "Submit a CAR rental application, full credit report (tenant pays $49.99), proof of income/funds, and all supporting documents as a single PDF. Only complete applications are reviewed."
+  },
+  {
+    q: "Is parking available?",
+    a: "Yes. The property includes a gated driveway that accommodates multiple vehicles plus an EV charging station. Please keep neighbor access clear."
+  },
+  {
+    q: "What smart home features does the property have?",
+    a: "The property includes smart lighting controls, a Ring security system, multi-zone HVAC (central, dual-zone), blackout shades, dual-pane windows, and a gated automatic entry."
+  },
+  {
+    q: "What is the square footage?",
+    a: "The main residence is approximately 4,092 sq ft. Combined with the detached guest house, the total living space is approximately 4,492 sq ft. The lot is 7,283 sq ft (60x121 ft)."
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    "name": q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": a
+    }
+  }))
+};
+---
+
+<Layout
+  title="FAQ | 9432 Oakmore Rd Luxury Rental Beverlywood LA 90035"
+  description="Frequently asked questions about 9432 Oakmore Rd luxury rental — rent, lease terms, pets, guest house, pool, parking, showings, and application process."
+  jsonLd={jsonLd}
+>
+  <section class="bg-charcoal py-20 text-center">
+    <p class="text-gold text-xs tracking-[0.3em] uppercase mb-3">9432 Oakmore Rd · Los Angeles 90035</p>
+    <h1 class="font-serif text-white text-4xl md:text-5xl">Frequently Asked Questions</h1>
+    <p class="text-white/40 mt-4 text-sm">Everything you need to know about this property</p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 py-20">
+    <div class="space-y-6">
+      {faqs.map(({ q, a }, i) => (
+        <div class="border border-charcoal/10 bg-white p-6">
+          <h2 class="font-serif text-charcoal text-lg mb-3">
+            <span class="text-gold text-sm font-sans mr-2">{String(i + 1).padStart(2, '0')}.</span>
+            {q}
+          </h2>
+          <p class="text-charcoal/60 text-sm leading-relaxed">{a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 bg-charcoal text-white p-8 text-center">
+      <p class="font-serif text-2xl mb-3">Still have questions?</p>
+      <p class="text-white/50 text-sm mb-6">Contact the listing agent directly</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="bg-gold text-charcoal font-bold text-xs tracking-widest uppercase px-8 py-4 hover:bg-gold-light transition-colors">
+          Send Inquiry
+        </a>
+        <a href="tel:3107700552" class="border border-white/20 text-white/70 text-xs tracking-widest uppercase px-8 py-4 hover:border-gold hover:text-gold transition-colors">
+          Call 310-770-0552
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,334 @@
+---
+import Layout from '../layouts/Layout.astro';
+import property from '../data/property.json';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Accommodation",
+    "name": "9432 Oakmore Rd — Luxury 5BR Compound | Beverlywood LA 90035",
+    "description": property.description,
+    "url": "https://rentlaelite-v2.theissakgroup.workers.dev/property/",
+    "image": [
+      `https://rentlaelite-v2.theissakgroup.workers.dev${property.images.hero}`,
+      `https://rentlaelite-v2.theissakgroup.workers.dev${property.images.exterior[0]}`,
+      `https://rentlaelite-v2.theissakgroup.workers.dev${property.images.outdoor[0]}`
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": property.address.street,
+      "addressLocality": property.address.city,
+      "addressRegion": property.address.state,
+      "postalCode": property.address.zip,
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "34.0503",
+      "longitude": "-118.3847"
+    },
+    "numberOfRooms": property.beds,
+    "amenityFeature": property.amenities.map(name => ({
+      "@type": "LocationFeatureSpecification",
+      "name": name,
+      "value": true
+    })),
+    "floorSize": {
+      "@type": "QuantitativeValue",
+      "value": property.sqft,
+      "unitCode": "FTK"
+    },
+    "leaseLength": {
+      "@type": "QuantitativeValue",
+      "minValue": 6,
+      "unitCode": "MON"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rentlaelite-v2.theissakgroup.workers.dev/" },
+      { "@type": "ListItem", "position": 2, "name": "Property", "item": "https://rentlaelite-v2.theissakgroup.workers.dev/property/" }
+    ]
+  }
+];
+---
+
+<Layout
+  title="9432 Oakmore Rd | 5BR Luxury Rental Beverlywood LA 90035 — $23,950/mo"
+  description="5 beds, 6 baths, 4,092 sq ft + detached guest house. Heated pool, steam sauna, chef's kitchen, smart home. Beverlywood / Pico-Robertson. MLS# 25594215."
+  jsonLd={jsonLd}
+>
+  <!-- HERO -->
+  <section class="relative h-[55vh] min-h-[420px] flex items-end bg-charcoal overflow-hidden">
+    <img
+      src={property.images.aerial[1]}
+      alt="9432 Oakmore Rd aerial view — gated 5-bedroom luxury compound Beverlywood Los Angeles"
+      class="absolute inset-0 w-full h-full object-cover opacity-55"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-charcoal to-transparent"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 pb-12 w-full">
+      <nav class="text-xs text-white/30 mb-4">
+        <a href="/" class="hover:text-gold transition-colors">Home</a>
+        <span class="mx-2">›</span>
+        <span class="text-white/60">Property</span>
+      </nav>
+      <p class="text-gold text-xs tracking-[0.3em] uppercase mb-2">MLS# {property.mlsNumber} · APN {property.apn}</p>
+      <h1 class="font-serif text-white text-4xl md:text-5xl">{property.address.street}</h1>
+      <p class="text-white/60 mt-2">{property.address.neighborhood} · {property.address.city}, {property.address.state} {property.address.zip}</p>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="bg-charcoal border-b border-white/10 sticky top-16 z-30">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap gap-6 justify-between items-center">
+      <div class="flex flex-wrap gap-6 text-sm text-white/60">
+        <span><span class="text-white font-medium">{property.beds}</span> Beds</span>
+        <span><span class="text-white font-medium">{property.baths}</span> Baths</span>
+        <span><span class="text-white font-medium">{property.sqft.toLocaleString()}</span> Sq Ft</span>
+        <span><span class="text-white font-medium">+~400</span> Guest House</span>
+        <span><span class="text-white font-medium">{property.yearBuilt}</span> Built</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="font-serif text-gold text-2xl">{property.priceDisplay}</span>
+        <a href="/contact" class="bg-gold text-charcoal font-bold text-xs tracking-widest uppercase px-5 py-2.5 hover:bg-gold-light transition-colors">
+          Inquire
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
+    <!-- MAIN CONTENT -->
+    <div class="lg:col-span-2 space-y-16">
+
+      <!-- Description -->
+      <div>
+        <h2 class="font-serif text-2xl mb-4 text-charcoal">About This Property</h2>
+        <p class="text-charcoal/70 leading-relaxed text-base mb-4">{property.description}</p>
+        <p class="text-charcoal/60 leading-relaxed text-sm">
+          Situated in the coveted Beverlywood enclave near Circle Park, this gated compound offers
+          the privacy of a compound with the convenience of a premier West Los Angeles address.
+          Minutes from Century City, Beverly Hills, Fox Studios, and Cedars-Sinai.
+          Long-term lease preferred (12+ months). No short-term or transient use.
+        </p>
+      </div>
+
+      <!-- Property Details Grid -->
+      <div>
+        <h2 class="font-serif text-2xl mb-6 text-charcoal">Property Details</h2>
+        <dl class="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
+          {[
+            ['Bedrooms', `${property.beds} BR`],
+            ['Bathrooms', property.bathsDisplay],
+            ['Sq Ft (Main)', property.sqft.toLocaleString()],
+            ['Combined Sq Ft', `~${property.sqftCombined.toLocaleString()}`],
+            ['Lot Size', `${property.lotSqft.toLocaleString()} sq ft`],
+            ['Lot Dimensions', property.lotDimensions],
+            ['Year Built', property.yearBuilt],
+            ['Style', property.style],
+            ['Building Type', property.type],
+            ['Zoning', property.zoning],
+            ['Stories', '2'],
+            ['Levels', 'Multi-Level'],
+            ['Fireplace', '1 (Decorative, Living Room)'],
+            ['Laundry', 'In-Unit'],
+            ['Parking', 'Gated Driveway + EV Charging'],
+            ['Guest House', '~400 sq ft (Detached)'],
+          ].map(([label, val]) => (
+            <div class="border border-charcoal/10 p-4 bg-white">
+              <dt class="text-charcoal/40 text-xs uppercase tracking-wider mb-1">{label}</dt>
+              <dd class="font-medium text-charcoal text-sm">{val}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <!-- Amenities -->
+      <div>
+        <h2 class="font-serif text-2xl mb-6 text-charcoal">Amenities & Features</h2>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {property.amenities.map((item) => (
+            <li class="flex items-start gap-3 text-sm text-charcoal/70">
+              <span class="mt-1.5 w-1.5 h-1.5 bg-gold rounded-full shrink-0"></span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Exterior / Aerial -->
+      <div>
+        <h2 class="font-serif text-2xl mb-6 text-charcoal">Exterior & Aerial Views</h2>
+        <div class="grid grid-cols-2 gap-2">
+          {[...property.images.aerial, ...property.images.exterior].map((src, i) => (
+            <img
+              src={src}
+              alt={`9432 Oakmore Rd ${i < 4 ? 'aerial drone' : 'exterior'} view — luxury rental Beverlywood LA`}
+              class="w-full aspect-video object-cover"
+              loading="lazy"
+            />
+          ))}
+        </div>
+      </div>
+
+      <!-- Interior -->
+      <div>
+        <h2 class="font-serif text-2xl mb-6 text-charcoal">Interior</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+          {[
+            ...property.images.living,
+            ...property.images.kitchen,
+            ...property.images.dining,
+            ...property.images.primarySuite,
+            ...property.images.bedrooms,
+            ...property.images.bathrooms,
+            ...property.images.office,
+            ...property.images.laundry,
+            ...property.images.staircase,
+          ].map((src, i) => (
+            <a href="/gallery">
+              <img
+                src={src}
+                alt={`9432 Oakmore Rd interior — luxury rental Los Angeles photo ${i + 1}`}
+                class="w-full aspect-[4/3] object-cover hover:opacity-90 transition-opacity"
+                loading="lazy"
+              />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Pool & Outdoor -->
+      <div>
+        <h2 class="font-serif text-2xl mb-6 text-charcoal">Pool & Outdoor</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+          {property.images.outdoor.map((src, i) => (
+            <img
+              src={src}
+              alt={`Heated pool and outdoor area — 9432 Oakmore Rd luxury rental Los Angeles photo ${i + 1}`}
+              class="w-full aspect-[4/3] object-cover"
+              loading="lazy"
+            />
+          ))}
+        </div>
+      </div>
+
+      <!-- Guest House -->
+      <div class="bg-charcoal text-white p-8">
+        <h2 class="font-serif text-2xl mb-2">Detached Guest House</h2>
+        <p class="text-white/50 text-sm mb-6">~{property.guestHouse.sqft} sq ft · Private entrance · Included in lease</p>
+        <ul class="space-y-2 mb-6">
+          {property.guestHouse.features.map((f) => (
+            <li class="flex items-center gap-3 text-sm text-white/70">
+              <span class="w-1.5 h-1.5 bg-gold rounded-full shrink-0"></span>
+              {f}
+            </li>
+          ))}
+        </ul>
+        <p class="text-white/40 text-xs mb-6">{property.guestHouse.note}</p>
+        <div class="grid grid-cols-3 gap-2">
+          {property.images.guestHouse.map((src, i) => (
+            <img
+              src={src}
+              alt={`Guest house at 9432 Oakmore Rd Los Angeles — photo ${i + 1}`}
+              class="w-full aspect-square object-cover"
+              loading="lazy"
+            />
+          ))}
+        </div>
+      </div>
+
+      <!-- Video -->
+      <div>
+        <h2 class="font-serif text-2xl mb-6 text-charcoal">Video Tour</h2>
+        <div class="relative w-full aspect-video bg-charcoal">
+          <iframe
+            src={`${property.video.embedUrl}?rel=0&modestbranding=1`}
+            title={property.video.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+            class="absolute inset-0 w-full h-full"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Tenant Pays -->
+      <div>
+        <h2 class="font-serif text-2xl mb-4 text-charcoal">Tenant Responsibilities</h2>
+        <ul class="grid grid-cols-2 gap-2">
+          {property.tenantPays.map((item) => (
+            <li class="text-sm text-charcoal/60 flex items-center gap-2">
+              <span class="w-1 h-1 bg-charcoal/30 rounded-full shrink-0"></span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="space-y-6">
+      <div class="bg-charcoal text-white p-6 sticky top-28">
+        <p class="font-serif text-gold text-2xl mb-1">{property.priceDisplay}</p>
+        <p class="text-white/40 text-xs mb-6">Utilities & maintenance not included</p>
+        <dl class="space-y-3 text-sm mb-6">
+          {[
+            ['Security Deposit', property.leaseTerms.securityDeposit],
+            ['Min. Lease', property.leaseTerms.minimum],
+            ['Preferred', property.leaseTerms.preferred],
+            ['Pets', 'Considered w/ conditions'],
+            ['Parking', 'Gated + EV charging'],
+            ['Short-Term', 'Not permitted'],
+          ].map(([label, val]) => (
+            <div class="flex justify-between border-b border-white/10 pb-3">
+              <dt class="text-white/40">{label}</dt>
+              <dd class="text-right text-white">{val}</dd>
+            </div>
+          ))}
+        </dl>
+        <a href="/contact" class="block text-center bg-gold text-charcoal font-bold text-xs tracking-widest uppercase px-6 py-4 hover:bg-gold-light transition-colors mb-3">
+          Schedule Showing
+        </a>
+        <a href={`tel:${property.agent.phone.replace(/-/g, '')}`} class="block text-center border border-white/20 text-white/70 text-xs tracking-widest uppercase px-6 py-4 hover:border-gold hover:text-gold transition-colors">
+          Call {property.agent.phone}
+        </a>
+        <div class="mt-6 pt-6 border-t border-white/10 text-xs text-white/30">
+          <p class="font-medium text-white/50 mb-1">{property.agent.name}</p>
+          <p>DRE# {property.agent.dre}</p>
+          <p class="mt-1">{property.agent.company}</p>
+          <p>DRE# {property.agent.companyDre}</p>
+        </div>
+      </div>
+
+      <div class="border border-charcoal/10 p-6 bg-white text-sm">
+        <p class="text-xs tracking-widest uppercase text-charcoal/40 mb-4">Location</p>
+        <p class="font-medium text-charcoal">{property.address.street}</p>
+        <p class="text-charcoal/60">{property.address.neighborhood}</p>
+        <p class="text-charcoal/60">{property.address.city}, {property.address.state} {property.address.zip}</p>
+        <p class="text-charcoal/40 text-xs mt-2">Cross: {property.address.crossStreet}</p>
+        <ul class="mt-4 space-y-1">
+          {property.nearbyLandmarks.map((place) => (
+            <li class="text-xs text-charcoal/50 flex items-center gap-2">
+              <span class="w-1 h-1 bg-gold/60 rounded-full shrink-0"></span>
+              {place}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="border border-charcoal/10 p-6 bg-white text-sm">
+        <p class="text-xs tracking-widest uppercase text-charcoal/40 mb-4">Quick Links</p>
+        <nav class="space-y-2">
+          {[['Gallery', '/gallery'], ['About Agent', '/about'], ['Contact', '/contact']].map(([label, href]) => (
+            <a href={href} class="block text-charcoal/60 hover:text-gold transition-colors">→ {label}</a>
+          ))}
+        </nav>
+      </div>
+    </aside>
+  </div>
+</Layout>

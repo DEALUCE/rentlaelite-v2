@@ -1,0 +1,56 @@
+---
+const nav = [
+  { label: 'Home', href: '/' },
+  { label: 'Property', href: '/property' },
+  { label: 'Gallery', href: '/gallery' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+];
+const current = Astro.url.pathname;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 glass border-b border-amber-400/10">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+    <a href="/" class="font-display text-amber-400 text-lg tracking-widest uppercase italic">
+      Rent LA Elite
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      {nav.map(({ label, href }) => (
+        <a
+          href={href}
+          class={`text-xs tracking-widest uppercase transition-all duration-300 ${
+            current === href || (href !== '/' && current.startsWith(href))
+              ? 'text-amber-400'
+              : 'text-slate-400 hover:text-amber-400'
+          }`}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+    <a
+      href="/contact"
+      class="hidden md:inline-block bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-5 py-2.5 hover:bg-amber-300 transition-all duration-300 amber-glow-hover"
+    >
+      Book a Tour
+    </a>
+    <details class="md:hidden group relative">
+      <summary class="text-slate-300 cursor-pointer list-none select-none p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </summary>
+      <div class="absolute top-12 right-0 w-56 glass border border-amber-400/10 py-4 px-5 flex flex-col gap-4">
+        {nav.map(({ label, href }) => (
+          <a href={href} class="text-xs tracking-widest uppercase text-slate-300 hover:text-amber-400 transition-colors">
+            {label}
+          </a>
+        ))}
+        <a href="/contact" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-4 py-3 text-center mt-2">
+          Book a Tour
+        </a>
+      </div>
+    </details>
+  </div>
+</header>

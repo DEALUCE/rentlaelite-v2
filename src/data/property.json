@@ -1,0 +1,176 @@
+{
+  "title": "9432 Oakmore Rd — Gated Beverlywood Luxury Compound",
+  "address": {
+    "street": "9432 Oakmore Rd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90035",
+    "neighborhood": "Beverlywood / Pico-Robertson",
+    "crossStreet": "S Beverly Dr"
+  },
+  "price": 29999.99,
+  "priceDisplay": "$29,999/mo",
+  "beds": 5,
+  "baths": 6,
+  "bathsDisplay": "6 (5 full, 1 half)",
+  "sqft": 4092,
+  "sqftCombined": 4492,
+  "lotSqft": 7283,
+  "lotDimensions": "60x121",
+  "yearBuilt": 1940,
+  "style": "Modern",
+  "type": "Single Family",
+  "zoning": "LAR1",
+  "mlsNumber": "25594215",
+  "apn": "4306-026-003",
+  "video": {
+    "youtubeId": "-j1TuUMxE_s",
+    "url": "https://www.youtube.com/watch?v=-j1TuUMxE_s",
+    "embedUrl": "https://www.youtube.com/embed/-j1TuUMxE_s",
+    "thumbnailUrl": "https://img.youtube.com/vi/-j1TuUMxE_s/maxresdefault.jpg",
+    "title": "9432 Oakmore Rd — Luxury Beverlywood Compound | Property Tour",
+    "description": "Full video walkthrough of 9432 Oakmore Rd, Los Angeles CA 90035 — a gated 5-bedroom luxury compound in Beverlywood with heated pool, detached guest house, steam sauna, and chef's kitchen."
+  },
+  "leaseTerms": {
+    "minimum": "30 days",
+    "preferred": "3–12 months",
+    "securityDeposit": "$29,999",
+    "availableDate": "By appointment",
+    "monthToMonth": false,
+    "petsConsidered": true,
+    "furnished": "Fully Furnished — curated luxury furnishings included"
+  },
+  "tenantPays": [
+    "Electricity", "Gas", "Water", "Sewer", "Trash",
+    "Internet / Cable", "Pool maintenance", "Gardener",
+    "Renter's insurance", "Smart home subscriptions"
+  ],
+  "description": "Gated Beverlywood compound with detached guest residence and heated pool/spa in prime 90035. Rare dual-structure configuration offering approximately 4,492 sq ft of combined living space across a 5-bedroom main residence and a private self-contained guest house on a single gated lot. The main residence features open-concept living filled with natural light and a chef's kitchen equipped with dual sinks and dual ovens. Hardwood flooring upstairs and Italian porcelain flooring on the main level complement the clean modern design. The spacious primary suite includes a spa-style bath with steam sauna.",
+  "guestHouse": {
+    "sqft": 400,
+    "features": ["Separate entrance", "Full kitchen", "Full bathroom", "Separately metered"],
+    "note": "Included in lease — may not be separately sublet"
+  },
+  "amenities": [
+    "Heated pool & spa (in-ground, gas-heated, filtered)",
+    "Steam sauna in primary suite",
+    "Chef's kitchen with dual sinks & dual ovens",
+    "Gourmet kitchen with island & ceramic counters",
+    "Hardwood flooring (upper level)",
+    "Italian porcelain flooring (main level)",
+    "Multi-zone HVAC (central, dual-zone)",
+    "Smart lighting controls",
+    "Ring security system",
+    "Blackout shades",
+    "Dual-pane windows",
+    "Decorative fireplace (living room)",
+    "Walk-in closet",
+    "In-unit washer & dryer",
+    "Water conditioner & purifier",
+    "Dishwasher, refrigerator, microwave, range/oven",
+    "Trash compactor",
+    "Gated driveway (multiple vehicles)",
+    "EV charging station",
+    "Exterior security lighting",
+    "Automatic gate",
+    "Landscaped front & back yard"
+  ],
+  "nearbyLandmarks": [
+    "Century City", "Beverly Hills", "Fox Studios",
+    "Cedars-Sinai Medical Center", "Circle Park", "Pico-Robertson"
+  ],
+  "images": {
+    "hero": "/images/DJI_20250122125313_0947_D.jpg",
+    "aerial": [
+      "/images/DJI_20250122125313_0947_D.jpg",
+      "/images/DJI_20250122125346_0953_D.jpg",
+      "/images/DJI_20250122125449_0960_D.jpg",
+      "/images/DJI_20250122125517_0966_D.jpg"
+    ],
+    "exterior": [
+      "/images/exterior-1.jpg",
+      "/images/exterior-2.jpg",
+      "/images/exterior-3.jpg",
+      "/images/exterior-4.jpg"
+    ],
+    "living": [
+      "/images/living-1.jpg",
+      "/images/living-2.jpg",
+      "/images/second-living-1.jpg",
+      "/images/second-living-2.jpg",
+      "/images/second-living-3.jpg"
+    ],
+    "kitchen": [
+      "/images/kitchen-1.jpg",
+      "/images/kitchen-2.jpg",
+      "/images/kitchen-3.jpg",
+      "/images/kitchen-4.jpg"
+    ],
+    "dining": [
+      "/images/dining-1.jpg"
+    ],
+    "primarySuite": [
+      "/images/primary-suite.jpg",
+      "/images/primary-suite-1.jpg",
+      "/images/primary-suite-2.jpg",
+      "/images/primary-suite-3.jpg",
+      "/images/primary-suite-4.jpg",
+      "/images/primary-closet.jpg"
+    ],
+    "bedrooms": [
+      "/images/bedroom-2-1.jpg",
+      "/images/bedroom-3.jpg",
+      "/images/bedroom-4.jpg"
+    ],
+    "bathrooms": [
+      "/images/bathroom-2.jpg",
+      "/images/bathroom-3.jpg",
+      "/images/bathroom-4.jpg"
+    ],
+    "office": [
+      "/images/office.jpg",
+      "/images/office-1.jpg",
+      "/images/office-rromm-3.jpg",
+      "/images/office-bathroom.jpg"
+    ],
+    "laundry": [
+      "/images/landryroom.jpg"
+    ],
+    "staircase": [
+      "/images/staircase.jpg",
+      "/images/staircase-1.jpg"
+    ],
+    "outdoor": [
+      "/images/pool-1.jpg",
+      "/images/pool-2.jpg",
+      "/images/pool-3.jpg",
+      "/images/outdoor-patio.jpg"
+    ],
+    "guestHouse": [
+      "/images/guest-house-1.jpg",
+      "/images/guest-house-2.jpg",
+      "/images/guest-house-3.jpg",
+      "/images/guest-house-4.jpg",
+      "/images/guest-house-5.jpg",
+      "/images/guest-house-bath.jpg",
+      "/images/guest-house-kitchen.jpg"
+    ],
+    "misc": [
+      "/images/IMG_3695.jpg",
+      "/images/IMG_3702.jpg",
+      "/images/IMG_3765.jpg",
+      "/images/IMG_3772.jpg",
+      "/images/IMG_3849.jpg"
+    ]
+  },
+  "agent": {
+    "name": "Daniel Issak",
+    "dre": "02037760",
+    "company": "Real Estate Source, Inc.",
+    "companyDre": "01869619",
+    "phone": "310-770-0552",
+    "phoneAlt": "424-272-5935",
+    "email": "dan.issak@gmail.com",
+    "fax": "866-322-6502"
+  }
+}

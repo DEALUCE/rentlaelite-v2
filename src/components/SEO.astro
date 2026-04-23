@@ -20,12 +20,14 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
 const ogImage = image.startsWith('http') ? image : new URL(image, siteUrl).href;
 
 const keywords = [
-  '9432 Oakmore Rd', 'luxury rental Los Angeles', 'Beverlywood rental',
-  'Pico Robertson luxury home rental', 'luxury house for rent LA 90035',
-  '5 bedroom rental Los Angeles', 'luxury rental with pool LA',
-  'gated compound Los Angeles', 'luxury rental Century City adjacent',
-  'Beverly Hills adjacent rental', 'long term luxury rental LA',
-  'luxury rental Beverlywood 90035', 'Daniel Issak real estate',
+  'Beverly Hills luxury rental', 'Beverly Hills luxury home for rent',
+  'Beverly Hills executive rental', 'Beverly Hills furnished rental',
+  'Beverly Hills short term rental', 'luxury rental Beverly Hills CA',
+  'luxury home for rent Beverly Hills', 'Beverly Hills real estate agent',
+  '9432 Oakmore Rd', 'Beverlywood luxury rental', 'luxury rental Los Angeles',
+  'gated compound Beverly Hills adjacent', 'luxury rental with pool Beverly Hills',
+  '5 bedroom luxury rental LA', 'corporate housing Beverly Hills',
+  'Daniel Issak real estate', 'The Issak Group Beverly Hills',
 ];
 ---
 
@@ -45,7 +47,7 @@ const keywords = [
 <meta property="og:image:width" content="1280" />
 <meta property="og:image:height" content="720" />
 <meta property="og:image:alt" content="9432 Oakmore Rd — Luxury Gated Compound Beverlywood Los Angeles" />
-<meta property="og:site_name" content="Rent LA Elite | 9432 Oakmore Rd" />
+<meta property="og:site_name" content="The Issak Group | Beverly Hills Luxury Real Estate" />
 <meta property="og:locale" content="en_US" />
 
 <!-- Twitter Card -->
@@ -57,6 +59,6 @@ const keywords = [
 
 <!-- Geo -->
 <meta name="geo.region" content="US-CA" />
-<meta name="geo.placename" content="Los Angeles, Beverlywood" />
+<meta name="geo.placename" content="Beverly Hills, Los Angeles, CA" />
 <meta name="geo.position" content="34.0503;-118.3847" />
 <meta name="ICBM" content="34.0503, -118.3847" />

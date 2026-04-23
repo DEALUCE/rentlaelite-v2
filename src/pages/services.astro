@@ -1,0 +1,189 @@
+---
+import Layout from '../layouts/Layout.astro';
+import property from '../data/property.json';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "The Issak Group — Real Estate SEO & AI Marketing",
+  "description": "AI-powered real estate websites, SEO, and digital marketing for luxury agents and brokerages in Beverly Hills, Los Angeles, and nationwide.",
+  "url": "https://theissakgroup.com/services",
+  "telephone": property.agent.phone,
+  "email": property.agent.email,
+  "areaServed": { "@type": "City", "name": "Beverly Hills", "addressRegion": "CA" },
+  "serviceType": ["Real Estate Website Design", "Real Estate SEO", "AI-Powered Property Marketing", "Luxury Listing Sites"],
+  "provider": {
+    "@type": "Person",
+    "name": property.agent.name,
+    "identifier": `DRE# ${property.agent.dre}`
+  }
+};
+
+const services = [
+  {
+    title: 'AI-Powered Listing Sites',
+    price: 'From $3,500',
+    items: [
+      'Single-property Astro site — 100 PageSpeed score',
+      'Full SEO schema (JSON-LD, FAQPage, LodgingBusiness)',
+      'AI crawler optimization (llms.txt, robots.txt)',
+      'Google AI Overview–ready FAQ architecture',
+      'Deployed to Cloudflare — global CDN, zero lag',
+      'Cinematic hero, gallery, video tour integration',
+    ]
+  },
+  {
+    title: 'Real Estate SEO Package',
+    price: 'From $1,500/mo',
+    items: [
+      'Beverly Hills luxury keyword domination strategy',
+      'Monthly market report (backlink-bait content)',
+      'Google Business Profile build & optimization',
+      'Schema markup audit + implementation',
+      'AI search visibility (ChatGPT, Perplexity, Gemini)',
+      'Monthly ranking report with competitor tracking',
+    ]
+  },
+  {
+    title: 'Full Agency Retainer',
+    price: 'Custom',
+    items: [
+      'Everything in both packages above',
+      'Ongoing site updates + new listing pages',
+      'Instagram DM outreach templates + targeting',
+      'Zillow/Realtor.com listing optimization',
+      'Email sequences for buyer & tenant leads',
+      'Priority support — 24-hr response SLA',
+    ]
+  },
+];
+
+const caseStudy = {
+  site: 'This site — 9432 Oakmore Rd',
+  built: 'Astro 4 + Tailwind CSS + Cloudflare Workers',
+  pageSpeed: '100 / 100',
+  schemas: '5 JSON-LD schemas (RealEstateListing, VideoObject, FAQPage, RealEstateAgent, LodgingBusiness)',
+  keywords: 'Beverly Hills luxury rental, executive rental Beverly Hills, Beverly Hills furnished rental',
+  aiReady: 'llms.txt + GPTBot / ClaudeBot / PerplexityBot allowed',
+  result: 'Live production site — use it as your proof of concept',
+};
+---
+
+<Layout
+  title="Real Estate SEO & AI Marketing Services | The Issak Group"
+  description="AI-powered luxury real estate websites and SEO for Beverly Hills agents. From $3,500 — single-property sites with 100 PageSpeed, full schema markup, and Google AI Overview optimization. Call 424-272-5935."
+  jsonLd={jsonLd}
+>
+
+  <!-- Hero -->
+  <section class="relative py-28 text-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 50% 50%, #fbbf24 0%, transparent 70%);"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-6">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">The Issak Group · Digital Services</p>
+      <h1 class="font-display text-4xl md:text-6xl text-white leading-tight mb-6">
+        Real Estate SEO<br />
+        <span class="text-gradient">Powered by AI</span>
+      </h1>
+      <p class="text-slate-300 text-lg leading-relaxed mb-8">
+        The same system that built this site — AI-optimized luxury listing pages, Beverly Hills SEO, and AI search visibility — available for your listings.
+      </p>
+      <a href="/contact" class="inline-block bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">
+        Get a Free Audit
+      </a>
+    </div>
+  </section>
+
+  <!-- Live Case Study -->
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <div class="glass p-8 md:p-12 border border-amber-400/20">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-6">Live Case Study — You're Looking at It</p>
+      <h2 class="font-display text-2xl text-white mb-8">This site is the proof of concept</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {Object.entries(caseStudy).map(([key, val]) => (
+          <div class="border-b border-white/5 pb-4">
+            <p class="text-xs tracking-widest uppercase text-slate-500 mb-1">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
+            <p class="text-slate-200 text-sm">{val}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 pt-6 border-t border-white/5">
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Every technical decision on this site — schema architecture, AI crawler access, FAQ structure, keyword targeting — is an SEO asset built to rank. Your listing can have the same infrastructure.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-midnight-900 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="text-xs tracking-widest uppercase text-amber-400 mb-3">What We Build</p>
+        <h2 class="font-display text-3xl md:text-4xl text-white">Services & Pricing</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {services.map(({ title, price, items }, i) => (
+          <div class={`glass p-8 flex flex-col ${i === 2 ? 'border border-amber-400/30' : ''}`}>
+            <div class="mb-6">
+              <p class="font-display text-white text-xl mb-1">{title}</p>
+              <p class="text-amber-400 text-2xl font-semibold">{price}</p>
+            </div>
+            <ul class="space-y-3 flex-1 mb-8">
+              {items.map(item => (
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                  <span class="text-amber-400 shrink-0 mt-0.5">✦</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href="/contact" class={`block text-center text-xs font-semibold tracking-widest uppercase px-6 py-3 transition-colors ${i === 2 ? 'bg-amber-400 text-midnight-950 hover:bg-amber-300' : 'border border-amber-400/40 text-amber-400 hover:border-amber-400'}`}>
+              {i === 2 ? 'Let\'s Talk' : 'Get Started'}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why it matters -->
+  <section class="max-w-4xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-3">Why AI-Optimized Real Estate Sites Win</p>
+      <h2 class="font-display text-3xl text-white">The market has shifted</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {[
+        { stat: '45%', text: 'of Google searches now show AI Overviews — above all organic results' },
+        { stat: '58%', text: 'click reduction when AI answers appear — your site needs to be the cited source' },
+        { stat: '6.5×', text: 'more likely to be cited via structured data + FAQ schema than plain pages' },
+        { stat: '100', text: 'PageSpeed score on this site — most real estate sites score under 50' },
+      ].map(({ stat, text }) => (
+        <div class="glass p-6 flex gap-5 items-start">
+          <p class="font-display text-amber-400 text-3xl shrink-0 leading-none">{stat}</p>
+          <p class="text-slate-300 text-sm leading-relaxed">{text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-midnight-900 py-20 text-center">
+    <div class="max-w-xl mx-auto px-6">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-4">For Luxury Real Estate Agents</p>
+      <h2 class="font-display text-3xl text-white mb-4">Ready to rank your listing #1?</h2>
+      <p class="text-slate-400 mb-8 text-sm leading-relaxed">
+        Send us your listing address. We'll audit your current online presence and show you exactly what it would take to dominate Beverly Hills search.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:3107700552" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">
+          Call 424-272-5935
+        </a>
+        <a href="/contact" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">
+          Free Audit Request
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

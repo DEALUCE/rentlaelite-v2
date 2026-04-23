@@ -7,11 +7,10 @@ const { agent } = property;
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
 
     <div class="md:col-span-2">
-      <p class="font-display text-amber-400 text-xl tracking-widest uppercase italic mb-4">Rent LA Elite</p>
+      <p class="font-display text-amber-400 text-xl tracking-widest uppercase italic mb-4">The Issak Group</p>
       <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
-        A rare gated luxury compound in the heart of Beverlywood —
-        5 bedrooms, 6 bathrooms, heated pool, steam sauna, and a fully
-        independent detached guest house.
+        Beverly Hills luxury real estate — leasing, buying, and AI-powered
+        marketing for properties that demand an audience. DRE# 02037760.
       </p>
       <div class="mt-6 flex gap-4">
         <a href={`tel:${agent.phone.replace(/-/g, '')}`} class="text-amber-400 text-sm hover:text-amber-300 transition-colors">
@@ -27,7 +26,7 @@ const { agent } = property;
     <div>
       <p class="text-xs tracking-widest uppercase text-slate-500 mb-5">Navigate</p>
       <nav class="flex flex-col gap-3">
-        {[['Home','/'],['Property','/property'],['Gallery','/gallery'],['FAQ','/faq'],['About','/about'],['Contact','/contact']].map(([label,href]) => (
+        {[['Home','/'],['Property','/property'],['Gallery','/gallery'],['⚽ FIFA 2026','/fifa-world-cup-2026-los-angeles-rental'],['Beverly Hills','/beverly-hills-luxury-rentals'],['Market Report','/beverly-hills-market-report'],['Services','/services'],['Results','/results'],['FAQ','/faq'],['Contact','/contact']].map(([label,href]) => (
           <a href={href} class="text-sm text-slate-400 hover:text-amber-400 transition-colors">{label}</a>
         ))}
       </nav>
@@ -47,7 +46,13 @@ const { agent } = property;
   </div>
 
   <div class="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between gap-3 text-xs text-slate-600">
-    <p>Broker/Agent does not guarantee accuracy of square footage, lot size, or other property information. Tenant to independently verify all details.</p>
-    <p class="shrink-0">© {new Date().getFullYear()} Rent LA Elite</p>
+    <p>Broker/Agent does not guarantee accuracy of square footage, lot size, or other property information. Tenant to independently verify all details. Some images on this site are AI-generated renderings for illustrative purposes only and do not represent the actual property at 9432 Oakmore Rd.</p>
+    <div class="flex items-center gap-4 shrink-0 flex-wrap justify-end">
+      <span class="inline-flex items-center gap-1.5 border border-amber-400/30 bg-amber-400/5 px-3 py-1 text-[11px] tracking-widest uppercase text-amber-400">
+        <span class="w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse"></span>
+        Powered by Claude AI
+      </span>
+      <p>© {new Date().getFullYear()} The Issak Group — Beverly Hills Luxury Real Estate</p>
+    </div>
   </div>
 </footer>

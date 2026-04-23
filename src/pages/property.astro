@@ -56,34 +56,34 @@ const jsonLd = [
 ---
 
 <Layout
-  title="9432 Oakmore Rd | 5BR Luxury Rental Beverlywood LA 90035 — $23,950/mo"
-  description="5 beds, 6 baths, 4,092 sq ft + detached guest house. Heated pool, steam sauna, chef's kitchen, smart home. Beverlywood / Pico-Robertson. MLS# 25594215."
+  title={`Beverlywood Luxury Compound | 5BR Rental LA 90035 — ${property.priceDisplay}`}
+  description="5 beds, 6 baths, 4,092 sq ft + detached guest house. Heated pool, steam sauna, chef's kitchen, smart home. Beverlywood / Beverly Hills Adjacent. MLS# 25594215."
   jsonLd={jsonLd}
 >
   <!-- HERO -->
-  <section class="relative h-[55vh] min-h-[420px] flex items-end bg-charcoal overflow-hidden">
+  <section class="relative h-[55vh] min-h-[420px] flex items-end bg-midnight-950 overflow-hidden">
     <img
       src={property.images.aerial[1]}
-      alt="9432 Oakmore Rd aerial view — gated 5-bedroom luxury compound Beverlywood Los Angeles"
+      alt="Gated 5-bedroom luxury compound aerial view — Beverlywood Los Angeles"
       class="absolute inset-0 w-full h-full object-cover opacity-55"
       loading="eager"
       fetchpriority="high"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-charcoal to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-midnight-950 to-transparent"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 pb-12 w-full">
       <nav class="text-xs text-white/30 mb-4">
-        <a href="/" class="hover:text-gold transition-colors">Home</a>
+        <a href="/" class="hover:text-amber-400 transition-colors">Home</a>
         <span class="mx-2">›</span>
         <span class="text-white/60">Property</span>
       </nav>
-      <p class="text-gold text-xs tracking-[0.3em] uppercase mb-2">MLS# {property.mlsNumber} · APN {property.apn}</p>
-      <h1 class="font-serif text-white text-4xl md:text-5xl">{property.address.street}</h1>
-      <p class="text-white/60 mt-2">{property.address.neighborhood} · {property.address.city}, {property.address.state} {property.address.zip}</p>
+      <p class="text-amber-400 text-xs tracking-[0.3em] uppercase mb-2">MLS# {property.mlsNumber} · APN {property.apn}</p>
+      <h1 class="font-display text-white text-4xl md:text-5xl">Beverlywood Luxury Compound</h1>
+      <p class="text-white/60 mt-2">{property.address.neighborhood} · {property.address.city}, {property.address.state} {property.address.zip} · <em class="text-white/40 not-italic text-xs">Address upon qualified inquiry</em></p>
     </div>
   </section>
 
   <!-- STATS BAR -->
-  <section class="bg-charcoal border-b border-white/10 sticky top-16 z-30">
+  <section class="bg-midnight-900 border-b border-amber-400/10 sticky top-16 z-30">
     <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap gap-6 justify-between items-center">
       <div class="flex flex-wrap gap-6 text-sm text-white/60">
         <span><span class="text-white font-medium">{property.beds}</span> Beds</span>
@@ -93,8 +93,8 @@ const jsonLd = [
         <span><span class="text-white font-medium">{property.yearBuilt}</span> Built</span>
       </div>
       <div class="flex items-center gap-4">
-        <span class="font-serif text-gold text-2xl">{property.priceDisplay}</span>
-        <a href="/contact" class="bg-gold text-charcoal font-bold text-xs tracking-widest uppercase px-5 py-2.5 hover:bg-gold-light transition-colors">
+        <span class="font-display text-amber-400 text-2xl">{property.priceDisplay}</span>
+        <a href="/contact" class="bg-amber-400 text-midnight-950 font-bold text-xs tracking-widest uppercase px-5 py-2.5 hover:bg-amber-300 transition-colors">
           Inquire
         </a>
       </div>
@@ -107,9 +107,9 @@ const jsonLd = [
 
       <!-- Description -->
       <div>
-        <h2 class="font-serif text-2xl mb-4 text-charcoal">About This Property</h2>
-        <p class="text-charcoal/70 leading-relaxed text-base mb-4">{property.description}</p>
-        <p class="text-charcoal/60 leading-relaxed text-sm">
+        <h2 class="font-display text-2xl mb-4 text-white">About This Property</h2>
+        <p class="text-slate-300 leading-relaxed text-base mb-4">{property.description}</p>
+        <p class="text-slate-400 leading-relaxed text-sm">
           Situated in the coveted Beverlywood enclave near Circle Park, this gated compound offers
           the privacy of a compound with the convenience of a premier West Los Angeles address.
           Minutes from Century City, Beverly Hills, Fox Studios, and Cedars-Sinai.
@@ -119,7 +119,7 @@ const jsonLd = [
 
       <!-- Property Details Grid -->
       <div>
-        <h2 class="font-serif text-2xl mb-6 text-charcoal">Property Details</h2>
+        <h2 class="font-display text-2xl mb-6 text-white">Property Details</h2>
         <dl class="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
           {[
             ['Bedrooms', `${property.beds} BR`],
@@ -139,9 +139,9 @@ const jsonLd = [
             ['Parking', 'Gated Driveway + EV Charging'],
             ['Guest House', '~400 sq ft (Detached)'],
           ].map(([label, val]) => (
-            <div class="border border-charcoal/10 p-4 bg-white">
-              <dt class="text-charcoal/40 text-xs uppercase tracking-wider mb-1">{label}</dt>
-              <dd class="font-medium text-charcoal text-sm">{val}</dd>
+            <div class="border border-slate-700 p-4 bg-midnight-900">
+              <dt class="text-slate-500 text-xs uppercase tracking-wider mb-1">{label}</dt>
+              <dd class="font-medium text-white text-sm">{val}</dd>
             </div>
           ))}
         </dl>
@@ -149,11 +149,11 @@ const jsonLd = [
 
       <!-- Amenities -->
       <div>
-        <h2 class="font-serif text-2xl mb-6 text-charcoal">Amenities & Features</h2>
+        <h2 class="font-display text-2xl mb-6 text-white">Amenities & Features</h2>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
           {property.amenities.map((item) => (
-            <li class="flex items-start gap-3 text-sm text-charcoal/70">
-              <span class="mt-1.5 w-1.5 h-1.5 bg-gold rounded-full shrink-0"></span>
+            <li class="flex items-start gap-3 text-sm text-slate-300">
+              <span class="mt-1.5 w-1.5 h-1.5 bg-amber-400 rounded-full shrink-0"></span>
               {item}
             </li>
           ))}
@@ -162,12 +162,12 @@ const jsonLd = [
 
       <!-- Exterior / Aerial -->
       <div>
-        <h2 class="font-serif text-2xl mb-6 text-charcoal">Exterior & Aerial Views</h2>
+        <h2 class="font-display text-2xl mb-6 text-white">Exterior & Aerial Views</h2>
         <div class="grid grid-cols-2 gap-2">
           {[...property.images.aerial, ...property.images.exterior].map((src, i) => (
             <img
               src={src}
-              alt={`9432 Oakmore Rd ${i < 4 ? 'aerial drone' : 'exterior'} view — luxury rental Beverlywood LA`}
+              alt={`Beverlywood luxury rental ${i < 4 ? 'aerial drone' : 'exterior'} view — LA 90035`}
               class="w-full aspect-video object-cover"
               loading="lazy"
             />
@@ -177,7 +177,7 @@ const jsonLd = [
 
       <!-- Interior -->
       <div>
-        <h2 class="font-serif text-2xl mb-6 text-charcoal">Interior</h2>
+        <h2 class="font-display text-2xl mb-6 text-white">Interior</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
           {[
             ...property.images.living,
@@ -193,7 +193,7 @@ const jsonLd = [
             <a href="/gallery">
               <img
                 src={src}
-                alt={`9432 Oakmore Rd interior — luxury rental Los Angeles photo ${i + 1}`}
+                alt={`Luxury rental interior — Los Angeles photo ${i + 1}`}
                 class="w-full aspect-[4/3] object-cover hover:opacity-90 transition-opacity"
                 loading="lazy"
               />
@@ -204,12 +204,12 @@ const jsonLd = [
 
       <!-- Pool & Outdoor -->
       <div>
-        <h2 class="font-serif text-2xl mb-6 text-charcoal">Pool & Outdoor</h2>
+        <h2 class="font-display text-2xl mb-6 text-white">Pool & Outdoor</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
           {property.images.outdoor.map((src, i) => (
             <img
               src={src}
-              alt={`Heated pool and outdoor area — 9432 Oakmore Rd luxury rental Los Angeles photo ${i + 1}`}
+              alt={`Heated pool and outdoor area — Beverlywood luxury rental photo ${i + 1}`}
               class="w-full aspect-[4/3] object-cover"
               loading="lazy"
             />
@@ -218,13 +218,13 @@ const jsonLd = [
       </div>
 
       <!-- Guest House -->
-      <div class="bg-charcoal text-white p-8">
-        <h2 class="font-serif text-2xl mb-2">Detached Guest House</h2>
+      <div class="bg-midnight-900 text-white p-8">
+        <h2 class="font-display text-2xl mb-2">Detached Guest House</h2>
         <p class="text-white/50 text-sm mb-6">~{property.guestHouse.sqft} sq ft · Private entrance · Included in lease</p>
         <ul class="space-y-2 mb-6">
           {property.guestHouse.features.map((f) => (
             <li class="flex items-center gap-3 text-sm text-white/70">
-              <span class="w-1.5 h-1.5 bg-gold rounded-full shrink-0"></span>
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full shrink-0"></span>
               {f}
             </li>
           ))}
@@ -234,7 +234,7 @@ const jsonLd = [
           {property.images.guestHouse.map((src, i) => (
             <img
               src={src}
-              alt={`Guest house at 9432 Oakmore Rd Los Angeles — photo ${i + 1}`}
+              alt={`Guest house — luxury rental Los Angeles photo ${i + 1}`}
               class="w-full aspect-square object-cover"
               loading="lazy"
             />
@@ -244,8 +244,8 @@ const jsonLd = [
 
       <!-- Video -->
       <div>
-        <h2 class="font-serif text-2xl mb-6 text-charcoal">Video Tour</h2>
-        <div class="relative w-full aspect-video bg-charcoal">
+        <h2 class="font-display text-2xl mb-6 text-white">Video Tour</h2>
+        <div class="relative w-full aspect-video bg-midnight-900">
           <iframe
             src={`${property.video.embedUrl}?rel=0&modestbranding=1`}
             title={property.video.title}
@@ -259,11 +259,11 @@ const jsonLd = [
 
       <!-- Tenant Pays -->
       <div>
-        <h2 class="font-serif text-2xl mb-4 text-charcoal">Tenant Responsibilities</h2>
+        <h2 class="font-display text-2xl mb-4 text-white">Tenant Responsibilities</h2>
         <ul class="grid grid-cols-2 gap-2">
           {property.tenantPays.map((item) => (
-            <li class="text-sm text-charcoal/60 flex items-center gap-2">
-              <span class="w-1 h-1 bg-charcoal/30 rounded-full shrink-0"></span>
+            <li class="text-sm text-slate-400 flex items-center gap-2">
+              <span class="w-1 h-1 bg-slate-600 rounded-full shrink-0"></span>
               {item}
             </li>
           ))}
@@ -273,9 +273,10 @@ const jsonLd = [
 
     <!-- SIDEBAR -->
     <aside class="space-y-6">
-      <div class="bg-charcoal text-white p-6 sticky top-28">
-        <p class="font-serif text-gold text-2xl mb-1">{property.priceDisplay}</p>
-        <p class="text-white/40 text-xs mb-6">Utilities & maintenance not included</p>
+      <div class="bg-midnight-900 text-white p-6 sticky top-28">
+        <p class="font-display text-amber-400 text-2xl mb-1">{property.priceDisplay}</p>
+        <p class="text-white/40 text-xs mb-1">Summer / FIFA Rate · May–Aug 2026</p>
+        <p class="text-white/30 text-xs mb-6">Utilities & maintenance not included</p>
         <dl class="space-y-3 text-sm mb-6">
           {[
             ['Security Deposit', property.leaseTerms.securityDeposit],
@@ -291,10 +292,15 @@ const jsonLd = [
             </div>
           ))}
         </dl>
-        <a href="/contact" class="block text-center bg-gold text-charcoal font-bold text-xs tracking-widest uppercase px-6 py-4 hover:bg-gold-light transition-colors mb-3">
+        <a
+          href="https://calendly.com/theissakgroup/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block text-center bg-amber-400 text-midnight-950 font-bold text-xs tracking-widest uppercase px-6 py-4 hover:bg-amber-300 transition-colors mb-3"
+        >
           Schedule Showing
         </a>
-        <a href={`tel:${property.agent.phone.replace(/-/g, '')}`} class="block text-center border border-white/20 text-white/70 text-xs tracking-widest uppercase px-6 py-4 hover:border-gold hover:text-gold transition-colors">
+        <a href={`tel:${property.agent.phone.replace(/-/g, '')}`} class="block text-center border border-white/20 text-white/70 text-xs tracking-widest uppercase px-6 py-4 hover:border-amber-400 hover:text-amber-400 transition-colors">
           Call {property.agent.phone}
         </a>
         <div class="mt-6 pt-6 border-t border-white/10 text-xs text-white/30">
@@ -305,27 +311,26 @@ const jsonLd = [
         </div>
       </div>
 
-      <div class="border border-charcoal/10 p-6 bg-white text-sm">
-        <p class="text-xs tracking-widest uppercase text-charcoal/40 mb-4">Location</p>
-        <p class="font-medium text-charcoal">{property.address.street}</p>
-        <p class="text-charcoal/60">{property.address.neighborhood}</p>
-        <p class="text-charcoal/60">{property.address.city}, {property.address.state} {property.address.zip}</p>
-        <p class="text-charcoal/40 text-xs mt-2">Cross: {property.address.crossStreet}</p>
+      <div class="border border-slate-700 p-6 bg-midnight-900 text-sm">
+        <p class="text-xs tracking-widest uppercase text-slate-500 mb-4">Location</p>
+        <p class="font-medium text-white">Beverlywood · Beverly Hills Adjacent</p>
+        <p class="text-slate-400">{property.address.city}, {property.address.state} {property.address.zip}</p>
+        <p class="text-slate-500 text-xs mt-2">Address provided upon qualified inquiry</p>
         <ul class="mt-4 space-y-1">
           {property.nearbyLandmarks.map((place) => (
-            <li class="text-xs text-charcoal/50 flex items-center gap-2">
-              <span class="w-1 h-1 bg-gold/60 rounded-full shrink-0"></span>
+            <li class="text-xs text-slate-500 flex items-center gap-2">
+              <span class="w-1 h-1 bg-amber-400/60 rounded-full shrink-0"></span>
               {place}
             </li>
           ))}
         </ul>
       </div>
 
-      <div class="border border-charcoal/10 p-6 bg-white text-sm">
-        <p class="text-xs tracking-widest uppercase text-charcoal/40 mb-4">Quick Links</p>
+      <div class="border border-slate-700 p-6 bg-midnight-900 text-sm">
+        <p class="text-xs tracking-widest uppercase text-slate-500 mb-4">Quick Links</p>
         <nav class="space-y-2">
           {[['Gallery', '/gallery'], ['About Agent', '/about'], ['Contact', '/contact']].map(([label, href]) => (
-            <a href={href} class="block text-charcoal/60 hover:text-gold transition-colors">→ {label}</a>
+            <a href={href} class="block text-slate-400 hover:text-amber-400 transition-colors">→ {label}</a>
           ))}
         </nav>
       </div>

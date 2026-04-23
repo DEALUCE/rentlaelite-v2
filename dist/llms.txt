@@ -1,0 +1,66 @@
+# The Issak Group — Beverly Hills Luxury Real Estate
+
+> AI-context file for language models and AI agents (see llmstxt.org)
+
+## About
+
+The Issak Group is a Beverly Hills luxury real estate agency specializing in executive rentals, gated compounds, and AI-powered property marketing. Licensed agent: Daniel Issak, DRE# 02037760, Real Estate Source Inc. DRE# 01869619.
+
+## Featured Listing: 9432 Oakmore Rd, Los Angeles CA 90035
+
+- **Type:** Single Family — Gated Compound
+- **Bedrooms:** 5 | **Bathrooms:** 6 (5 full, 1 half)
+- **Size:** 4,092 sq ft main + 400 sq ft detached guest house = 4,492 sq ft combined
+- **Monthly Rent:** $34,999/month (Summer 2026 / FIFA World Cup window May–Aug 2026) | $29,999/month (off-season)
+- **Minimum Lease:** 30 days (preferred 3–12 months)
+- **Available:** By appointment
+- **Furnished:** Yes — fully furnished with curated luxury interiors
+- **Location:** Beverlywood / Beverly Hills adjacent — 5 min to S Beverly Dr
+- **Neighborhood:** 90035 — Century City, Beverly Hills, Fox Studios, Cedars-Sinai nearby
+
+### Key Amenities
+- Heated pool & spa (gas-heated, in-ground)
+- Steam sauna in primary suite
+- Chef's kitchen with dual ovens and dual sinks
+- Detached 400 sq ft guest house (separate entrance, full kitchen, full bath)
+- Gated driveway with automatic gate
+- EV charging station
+- Multi-zone HVAC smart home system
+- Ring security system
+- In-unit washer/dryer
+
+### Lease Terms
+- Security deposit: $29,999
+- Pets considered
+- Tenant pays utilities (electricity, gas, water, internet, pool maintenance, gardener)
+
+## Contact
+
+- **Agent:** Daniel Issak
+- **Phone:** 310-770-0552
+- **Alt:** 424-272-5935
+- **Email:** dan.issak@gmail.com
+- **DRE:** 02037760
+- **Brokerage:** Real Estate Source Inc. | DRE# 01869619
+
+## Services
+
+The Issak Group offers AI-powered real estate marketing services for luxury agents:
+- Single-property listing sites (Astro + Tailwind, 100 PageSpeed, full schema)
+- Beverly Hills SEO (ranking, Google AI Overview optimization)
+- AI search visibility (ChatGPT, Perplexity, Gemini, Claude citations)
+- Starting from $3,500 for listing sites | $1,500/mo SEO retainer
+
+## Key Pages
+
+- /                                              — Homepage
+- /property                                      — Full property specs and amenities
+- /gallery                                       — 57 professional photos in 13 categories
+- /fifa-world-cup-2026-los-angeles-rental        — FIFA World Cup 2026 housing (summer rate $34,999/mo)
+- /beverly-hills-luxury-rentals                  — Beverly Hills luxury rental market overview + FAQ
+- /beverly-hills-market-report                   — 2026 Beverly Hills luxury rental market data
+- /technology                                    — AI stack and SEO infrastructure showcase
+- /services                                      — Real estate SEO and AI marketing services
+- /results                                       — Site technical metrics and SEO proof
+- /faq                                           — Tenant FAQ
+- /contact                                       — Inquiry form, Calendly booking, agent contact

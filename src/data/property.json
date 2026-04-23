@@ -1,15 +1,20 @@
 {
   "title": "9432 Oakmore Rd — Gated Beverlywood Luxury Compound",
   "address": {
-    "street": "9432 Oakmore Rd",
+    "street": "9432 & 9430 Oakmore Rd",
     "city": "Los Angeles",
     "state": "CA",
     "zip": "90035",
     "neighborhood": "Beverlywood / Pico-Robertson",
     "crossStreet": "S Beverly Dr"
   },
-  "price": 29999.99,
-  "priceDisplay": "$29,999/mo",
+  "price": 34999.99,
+  "priceDisplay": "$34,999/mo",
+  "priceOffSeason": 34999,
+  "priceOffSeasonDisplay": "$34,999/mo",
+  "priceSummer": 34999.99,
+  "priceSummerDisplay": "$34,999/mo",
+  "summerWindow": "May – Aug 2026 · FIFA World Cup Window",
   "beds": 5,
   "baths": 6,
   "bathsDisplay": "6 (5 full, 1 half)",
@@ -34,7 +39,7 @@
   "leaseTerms": {
     "minimum": "30 days",
     "preferred": "3–12 months",
-    "securityDeposit": "$29,999",
+    "securityDeposit": "$34,999",
     "availableDate": "By appointment",
     "monthToMonth": false,
     "petsConsidered": true,
@@ -168,7 +173,7 @@
     "dre": "02037760",
     "company": "Real Estate Source, Inc.",
     "companyDre": "01869619",
-    "phone": "310-770-0552",
+    "phone": "424-272-5935",
     "phoneAlt": "424-272-5935",
     "email": "dan.issak@gmail.com",
     "fax": "866-322-6502"

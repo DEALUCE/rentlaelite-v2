@@ -1,0 +1,254 @@
+---
+import Layout from '../layouts/Layout.astro';
+import property from '../data/property.json';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "The Issak Group",
+    "description": "Beverly Hills luxury real estate — exclusive rentals, executive housing, and AI-powered property marketing in the greater Beverly Hills area.",
+    "url": "https://theissakgroup.com/beverly-hills-luxury-rentals",
+    "telephone": property.agent.phone,
+    "email": property.agent.email,
+    "areaServed": [
+      { "@type": "City", "name": "Beverly Hills", "addressRegion": "CA" },
+      { "@type": "City", "name": "Los Angeles", "addressRegion": "CA" },
+      { "@type": "Neighborhood", "name": "Beverlywood" },
+      { "@type": "Neighborhood", "name": "Century City" },
+      { "@type": "Neighborhood", "name": "Bel Air" }
+    ],
+    "identifier": `DRE# ${property.agent.dre}`,
+    "worksFor": { "@type": "Organization", "name": property.agent.company }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the average price for a Beverly Hills luxury rental?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beverly Hills luxury rentals typically range from $15,000 to $75,000+ per month depending on size, amenities, and exact location. Our current featured listing at 9432 Oakmore Rd — a fully furnished 5-bedroom gated compound with heated pool, steam sauna, and detached guest house — is priced at $34,999/month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What neighborhoods are considered Beverly Hills luxury real estate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Beverly Hills luxury rental market includes 90210, Beverlywood, Century City, Bel Air, Holmby Hills, and Trousdale Estates. Properties within a 5-minute drive of Beverly Hills proper command premium pricing and executive-level tenant demand."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are Beverly Hills luxury rentals available furnished?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The majority of executive-tier Beverly Hills rentals are fully furnished with curated luxury furnishings, smart home systems, and concierge-ready amenities. Our listing at 9432 Oakmore Rd is move-in ready with all furniture, appliances, and fixtures included."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the minimum lease for a Beverly Hills luxury rental?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most Beverly Hills luxury rentals require a minimum 30-day lease. Preferred terms range from 3 to 12 months. Short-term corporate leases under 30 days are subject to Los Angeles short-term rental regulations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I schedule a showing for a Beverly Hills luxury rental?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All showings are by appointment only with 24-hour advance notice. Contact Daniel Issak at 424-272-5935 or via the inquiry form. The listing agent accompanies all showings."
+        }
+      }
+    ]
+  }
+];
+
+const stats = [
+  { value: '$34,999', label: 'Monthly Rate', sub: 'Featured listing' },
+  { value: '4,492', label: 'Square Feet', sub: 'Combined living space' },
+  { value: '5 BR / 6 BA', label: 'Bedrooms / Baths', sub: 'Main residence' },
+  { value: '< 5 min', label: 'To Beverly Hills', sub: 'S Beverly Dr corridor' },
+];
+
+const features = [
+  'Fully furnished — curated luxury interiors',
+  'Heated pool & spa with gas heating',
+  'Steam sauna in primary suite',
+  'Detached 400 sq ft guest house',
+  'Gated compound with auto gate',
+  'Chef\'s kitchen with dual ovens & sinks',
+  'Smart home: multi-zone HVAC, Ring security',
+  'EV charging station on-site',
+  'Private home office with fiber-ready',
+  'Drone-shot media package included',
+];
+---
+
+<Layout
+  title="Beverly Hills Luxury Rentals | The Issak Group — DRE# 02037760"
+  description="Beverly Hills luxury rentals from $15K–$75K/month. Executive furnished homes, gated compounds, and corporate housing near Beverly Hills, CA. Featured: 5BR gated estate with heated pool at $34,999/mo. Call 424-272-5935."
+  canonical="https://theissakgroup.com/beverly-hills-luxury-rentals"
+  jsonLd={jsonLd}
+>
+
+  <!-- Hero -->
+  <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/DJI_20250122125313_0947_D.jpg"
+        alt="Beverly Hills luxury rental — aerial view of 9432 Oakmore Rd gated compound"
+        class="w-full h-full object-cover"
+        style="animation: ken-burns 20s ease-in-out infinite alternate;"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-midnight-950/60 via-midnight-950/40 to-midnight-950"></div>
+    </div>
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">The Issak Group · DRE# 02037760</p>
+      <h1 class="font-display text-4xl md:text-6xl text-white leading-tight mb-6">
+        Beverly Hills<br />
+        <span class="text-gradient">Luxury Rentals</span>
+      </h1>
+      <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
+        Executive furnished estates, gated compounds, and corporate housing — minutes from Beverly Hills, Century City, and Bel Air.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">
+          Schedule Private Showing
+        </a>
+        <a href="/property" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 hover:bg-amber-400/5 transition-all duration-300">
+          View Featured Property
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market definition block (AI-extractable) -->
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <div class="glass p-8 md:p-12">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-4">Beverly Hills Luxury Rental Market</p>
+      <h2 class="font-display text-2xl md:text-3xl text-white mb-6">What is a Beverly Hills luxury rental?</h2>
+      <p class="text-slate-300 leading-relaxed text-lg mb-4">
+        A Beverly Hills luxury rental is a high-end residential property located within or directly adjacent to Beverly Hills, CA — typically priced at $15,000 to $75,000+ per month. These properties feature premium finishes, full furnishings, gated security, pools, and smart home systems, and are leased to executives, corporate tenants, international visitors, and high-net-worth individuals.
+      </p>
+      <p class="text-slate-400 leading-relaxed">
+        The Beverly Hills luxury rental corridor spans ZIP codes 90210, 90035, 90064, and 90024 — encompassing neighborhoods including Beverlywood, Century City, Holmby Hills, Bel Air, and the 90210 flats. Properties within a 5-minute drive of S Beverly Dr command the highest demand, particularly from entertainment industry executives, tech founders, and corporate housing programs.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="max-w-6xl mx-auto px-6 pb-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {stats.map(({ value, label, sub }) => (
+        <div class="glass p-6 text-center">
+          <p class="font-display text-amber-400 text-2xl md:text-3xl mb-1">{value}</p>
+          <p class="text-white text-sm font-medium mb-1">{label}</p>
+          <p class="text-slate-500 text-xs">{sub}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Featured Listing -->
+  <section class="bg-midnight-900 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="text-xs tracking-widest uppercase text-amber-400 mb-3">Featured Beverly Hills Luxury Rental</p>
+        <h2 class="font-display text-3xl md:text-4xl text-white">9432 Oakmore Rd</h2>
+        <p class="text-slate-400 mt-2">Beverlywood / Beverly Hills Adjacent — Los Angeles, CA 90035</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <img
+            src="/images/exterior-1.jpg"
+            alt="9432 Oakmore Rd Beverly Hills luxury rental exterior — gated compound"
+            class="w-full aspect-[4/3] object-cover"
+          />
+        </div>
+        <div class="space-y-6">
+          <div class="grid grid-cols-2 gap-4">
+            {features.map(f => (
+              <div class="flex items-start gap-2">
+                <span class="text-amber-400 mt-0.5 shrink-0">✦</span>
+                <span class="text-slate-300 text-sm">{f}</span>
+              </div>
+            ))}
+          </div>
+          <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+            <div>
+              <p class="text-xs text-slate-500 uppercase tracking-widest">Monthly Rate</p>
+              <p class="font-display text-amber-400 text-3xl">$34,999</p>
+            </div>
+            <a href="/contact" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-6 py-3 hover:bg-amber-300 transition-colors">
+              Inquire Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (schema-backed) -->
+  <section class="max-w-3xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-3">Common Questions</p>
+      <h2 class="font-display text-3xl text-white">Beverly Hills Luxury Rental FAQ</h2>
+    </div>
+    <div class="space-y-4">
+      {[
+        {
+          q: 'What is the average price for a Beverly Hills luxury rental?',
+          a: 'Beverly Hills luxury rentals range from $15,000 to $75,000+ per month. Our featured 5BR gated compound with heated pool is $34,999/month — fully furnished, move-in ready.'
+        },
+        {
+          q: 'What neighborhoods are considered Beverly Hills luxury real estate?',
+          a: 'Beverlywood, Century City, Bel Air, Holmby Hills, Trousdale Estates, and 90210 proper. Properties within 5 minutes of S Beverly Dr command premium pricing.'
+        },
+        {
+          q: 'Are Beverly Hills luxury rentals available furnished?',
+          a: 'Yes. Executive-tier Beverly Hills rentals are fully furnished with curated interiors, smart home systems, and concierge-ready amenities. Our listing is move-in ready.'
+        },
+        {
+          q: 'What is the minimum lease for a Beverly Hills luxury rental?',
+          a: 'Minimum 30-day lease. Preferred terms 3–12 months. Corporate and executive housing programs welcome.'
+        },
+        {
+          q: 'How do I schedule a showing for a Beverly Hills luxury rental?',
+          a: 'By appointment only with 24-hour notice. Call 424-272-5935 or submit an inquiry. All showings accompanied by the listing agent.'
+        },
+      ].map(({ q, a }) => (
+        <details class="glass group">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="text-white font-medium pr-4">{q}</span>
+            <span class="text-amber-400 shrink-0 text-lg group-open:rotate-45 transition-transform duration-200">+</span>
+          </summary>
+          <p class="px-6 pb-6 text-slate-400 leading-relaxed">{a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-midnight-900 py-20 text-center">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-4">Private Showings Available</p>
+      <h2 class="font-display text-3xl md:text-4xl text-white mb-6">Ready to tour Beverly Hills luxury rentals?</h2>
+      <p class="text-slate-400 mb-8">Call or text Daniel Issak directly. All inquiries answered within 24 hours.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:3107700552" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">
+          Call 424-272-5935
+        </a>
+        <a href="/contact" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">
+          Send Inquiry
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,476 @@
+---
+import property from '../data/property.json';
+const { agent } = property;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Brief — Beverlywood Luxury Compound | FIFA World Cup 2026</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 40px;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 3px solid #f59e0b;
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #f59e0b;
+      font-style: italic;
+      margin-bottom: 4px;
+    }
+    .header-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #0a0a0f;
+      line-height: 1.2;
+    }
+    .header-sub {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 4px;
+      letter-spacing: 0.05em;
+    }
+    .fifa-badge {
+      background: #0a0a0f;
+      color: #f59e0b;
+      padding: 10px 16px;
+      text-align: right;
+      min-width: 160px;
+    }
+    .fifa-badge-label {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #f59e0b;
+      opacity: 0.7;
+    }
+    .fifa-badge-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #f59e0b;
+    }
+    .fifa-badge-window {
+      font-size: 9px;
+      color: #f59e0b;
+      opacity: 0.6;
+      margin-top: 2px;
+    }
+
+    /* HERO IMAGE ROW */
+    .hero-images {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 28px;
+      height: 220px;
+    }
+    .hero-images img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* STATS ROW */
+    .stats-row {
+      display: flex;
+      gap: 0;
+      background: #0a0a0f;
+      margin-bottom: 28px;
+    }
+    .stat {
+      flex: 1;
+      padding: 14px 16px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    .stat:last-child { border-right: none; }
+    .stat-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: #f59e0b;
+      display: block;
+    }
+    .stat-label {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* TWO-COL LAYOUT */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    /* SECTIONS */
+    .section-label {
+      font-size: 9px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #f59e0b;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #f59e0b;
+      opacity: 0.2;
+    }
+
+    .description {
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.7;
+    }
+
+    /* AMENITIES */
+    .amenity-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 16px;
+    }
+    .amenity-item {
+      font-size: 12px;
+      color: #374151;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .amenity-dot {
+      width: 4px;
+      height: 4px;
+      background: #f59e0b;
+      border-radius: 50%;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    /* FIFA PROXIMITY */
+    .fifa-box {
+      background: #0a0a0f;
+      padding: 16px 18px;
+      margin-bottom: 28px;
+    }
+    .fifa-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .fifa-row:last-child { border-bottom: none; }
+    .fifa-venue {
+      font-size: 12px;
+      color: #fff;
+      font-weight: 500;
+      flex: 1;
+    }
+    .fifa-dist {
+      font-size: 11px;
+      color: #f59e0b;
+      font-weight: 600;
+    }
+    .fifa-note {
+      font-size: 10px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* LEASE TERMS */
+    .terms-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .term-item {
+      border: 1px solid #e5e7eb;
+      padding: 10px 12px;
+    }
+    .term-label {
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      margin-bottom: 3px;
+    }
+    .term-val {
+      font-size: 13px;
+      font-weight: 500;
+      color: #111827;
+    }
+
+    /* CONTACT FOOTER */
+    .contact-footer {
+      background: #0a0a0f;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 28px;
+    }
+    .agent-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      color: #fff;
+    }
+    .agent-dre {
+      font-size: 10px;
+      color: rgba(255,255,255,0.35);
+      margin-top: 2px;
+    }
+    .contact-links {
+      text-align: right;
+    }
+    .contact-phone {
+      font-size: 15px;
+      font-weight: 600;
+      color: #f59e0b;
+    }
+    .contact-email {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 2px;
+    }
+    .contact-web {
+      font-size: 10px;
+      color: rgba(255,255,255,0.3);
+      margin-top: 2px;
+    }
+    .contact-cta {
+      background: #f59e0b;
+      color: #0a0a0f;
+      padding: 10px 18px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    /* DISCLAIMER */
+    .disclaimer {
+      font-size: 9px;
+      color: #9ca3af;
+      margin-top: 16px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* PRINT */
+    @media print {
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .no-print { display: none; }
+    }
+
+    /* SCREEN: print button */
+    .print-bar {
+      background: #0a0a0f;
+      padding: 12px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .print-btn {
+      background: #f59e0b;
+      color: #0a0a0f;
+      border: none;
+      padding: 8px 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .print-note {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+    }
+    @media print { .print-bar { display: none; } }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar no-print">
+    <span class="print-note">Share this link · or save as PDF</span>
+    <button class="print-btn" onclick="window.print()">Download PDF →</button>
+  </div>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div>
+        <div class="brand">The Issak Group · Beverly Hills Luxury Real Estate</div>
+        <div class="header-title">Gated Beverlywood Luxury Compound</div>
+        <div class="header-sub">Los Angeles, CA 90035 · 5 BR · 6 BA · ~4,492 Sq Ft · MLS# {property.mlsNumber}</div>
+      </div>
+      <div class="fifa-badge">
+        <div class="fifa-badge-label">⚽ FIFA 2026 Rate</div>
+        <div class="fifa-badge-price">{property.priceSummerDisplay}</div>
+        <div class="fifa-badge-window">{property.summerWindow}</div>
+      </div>
+    </div>
+
+    <!-- HERO IMAGES -->
+    <div class="hero-images">
+      <img src={`https://master.rentlaelite-v2.pages.dev${property.images.aerial[0]}`} alt="Aerial view" />
+      <img src={`https://master.rentlaelite-v2.pages.dev${property.images.outdoor[0]}`} alt="Pool" />
+      <img src={`https://master.rentlaelite-v2.pages.dev${property.images.living[0]}`} alt="Living room" />
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-row">
+      {[
+        ['5', 'Bedrooms'],
+        ['6', 'Bathrooms'],
+        ['4,492', 'Sq Ft Combined'],
+        ['~400', 'Guest House Sq Ft'],
+        ['15 min', 'SoFi Stadium'],
+        ['35 min', 'Rose Bowl'],
+      ].map(([val, label]) => (
+        <div class="stat">
+          <span class="stat-val">{val}</span>
+          <span class="stat-label">{label}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- DESCRIPTION + AMENITIES -->
+    <div class="two-col">
+      <div>
+        <div class="section-label">About the Property</div>
+        <p class="description">{property.description}</p>
+        <p class="description" style="margin-top:10px; color:#6b7280; font-size:12px;">
+          Fully furnished with curated luxury furnishings. Private gated driveway, EV charging, Ring security system, smart lighting, and blackout shades throughout.
+        </p>
+      </div>
+      <div>
+        <div class="section-label">Amenities & Features</div>
+        <div class="amenity-grid">
+          {property.amenities.slice(0, 16).map((item) => (
+            <div class="amenity-item">
+              <div class="amenity-dot"></div>
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- FIFA PROXIMITY -->
+    <div>
+      <div class="section-label">FIFA World Cup 2026 · Venue Proximity</div>
+      <div class="fifa-box">
+        <div class="fifa-row">
+          <span class="fifa-venue">SoFi Stadium — Inglewood, CA</span>
+          <span class="fifa-dist">~15 min</span>
+          <span class="fifa-note">Group Stage + Knockout · 7 matches</span>
+        </div>
+        <div class="fifa-row">
+          <span class="fifa-venue">Rose Bowl — Pasadena, CA</span>
+          <span class="fifa-dist">~35 min</span>
+          <span class="fifa-note">Group Stage + Knockout · 6 matches</span>
+        </div>
+        <div class="fifa-row">
+          <span class="fifa-venue">Beverly Hills / Century City</span>
+          <span class="fifa-dist">~8 min</span>
+          <span class="fifa-note">Dining, shopping, entertainment</span>
+        </div>
+        <div class="fifa-row">
+          <span class="fifa-venue">LAX International Airport</span>
+          <span class="fifa-dist">~20 min</span>
+          <span class="fifa-note">Direct international flights</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEASE TERMS -->
+    <div style="margin-bottom: 28px;">
+      <div class="section-label">Lease Terms</div>
+      <div class="terms-grid">
+        {[
+          ['Monthly Rate (Summer/FIFA)', property.priceDisplay],
+          ['Monthly Rate (Off-Season)', property.priceOffSeasonDisplay],
+          ['Minimum Lease', property.leaseTerms.minimum],
+          ['Security Deposit', property.leaseTerms.securityDeposit],
+          ['Furnished', 'Fully Furnished'],
+          ['Pets', 'Considered w/ conditions'],
+          ['Short-Term', 'Not permitted'],
+          ['Availability', 'By appointment'],
+        ].map(([label, val]) => (
+          <div class="term-item">
+            <div class="term-label">{label}</div>
+            <div class="term-val">{val}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CONTACT FOOTER -->
+    <div class="contact-footer">
+      <div>
+        <div class="agent-name">{agent.name}</div>
+        <div class="agent-dre">DRE# {agent.dre} · {agent.company} · DRE# {agent.companyDre}</div>
+      </div>
+      <div style="text-align:center;">
+        <a href="https://master.rentlaelite-v2.pages.dev" class="contact-cta" style="color:#0a0a0f; text-decoration:none;">
+          View Full Property Site →
+        </a>
+      </div>
+      <div class="contact-links">
+        <div class="contact-phone">{agent.phone}</div>
+        <div class="contact-email">{agent.email}</div>
+        <div class="contact-web">rentlaelite-v2.pages.dev</div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      Broker/Agent does not guarantee accuracy of square footage, lot size, or other property information. Tenant to independently verify all details.
+      Some images may be illustrative. All rates subject to change. · MLS# {property.mlsNumber}
+    </div>
+
+  </div>
+
+</body>
+</html>

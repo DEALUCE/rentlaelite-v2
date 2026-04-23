@@ -20,14 +20,52 @@ const jsonLd = {
 ---
 
 <Layout
-  title="About the Agent | Daniel Issak — Real Estate Source Inc"
-  description="Daniel Issak, DRE# 02037760, Real Estate Source Inc. Listing agent for 9432 Oakmore Rd luxury rental in Beverlywood, Los Angeles."
+  title="Daniel Issak — Beverly Hills Luxury Real Estate Agent | The Issak Group"
+  description="Daniel Issak, DRE# 02037760. Beverly Hills luxury real estate agent specializing in executive rentals, gated estates, and AI-powered property marketing. The Issak Group — Real Estate Source Inc."
   jsonLd={jsonLd}
 >
-  <section class="bg-charcoal py-20 text-center">
-    <p class="text-gold text-xs tracking-[0.3em] uppercase mb-3">Listing Agent</p>
-    <h1 class="font-serif text-white text-4xl md:text-5xl">{agent.name}</h1>
-    <p class="text-white/40 mt-4 text-sm">DRE# {agent.dre}</p>
+  <!-- Agent Hero -->
+  <section class="relative py-24 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="absolute inset-0 opacity-5" style="background: radial-gradient(ellipse at 50% 0%, #fbbf24 0%, transparent 65%);"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row gap-10 items-center md:items-start">
+        <!-- Headshot placeholder — replace src with actual photo path e.g. /images/daniel-issak.jpg -->
+        <div class="shrink-0">
+          <div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-midnight-800 border-2 border-amber-400/40 flex items-center justify-center overflow-hidden">
+            <!-- Swap this div for: <img src="/images/daniel-issak.jpg" alt="Daniel Issak — Beverly Hills luxury real estate agent" class="w-full h-full object-cover" /> -->
+            <svg class="w-20 h-20 text-amber-400/30" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <div class="mt-3 text-center">
+            <span class="text-xs text-slate-600">Add headshot → /images/daniel-issak.jpg</span>
+          </div>
+        </div>
+        <div class="text-center md:text-left">
+          <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-3">The Issak Group · Listing Agent</p>
+          <h1 class="font-display text-4xl md:text-5xl text-white mb-2">{agent.name}</h1>
+          <p class="text-slate-400 mb-6">DRE# {agent.dre} · {agent.company}</p>
+          <blockquote class="border-l-2 border-amber-400 pl-5 text-slate-300 italic text-lg leading-relaxed max-w-xl mb-8">
+            "Beverly Hills luxury rentals move in hours when they're priced right and presented well. Every listing I take gets a dedicated site, professional media, and AI-powered visibility from day one."
+          </blockquote>
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+            <div class="glass px-5 py-3 text-center">
+              <p class="text-amber-400 font-display text-xl">Beverly Hills</p>
+              <p class="text-slate-500 text-xs mt-0.5">Primary Market</p>
+            </div>
+            <div class="glass px-5 py-3 text-center">
+              <p class="text-amber-400 font-display text-xl">Luxury</p>
+              <p class="text-slate-500 text-xs mt-0.5">$15K–$75K+/mo</p>
+            </div>
+            <div class="glass px-5 py-3 text-center">
+              <p class="text-amber-400 font-display text-xl">AI-First</p>
+              <p class="text-slate-500 text-xs mt-0.5">Marketing Stack</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="max-w-4xl mx-auto px-6 py-20">

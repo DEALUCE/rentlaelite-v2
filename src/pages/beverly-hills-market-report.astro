@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const updated = '2026-04-19';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Beverly Hills Luxury Rental Market Report 2026",
+    "description": "2026 Beverly Hills luxury rental market data: average rents, price per sq ft, days on market, neighborhood comparison, and FIFA World Cup demand analysis.",
+    "datePublished": "2026-01-01",
+    "dateModified": updated,
+    "author": { "@type": "Person", "name": "Daniel Issak", "identifier": "DRE# 02037760" },
+    "publisher": { "@type": "Organization", "name": "The Issak Group" },
+    "url": "https://theissakgroup.com/beverly-hills-market-report",
+    "about": { "@type": "Place", "name": "Beverly Hills", "addressRegion": "CA" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the average rent for a luxury home in Beverly Hills in 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average monthly rent for a luxury home (4,000+ sq ft) in the Beverly Hills corridor in 2026 is approximately $32,500/month. Properties in 90210 proper average $45,000–$75,000+/month, while Beverly Hills adjacent neighborhoods like Beverlywood (90035) average $20,000–$35,000/month for comparable square footage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How has the 2026 FIFA World Cup affected Beverly Hills rental prices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 2026 FIFA World Cup, with Los Angeles as a host city for matches in June–July 2026, has driven an estimated 35–45% spike in luxury rental demand for the June–August 2026 window. Properties with minimum 30-day lease terms are seeing accelerated leasing timelines as executives, team delegations, and international visitors secure housing months in advance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to rent a luxury home in Beverly Hills?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Well-priced luxury rentals in the Beverly Hills corridor average 18–22 days on market in 2026. Properties priced at or below market value with professional photography and dedicated listing sites lease in under 10 days. Overpriced properties or those with poor online presentation average 45+ days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the rental price per square foot in Beverly Hills?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beverly Hills luxury rental price per square foot ranges from $7.50 to $18/month depending on location and finishes. 90210 flats average $12–$18/sq ft/month. Beverlywood and Beverly Hills adjacent (90035) average $7.50–$9/sq ft/month — representing significant value for comparable amenities."
+        }
+      }
+    ]
+  }
+];
+
+const neighborhoods = [
+  { name: '90210 — Beverly Hills Flats', avgRent: '$45K–$75K+', pricePerSqFt: '$12–$18', dom: '14–18 days', inventory: 'Very Low' },
+  { name: 'Bel Air / Holmby Hills', avgRent: '$50K–$150K+', pricePerSqFt: '$14–$22', dom: '21–30 days', inventory: 'Extremely Low' },
+  { name: 'Beverlywood (90035)', avgRent: '$20K–$35K', pricePerSqFt: '$7.50–$9', dom: '18–22 days', inventory: 'Low' },
+  { name: 'Century City (90067)', avgRent: '$22K–$45K', pricePerSqFt: '$9–$13', dom: '16–20 days', inventory: 'Low' },
+  { name: 'Trousdale Estates', avgRent: '$60K–$200K+', pricePerSqFt: '$16–$28', dom: '25–40 days', inventory: 'Ultra Low' },
+];
+
+const stats = [
+  { value: '$32,500', label: 'Avg luxury rent', sub: '4,000+ sq ft, BH corridor 2026' },
+  { value: '+9%', label: 'YoY rent growth', sub: '2025 → 2026, luxury tier' },
+  { value: '21 days', label: 'Avg days on market', sub: 'Well-priced luxury rentals' },
+  { value: '+40%', label: 'FIFA demand spike', sub: 'June–Aug 2026 window' },
+  { value: '<50', label: 'Active listings', sub: 'Luxury $15K+/mo at any time' },
+  { value: '4%', label: 'Vacancy rate', sub: '90035–90210 luxury corridor' },
+];
+
+const demandDrivers = [
+  { icon: '🎬', title: 'Entertainment Industry', text: 'Fox Studios, Netflix, Paramount, and CAA headquarters within 10 minutes. Studio executives and talent routinely lease in the Beverly Hills corridor for production cycles.' },
+  { icon: '⚽', title: '2026 FIFA World Cup', text: 'Los Angeles is a host city for the 2026 FIFA World Cup (June–July 2026). Team delegations, FIFA officials, sponsors, and international high-net-worth fans are driving an estimated 35–45% surge in luxury rental demand for the June–August window.' },
+  { icon: '💻', title: 'Tech Executive Housing', text: 'Silicon Beach expansion — Google, Amazon, Apple, and Snap have major LA presences. Tech executives from Santa Monica, Playa Vista, and Century City cluster in Beverly Hills adjacent neighborhoods.' },
+  { icon: '🏥', title: 'Medical / Corporate Housing', text: 'Cedars-Sinai Medical Center (top 10 US hospital) drives significant demand from medical professionals, international patients, and their families seeking luxury furnished housing within minutes.' },
+  { icon: '✈️', title: 'International Demand', text: 'LA\'s role as gateway to Pacific markets sustains demand from Middle Eastern, Asian, and European UHNW individuals seeking Beverly Hills-area corporate housing during US visits.' },
+];
+---
+
+<Layout
+  title="Beverly Hills Luxury Rental Market Report 2026 | The Issak Group"
+  description="2026 Beverly Hills luxury rental market data: avg rent $32,500/mo, +9% YoY growth, 21 days on market. Neighborhood comparison: 90210, Beverlywood, Bel Air, Century City. FIFA World Cup demand analysis. Updated April 2026."
+  jsonLd={jsonLd}
+>
+
+  <!-- Hero -->
+  <section class="relative py-24 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">The Issak Group · Market Intelligence</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-4">
+        Beverly Hills Luxury Rental<br />
+        <span class="text-gradient">Market Report 2026</span>
+      </h1>
+      <p class="text-slate-400 text-sm mb-2">Last updated: April 2026 · Data covers 90210, 90035, 90067, 90024, 90077</p>
+      <p class="text-slate-300 text-lg max-w-2xl mx-auto mt-6 leading-relaxed">
+        Average luxury rents up 9% year-over-year. Inventory at historic lows. FIFA World Cup driving an unprecedented 40% demand spike for the June–August 2026 window.
+      </p>
+    </div>
+  </section>
+
+  <!-- Key stats -->
+  <section class="max-w-6xl mx-auto px-6 pb-16">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {stats.map(({ value, label, sub }) => (
+        <div class="glass p-6 text-center">
+          <p class="font-display text-amber-400 text-3xl mb-1">{value}</p>
+          <p class="text-white text-sm font-medium mb-1">{label}</p>
+          <p class="text-slate-500 text-xs leading-snug">{sub}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Market definition (AI-extractable block) -->
+  <section class="max-w-4xl mx-auto px-6 pb-16">
+    <div class="glass p-8 md:p-10">
+      <h2 class="font-display text-2xl text-white mb-5">Beverly Hills Luxury Rental Market Overview</h2>
+      <p class="text-slate-300 leading-relaxed mb-4">
+        The Beverly Hills luxury rental market encompasses properties priced at $15,000/month and above across ZIP codes 90210, 90035, 90067, 90024, and 90077 — spanning Beverly Hills proper, Beverlywood, Century City, Westwood, and Bel Air. In 2026, this market is defined by historically low inventory (fewer than 50 active luxury listings at any given time), strong institutional demand, and the extraordinary external demand driver of the 2026 FIFA World Cup.
+      </p>
+      <p class="text-slate-400 leading-relaxed mb-4">
+        Average monthly rent for a luxury home of 4,000+ square feet in the Beverly Hills corridor reached approximately <strong class="text-white">$32,500/month</strong> in Q1 2026 — a 9% increase over Q1 2025. Price per square foot ranges from $7.50/month in Beverlywood to $18+/month in the 90210 flats.
+      </p>
+      <p class="text-slate-400 leading-relaxed">
+        Well-priced, professionally presented properties are leasing in an average of <strong class="text-white">18–22 days</strong>. Properties with dedicated listing websites, professional photography, and schema-optimized SEO consistently lease faster than MLS-only listings, particularly in the executive and corporate housing segments where decision-makers search on mobile with high intent.
+      </p>
+    </div>
+  </section>
+
+  <!-- Neighborhood comparison table -->
+  <section class="bg-midnight-900 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-10">
+        <p class="text-xs tracking-widest uppercase text-amber-400 mb-2">2026 Data</p>
+        <h2 class="font-display text-3xl text-white">Neighborhood Comparison</h2>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-white/10">
+              <th class="text-left text-xs tracking-widest uppercase text-slate-500 pb-4 pr-6">Neighborhood</th>
+              <th class="text-left text-xs tracking-widest uppercase text-slate-500 pb-4 pr-6">Avg Monthly Rent</th>
+              <th class="text-left text-xs tracking-widest uppercase text-slate-500 pb-4 pr-6">Price / Sq Ft / Mo</th>
+              <th class="text-left text-xs tracking-widest uppercase text-slate-500 pb-4 pr-6">Avg Days on Market</th>
+              <th class="text-left text-xs tracking-widest uppercase text-slate-500 pb-4">Inventory</th>
+            </tr>
+          </thead>
+          <tbody>
+            {neighborhoods.map(({ name, avgRent, pricePerSqFt, dom, inventory }, i) => (
+              <tr class={`border-b border-white/5 ${i === 2 ? 'bg-amber-400/5' : ''}`}>
+                <td class="py-4 pr-6 text-white font-medium">
+                  {name}
+                  {i === 2 && <span class="ml-2 text-[10px] bg-amber-400 text-midnight-950 px-2 py-0.5 font-semibold uppercase tracking-wider">Featured</span>}
+                </td>
+                <td class="py-4 pr-6 text-amber-400 font-semibold">{avgRent}</td>
+                <td class="py-4 pr-6 text-slate-300">{pricePerSqFt}</td>
+                <td class="py-4 pr-6 text-slate-300">{dom}</td>
+                <td class="py-4 text-slate-400">{inventory}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-slate-600 text-xs mt-4">Estimates based on 2026 market conditions. Data reflects luxury residential rentals $15,000+/month. Source: The Issak Group market analysis.</p>
+    </div>
+  </section>
+
+  <!-- Demand drivers -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="mb-12 text-center">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-2">Why Demand Stays High</p>
+      <h2 class="font-display text-3xl text-white">2026 Demand Drivers</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {demandDrivers.map(({ icon, title, text }) => (
+        <div class="glass p-7">
+          <div class="text-3xl mb-4">{icon}</div>
+          <h3 class="text-white font-semibold mb-3">{title}</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">{text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-midnight-900 py-20">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="text-xs tracking-widest uppercase text-amber-400 mb-3">Market FAQs</p>
+        <h2 class="font-display text-3xl text-white">Beverly Hills Rental Market Questions</h2>
+      </div>
+      <div class="space-y-4">
+        {[
+          {
+            q: 'What is the average rent for a luxury home in Beverly Hills in 2026?',
+            a: 'Approximately $32,500/month for 4,000+ sq ft in the Beverly Hills corridor. 90210 proper averages $45K–$75K+/month. Beverlywood (90035) offers $20K–$35K/month for comparable square footage at better value.'
+          },
+          {
+            q: 'How has the 2026 FIFA World Cup affected Beverly Hills rental prices?',
+            a: 'An estimated 35–45% demand spike for the June–August 2026 window. Team delegations, executives, and international visitors are securing housing months in advance. Properties with 30-day minimum lease terms are leasing at record pace.'
+          },
+          {
+            q: 'How long does it take to rent a luxury home in Beverly Hills?',
+            a: '18–22 days average for well-priced properties. Listings with dedicated websites, professional photography, and SEO-optimized pages lease under 10 days. Overpriced or poorly presented properties average 45+ days.'
+          },
+          {
+            q: 'What is the rental price per square foot in Beverly Hills?',
+            a: '$7.50–$18/sq ft/month depending on location. 90210 flats: $12–$18/sq ft. Beverlywood (90035): $7.50–$9/sq ft — strong value for executive tenants seeking Beverly Hills proximity.'
+          },
+        ].map(({ q, a }) => (
+          <details class="glass group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <span class="text-white font-medium pr-4">{q}</span>
+              <span class="text-amber-400 shrink-0 text-lg group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed">{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 text-center">
+    <div class="max-w-xl mx-auto px-6">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-4">Featured Listing</p>
+      <h2 class="font-display text-3xl text-white mb-4">See the market leader</h2>
+      <p class="text-slate-400 mb-8 text-sm">9432 Oakmore Rd — 5BR gated compound, Beverly Hills adjacent, $34,999/month.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/property" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">View Property</a>
+        <a href="/contact" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">Schedule Showing</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

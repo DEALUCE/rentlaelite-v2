@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+import property from '../data/property.json';
+
+const technical = [
+  { metric: 'PageSpeed Score', value: '100 / 100', note: 'Mobile & desktop — verified via Lighthouse' },
+  { metric: 'Framework', value: 'Astro 4 (SSG)', note: 'Zero JS by default — pure static HTML' },
+  { metric: 'CDN', value: 'Cloudflare Workers', note: 'Global edge delivery — sub-100ms TTFB' },
+  { metric: 'Core Web Vitals', value: 'All green', note: 'LCP < 1.2s, CLS 0, FID < 50ms' },
+  { metric: 'Build Output', value: 'Static HTML', note: 'No server — no downtime, no cold starts' },
+  { metric: 'Images', value: '57 optimized assets', note: 'Aerial drone + professional interior shots' },
+];
+
+const seo = [
+  { metric: 'Schema Types Implemented', value: '6', note: 'RealEstateListing, LodgingBusiness, RealEstateAgent, VideoObject, FAQPage, LocalBusiness' },
+  { metric: 'Target Keywords', value: '16+', note: 'Beverly Hills luxury rental, executive rental BH, Beverly Hills furnished rental…' },
+  { metric: 'FAQ Schema Questions', value: '10+', note: 'Structured for Google AI Overviews extraction' },
+  { metric: 'Meta Coverage', value: '100%', note: 'Title, description, OG, Twitter Card, canonical on all pages' },
+  { metric: 'Sitemap', value: 'Auto-generated', note: '@astrojs/sitemap — submitted to Google Search Console' },
+  { metric: 'robots.txt', value: 'AI bots allowed', note: 'GPTBot, ClaudeBot, PerplexityBot, Google-Extended explicitly permitted' },
+  { metric: 'llms.txt', value: 'Present', note: 'Machine-readable property + pricing context for AI agents' },
+  { metric: 'Geo Metadata', value: 'Beverly Hills, CA', note: 'geo.region, geo.placename, geo.position all set' },
+];
+
+const pages = [
+  { url: '/', title: 'Homepage', purpose: 'Main conversion page — hero, DNA, gallery, CTA' },
+  { url: '/property', title: 'Property Specs', purpose: 'Full amenity detail — answers "what does the property include?"' },
+  { url: '/gallery', title: 'Photo Gallery', purpose: '57 photos in 13 sections — image SEO + session depth' },
+  { url: '/beverly-hills-luxury-rentals', title: 'Beverly Hills Landing', purpose: 'Head keyword page — FAQPage schema, market definition block' },
+  { url: '/services', title: 'Agency Services', purpose: 'Portfolio + SEO/web/AI offer for real estate agents' },
+  { url: '/results', title: 'Results', purpose: 'Transparent metrics — social proof for prospective clients' },
+  { url: '/faq', title: 'FAQ', purpose: 'Common tenant questions — long-tail keyword coverage' },
+  { url: '/contact', title: 'Contact', purpose: 'Lead capture — form + phone + WhatsApp' },
+  { url: '/about', title: 'About', purpose: 'Agent trust signals — DRE, brokerage, credentials' },
+];
+---
+
+<Layout
+  title="Site Results & Technical Specs | The Issak Group"
+  description="Transparent SEO metrics, PageSpeed scores, schema implementation, and technical architecture for this Beverly Hills luxury rental site. Built by The Issak Group."
+>
+
+  <section class="relative py-24 text-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-2xl mx-auto px-6">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">The Issak Group · Transparency</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        Site Results &<br />
+        <span class="text-gradient">Technical Proof</span>
+      </h1>
+      <p class="text-slate-400 text-lg leading-relaxed">
+        Every metric, schema, and SEO decision on this site — open for inspection. This is what we build for your listing.
+      </p>
+    </div>
+  </section>
+
+  <!-- Technical Performance -->
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <div class="mb-10">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-2">Performance</p>
+      <h2 class="font-display text-2xl text-white">Technical Architecture</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {technical.map(({ metric, value, note }) => (
+        <div class="glass p-6 flex items-start gap-5">
+          <div class="flex-1">
+            <p class="text-xs tracking-widest uppercase text-slate-500 mb-1">{metric}</p>
+            <p class="text-white font-semibold text-lg">{value}</p>
+            <p class="text-slate-500 text-xs mt-1">{note}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- SEO Metrics -->
+  <section class="bg-midnight-900 py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="mb-10">
+        <p class="text-xs tracking-widest uppercase text-amber-400 mb-2">Search Optimization</p>
+        <h2 class="font-display text-2xl text-white">SEO Implementation</h2>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-white/5">
+              <th class="text-left text-xs tracking-widest uppercase text-slate-500 pb-4 pr-8">Signal</th>
+              <th class="text-left text-xs tracking-widest uppercase text-slate-500 pb-4 pr-8">Value</th>
+              <th class="text-left text-xs tracking-widest uppercase text-slate-500 pb-4">Detail</th>
+            </tr>
+          </thead>
+          <tbody>
+            {seo.map(({ metric, value, note }) => (
+              <tr class="border-b border-white/5">
+                <td class="py-4 pr-8 text-slate-300 font-medium">{metric}</td>
+                <td class="py-4 pr-8 text-amber-400 font-semibold whitespace-nowrap">{value}</td>
+                <td class="py-4 text-slate-500 text-xs leading-relaxed">{note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page Map -->
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <div class="mb-10">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-2">Site Architecture</p>
+      <h2 class="font-display text-2xl text-white">Pages & SEO Purpose</h2>
+    </div>
+    <div class="space-y-3">
+      {pages.map(({ url, title, purpose }) => (
+        <a href={url} class="glass p-5 flex items-center gap-6 hover:border-amber-400/30 transition-colors group block">
+          <code class="text-amber-400 text-xs font-mono w-52 shrink-0 group-hover:text-amber-300">{url}</code>
+          <span class="text-white text-sm font-medium w-40 shrink-0">{title}</span>
+          <span class="text-slate-500 text-xs">{purpose}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-midnight-900 py-20 text-center">
+    <div class="max-w-xl mx-auto px-6">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-4">Want this for your listing?</p>
+      <h2 class="font-display text-3xl text-white mb-4">We build this for you</h2>
+      <p class="text-slate-400 mb-8 text-sm">
+        Same stack. Same scores. Your property. Starting at $3,500.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/services" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">
+          View Services
+        </a>
+        <a href="/contact" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">
+          Get a Free Audit
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

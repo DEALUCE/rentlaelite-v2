@@ -1,0 +1,390 @@
+---
+import Layout from '../layouts/Layout.astro';
+import property from '../data/property.json';
+
+const { agent } = property;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "FIFA World Cup 2026 — Los Angeles",
+    "description": "FIFA World Cup 2026 Los Angeles matches at SoFi Stadium (Inglewood) and Rose Bowl (Pasadena). LA is a primary host city for the tournament running June 11 – July 19, 2026.",
+    "startDate": "2026-06-11",
+    "endDate": "2026-07-19",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": [
+      {
+        "@type": "Place",
+        "name": "SoFi Stadium",
+        "address": { "@type": "PostalAddress", "streetAddress": "1001 Stadium Dr", "addressLocality": "Inglewood", "addressRegion": "CA", "postalCode": "90301", "addressCountry": "US" }
+      },
+      {
+        "@type": "Place",
+        "name": "Rose Bowl Stadium",
+        "address": { "@type": "PostalAddress", "streetAddress": "1001 Rose Bowl Dr", "addressLocality": "Pasadena", "addressRegion": "CA", "postalCode": "91103", "addressCountry": "US" }
+      }
+    ],
+    "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" },
+    "offers": {
+      "@type": "Offer",
+      "name": "Luxury Housing Near FIFA World Cup 2026 Los Angeles — 9432 Oakmore Rd",
+      "description": "Fully furnished 5BR gated luxury compound 15 min from SoFi Stadium, Beverly Hills adjacent. $34,999/month for the FIFA World Cup window.",
+      "price": "34999.99",
+      "priceCurrency": "USD",
+      "validFrom": "2026-05-01",
+      "validThrough": "2026-08-31",
+      "url": "https://theissakgroup.com/fifa-world-cup-2026-los-angeles-rental",
+      "availability": "https://schema.org/LimitedAvailability"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where should I stay for FIFA World Cup 2026 in Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best luxury housing for FIFA World Cup 2026 in Los Angeles is in the Beverly Hills / Beverlywood corridor — approximately 15 minutes from SoFi Stadium in Inglewood and 35 minutes from Rose Bowl in Pasadena. 9432 Oakmore Rd offers a fully furnished 5-bedroom gated compound at $34,999/month for the FIFA window, with heated pool, detached guest house, and space for an entire delegation or executive team."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How far is Beverly Hills from SoFi Stadium for FIFA World Cup 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beverly Hills and the Beverlywood area are approximately 8–10 miles from SoFi Stadium in Inglewood — roughly 15–20 minutes by car depending on traffic. This makes Beverly Hills adjacent properties ideal base camps for FIFA World Cup 2026 attendees who want luxury accommodations within easy reach of match venues."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best luxury rental near FIFA World Cup 2026 venues in Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "9432 Oakmore Rd in Beverlywood (90035) is one of the best positioned luxury rentals for FIFA World Cup 2026. The gated 5-bedroom compound offers 4,492 sq ft of combined living space including a detached guest house, heated pool, and full smart home system — 15 min from SoFi Stadium, 35 min from Rose Bowl, and 5 min from Beverly Hills. $34,999/month for the summer 2026 window. Inquire via WhatsApp at +1-424-272-5935."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are FIFA World Cup 2026 Los Angeles housing prices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Luxury housing prices for the FIFA World Cup 2026 window in Los Angeles range from $15,000 to $75,000+ per month. Beverly Hills adjacent luxury rentals (4,000+ sq ft, fully furnished) are running $30,000–$45,000/month for the June–August 2026 period, representing a 35–45% premium over standard lease rates due to World Cup demand."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I rent a luxury home in Los Angeles for the entire FIFA World Cup 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. 9432 Oakmore Rd accepts a 30-day minimum lease, making it ideal for securing the full FIFA World Cup window (June–July 2026) or the broader summer season (May–August 2026). The property is fully furnished and move-in ready. Extended stay rates are available for 3+ month commitments."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "9432 Oakmore Rd — FIFA World Cup 2026 Los Angeles Luxury Housing",
+    "description": "Fully furnished gated luxury compound 15 minutes from SoFi Stadium. 5BR/6BA, 4,492 sq ft, heated pool, detached guest house. $34,999/month for the FIFA World Cup 2026 window.",
+    "url": "https://theissakgroup.com/fifa-world-cup-2026-los-angeles-rental",
+    "telephone": agent.phone,
+    "email": agent.email,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": property.address.street,
+      "addressLocality": property.address.city,
+      "addressRegion": property.address.state,
+      "postalCode": property.address.zip,
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": "34.0503", "longitude": "-118.3847" },
+    "numberOfRooms": property.beds,
+    "priceRange": "$$$$$",
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Heated Pool", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Gated Compound", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Guest House", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Fully Furnished", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "EV Charging", "value": true }
+    ]
+  }
+];
+
+const venues = [
+  { name: 'SoFi Stadium', note: 'Group stage + knockout matches', distance: '~8 miles', time: '15–20 min' },
+  { name: 'Rose Bowl, Pasadena', note: 'Semi-final venue', distance: '~25 miles', time: '35–45 min' },
+  { name: 'Beverly Hills', note: 'Fine dining, luxury shopping', distance: '~2 miles', time: '5 min' },
+  { name: 'Century City', note: 'Business district', distance: '~3 miles', time: '8 min' },
+  { name: 'LAX Airport', note: 'International arrivals', distance: '~9 miles', time: '20–25 min' },
+  { name: 'Hollywood', note: 'Entertainment hub', distance: '~10 miles', time: '20 min' },
+];
+
+const highlights = [
+  { label: 'Bedrooms', value: '5 BR + Guest House' },
+  { label: 'Bathrooms', value: '6 (5 full, 1 half)' },
+  { label: 'Total Space', value: '4,492 sq ft combined' },
+  { label: 'Summer Rate', value: '$34,999/month' },
+  { label: 'To SoFi Stadium', value: '15–20 min' },
+  { label: 'To Rose Bowl', value: '35–45 min' },
+  { label: 'Min. Lease', value: '30 days' },
+  { label: 'Furnished', value: 'Fully — move-in ready' },
+];
+---
+
+<Layout
+  title="FIFA World Cup 2026 Los Angeles Luxury Housing | 9432 Oakmore Rd — $34,999/mo"
+  description="Luxury housing for FIFA World Cup 2026 Los Angeles. Fully furnished 5BR gated estate — 15 min from SoFi Stadium, 5 min from Beverly Hills. $34,999/month for the summer window. Limited availability. WhatsApp: +1-424-272-5935."
+  image="/images/fifa-2026-la.jpg"
+  jsonLd={jsonLd}
+>
+
+  <!-- FIFA Hero -->
+  <section class="relative min-h-[80vh] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/fifa-hero.jpg"
+        alt="FIFA World Cup 2026 Los Angeles SoFi Stadium — luxury rental Beverly Hills adjacent"
+        class="w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/60 to-midnight-950/20"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-midnight-950/80 to-transparent"></div>
+    </div>
+
+    <!-- FIFA badge top -->
+    <div class="absolute top-0 left-0 right-0 z-10">
+      <div class="max-w-7xl mx-auto px-6 pt-8 flex items-center justify-between">
+        <div class="inline-flex items-center gap-3 border border-amber-400/40 bg-midnight-950/60 backdrop-blur-sm px-4 py-2">
+          <span class="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></span>
+          <span class="text-amber-400 text-xs tracking-widest uppercase font-semibold">FIFA World Cup 2026 · Los Angeles Host City</span>
+        </div>
+        <div class="hidden md:flex items-center gap-3 text-xs text-slate-400">
+          <span>SoFi Stadium · Rose Bowl</span>
+          <span class="text-amber-400">June 11 – July 19, 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 pb-16 w-full">
+      <div class="max-w-2xl">
+        <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4 flex items-center gap-3">
+          <span class="w-8 h-px bg-amber-400"></span>
+          Limited Summer Availability
+        </p>
+        <h1 class="font-display text-4xl md:text-6xl text-white leading-tight mb-4">
+          FIFA World Cup 2026<br />
+          <span class="text-gradient">Los Angeles Housing</span>
+        </h1>
+        <p class="text-slate-300 text-lg leading-relaxed mb-8 max-w-xl">
+          The only fully furnished gated luxury compound positioned between SoFi Stadium and Beverly Hills. 5 bedrooms. Heated pool. Detached guest house. 15 minutes from every LA match.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href={`https://wa.me/13107700552?text=Hi%20Daniel%2C%20I'm%20interested%20in%20the%20FIFA%20World%20Cup%202026%20housing%20at%209432%20Oakmore%20Rd.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 bg-green-500 text-white text-xs font-semibold tracking-widest uppercase px-6 py-4 hover:bg-green-400 transition-colors"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Inquiry
+          </a>
+          <a href="https://calendly.com/theissakgroup/30min" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 border border-amber-400 text-amber-400 text-xs font-semibold tracking-widest uppercase px-6 py-4 hover:bg-amber-400 hover:text-midnight-950 transition-colors">
+            Book a Showing
+          </a>
+          <a href="tel:3107700552" class="inline-flex items-center justify-center gap-2 border border-white/20 text-white text-xs font-semibold tracking-widest uppercase px-6 py-4 hover:border-white/40 transition-colors">
+            424-272-5935
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Urgency bar -->
+  <div class="bg-amber-400 text-midnight-950 py-3 px-4">
+    <p class="text-xs font-bold tracking-[0.3em] uppercase text-center flex items-center justify-center gap-3">
+      <span class="w-1.5 h-1.5 bg-midnight-950 rounded-full animate-pulse"></span>
+      Summer 2026 Window · $34,999/mo · Extended Stay Rates Available · Limited to Qualified Inquiries
+      <span class="w-1.5 h-1.5 bg-midnight-950 rounded-full animate-pulse"></span>
+    </p>
+  </div>
+
+  <!-- Property highlights grid -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {highlights.map(({ label, value }) => (
+        <div class="glass p-5 text-center">
+          <p class="text-xs tracking-widest uppercase text-slate-500 mb-2">{label}</p>
+          <p class="text-white font-semibold text-sm md:text-base">{value}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Why this property for FIFA -->
+  <section class="bg-midnight-900 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-xs tracking-widest uppercase text-amber-400 mb-4">The Strategic Position</p>
+          <h2 class="font-display text-3xl md:text-4xl text-white mb-6">
+            Between Beverly Hills<br />and Every LA Venue
+          </h2>
+          <p class="text-slate-300 leading-relaxed mb-6">
+            9432 Oakmore Rd sits in the exact center of the FIFA World Cup 2026 Los Angeles footprint. SoFi Stadium to the southwest. Rose Bowl to the northeast. Beverly Hills fine dining and the Beverly Center five minutes in any direction.
+          </p>
+          <p class="text-slate-400 leading-relaxed mb-8">
+            The property fits an entire delegation, executive team, or extended family — 5 bedrooms in the main residence plus a fully independent detached guest house with its own entrance, kitchen, and bath. Gated compound with space for multiple vehicles and EV charging.
+          </p>
+          <a
+            href={`https://wa.me/13107700552?text=Hi%20Daniel%2C%20I'm%20interested%20in%20FIFA%20World%20Cup%202026%20housing%20at%209432%20Oakmore%20Rd.%20Please%20confirm%20availability.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-green-500 text-white text-xs font-semibold tracking-widest uppercase px-6 py-4 hover:bg-green-400 transition-colors"
+          >
+            <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Confirm Availability via WhatsApp
+          </a>
+        </div>
+        <div class="space-y-3">
+          <div class="relative">
+            <img
+              src="/images/fifa-aerial.jpg"
+              alt="Beverly Hills aerial view — FIFA World Cup 2026 Los Angeles luxury housing location"
+              class="w-full aspect-video object-cover"
+            />
+            <p class="absolute bottom-2 right-2 text-[10px] text-white/40 bg-midnight-950/60 px-2 py-0.5">Illustrative rendering — not actual property</p>
+          </div>
+          <div class="relative">
+            <img
+              src="/images/fifa-living-room.jpg"
+              alt="Luxury living room — FIFA executive housing Los Angeles"
+              class="w-full aspect-video object-cover"
+            />
+            <p class="absolute bottom-2 right-2 text-[10px] text-white/40 bg-midnight-950/60 px-2 py-0.5">Illustrative rendering — not actual property</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Venue distances -->
+  <section class="max-w-5xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-3">Location Intelligence</p>
+      <h2 class="font-display text-3xl text-white">Distance to FIFA Venues & Key Destinations</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {venues.map(({ name, note, distance, time }, i) => (
+        <div class={`glass p-6 flex items-center gap-5 ${i < 2 ? 'border border-amber-400/20' : ''}`}>
+          <div class="w-12 h-12 bg-amber-400/10 border border-amber-400/20 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {i < 2
+                ? <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.25 9.71 2 12 2c2.291 0 4.545.25 6.75.721v1.515M7.73 9.728a6.726 6.726 0 002.748 1.35M18.75 4.236c.982.143 1.954.317 2.916.52a6.003 6.003 0 01-5.395 5.492M18.75 4.236V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492V2.721" />
+                : <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              }
+            </svg>
+          </div>
+          <div class="flex-1">
+            <p class="text-white font-semibold">{name}</p>
+            <p class="text-slate-500 text-xs mt-0.5">{note}</p>
+          </div>
+          <div class="text-right shrink-0">
+            <p class="text-amber-400 font-semibold text-sm">{time}</p>
+            <p class="text-slate-600 text-xs">{distance}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- FIFA FAQ -->
+  <section class="bg-midnight-900 py-20">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="text-xs tracking-widest uppercase text-amber-400 mb-3">FIFA World Cup 2026 Housing FAQ</p>
+        <h2 class="font-display text-3xl text-white">Common Questions</h2>
+      </div>
+      <div class="space-y-4">
+        {[
+          {
+            q: 'Where should I stay for FIFA World Cup 2026 in Los Angeles?',
+            a: 'The Beverly Hills / Beverlywood corridor is the optimal base — 15 min from SoFi Stadium, 35 min from Rose Bowl, and surrounded by world-class dining, shopping, and nightlife. 9432 Oakmore Rd is a fully furnished gated compound at $34,999/month for the FIFA window.'
+          },
+          {
+            q: 'How far is Beverly Hills from SoFi Stadium (FIFA 2026)?',
+            a: '~8 miles. Approximately 15–20 minutes by car. Beverly Hills adjacent properties like Beverlywood (90035) offer the best combination of luxury, proximity to both venues, and access to LA\'s best amenities.'
+          },
+          {
+            q: 'Can I rent a luxury home for the full FIFA World Cup 2026 window?',
+            a: 'Yes. Minimum lease is 30 days. The full FIFA window (June–August) runs 60–90 days — extended stay rates are available for multi-month commitments. Inquire via WhatsApp for exact availability and terms.'
+          },
+          {
+            q: 'What FIFA World Cup 2026 housing is available near Los Angeles venues?',
+            a: 'Available now: 9432 Oakmore Rd — 5BR/6BA gated compound, 4,492 sq ft, heated pool, fully furnished, $34,999/month. Accommodates delegations, executive teams, and extended families. Detached guest house included.'
+          },
+          {
+            q: 'What is the pricing for luxury FIFA World Cup housing in Los Angeles?',
+            a: 'Luxury Beverly Hills adjacent rentals for the FIFA window run $30,000–$45,000+/month for 4,000+ sq ft fully furnished properties. 9432 Oakmore Rd is $34,999/month — competitively priced for its specification and location.'
+          },
+        ].map(({ q, a }) => (
+          <details class="glass group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <span class="text-white font-medium pr-4">{q}</span>
+              <span class="text-amber-400 shrink-0 text-lg group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed">{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pool showcase -->
+  <section class="relative h-80 overflow-hidden">
+    <img
+      src="/images/fifa-pool-night.jpg"
+      alt="Luxury Beverly Hills pool — FIFA World Cup 2026 summer entertainment"
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/30 to-transparent"></div>
+    <div class="absolute bottom-4 left-0 right-0 text-center">
+      <p class="text-white/30 text-xs">AI-generated rendering for illustrative purposes only — not actual property photography</p>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="relative py-24 overflow-hidden text-center">
+    <div class="absolute inset-0">
+      <img src="/images/fifa-2026-la.jpg" alt="FIFA World Cup 2026 Los Angeles" class="w-full h-full object-cover opacity-20" />
+      <div class="absolute inset-0 bg-midnight-950/90"></div>
+    </div>
+    <div class="relative z-10 max-w-2xl mx-auto px-6">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-4">Limited Summer Availability</p>
+      <h2 class="font-display text-4xl text-white mb-4">Secure Your FIFA World Cup Housing</h2>
+      <p class="text-slate-400 mb-8 leading-relaxed">
+        The 2026 FIFA World Cup window is filling fast. Delegation housing, executive suites, and luxury compounds near SoFi Stadium are booking months in advance.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href={`https://wa.me/13107700552?text=Hi%20Daniel%2C%20I'm%20interested%20in%20FIFA%20World%20Cup%202026%20housing.%20Please%20confirm%20availability%20for%209432%20Oakmore%20Rd.`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 bg-green-500 text-white text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-green-400 transition-colors"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Daniel Now
+        </a>
+        <a href="https://calendly.com/theissakgroup/30min" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">
+          Book a Showing
+        </a>
+      </div>
+      <p class="text-slate-600 text-xs mt-6">Extended stay rates available for 3+ month commitments · Agent responds within 24 hours</p>
+    </div>
+  </section>
+
+</Layout>

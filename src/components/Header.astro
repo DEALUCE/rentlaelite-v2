@@ -3,8 +3,9 @@ const nav = [
   { label: 'Home', href: '/' },
   { label: 'Property', href: '/property' },
   { label: 'Gallery', href: '/gallery' },
-  { label: 'FAQ', href: '/faq' },
-  { label: 'About', href: '/about' },
+  { label: '⚽ FIFA 2026', href: '/fifa-world-cup-2026-los-angeles-rental' },
+  { label: 'Market Report', href: '/beverly-hills-market-report' },
+  { label: 'Services', href: '/services' },
   { label: 'Contact', href: '/contact' },
 ];
 const current = Astro.url.pathname;
@@ -13,7 +14,7 @@ const current = Astro.url.pathname;
 <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-amber-400/10">
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
     <a href="/" class="font-display text-amber-400 text-lg tracking-widest uppercase italic">
-      Rent LA Elite
+      The Issak Group
     </a>
     <nav class="hidden md:flex items-center gap-8">
       {nav.map(({ label, href }) => (
@@ -30,7 +31,9 @@ const current = Astro.url.pathname;
       ))}
     </nav>
     <a
-      href="/contact"
+      href="https://calendly.com/theissakgroup/30min"
+      target="_blank"
+      rel="noopener noreferrer"
       class="hidden md:inline-block bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-5 py-2.5 hover:bg-amber-300 transition-all duration-300 amber-glow-hover"
     >
       Book a Tour
@@ -47,7 +50,7 @@ const current = Astro.url.pathname;
             {label}
           </a>
         ))}
-        <a href="/contact" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-4 py-3 text-center mt-2">
+        <a href="https://calendly.com/theissakgroup/30min" target="_blank" rel="noopener noreferrer" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-4 py-3 text-center mt-2">
           Book a Tour
         </a>
       </div>

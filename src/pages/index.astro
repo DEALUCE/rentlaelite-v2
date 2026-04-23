@@ -65,12 +65,25 @@ const jsonLd = [
     "geo": { "@type": "GeoCoordinates", "latitude": "34.0503", "longitude": "-118.3847" },
     "numberOfRooms": property.beds,
     "floorSize": { "@type": "QuantitativeValue", "value": property.sqft, "unitCode": "FTK" },
-    "offers": {
-      "@type": "Offer",
-      "price": property.price,
-      "priceCurrency": "USD",
-      "priceSpecification": { "@type": "UnitPriceSpecification", "price": property.price, "priceCurrency": "USD", "unitText": "MON" }
-    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Standard Rate",
+        "price": property.priceOffSeason,
+        "priceCurrency": "USD",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": property.priceOffSeason, "priceCurrency": "USD", "unitText": "MON" }
+      },
+      {
+        "@type": "Offer",
+        "name": "Summer 2026 / FIFA World Cup Window",
+        "price": property.priceSummer,
+        "priceCurrency": "USD",
+        "validFrom": "2026-05-01",
+        "validThrough": "2026-08-31",
+        "availability": "https://schema.org/LimitedAvailability",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": property.priceSummer, "priceCurrency": "USD", "unitText": "MON" }
+      }
+    ],
     "broker": { "@type": "RealEstateAgent", "name": property.agent.name, "telephone": property.agent.phone, "email": property.agent.email }
   },
   {
@@ -82,21 +95,133 @@ const jsonLd = [
     "uploadDate": "2025-01-22",
     "contentUrl": property.video.url,
     "embedUrl": property.video.embedUrl
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "9432 Oakmore Rd — Beverly Hills Luxury Rental",
+    "description": property.description,
+    "url": "https://theissakgroup.com",
+    "telephone": property.agent.phone,
+    "email": property.agent.email,
+    "image": `https://theissakgroup.com${property.images.hero}`,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": property.address.street,
+      "addressLocality": property.address.city,
+      "addressRegion": property.address.state,
+      "postalCode": property.address.zip,
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": "34.0503", "longitude": "-118.3847" },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Heated Pool", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Steam Sauna", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "EV Charging", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Gated Security", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Guest House", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Smart Home", "value": true }
+    ],
+    "numberOfRooms": property.beds,
+    "checkinTime": "15:00",
+    "checkoutTime": "11:00",
+    "priceRange": "$$$$$"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "The Issak Group",
+    "description": "Beverly Hills luxury real estate — executive rentals, AI-powered listing sites, and SEO for luxury agents.",
+    "url": "https://theissakgroup.com",
+    "telephone": property.agent.phone,
+    "email": property.agent.email,
+    "image": `https://theissakgroup.com${property.images.hero}`,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Beverly Hills",
+      "addressRegion": "CA",
+      "postalCode": "90210",
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": "34.0736", "longitude": "-118.4004" },
+    "areaServed": [
+      { "@type": "City", "name": "Beverly Hills" },
+      { "@type": "City", "name": "Los Angeles" },
+      { "@type": "Neighborhood", "name": "Beverlywood" },
+      { "@type": "Neighborhood", "name": "Bel Air" },
+      { "@type": "Neighborhood", "name": "Century City" }
+    ],
+    "sameAs": [
+      `https://www.dre.ca.gov/licensees/licenseesearch.html`
+    ],
+    "employee": {
+      "@type": "Person",
+      "name": property.agent.name,
+      "identifier": `DRE# ${property.agent.dre}`
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://theissakgroup.com" },
+      { "@type": "ListItem", "position": 2, "name": "Beverly Hills Luxury Rentals", "item": "https://theissakgroup.com/beverly-hills-luxury-rentals" },
+      { "@type": "ListItem", "position": 3, "name": "9432 Oakmore Rd", "item": "https://theissakgroup.com" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Beverly Hills Luxury Rental | 9432 Oakmore Rd",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".speakable"]
+    },
+    "url": "https://theissakgroup.com"
   }
 ];
 ---
 
 <Layout
-  title="Luxury 5BR Fully Furnished Rental Beverlywood LA 90035 | 9432 Oakmore Rd — $29,999/mo"
-  description="Gated 5-bed fully furnished luxury compound in Beverlywood, LA 90035. Heated pool, steam sauna, chef's kitchen, detached guest house. $29,999/mo. 30-day minimum. Virtual tour available."
+  title="Beverly Hills Luxury Rental | 9432 Oakmore Rd — FIFA World Cup 2026 Housing $34,999/mo"
+  description="Beverly Hills luxury rental — fully furnished gated 5BR compound, 15 min from SoFi Stadium. FIFA World Cup 2026 housing window: $34,999/mo. Heated pool, detached guest house, Beverly Hills adjacent. Call 424-272-5935."
   jsonLd={jsonLd}
 >
+
+  <!-- ═══════════════════════════════════════ FIFA BANNER -->
+  <a href="/fifa-world-cup-2026-los-angeles-rental" class="block relative overflow-hidden group">
+    <div class="relative h-20 md:h-28">
+      <img
+        src="/images/fifa-2026-la.jpg"
+        alt="FIFA World Cup 2026 Los Angeles — luxury housing available"
+        class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-midnight-950/90 via-midnight-950/60 to-midnight-950/40"></div>
+      <div class="absolute inset-0 flex items-center">
+        <div class="max-w-7xl mx-auto px-6 w-full flex items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <span class="w-2 h-2 bg-amber-400 rounded-full animate-pulse shrink-0"></span>
+            <div>
+              <p class="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase">Summer 2026 · FIFA World Cup Window</p>
+              <p class="text-white text-xs md:text-sm tracking-wide mt-0.5 hidden sm:block">Limited summer availability — secure your dates · Extended stay rates available</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 shrink-0">
+            <span class="hidden md:block text-slate-400 text-xs">$34,999/mo Summer Rate</span>
+            <span class="text-amber-400 text-xs font-semibold tracking-widest uppercase border border-amber-400/40 px-3 py-1.5 group-hover:bg-amber-400 group-hover:text-midnight-950 transition-colors">
+              Inquire Now →
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
 
   <!-- ═══════════════════════════════════════ SCARCITY TICKER -->
   <div class="bg-amber-400 text-midnight-950 py-2.5 px-4 text-center z-50 relative">
     <p class="text-xs font-semibold tracking-[0.3em] uppercase flex items-center justify-center gap-3">
       <span class="w-1.5 h-1.5 bg-midnight-950 rounded-full animate-pulse"></span>
-      Limited Availability · 2026 FIFA World Cup Housing Window — Inquire Now
+      Summer 2026 · $34,999/mo · FIFA World Cup Window — Extended Stay Rates Available
       <span class="w-1.5 h-1.5 bg-midnight-950 rounded-full animate-pulse"></span>
     </p>
   </div>
@@ -126,9 +251,9 @@ const jsonLd = [
           Beverlywood · Los Angeles, CA 90035
         </p>
         <!-- Fully Furnished Badge -->
-        <div class="inline-flex items-center gap-2 border border-amber-400/40 bg-amber-400/10 px-3 py-1.5 mb-6">
-          <svg class="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-          <span class="text-amber-400 text-xs font-semibold tracking-widest uppercase">Fully Furnished · Move-In Ready</span>
+        <div class="inline-flex items-center gap-2.5 border border-amber-400 bg-amber-400/15 px-4 py-2 mb-6 amber-glow-hover">
+          <svg class="w-4 h-4 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span class="text-amber-400 text-sm font-bold tracking-widest uppercase">Fully Furnished · Move-In Ready</span>
         </div>
         <h1 class="font-display text-5xl md:text-7xl leading-[1.05] mb-6">
           <span class="text-white">9432</span><br />
@@ -152,8 +277,9 @@ const jsonLd = [
           ))}
           <div class="w-px bg-midnight-700 self-stretch"></div>
           <div>
-            <p class="font-display text-3xl text-white">$29,999</p>
-            <p class="text-xs text-slate-500 tracking-widest uppercase">Per Month</p>
+            <p class="font-display text-3xl text-white">{property.priceSummerDisplay}</p>
+            <p class="text-xs text-amber-400/70 tracking-widest uppercase">Summer / FIFA Rate</p>
+            <p class="text-xs text-slate-600 mt-0.5">Call for off-season pricing</p>
           </div>
         </div>
         <div class="flex flex-wrap gap-3">
@@ -224,7 +350,7 @@ const jsonLd = [
           <div class="flex items-center justify-center gap-4 mt-5 pt-4 border-t border-white/5">
             <a href="tel:3107700552" class="text-slate-500 text-xs hover:text-amber-400 transition-colors flex items-center gap-1.5">
               <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-              310-770-0552
+              424-272-5935
             </a>
             <span class="text-midnight-700">|</span>
             <a href="https://wa.me/13107700552" target="_blank" rel="noopener noreferrer" class="text-green-500 text-xs hover:text-green-400 transition-colors flex items-center gap-1.5">
@@ -393,8 +519,8 @@ const jsonLd = [
         <!-- Table rows -->
         <div class="divide-y divide-white/5">
           {[
-            ['Monthly Rent', '$29,999/mo', true],
-            ['Security Deposit', '$29,999', false],
+            ['Monthly Rent', '$34,999/mo', true],
+            ['Security Deposit', '$34,999', false],
             ['Minimum Lease Term', '30 Days', false],
             ['Preferred Lease', '3–12 Months', false],
             ['Furnished', 'Fully Furnished — curated luxury', false],
@@ -417,8 +543,8 @@ const jsonLd = [
         <div class="bg-midnight-950/60 px-8 py-6 flex flex-col sm:flex-row gap-4 justify-between items-center border-t border-amber-400/10">
           <p class="text-slate-500 text-xs">By appointment only · 24-hr notice required · Agent accompanies all showings</p>
           <div class="flex gap-3 shrink-0">
-            <a href="/contact" class="bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase px-8 py-3.5 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">
-              Inquire Now
+            <a href="https://calendly.com/theissakgroup/30min" target="_blank" rel="noopener noreferrer" class="bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase px-8 py-3.5 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">
+              Book a Showing
             </a>
             <a
               href="https://wa.me/13107700552?text=I'm%20interested%20in%209432%20Oakmore%20Rd%20rental"
@@ -518,8 +644,8 @@ const jsonLd = [
             </div>
           </div>
 
-          <a href="/contact" class="mt-6 block text-center bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase py-3.5 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">
-            Schedule Site Visit
+          <a href="https://calendly.com/theissakgroup/30min" target="_blank" rel="noopener noreferrer" class="mt-6 block text-center bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase py-3.5 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">
+            Book a Showing
           </a>
         </div>
       </div>
@@ -570,11 +696,11 @@ const jsonLd = [
         Minimum 30-day stay. Contact Daniel Issak directly to arrange a private showing.
       </p>
       <p class="text-amber-400/70 text-xs tracking-widest uppercase mb-10">
-        $29,999/mo · Fully Furnished · 30-Day Minimum · Gated · Heated Pool · Guest House Included
+        $34,999/mo · Fully Furnished · 30-Day Minimum · Gated · Heated Pool · Guest House Included
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase px-10 py-5 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">
-          Schedule Private Showing
+        <a href="https://calendly.com/theissakgroup/30min" target="_blank" rel="noopener noreferrer" class="bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase px-10 py-5 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">
+          Book Private Showing
         </a>
         <a
           href="https://wa.me/13107700552?text=I'm%20interested%20in%209432%20Oakmore%20Rd%20rental%20-%20please%20contact%20me"
@@ -586,7 +712,7 @@ const jsonLd = [
           Message via WhatsApp
         </a>
         <a href="tel:3107700552" class="border border-slate-600 text-slate-300 text-xs tracking-widest uppercase px-10 py-5 hover:border-amber-400 hover:text-amber-400 transition-all duration-300">
-          Call 310-770-0552
+          Call 424-272-5935
         </a>
       </div>
       <p class="text-slate-600 text-xs mt-8">

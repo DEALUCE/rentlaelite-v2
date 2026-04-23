@@ -1,0 +1,161 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": "Short-Term Luxury Rental West Los Angeles — 9432 Oakmore Rd, Beverlywood",
+    "description": "Short-term luxury rental in West Los Angeles. 5BR gated compound in Beverlywood, 30-day minimum, $34,999/month fully furnished. Beverly Hills adjacent.",
+    "url": "https://theissakgroup.com/short-term-luxury-rental-west-los-angeles",
+    "price": "34999",
+    "priceCurrency": "USD",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9432 & 9430 Oakmore Rd",
+      "addressLocality": "Los Angeles",
+      "addressRegion": "CA",
+      "postalCode": "90035",
+      "addressCountry": "US"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where can I find a short-term luxury rental in West Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "9432 & 9430 Oakmore Rd in Beverlywood (West Los Angeles, ZIP 90035) is a fully furnished short-term luxury rental available for 30-day minimum leases at $34,999/month. The gated 5-bedroom compound with heated pool, spa, and guest house is in Beverly Hills adjacent West Los Angeles, 15 minutes from SoFi Stadium and 5 minutes from Beverly Hills."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the minimum lease for a luxury rental in West Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The minimum lease term at 9432 Oakmore Rd is 30 days, making it one of the few fully furnished luxury compounds in West Los Angeles that accommodates true short-term rental needs. Extended leases of 3–12+ months are also welcome."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a short-term luxury rental in West LA cost per month?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Short-term luxury rental pricing in West Los Angeles ranges from $15,000 to $50,000+/month depending on property size and amenities. 9432 Oakmore Rd in Beverlywood is $34,999/month for a fully furnished 5-bedroom, 4,492 sq ft gated compound including heated pool, spa, and detached guest house."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Short-Term Luxury Rental West Los Angeles | 5BR $34,999/mo | Beverlywood"
+  description="Short-term luxury rental in West Los Angeles, Beverly Hills adjacent. 5BR/6BA gated compound, 30-day minimum, $34,999/month fully furnished. Heated pool, spa, guest house. Contact 424-272-5935."
+  jsonLd={jsonLd}
+>
+  <section class="relative py-28 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">West Los Angeles · 30-Day Minimum · Move-In Ready</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        Short-Term Luxury Rental<br /><em class="text-gradient">West Los Angeles</em>
+      </h1>
+      <p class="text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+        9432 & 9430 Oakmore Rd — a fully furnished 5-bedroom gated compound in Beverlywood, Beverly Hills adjacent. Short-term leases from 30 days. Available now.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">Check Availability</a>
+        <a href="/property" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">View Full Details</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {[
+        { val: '30 Days', sub: 'Minimum lease term' },
+        { val: '$34,999/mo', sub: 'Fully furnished' },
+        { val: '4,492 sqft', sub: '5BR + guest house' },
+        { val: 'Available', sub: 'Short & long-term' },
+      ].map(({ val, sub }) => (
+        <div class="glass p-6 text-center border border-amber-400/20">
+          <p class="font-display text-amber-400 text-xl mb-1">{val}</p>
+          <p class="text-slate-500 text-xs">{sub}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 pb-16">
+    <div class="glass p-8 md:p-10">
+      <h2 class="font-display text-2xl text-white mb-5">Short-Term Luxury Rentals in West Los Angeles</h2>
+      <p class="text-slate-300 leading-relaxed mb-4">
+        True short-term luxury rental homes in West Los Angeles — fully furnished, gated, with pool — are extremely limited. Most luxury properties in the Beverly Hills adjacent corridor require 6–12 month minimum leases, making <strong class="text-white">9432 & 9430 Oakmore Rd</strong> an exceptional option with its <strong class="text-white">30-day minimum</strong>.
+      </p>
+      <p class="text-slate-400 leading-relaxed mb-4">
+        Located in Beverlywood (ZIP 90035), the compound is ideal for executives on production cycles, medical stays near Cedars-Sinai, corporate relocation transitions, FIFA 2026 seasonal housing, or international visitors requiring a private, fully equipped luxury residence for weeks to months.
+      </p>
+      <p class="text-slate-400 leading-relaxed">
+        The property is fully furnished and move-in ready — furniture, linens, cookware, smart home setup, and all systems are included at <strong class="text-white">$34,999/month</strong>. Tenants pay utilities. The 5-bedroom main residence plus ~400 sq ft detached guest house totals 4,492 sq ft with a heated pool, spa, steam sauna, chef's kitchen, EV charging, and gated security.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-midnight-900 py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-10 text-center">Who Books Short-Term Luxury Rentals in West LA</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { icon: '🎬', title: 'Entertainment Executives', text: 'Producers, directors, and talent on 1–6 month production cycles at Fox, Sony, Amazon, Netflix, or Paramount who need a private, fully equipped Beverly Hills-adjacent base.' },
+          { icon: '⚽', title: 'FIFA 2026 Delegations', text: 'Team delegations, FIFA officials, corporate sponsors, and international VIPs securing executive housing for the May–August 2026 window in Los Angeles.' },
+          { icon: '🏥', title: 'Medical Stays', text: 'Patients and families at Cedars-Sinai Medical Center (10 minutes) or UCLA Health (15 minutes) seeking short-term luxury housing close to world-class medical care.' },
+          { icon: '🏢', title: 'Corporate Relocation', text: 'Executives relocating to LA for new roles who need 30–90 days of premium furnished housing while purchasing or preparing their permanent residence.' },
+          { icon: '🌍', title: 'International Visitors', text: 'UHNW international visitors from the Middle East, Europe, and Asia who require a private gated compound for LA visits — not a hotel, not an Airbnb.' },
+          { icon: '💼', title: 'Production Housing', text: 'Film, TV, and commercial productions requiring luxury base housing for talent, directors, or above-the-line crew during LA-based shoots.' },
+        ].map(({ icon, title, text }) => (
+          <div class="glass p-7">
+            <div class="text-3xl mb-4">{icon}</div>
+            <h3 class="text-white font-semibold mb-3">{title}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 py-20">
+    <h2 class="font-display text-2xl text-white mb-8 text-center">Short-Term Luxury Rental West LA — FAQ</h2>
+    <div class="space-y-4">
+      {[
+        { q: 'Where can I find a short-term luxury rental in West Los Angeles?', a: '9432 & 9430 Oakmore Rd in Beverlywood (90035) is a fully furnished short-term luxury rental available from 30-day minimums at $34,999/month. Gated 5BR compound with heated pool, spa, and guest house in Beverly Hills adjacent West Los Angeles.' },
+        { q: 'What is the minimum lease for the West LA luxury rental at 9432 Oakmore?', a: '30 days minimum. Extended leases of 3, 6, or 12+ months are available and preferred for the right tenant. The property is fully furnished and move-in ready for any duration within this range.' },
+        { q: 'How much does a short-term luxury rental in West LA cost?', a: '$34,999/month for the full 4,492 sq ft compound including 5 bedrooms, 6 bathrooms, heated pool, spa, steam sauna, chef\'s kitchen, and detached guest house. All furnishings included. Tenant pays utilities.' },
+        { q: 'Is a short-term luxury rental better than a hotel in West LA?', a: 'For 30+ day stays, a furnished luxury compound provides significantly more space, privacy, kitchen facilities, outdoor amenities (pool, spa), and value per square foot than a comparable luxury hotel in Beverly Hills or West Hollywood — typically at 40–60% lower cost per night when calculated monthly.' },
+      ].map(({ q, a }) => (
+        <details class="glass group">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="text-white font-medium pr-4">{q}</span>
+            <span class="text-amber-400 shrink-0 text-lg group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="px-6 pb-6 text-slate-400 leading-relaxed">{a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-midnight-900 text-center">
+    <div class="max-w-xl mx-auto px-6">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-4">30-Day Minimum · Available Now</p>
+      <h2 class="font-display text-3xl text-white mb-4">Book Your West LA Residence</h2>
+      <p class="text-slate-400 text-sm mb-8">Contact Daniel Issak to confirm availability and arrange a private showing.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">Contact Daniel →</a>
+        <a href="tel:14242725935" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">Call 424-272-5935</a>
+      </div>
+    </div>
+  </section>
+</Layout>

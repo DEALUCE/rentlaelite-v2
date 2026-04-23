@@ -49,8 +49,12 @@ const { agent } = property;
     <!-- FORM (3 cols) -->
     <div class="lg:col-span-3">
       <h2 class="font-display text-2xl text-white mb-8">Inquiry Form</h2>
-      <form name="contact" method="POST" action="/contact?success=true" class="space-y-4">
-        <input type="hidden" name="form-name" value="contact" />
+      <div id="form-success" class="hidden glass border border-amber-400/30 p-8 text-center">
+        <p class="text-amber-400 text-xs tracking-widest uppercase mb-3">Inquiry Received</p>
+        <p class="text-white text-lg font-display mb-2">Thank you — Daniel will be in touch within 24 hours.</p>
+        <p class="text-slate-400 text-sm">Check your inbox — a full property brochure is on its way.</p>
+      </div>
+      <form id="contact-form" class="space-y-4">
         <div class="grid grid-cols-2 gap-4">
           <div>
             <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">First Name *</label>
@@ -89,10 +93,51 @@ const { agent } = property;
           <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Message</label>
           <textarea name="message" rows="4" placeholder="Questions, preferred showing times, intended use…" class="w-full bg-midnight-900 border border-slate-700 text-white placeholder-slate-600 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors resize-none"></textarea>
         </div>
-        <button type="submit" class="w-full bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase py-4 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">
+        <p id="form-error" class="hidden text-red-400 text-sm"></p>
+        <button type="submit" id="form-btn" class="w-full bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase py-4 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">
           Send Inquiry
         </button>
       </form>
+      <script>
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const form = e.target;
+          const btn = document.getElementById('form-btn');
+          const errEl = document.getElementById('form-error');
+          btn.textContent = 'Sending…';
+          btn.disabled = true;
+          errEl.classList.add('hidden');
+          const firstName = form['first-name'].value.trim();
+          const lastName = form['last-name'].value.trim();
+          const payload = {
+            name: `${firstName} ${lastName}`.trim(),
+            email: form['email'].value.trim(),
+            phone: form['phone'].value.trim(),
+            moveIn: form['move-in'].value,
+            leaseLength: form['lease-length'].value,
+            message: form['message'].value.trim(),
+            source: 'contact-form',
+          };
+          try {
+            const res = await fetch('/api/contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+            });
+            if (res.ok) {
+              form.classList.add('hidden');
+              document.getElementById('form-success').classList.remove('hidden');
+            } else {
+              throw new Error('Server error');
+            }
+          } catch {
+            errEl.textContent = 'Something went wrong. Please call 424-272-5935 directly.';
+            errEl.classList.remove('hidden');
+            btn.textContent = 'Send Inquiry';
+            btn.disabled = false;
+          }
+        });
+      </script>
     </div>
 
     <!-- SIDEBAR (2 cols) -->

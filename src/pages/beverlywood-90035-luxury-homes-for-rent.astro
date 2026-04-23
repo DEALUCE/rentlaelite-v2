@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": "Beverlywood 90035 Luxury Homes for Rent — 9432 Oakmore Rd",
+    "description": "Luxury homes for rent in Beverlywood 90035. Gated 5BR compound with heated pool, $34,999/month. Beverly Hills adjacent, fully furnished.",
+    "url": "https://theissakgroup.com/beverlywood-90035-luxury-homes-for-rent",
+    "price": "34999",
+    "priceCurrency": "USD",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9432 & 9430 Oakmore Rd",
+      "addressLocality": "Los Angeles",
+      "addressRegion": "CA",
+      "postalCode": "90035",
+      "addressCountry": "US"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What luxury homes are available for rent in Beverlywood 90035?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "9432 & 9430 Oakmore Rd is the premier luxury home for rent in Beverlywood (90035). This gated 5-bedroom, 4,492 sq ft compound features a heated pool, spa, chef's kitchen, steam sauna, and a detached guest house — fully furnished at $34,999/month. Contact listing agent Daniel Issak (DRE# 02037760) at 424-272-5935."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a luxury home rent for in Beverlywood 90035?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Luxury homes in Beverlywood (90035) rent for $15,000–$35,000/month depending on size and amenities. 9432 & 9430 Oakmore Rd, the most comprehensively equipped luxury compound in the area, is priced at $34,999/month fully furnished for 4,492 sq ft including a detached guest house."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Beverlywood a good neighborhood for luxury rentals?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Beverlywood (90035) is one of the most desirable luxury rental neighborhoods in Los Angeles. It offers Beverly Hills-adjacent prestige, walkable dining on Pico Boulevard, excellent school districts, and easy access to Century City, Fox Studios, Cedars-Sinai, and the 405/10 freeways — at a significantly better price-per-square-foot than 90210."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Beverlywood 90035 Luxury Homes for Rent | 5BR $34,999/mo | The Issak Group"
+  description="Luxury homes for rent in Beverlywood 90035. 5BR/6BA gated compound, 4,492 sqft, heated pool & spa, chef's kitchen. Beverly Hills adjacent. $34,999/month fully furnished. Daniel Issak DRE# 02037760."
+  jsonLd={jsonLd}
+>
+  <section class="relative py-28 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">Beverlywood · ZIP 90035 · Beverly Hills Adjacent</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        Beverlywood 90035<br /><em class="text-gradient">Luxury Homes for Rent</em>
+      </h1>
+      <p class="text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+        9432 & 9430 Oakmore Rd — the defining luxury compound available for rent in Beverlywood. Gated, fully furnished, heated pool, guest house. $34,999/month.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">Request a Showing</a>
+        <a href="/property" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">View Property</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <div class="glass p-8 md:p-10">
+      <h2 class="font-display text-2xl text-white mb-5">Luxury Homes for Rent in Beverlywood, ZIP 90035</h2>
+      <p class="text-slate-300 leading-relaxed mb-4">
+        Beverlywood (ZIP code 90035) is a premier luxury residential neighborhood in Los Angeles, directly bordering Beverly Hills to the east. Luxury rental homes in 90035 are among the most sought-after in the Greater Los Angeles area, offering Beverly Hills proximity at a meaningful value compared to 90210 pricing.
+      </p>
+      <p class="text-slate-400 leading-relaxed mb-4">
+        <strong class="text-white">9432 & 9430 Oakmore Rd</strong> is the standout luxury rental currently available in Beverlywood: a gated compound with automatic gate, heated pool and spa, steam sauna, chef's kitchen with dual ovens, detached guest house, EV charging, and Ring security — fully furnished and move-in ready at <strong class="text-white">$34,999/month</strong>.
+      </p>
+      <p class="text-slate-400 leading-relaxed">
+        The property is represented by listing agent <strong class="text-white">Daniel Issak (DRE# 02037760)</strong> of Real Estate Source, Inc. Showings are by appointment with 24-hour notice required. Contact Daniel at 424-272-5935 or via the form below.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-midnight-900 py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-10 text-center">Why Beverlywood 90035</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { icon: '🏙️', title: 'Beverly Hills Adjacent', text: 'Directly bordering 90210, Beverlywood offers the same prestigious address environment at 40–60% better price-per-square-foot. 5 minutes to Beverly Drive, 8 minutes to Rodeo Drive.' },
+          { icon: '🎬', title: 'Entertainment Hub', text: 'Fox Studios, Sony Pictures, and CAA are within 10 minutes. Proximity to Century City, Culver City studios, and Hollywood makes 90035 the neighborhood of choice for entertainment industry executives.' },
+          { icon: '🏥', title: 'Medical District Access', text: 'Cedars-Sinai Medical Center — ranked in the top 10 US hospitals — is 10 minutes away. Corporate housing for medical professionals, international patients, and their families is a major demand driver.' },
+          { icon: '🛍️', title: 'Walkable Amenities', text: 'Walking distance to Pico-Robertson\'s acclaimed dining, specialty grocers, and retail. Beverly Hills shopping, Westfield Century City, and Erewhon are within 10 minutes.' },
+          { icon: '✈️', title: 'LAX & Highway Access', text: '12 minutes to LAX International Airport. Direct access to I-405 and I-10. Beverly Hills, Santa Monica, DTLA, and Malibu all within 20–25 minutes.' },
+          { icon: '⚽', title: 'FIFA 2026 Location', text: '15 minutes from SoFi Stadium — the FIFA World Cup 2026 venue for Los Angeles. Demand for Beverlywood luxury rentals for the May–August 2026 window is at an all-time high.' },
+        ].map(({ icon, title, text }) => (
+          <div class="glass p-7">
+            <div class="text-3xl mb-4">{icon}</div>
+            <h3 class="text-white font-semibold mb-3">{title}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 py-20">
+    <h2 class="font-display text-2xl text-white mb-8 text-center">Beverlywood 90035 Rental FAQ</h2>
+    <div class="space-y-4">
+      {[
+        { q: 'What luxury homes are for rent in Beverlywood 90035?', a: '9432 & 9430 Oakmore Rd is the premier luxury home for rent in Beverlywood. This gated 5-bedroom, 4,492 sq ft compound with heated pool, spa, and guest house is available at $34,999/month fully furnished. Listed by Daniel Issak (DRE# 02037760), 424-272-5935.' },
+        { q: 'How much does a luxury home cost to rent in Beverlywood 90035?', a: 'Luxury homes in Beverlywood (90035) range from $15,000 to $35,000/month. The compound at 9432 Oakmore Rd is priced at $34,999/month for 4,492 sq ft fully furnished including pool, spa, and detached guest house.' },
+        { q: 'Is Beverlywood a safe neighborhood?', a: 'Yes. Beverlywood is consistently ranked one of the safest upscale neighborhoods in Los Angeles. It is a low-traffic residential enclave with active neighborhood watch programs and private security in many blocks. 9432 Oakmore Rd has an automatic gate and Ring security system.' },
+        { q: 'What is the difference between Beverlywood and Beverly Hills?', a: 'Beverlywood (90035) is an unincorporated community of LA County immediately adjacent to the City of Beverly Hills (90210). Beverlywood offers comparable residential prestige and proximity to Beverly Hills amenities at 40–60% better price-per-square-foot than Beverly Hills proper.' },
+      ].map(({ q, a }) => (
+        <details class="glass group">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="text-white font-medium pr-4">{q}</span>
+            <span class="text-amber-400 shrink-0 text-lg group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="px-6 pb-6 text-slate-400 leading-relaxed">{a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-midnight-900 text-center">
+    <div class="max-w-xl mx-auto px-6">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-4">Available Now · Beverlywood 90035</p>
+      <h2 class="font-display text-3xl text-white mb-4">Tour 9432 Oakmore Rd</h2>
+      <p class="text-slate-400 text-sm mb-8">By appointment · 24-hour notice · Daniel Issak DRE# 02037760</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">Schedule Showing →</a>
+        <a href="tel:14242725935" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">Call 424-272-5935</a>
+      </div>
+    </div>
+  </section>
+</Layout>

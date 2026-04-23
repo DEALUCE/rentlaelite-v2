@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": "FIFA 2026 Executive Housing Los Angeles — 9432 Oakmore Rd",
+    "description": "FIFA World Cup 2026 executive housing in Los Angeles. 5BR gated compound in Beverlywood, Beverly Hills adjacent. $34,999/month. Available May–August 2026.",
+    "url": "https://theissakgroup.com/fifa-2026-executive-housing-los-angeles",
+    "price": "34999",
+    "priceCurrency": "USD",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9432 & 9430 Oakmore Rd",
+      "addressLocality": "Los Angeles",
+      "addressRegion": "CA",
+      "postalCode": "90035",
+      "addressCountry": "US"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where is FIFA World Cup 2026 being played in Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FIFA World Cup 2026 matches in Los Angeles are scheduled at SoFi Stadium in Inglewood, CA. SoFi Stadium is approximately 15 minutes from Beverlywood and Beverly Hills, making the 90035 corridor one of the most strategically located areas for FIFA 2026 executive housing in Los Angeles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best executive housing option for FIFA World Cup 2026 in Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "9432 & 9430 Oakmore Rd in Beverlywood is the top FIFA 2026 executive housing option in Beverly Hills adjacent Los Angeles. The fully furnished 5-bedroom gated compound with heated pool, spa, and guest house is 15 minutes from SoFi Stadium and 5 minutes from Beverly Hills, at $34,999/month with 30-day minimum lease terms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When is FIFA World Cup 2026 in Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FIFA World Cup 2026 matches at SoFi Stadium in Los Angeles are scheduled for June and July 2026. Executive housing demand in the Beverly Hills corridor is at an all-time high for the May–August 2026 window, with well-positioned luxury rentals leasing months in advance."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="FIFA 2026 Executive Housing Los Angeles | 5BR Luxury Compound | Beverlywood"
+  description="FIFA World Cup 2026 executive housing in Los Angeles. Gated 5BR compound in Beverlywood, Beverly Hills adjacent, 15 min from SoFi Stadium. $34,999/month. May–August 2026 available. Book now."
+  jsonLd={jsonLd}
+>
+  <section class="relative py-28 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">⚽ FIFA World Cup 2026 · Los Angeles · Beverly Hills Adjacent</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        FIFA 2026 Executive Housing<br /><em class="text-gradient">Los Angeles</em>
+      </h1>
+      <p class="text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+        The premier executive compound for FIFA World Cup 2026 in Los Angeles. Gated 5-bedroom estate in Beverlywood — 15 minutes from SoFi Stadium, 5 minutes from Beverly Hills. Available May–August 2026.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">Reserve Now — Limited Availability</a>
+        <a href="/property" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">Full Property Details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- URGENCY STATS -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {[
+        { val: '15 Min', sub: 'From SoFi Stadium' },
+        { val: '+40%', sub: 'Luxury rental demand spike' },
+        { val: 'May–Aug', sub: '2026 available window' },
+        { val: '<10', sub: 'Properties like this in all of LA' },
+      ].map(({ val, sub }) => (
+        <div class="glass p-6 text-center border border-amber-400/20">
+          <p class="font-display text-amber-400 text-2xl mb-1">{val}</p>
+          <p class="text-slate-400 text-xs">{sub}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CONTENT BLOCK -->
+  <section class="max-w-4xl mx-auto px-6 pb-16">
+    <div class="glass p-8 md:p-10">
+      <h2 class="font-display text-2xl text-white mb-5">FIFA World Cup 2026 Executive Housing in Los Angeles</h2>
+      <p class="text-slate-300 leading-relaxed mb-4">
+        The 2026 FIFA World Cup in Los Angeles is scheduled at SoFi Stadium in Inglewood (June–July 2026), with Los Angeles serving as one of the primary host cities in North America. The event has driven an estimated <strong class="text-white">35–45% spike in luxury rental demand</strong> for the May–August 2026 window across Beverly Hills, Bel Air, and adjacent neighborhoods.
+      </p>
+      <p class="text-slate-400 leading-relaxed mb-4">
+        <strong class="text-white">9432 & 9430 Oakmore Rd</strong> is the most strategically positioned FIFA 2026 executive compound in the Beverly Hills adjacent market. At 15 minutes from SoFi Stadium, 5 minutes from Beverly Hills, and 12 minutes from LAX, it serves team delegations, FIFA officials, corporate sponsors, and UHNW international visitors who demand privacy, security, and full luxury amenity sets.
+      </p>
+      <p class="text-slate-400 leading-relaxed">
+        The compound features a gated driveway with automatic gate, Ring security, heated pool and spa, steam sauna, chef's kitchen, detached guest house with private entrance, EV charging, and is fully furnished at <strong class="text-white">$34,999/month</strong> with 30-day minimum leases. Multiple month bookings covering the full FIFA window (May–August 2026) are strongly preferred and available.
+      </p>
+    </div>
+  </section>
+
+  <!-- LOCATION TABLE -->
+  <section class="bg-midnight-900 py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-8 text-center">Strategic Location — FIFA 2026 Los Angeles</p>
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-white/10">
+            <th class="text-left text-xs tracking-widest uppercase text-slate-500 pb-4 pr-6">Destination</th>
+            <th class="text-left text-xs tracking-widest uppercase text-slate-500 pb-4">Drive Time from 9432 Oakmore</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            ['SoFi Stadium — FIFA 2026 venue', '15 min'],
+            ['Beverly Hills / Rodeo Drive', '5 min'],
+            ['Century City / Westfield', '8 min'],
+            ['Fox Studios / Sony Pictures', '10 min'],
+            ['LAX International Airport', '12 min'],
+            ['Santa Monica Beach', '15 min'],
+            ['Cedars-Sinai Medical Center', '10 min'],
+            ['West Hollywood / Sunset Strip', '12 min'],
+          ].map(([dest, time]) => (
+            <tr class="border-b border-white/5">
+              <td class="py-3 pr-6 text-white">{dest}</td>
+              <td class="py-3 text-amber-400 font-semibold">{time}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="max-w-3xl mx-auto px-6 py-20">
+    <h2 class="font-display text-2xl text-white mb-8 text-center">FIFA 2026 Los Angeles Housing FAQ</h2>
+    <div class="space-y-4">
+      {[
+        { q: 'Where is FIFA World Cup 2026 being played in Los Angeles?', a: 'FIFA World Cup 2026 matches in Los Angeles are at SoFi Stadium in Inglewood — approximately 15 minutes from Beverlywood and the Beverly Hills corridor, where top executive housing is concentrated.' },
+        { q: 'When is FIFA 2026 in Los Angeles?', a: 'LA FIFA matches are scheduled for June–July 2026. Executive housing demand is elevated across the full May–August 2026 window, as teams, sponsors, and high-net-worth visitors arrive weeks before match dates and extend post-tournament.' },
+        { q: 'What executive housing is available near SoFi Stadium for FIFA 2026?', a: '9432 & 9430 Oakmore Rd in Beverlywood is the premier gated luxury compound available for the FIFA 2026 window — 15 min from SoFi, 5 min from Beverly Hills, fully furnished at $34,999/month with 30-day minimums.' },
+        { q: 'How much does FIFA 2026 executive housing cost in Los Angeles?', a: 'Top-tier fully furnished FIFA 2026 executive homes in Beverly Hills adjacent neighborhoods run $25,000–$50,000+/month. 9432 Oakmore Rd is $34,999/month for a 5-bedroom, 4,492 sq ft gated compound including pool, spa, and guest house.' },
+      ].map(({ q, a }) => (
+        <details class="glass group">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="text-white font-medium pr-4">{q}</span>
+            <span class="text-amber-400 shrink-0 text-lg group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="px-6 pb-6 text-slate-400 leading-relaxed">{a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-midnight-900 text-center">
+    <div class="max-w-xl mx-auto px-6">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-4">Limited Availability · Book Now</p>
+      <h2 class="font-display text-3xl text-white mb-4">Secure Your FIFA 2026 Residence</h2>
+      <p class="text-slate-400 text-sm mb-8">Properties at this level and location for the 2026 window are extremely limited. Contact Daniel Issak to check availability.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">Check Availability →</a>
+        <a href="tel:14242725935" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">Call 424-272-5935</a>
+      </div>
+    </div>
+  </section>
+</Layout>

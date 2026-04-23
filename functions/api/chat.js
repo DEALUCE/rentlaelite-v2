@@ -3,9 +3,9 @@ const SYSTEM_PROMPT = `You are the AI concierge for 9432 Oakmore Rd — a gated 
 PROPERTY FACTS:
 - 5 bedrooms / 6 bathrooms (5 full, 1 half)
 - 4,092 sq ft main residence + 400 sq ft detached guest house = 4,492 sq ft combined
-- $29,999/month — fully furnished with curated luxury interiors, move-in ready
+- $34,999/month — fully furnished with curated luxury interiors, move-in ready
 - Minimum lease: 30 days | Preferred: 3–12 months
-- Security deposit: $29,999 | Pets considered
+- Security deposit: $34,999 | Pets considered
 
 AMENITIES:
 - Heated pool & spa (gas-heated, in-ground, filtered)
@@ -32,7 +32,7 @@ LEASE TERMS:
 - Application: CAR rental application, full credit report ($49.99), proof of income/funds, all docs as single PDF
 
 CONTACT:
-- Daniel Issak: 310-770-0552 (call/text) | 424-272-5935 alt | dan.issak@gmail.com
+- Daniel Issak: 424-272-5935 (call/text) | dan.issak@gmail.com
 - All showings by appointment, 24-hour notice required. Listing agent accompanies all showings.
 
 TONE & RULES:

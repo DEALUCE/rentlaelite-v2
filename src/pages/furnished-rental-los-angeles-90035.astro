@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": "Furnished Rental Los Angeles 90035 — 9432 & 9430 Oakmore Rd",
+    "description": "Fully furnished luxury rental in Los Angeles 90035 (Beverlywood). 5BR/6BA gated compound, 4,492 sq ft, heated pool, $34,999/month. Available for short-term and long-term leases.",
+    "url": "https://theissakgroup.com/furnished-rental-los-angeles-90035",
+    "price": "34999",
+    "priceCurrency": "USD",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9432 & 9430 Oakmore Rd",
+      "addressLocality": "Los Angeles",
+      "addressRegion": "CA",
+      "postalCode": "90035",
+      "addressCountry": "US"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where can I find a fully furnished luxury rental in Los Angeles 90035?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "9432 & 9430 Oakmore Rd in Beverlywood (90035) is a fully furnished 5-bedroom luxury compound available for short-term and long-term leases starting at 30 days. The property is move-in ready with curated luxury interiors, heated pool, spa, chef's kitchen, and a detached guest house — all included at $34,999/month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is included in a fully furnished luxury rental in Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "At 9432 Oakmore Rd, the furnished rental includes all furniture, linens, cookware, smart home systems, heated pool and spa, steam sauna, EV charging station, Ring security, and a fully furnished detached guest house. Tenants pay utilities (electricity, gas, water, internet) and maintain pool and garden service."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Furnished Rental Los Angeles 90035 | 5BR Luxury $34,999/mo | Oakmore Rd"
+  description="Fully furnished luxury rental in Los Angeles 90035 (Beverlywood). 5BR/6BA gated compound, 4,492 sq ft, heated pool & spa, chef's kitchen. Move-in ready. $34,999/month. Short-term & long-term."
+  jsonLd={jsonLd}
+>
+  <section class="relative py-28 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">Los Angeles · ZIP 90035 · Move-In Ready</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        Furnished Rental<br /><em class="text-gradient">Los Angeles 90035</em>
+      </h1>
+      <p class="text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+        9432 & 9430 Oakmore Rd — fully furnished 5-bedroom compound in Beverlywood. Heated pool, spa, guest house. Available from 30 days. $34,999/month.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">Inquire Now</a>
+        <a href="/property" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">Property Details</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <div class="glass p-8 md:p-10">
+      <h2 class="font-display text-2xl text-white mb-5">Fully Furnished Luxury Rental — Los Angeles 90035</h2>
+      <p class="text-slate-300 leading-relaxed mb-4">
+        <strong class="text-white">9432 & 9430 Oakmore Rd</strong> is a fully furnished luxury rental in Los Angeles ZIP code 90035 (Beverlywood), available for short-term leases starting at 30 days and long-term leases up to 12+ months. The property is move-in ready with curated luxury interiors — no additional furniture, equipment, or setup required.
+      </p>
+      <p class="text-slate-400 leading-relaxed mb-4">
+        The compound totals 4,492 sq ft across the main 5-bedroom residence and a detached ~400 sq ft guest house with a private entrance. Monthly rent is <strong class="text-white">$34,999/month</strong>, inclusive of all furnishings, heated pool and spa, steam sauna, dual-oven chef's kitchen, EV charging, smart home systems, and Ring security.
+      </p>
+      <p class="text-slate-400 leading-relaxed">
+        ZIP code 90035 (Beverlywood) is one of the most desirable furnished rental locations in Los Angeles, offering Beverly Hills-adjacent prestige at a relative value versus 90210. The neighborhood is walkable to Pico-Robertson dining, 5 minutes to Beverly Hills, and 15 minutes to LAX.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-midnight-900 py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-8 text-center">What's Included — Fully Furnished</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { title: 'Main Residence', items: ['5 bedrooms · 5.5 bathrooms', 'Curated luxury furniture & art', 'Chef\'s kitchen: dual ovens, island', 'Steam sauna in primary suite', 'Hardwood & Italian porcelain floors', 'Smart home, multi-zone HVAC', 'Blackout shades, smart lighting'] },
+          { title: 'Outdoor & Systems', items: ['Heated pool & spa (gas-heated)', 'Gated driveway · automatic gate', 'Ring security system', 'EV charging station', 'In-unit washer/dryer', 'Water conditioner & purifier', 'Walk-in closets, decorative fireplace'] },
+          { title: 'Guest House', items: ['~400 sq ft · private entrance', 'Full kitchen & full bathroom', 'Separately metered utilities', 'Included in lease (cannot be sublet)', 'Ideal for staff, guests, or office'] },
+          { title: 'Lease Terms', items: ['Minimum 30 days', 'Short-term & long-term welcome', '$34,999/month fully furnished', 'Security deposit: $34,999', 'Tenant pays: utilities, pool, garden', 'Pets considered case by case'] },
+        ].map(({ title, items }) => (
+          <div class="glass p-7">
+            <p class="text-amber-400 text-xs tracking-widest uppercase mb-4">{title}</p>
+            <ul class="space-y-2">
+              {items.map(item => (
+                <li class="flex gap-3 text-sm text-slate-400">
+                  <span class="text-amber-400 shrink-0">→</span>{item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 py-20">
+    <h2 class="font-display text-2xl text-white mb-8 text-center">Furnished Rental 90035 — FAQ</h2>
+    <div class="space-y-4">
+      {[
+        { q: 'Where can I find a fully furnished luxury rental in Los Angeles 90035?', a: '9432 & 9430 Oakmore Rd in Beverlywood (90035) is the premier furnished luxury rental in this ZIP code — a 5-bedroom, 4,492 sq ft gated compound available from 30-day minimum at $34,999/month, fully furnished and move-in ready.' },
+        { q: 'What is included in the furnished rental at 9432 Oakmore Rd?', a: 'All furniture, linens, cookware, smart home systems, heated pool and spa, steam sauna, EV charging, Ring security, and the fully furnished guest house. Tenants pay utilities (electricity, gas, water, internet) and pool/garden maintenance.' },
+        { q: 'Is a short-term furnished rental available in Los Angeles 90035?', a: 'Yes. 9432 Oakmore Rd accepts leases starting at 30 days, making it suitable for executive relocation, production housing, FIFA 2026 seasonal rental, or medical stays near Cedars-Sinai.' },
+        { q: 'What is the price for a furnished luxury rental in Beverlywood?', a: '$34,999/month for the entire 4,492 sq ft gated compound including the detached guest house, heated pool, and all amenities listed above.' },
+      ].map(({ q, a }) => (
+        <details class="glass group">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+            <span class="text-white font-medium pr-4">{q}</span>
+            <span class="text-amber-400 shrink-0 text-lg group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="px-6 pb-6 text-slate-400 leading-relaxed">{a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-midnight-900 text-center">
+    <div class="max-w-xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-4">Ready to Move In</h2>
+      <p class="text-slate-400 text-sm mb-8">Fully furnished · Gated · Beverly Hills adjacent · Available now</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">Schedule Showing →</a>
+        <a href="tel:14242725935" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">Call 424-272-5935</a>
+      </div>
+    </div>
+  </section>
+</Layout>

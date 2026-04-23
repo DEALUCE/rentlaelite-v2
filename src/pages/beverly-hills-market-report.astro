@@ -104,6 +104,25 @@ const demandDrivers = [
     </div>
   </section>
 
+  <!-- Email gate -->
+  <section id="report-gate" class="max-w-xl mx-auto px-6 pb-10">
+    <div class="glass border border-amber-400/30 p-8 text-center">
+      <p class="text-amber-400 text-xs tracking-widest uppercase mb-3">Free · Instant Access</p>
+      <h2 class="font-display text-2xl text-white mb-2">Get the Full Report</h2>
+      <p class="text-slate-400 text-sm mb-6 leading-relaxed">Enter your email to unlock all data: neighborhood comparison, price-per-sq-ft tables, FIFA demand analysis, and days-on-market trends.</p>
+      <form id="gate-form" class="flex flex-col sm:flex-row gap-3">
+        <input type="email" id="gate-email" required placeholder="your@email.com" class="flex-1 bg-midnight-900 border border-slate-700 text-white placeholder-slate-600 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors" />
+        <button type="submit" id="gate-btn" class="bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase px-6 py-3 hover:bg-amber-300 transition-colors whitespace-nowrap">
+          Unlock Report →
+        </button>
+      </form>
+      <p id="gate-error" class="hidden text-red-400 text-xs mt-3"></p>
+      <p class="text-slate-600 text-xs mt-4">No spam. You'll also receive the property brochure for 9432 Oakmore Rd.</p>
+    </div>
+  </section>
+
+  <div id="report-content" class="hidden">
+
   <!-- Key stats -->
   <section class="max-w-6xl mx-auto px-6 pb-16">
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -226,6 +245,8 @@ const demandDrivers = [
     </div>
   </section>
 
+  </div><!-- /report-content -->
+
   <!-- CTA -->
   <section class="py-20 text-center">
     <div class="max-w-xl mx-auto px-6">
@@ -239,4 +260,36 @@ const demandDrivers = [
     </div>
   </section>
 
+<script>
+  (function() {
+    const GATE_KEY = 'mkt_report_unlocked';
+    function unlock() {
+      document.getElementById('report-gate').classList.add('hidden');
+      document.getElementById('report-content').classList.remove('hidden');
+    }
+    if (localStorage.getItem(GATE_KEY)) { unlock(); return; }
+    document.getElementById('gate-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('gate-email').value.trim();
+      const btn = document.getElementById('gate-btn');
+      const errEl = document.getElementById('gate-error');
+      btn.textContent = 'Unlocking…';
+      btn.disabled = true;
+      try {
+        await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: 'market-report-gate' }),
+        });
+        localStorage.setItem(GATE_KEY, '1');
+        unlock();
+      } catch {
+        errEl.textContent = 'Error — please try again.';
+        errEl.classList.remove('hidden');
+        btn.textContent = 'Unlock Report →';
+        btn.disabled = false;
+      }
+    });
+  })();
+</script>
 </Layout>

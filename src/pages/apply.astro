@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+import property from '../data/property.json';
+const { agent } = property;
+---
+
+<Layout
+  title="Apply to Rent — 9432 & 9430 Oakmore Rd, Beverlywood | Pre-Qualification"
+  description="Pre-qualify to rent 9432 & 9430 Oakmore Rd, Beverlywood. 5BR luxury compound, $34,999/mo. Submit your inquiry — Daniel Issak responds within 24 hours."
+>
+  <!-- HERO -->
+  <section class="relative py-24 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-midnight-950 to-midnight-900"></div>
+    <div class="relative z-10 text-center max-w-2xl mx-auto px-6">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4 flex items-center justify-center gap-3">
+        <span class="w-8 h-px bg-amber-400"></span>
+        Tenant Pre-Qualification
+        <span class="w-8 h-px bg-amber-400"></span>
+      </p>
+      <h1 class="font-display text-4xl md:text-5xl text-white mb-4">Apply to <em class="text-gradient">Rent</em></h1>
+      <p class="text-slate-400 text-sm">9432 & 9430 Oakmore Rd · Beverlywood · $34,999/month</p>
+    </div>
+  </section>
+
+  <!-- INFO BANNER -->
+  <section class="max-w-4xl mx-auto px-6 pt-10 pb-4">
+    <div class="glass border border-amber-400/20 p-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-sm">
+      <div>
+        <p class="text-amber-400 font-semibold text-base">$34,999/mo</p>
+        <p class="text-slate-500 text-xs mt-1">Fully furnished · Move-in ready</p>
+      </div>
+      <div>
+        <p class="text-amber-400 font-semibold text-base">30-Day Minimum</p>
+        <p class="text-slate-500 text-xs mt-1">Short-term & long-term considered</p>
+      </div>
+      <div>
+        <p class="text-amber-400 font-semibold text-base">24 Hr Response</p>
+        <p class="text-slate-500 text-xs mt-1">Daniel reviews all applications personally</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="max-w-3xl mx-auto px-6 py-14">
+    <div id="apply-success" class="hidden glass border border-amber-400/30 p-10 text-center">
+      <p class="text-amber-400 text-xs tracking-widest uppercase mb-3">Application Received</p>
+      <p class="font-display text-2xl text-white mb-3">Thank you — Daniel will review and respond within 24 hours.</p>
+      <p class="text-slate-400 text-sm">Check your inbox for a confirmation and brochure.</p>
+    </div>
+
+    <form id="apply-form" class="space-y-6">
+      <div>
+        <p class="text-xs tracking-widest uppercase text-amber-400 mb-5">Personal Information</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Full Name *</label>
+            <input type="text" name="name" required class="w-full bg-midnight-900 border border-slate-700 text-white placeholder-slate-600 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Email *</label>
+            <input type="email" name="email" required class="w-full bg-midnight-900 border border-slate-700 text-white placeholder-slate-600 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Phone *</label>
+            <input type="tel" name="phone" required class="w-full bg-midnight-900 border border-slate-700 text-white placeholder-slate-600 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Employer / Company</label>
+            <input type="text" name="employer" class="w-full bg-midnight-900 border border-slate-700 text-white placeholder-slate-600 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors" />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-xs tracking-widest uppercase text-amber-400 mb-5">Financial Qualification</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Annual Gross Income</label>
+            <select name="income" class="w-full bg-midnight-900 border border-slate-700 text-slate-400 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors">
+              <option value="">Select range…</option>
+              <option>$500K – $1M</option>
+              <option>$1M – $2M</option>
+              <option>$2M – $5M</option>
+              <option>$5M+</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Credit Score (approx.)</label>
+            <select name="creditScore" class="w-full bg-midnight-900 border border-slate-700 text-slate-400 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors">
+              <option value="">Select range…</option>
+              <option>750+</option>
+              <option>700 – 749</option>
+              <option>650 – 699</option>
+              <option>Below 650</option>
+              <option>Unknown</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-xs tracking-widest uppercase text-amber-400 mb-5">Lease Details</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Desired Move-In Date</label>
+            <input type="date" name="moveIn" class="w-full bg-midnight-900 border border-slate-700 text-white px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Lease Length</label>
+            <select name="leaseLength" class="w-full bg-midnight-900 border border-slate-700 text-slate-400 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors">
+              <option value="">Select…</option>
+              <option>30–60 Days (FIFA Window)</option>
+              <option>3 Months</option>
+              <option>6 Months</option>
+              <option>12 Months</option>
+              <option>12+ Months</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Number of Occupants</label>
+            <select name="occupants" class="w-full bg-midnight-900 border border-slate-700 text-slate-400 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors">
+              <option value="">Select…</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5+</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Pets?</label>
+            <select name="pets" class="w-full bg-midnight-900 border border-slate-700 text-slate-400 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors">
+              <option value="">Select…</option>
+              <option>No pets</option>
+              <option>1 small dog/cat</option>
+              <option>Multiple / large pets</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs tracking-widest uppercase text-slate-500 mb-2">Additional Notes</label>
+        <textarea name="message" rows="4" placeholder="Intended use, special requests, questions…" class="w-full bg-midnight-900 border border-slate-700 text-white placeholder-slate-600 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors resize-none"></textarea>
+      </div>
+
+      <p class="text-slate-600 text-xs">This is an initial inquiry form. Formal application (CAR rental application, credit report, proof of income) will be requested if you qualify. All information kept strictly confidential.</p>
+      <p id="apply-error" class="hidden text-red-400 text-sm"></p>
+      <button type="submit" id="apply-btn" class="w-full bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase py-4 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">
+        Submit Pre-Qualification
+      </button>
+    </form>
+  </section>
+
+  <script>
+    document.getElementById('apply-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const btn = document.getElementById('apply-btn');
+      const errEl = document.getElementById('apply-error');
+      btn.textContent = 'Submitting…';
+      btn.disabled = true;
+      errEl.classList.add('hidden');
+      const data = Object.fromEntries(new FormData(form).entries());
+      data.source = 'pre-qual-form';
+      try {
+        const res = await fetch('/api/apply', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        if (res.ok) {
+          form.classList.add('hidden');
+          document.getElementById('apply-success').classList.remove('hidden');
+        } else {
+          throw new Error();
+        }
+      } catch {
+        errEl.textContent = 'Something went wrong. Please call 424-272-5935.';
+        errEl.classList.remove('hidden');
+        btn.textContent = 'Submit Pre-Qualification';
+        btn.disabled = false;
+      }
+    });
+  </script>
+</Layout>

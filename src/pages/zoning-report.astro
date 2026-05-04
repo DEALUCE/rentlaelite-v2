@@ -397,7 +397,7 @@ const description = "Enter any Los Angeles address and get a forensic report: AP
 </main>
 
 <script>
-  const API_URL = "http://localhost:8000/api/zoning";
+  const API_URL = "/api/zoning";
 
   function fillAddress(addr) {
     document.getElementById('address-input').value = addr;
@@ -613,7 +613,7 @@ const description = "Enter any Los Angeles address and get a forensic report: AP
       }
     } catch (err) {
       document.getElementById('error-box').textContent =
-        'Could not reach the API. Make sure the Python server is running: python agents/zoning_api.py';
+        'Could not reach the server. Please try again in a moment.';
       document.getElementById('error-box').style.display = 'block';
     } finally {
       document.getElementById('loading').style.display  = 'none';

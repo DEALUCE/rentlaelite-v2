@@ -1,0 +1,632 @@
+---
+import SEO from '../components/SEO.astro';
+const title = "LA Property Zoning & Development Report | Sevennova";
+const description = "Enter any Los Angeles address and get a forensic report: APN, zoning, assessed value, TOC tier, development potential, and grant eligibility.";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <SEO title={title} description={description} />
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --border: #1e1e2e;
+      --accent: #c8a96e;
+      --accent2: #7c6fff;
+      --text: #e8e8f0;
+      --muted: #7a7a9a;
+      --green: #4caf7d;
+      --red: #e05c5c;
+      --yellow: #e8c54a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── Nav ── */
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .logo span { color: var(--accent); }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    nav a:hover { color: var(--text); }
+
+    /* ── Hero / Search ── */
+    .hero {
+      max-width: 760px;
+      margin: 80px auto 0;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(200,169,110,0.12);
+      border: 1px solid rgba(200,169,110,0.3);
+      color: var(--accent);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    h1 span { color: var(--accent); }
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 44px;
+    }
+
+    /* ── Search Bar ── */
+    .search-wrap {
+      display: flex;
+      gap: 0;
+      max-width: 600px;
+      margin: 0 auto 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .search-wrap:focus-within {
+      border-color: var(--accent);
+    }
+    #address-input {
+      flex: 1;
+      background: var(--surface);
+      border: none;
+      outline: none;
+      padding: 16px 20px;
+      font-size: 0.97rem;
+      color: var(--text);
+      font-family: inherit;
+    }
+    #address-input::placeholder { color: var(--muted); }
+    #search-btn {
+      background: var(--accent);
+      color: #0a0a0f;
+      border: none;
+      padding: 16px 28px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+    #search-btn:hover { background: #d4b87e; }
+    #search-btn:disabled { background: #555; cursor: default; }
+
+    .examples {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 60px;
+    }
+    .examples span {
+      cursor: pointer;
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .examples span:hover { color: #d4b87e; }
+
+    /* ── Loading ── */
+    #loading {
+      display: none;
+      text-align: center;
+      padding: 60px 24px;
+      color: var(--muted);
+    }
+    .spinner {
+      width: 36px; height: 36px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Error ── */
+    #error-box {
+      display: none;
+      max-width: 600px;
+      margin: 20px auto;
+      background: rgba(224,92,92,0.1);
+      border: 1px solid rgba(224,92,92,0.3);
+      color: #e05c5c;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+
+    /* ── Report ── */
+    #report {
+      display: none;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    .report-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+    .report-address {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .report-meta {
+      color: var(--muted);
+      font-size: 0.83rem;
+    }
+
+    /* ── Grid ── */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+    }
+    .card-full { grid-column: 1 / -1; }
+
+    .card-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-label .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ── Data rows ── */
+    .data-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 0.9rem;
+    }
+    .data-row:last-child { border-bottom: none; }
+    .data-key { color: var(--muted); }
+    .data-val { color: var(--text); font-weight: 500; text-align: right; max-width: 55%; }
+
+    /* ── Status pills ── */
+    .pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .pill-green { background: rgba(76,175,125,0.15); color: var(--green); }
+    .pill-red   { background: rgba(224,92,92,0.15);  color: var(--red); }
+    .pill-yellow { background: rgba(232,197,74,0.15); color: var(--yellow); }
+    .pill-blue  { background: rgba(124,111,255,0.15); color: var(--accent2); }
+
+    /* ── Big stat ── */
+    .big-stat {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin: 8px 0 4px;
+    }
+    .big-label { color: var(--muted); font-size: 0.82rem; }
+
+    /* ── Dev potential ── */
+    .units-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 500px) { .units-row { grid-template-columns: 1fr 1fr; } }
+    .unit-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      text-align: center;
+    }
+    .unit-box .num { font-size: 1.8rem; font-weight: 700; color: var(--text); }
+    .unit-box .lbl { font-size: 0.74rem; color: var(--muted); margin-top: 2px; }
+
+    /* ── Grant cards ── */
+    .grant-item {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 10px;
+      transition: border-color 0.2s;
+    }
+    .grant-item:hover { border-color: rgba(200,169,110,0.3); }
+    .grant-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .grant-name {
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+    .grant-award {
+      color: var(--accent);
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+    .grant-agency { color: var(--muted); font-size: 0.8rem; margin-bottom: 8px; }
+    .grant-desc { color: var(--muted); font-size: 0.83rem; line-height: 1.55; }
+    .grant-reasons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .reason-tag {
+      background: rgba(76,175,125,0.1);
+      border: 1px solid rgba(76,175,125,0.2);
+      color: var(--green);
+      font-size: 0.75rem;
+      padding: 3px 9px;
+      border-radius: 20px;
+    }
+    .grant-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--accent2);
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+    .grant-link:hover { text-decoration: underline; }
+
+    /* ── Sources ── */
+    .sources {
+      margin-top: 32px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .sources strong { color: var(--text); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/luxury-rental" class="logo">SEVEN<span>NOVA</span></a>
+  <div style="display:flex;gap:28px;align-items:center;">
+    <a href="/luxury-rental">Luxury Rental</a>
+    <a href="/luxury-rental/services">Services</a>
+    <a href="/luxury-rental/contact">Contact</a>
+  </div>
+</nav>
+
+<main>
+  <div class="hero">
+    <div class="badge">LA Property Intelligence</div>
+    <h1>Forensic <span>Zoning</span> Report</h1>
+    <p class="subtitle">
+      Enter any Los Angeles address. Get APN, zoning code, assessed value,
+      TOC tier, development potential, and every grant you qualify for.
+    </p>
+
+    <div class="search-wrap">
+      <input
+        id="address-input"
+        type="text"
+        placeholder="9432 Oakmore Rd, Los Angeles, CA 90035"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button id="search-btn">Run Report</button>
+    </div>
+
+    <div class="examples">
+      Try: <span onclick="fillAddress('904 S Ardmore Ave, Los Angeles, CA 90006')">904 S Ardmore Ave</span>
+      &nbsp;·&nbsp;
+      <span onclick="fillAddress('1234 Wilshire Blvd, Los Angeles, CA 90025')">1234 Wilshire Blvd</span>
+      &nbsp;·&nbsp;
+      <span onclick="fillAddress('6500 Sunset Blvd, Los Angeles, CA 90028')">6500 Sunset Blvd</span>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  <div id="loading">
+    <div class="spinner"></div>
+    <p>Pulling APN, zoning, and grant data…</p>
+  </div>
+
+  <!-- Error -->
+  <div id="error-box"></div>
+
+  <!-- Report output -->
+  <div id="report"></div>
+</main>
+
+<script>
+  const API_URL = "http://localhost:8000/api/zoning";
+
+  function fillAddress(addr) {
+    document.getElementById('address-input').value = addr;
+  }
+
+  function fmt(n) {
+    if (!n && n !== 0) return '—';
+    if (typeof n === 'number') return n.toLocaleString();
+    return n;
+  }
+
+  function pill(val, trueLabel, falseLabel, trueColor='green', falseColor='red') {
+    if (val) return `<span class="pill pill-${trueColor}">${trueLabel}</span>`;
+    return `<span class="pill pill-${falseColor}">${falseLabel}</span>`;
+  }
+
+  function row(key, val) {
+    return `<div class="data-row"><span class="data-key">${key}</span><span class="data-val">${val ?? '—'}</span></div>`;
+  }
+
+  function renderReport(d) {
+    const p   = d.parcel || {};
+    const z   = d.zoning || {};
+    const ov  = d.overlays || {};
+    const val = d.valuation || {};
+    const dev = d.development_potential || {};
+    const gr  = d.grants || {};
+
+    let html = `
+      <div class="report-header">
+        <div class="report-address">${d.address || d.full_address}</div>
+        <div class="report-meta">APN ${p.apn || '—'} &nbsp;·&nbsp; Generated ${d.generated}</div>
+      </div>
+
+      <div class="grid-2">
+
+        <!-- Parcel -->
+        <div class="card">
+          <div class="card-label"><span class="dot"></span>Parcel Data</div>
+          ${row('APN', `<code style="font-size:0.85em;color:var(--accent)">${p.apn || '—'}</code>`)}
+          ${row('Use Type', p.use_type || '—')}
+          ${row('Use Code', p.use_code || '—')}
+          ${row('Status', p.status ? `<span class="pill pill-green">${p.status}</span>` : '—')}
+          ${row('Year Built', p.year_built || '—')}
+          ${row('Effective Year', p.effective_year || '—')}
+          ${row('Building Sqft', p.sqft_building ? fmt(p.sqft_building) + ' sq ft' : '—')}
+          ${row('Lot Size', p.sqft_lot ? fmt(p.sqft_lot) + ' sq ft' : '—')}
+          ${row('Lot Acres', p.lot_acres || '—')}
+          ${row('Dimensions', p.lot_dimensions || '—')}
+          ${row('Beds / Baths', p.bedrooms && p.bathrooms ? `${p.bedrooms} / ${p.bathrooms}` : '—')}
+          ${row('Units', p.num_units || '1')}
+          ${row('Sewer', pill(p.sewer, 'Connected', 'Check'))}
+          ${row('Corner Lot', pill(p.lot_corner, 'Yes', 'No', 'green', 'yellow'))}
+          ${row('Exemption', p.exemption || 'None')}
+          ${row('Cluster', p.cluster || '—')}
+          ${row('Legal', `<span style="font-size:0.8em;color:var(--muted)">${p.legal_desc || '—'}</span>`)}
+        </div>
+
+        <!-- Zoning + Overlays -->
+        <div class="card">
+          <div class="card-label"><span class="dot"></span>Zoning & Overlays</div>
+          ${row('Zone Code', `<code style="font-size:0.9em;color:var(--accent)">${z.code || '—'}</code>`)}
+          ${row('Description', z.description || '—')}
+          ${row('Multifamily', pill(z.multifamily_eligible, 'Eligible', 'Not Eligible'))}
+          ${row('Data Source', `<span style="font-size:0.8em;color:var(--muted)">${z.source || '—'}</span>`)}
+          <div style="margin: 16px 0 8px; border-top: 1px solid var(--border); padding-top: 14px; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted);">Overlays</div>
+          ${row('TOC Tier', ov.toc_tier > 0 ? `<span class="pill pill-green">Tier ${ov.toc_tier}</span>` : '<span class="pill pill-yellow">None</span>')}
+          ${ov.toc_eligible ? row('Nearest Metro', `${ov.nearest_metro_line} — ${ov.distance_to_metro}`) : ''}
+          ${row('AB 2097 Zero Parking', pill(ov.ab2097_zero_parking, 'Exempt', 'Not Exempt'))}
+          ${row('Opportunity Zone', pill(ov.opportunity_zone, 'Yes', 'No', 'green', 'yellow'))}
+          ${row('Low Income Area', pill(ov.low_income_area, 'Yes — LMI Tract', 'No', 'green', 'yellow'))}
+        </div>
+
+        <!-- Valuation -->
+        <div class="card">
+          <div class="card-label"><span class="dot"></span>Assessed Value</div>
+          <div class="big-stat">$${Math.round((val.total_assessed||0)/1000)}K</div>
+          <div class="big-label">Total assessed (Prop 13)</div>
+          <div style="margin-top:20px">
+            ${row('Land Value', val.land_value ? '$' + fmt(val.land_value) : '—')}
+            ${row('Improvement Value', val.improvement_value ? '$' + fmt(val.improvement_value) : '—')}
+            ${row('Tax Status', val.tax_status ? `<span class="pill pill-${val.tax_status==='CURRENT'?'green':'red'}">${val.tax_status}</span>` : '—')}
+            ${row('Roll Year', val.roll_year || '—')}
+          </div>
+          <div style="margin-top:12px;font-size:0.78rem;color:var(--muted);">${val.note || ''}</div>
+        </div>
+
+        <!-- Development Potential -->
+        <div class="card">
+          <div class="card-label"><span class="dot"></span>Development Potential</div>
+          <div class="units-row">
+            <div class="unit-box">
+              <div class="num">${dev.base_units_by_right ?? '—'}</div>
+              <div class="lbl">By Right</div>
+            </div>
+            <div class="unit-box">
+              <div class="num" style="color:var(--accent)">${dev.toc_units || dev.base_units_by_right || '—'}</div>
+              <div class="lbl">TOC Bonus</div>
+            </div>
+            <div class="unit-box">
+              <div class="num" style="color:var(--accent2)">${dev.max_potential_units ?? '—'}</div>
+              <div class="lbl">Max (MIIP)</div>
+            </div>
+          </div>
+          <div style="margin-top:18px">
+            ${row('TOC Density Bonus', dev.toc_density_bonus || 'N/A')}
+            ${row('MIIP Available', pill(dev.miip_available, 'Yes — 120% Bonus', 'No', 'green', 'yellow'))}
+            ${row('FAR Boost', dev.far_boost_available || 'N/A')}
+            ${row('AB 2097 Zero Parking', pill(dev.ab2097_zero_parking, 'Yes', 'No', 'green', 'yellow'))}
+            ${row('Approval Path', dev.approval_path || '—')}
+          </div>
+        </div>
+
+        <!-- Grants -->
+        <div class="card card-full">
+          <div class="card-label" style="margin-bottom:6px"><span class="dot"></span>Grant Eligibility</div>
+          <div style="display:flex;gap:16px;margin-bottom:20px;flex-wrap:wrap">
+            <div style="text-align:center;padding:12px 20px;background:rgba(76,175,125,0.08);border:1px solid rgba(76,175,125,0.2);border-radius:10px">
+              <div style="font-size:2rem;font-weight:700;color:var(--green)">${gr.summary?.total_qualified ?? 0}</div>
+              <div style="font-size:0.78rem;color:var(--muted)">Fully Qualified</div>
+            </div>
+            <div style="text-align:center;padding:12px 20px;background:rgba(232,197,74,0.08);border:1px solid rgba(232,197,74,0.2);border-radius:10px">
+              <div style="font-size:2rem;font-weight:700;color:var(--yellow)">${gr.summary?.total_potential ?? 0}</div>
+              <div style="font-size:0.78rem;color:var(--muted)">Potential</div>
+            </div>
+            <div style="text-align:center;padding:12px 20px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px">
+              <div style="font-size:2rem;font-weight:700;color:var(--muted)">${gr.summary?.total_ineligible ?? 0}</div>
+              <div style="font-size:0.78rem;color:var(--muted)">Not Eligible</div>
+            </div>
+          </div>
+
+          ${gr.qualified?.length > 0 ? `
+            <div style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--green);margin-bottom:12px">
+              Fully Qualified (${gr.qualified.length})
+            </div>
+            ${gr.qualified.map(g => `
+              <div class="grant-item">
+                <div class="grant-top">
+                  <div>
+                    <div class="grant-name">${g.name}</div>
+                    <div class="grant-agency">${g.agency} &nbsp;·&nbsp; <span class="pill pill-${g.level==='federal'?'blue':g.level==='state'?'green':'yellow'}">${g.level}</span></div>
+                  </div>
+                  <div class="grant-award">${g.max_award}</div>
+                </div>
+                <div class="grant-desc">${g.description}</div>
+                <div class="grant-reasons">
+                  ${g.match_reasons?.map(r => `<span class="reason-tag">✓ ${r}</span>`).join('') || ''}
+                </div>
+                <div style="margin-top:8px;font-size:0.8rem;color:var(--muted)">⏱ ${g.deadline}</div>
+                <a href="${g.url}" target="_blank" rel="noopener" class="grant-link">Learn more →</a>
+              </div>
+            `).join('')}
+          ` : ''}
+
+          ${gr.potential?.length > 0 ? `
+            <div style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--yellow);margin: 24px 0 12px">
+              Worth Exploring (${gr.potential.length})
+            </div>
+            ${gr.potential.map(g => `
+              <div class="grant-item" style="opacity:0.75">
+                <div class="grant-top">
+                  <div class="grant-name">${g.name}</div>
+                  <div class="grant-award">${g.max_award}</div>
+                </div>
+                <div class="grant-agency">${g.agency}</div>
+                <a href="${g.url}" target="_blank" rel="noopener" class="grant-link">Learn more →</a>
+              </div>
+            `).join('')}
+          ` : ''}
+        </div>
+
+      </div>
+
+      <div class="sources">
+        <strong>Data Sources:</strong><br>
+        ${d.data_sources?.join(' &nbsp;·&nbsp; ') || ''}
+        <br><br>
+        <strong>Disclaimer:</strong> This report is for informational purposes only. Verify zoning with
+        <a href="https://zimas.lacity.org" target="_blank" style="color:var(--accent2)">ZIMAS</a>,
+        assessed values with <a href="https://portal.assessor.lacounty.gov" target="_blank" style="color:var(--accent2)">LA County Assessor</a>,
+        and grant eligibility with the issuing agency before making investment decisions.
+      </div>
+    `;
+
+    document.getElementById('report').innerHTML = html;
+    document.getElementById('report').style.display = 'block';
+  }
+
+  async function runSearch() {
+    const address = document.getElementById('address-input').value.trim();
+    if (!address) return;
+
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('report').style.display  = 'none';
+    document.getElementById('error-box').style.display = 'none';
+    document.getElementById('search-btn').disabled   = true;
+    document.getElementById('search-btn').textContent = 'Searching…';
+
+    try {
+      const res  = await fetch(API_URL, {
+        method:  'POST',
+        headers: {'Content-Type': 'application/json'},
+        body:    JSON.stringify({address}),
+      });
+      const data = await res.json();
+
+      if (data.error) {
+        document.getElementById('error-box').textContent = data.error;
+        document.getElementById('error-box').style.display = 'block';
+      } else {
+        renderReport(data);
+        document.getElementById('report').scrollIntoView({behavior: 'smooth', block: 'start'});
+      }
+    } catch (err) {
+      document.getElementById('error-box').textContent =
+        'Could not reach the API. Make sure the Python server is running: python agents/zoning_api.py';
+      document.getElementById('error-box').style.display = 'block';
+    } finally {
+      document.getElementById('loading').style.display  = 'none';
+      document.getElementById('search-btn').disabled    = false;
+      document.getElementById('search-btn').textContent = 'Run Report';
+    }
+  }
+
+  document.getElementById('search-btn').addEventListener('click', runSearch);
+  document.getElementById('address-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') runSearch();
+  });
+</script>
+
+</body>
+</html>

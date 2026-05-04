@@ -15,7 +15,7 @@ const {
   type = 'website',
 } = Astro.props;
 
-const siteUrl = 'https://rentlaelite-v2.theissakgroup.workers.dev';
+const siteUrl = 'https://sevennova.ai/luxury-rental';
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
 const ogImage = image.startsWith('http') ? image : new URL(image, siteUrl).href;
 
@@ -60,5 +60,5 @@ const keywords = [
 <!-- Geo -->
 <meta name="geo.region" content="US-CA" />
 <meta name="geo.placename" content="Beverly Hills, Los Angeles, CA" />
-<meta name="geo.position" content="34.0503;-118.3847" />
-<meta name="ICBM" content="34.0503, -118.3847" />
+<meta name="geo.position" content="34.05303;-118.38756" />
+<meta name="ICBM" content="34.05303, -118.38756" />

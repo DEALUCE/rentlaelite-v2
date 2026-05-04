@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://rentlaelite-v2.theissakgroup.workers.dev',
+  site: 'https://sevennova.ai',
   integrations: [tailwind()],
   output: 'static',
 });

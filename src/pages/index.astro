@@ -1,4 +1,4 @@
-﻿---
+---
 import PropertySchema from '../components/PropertySchema.astro';
 import Layout from '../layouts/Layout.astro';
 import property from '../data/property.json';
@@ -45,7 +45,7 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "RealEstateListing",
-    "name": "9432 Oakmore Rd â€” Luxury 5BR Fully Furnished Rental | Beverlywood Los Angeles",
+    "name": "9432 Oakmore Rd — Luxury 5BR Fully Furnished Rental | Beverlywood Los Angeles",
     "description": property.description,
     "url": "https://sevennova.ai/luxury-rental",
     "image": [
@@ -93,14 +93,14 @@ const jsonLd = [
     "name": property.video.title,
     "description": property.video.description,
     "thumbnailUrl": property.video.thumbnailUrl,
-    "uploadDate": "2026-05-25T00:00:00-07:00",
+    "uploadDate": "2025-01-22T08:00:00-08:00",
     "contentUrl": property.video.url,
     "embedUrl": property.video.embedUrl
   },
   {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
-    "name": "9432 Oakmore Rd â€” Beverly Hills Luxury Rental",
+    "name": "9432 Oakmore Rd — Beverly Hills Luxury Rental",
     "description": property.description,
     "url": "https://sevennova.ai/luxury-rental",
     "telephone": property.agent.phone,
@@ -132,7 +132,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "The Issak Group",
-    "description": "Beverly Hills luxury real estate â€” executive rentals, AI-powered listing sites, and SEO for luxury agents.",
+    "description": "Beverly Hills luxury real estate — executive rentals, AI-powered listing sites, and SEO for luxury agents.",
     "url": "https://sevennova.ai/luxury-rental",
     "telephone": property.agent.phone,
     "email": property.agent.email,
@@ -185,8 +185,8 @@ const jsonLd = [
 
 <PropertySchema />
 <Layout
-  title="Beverly Hills Luxury Rental | 9432 Oakmore Rd â€” FIFA World Cup 2026 Housing $34,999/mo"
-  description="Beverly Hills luxury rental â€” fully furnished gated 5BR compound, 15 min from SoFi Stadium. FIFA World Cup 2026 housing window: $34,999/mo. Heated pool, detached guest house, Beverly Hills adjacent. Call 424-272-5935."
+  title="Beverly Hills Luxury Rental | 9432 Oakmore Rd — FIFA World Cup 2026 Housing $34,999/mo"
+  description="Beverly Hills luxury rental — fully furnished gated 5BR compound, 15 min from SoFi Stadium. FIFA World Cup 2026 housing window: $34,999/mo. Heated pool, detached guest house, Beverly Hills adjacent. Call 424-272-5935."
   jsonLd={jsonLd}
 >
 
@@ -195,7 +195,7 @@ const jsonLd = [
     <div class="relative h-20 md:h-28">
       <img
         src="/images/fifa-2026-la.jpg"
-        alt="FIFA World Cup 2026 Los Angeles â€” luxury housing available"
+        alt="FIFA World Cup 2026 Los Angeles — luxury housing available"
         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-midnight-950/90 via-midnight-950/60 to-midnight-950/40"></div>
@@ -205,7 +205,7 @@ const jsonLd = [
             <span class="w-2 h-2 bg-amber-400 rounded-full animate-pulse shrink-0"></span>
             <div>
               <p class="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase">Summer 2026 Â· FIFA World Cup Window</p>
-              <p class="text-white text-xs md:text-sm tracking-wide mt-0.5 hidden sm:block">Limited summer availability â€” secure your dates Â· Extended stay rates available</p>
+              <p class="text-white text-xs md:text-sm tracking-wide mt-0.5 hidden sm:block">Limited summer availability — secure your dates Â· Extended stay rates available</p>
             </div>
           </div>
           <div class="flex items-center gap-3 shrink-0">
@@ -223,7 +223,7 @@ const jsonLd = [
   <div class="bg-amber-400 text-midnight-950 py-2.5 px-4 text-center z-50 relative">
     <p class="text-xs font-semibold tracking-[0.3em] uppercase flex items-center justify-center gap-3">
       <span class="w-1.5 h-1.5 bg-midnight-950 rounded-full animate-pulse"></span>
-      Summer 2026 Â· $34,999/mo Â· FIFA World Cup Window â€” Extended Stay Rates Available
+      Summer 2026 Â· $34,999/mo Â· FIFA World Cup Window — Extended Stay Rates Available
       <span class="w-1.5 h-1.5 bg-midnight-950 rounded-full animate-pulse"></span>
     </p>
   </div>
@@ -235,7 +235,7 @@ const jsonLd = [
     <div class="absolute inset-0 z-0">
       <img
         src={property.images.hero}
-        alt="9432 Oakmore Rd aerial â€” gated luxury compound Beverlywood Los Angeles 90035"
+        alt="9432 Oakmore Rd aerial — gated luxury compound Beverlywood Los Angeles 90035"
         class="w-full h-full object-cover animate-ken-burns origin-center"
         loading="eager"
         fetchpriority="high"
@@ -263,7 +263,7 @@ const jsonLd = [
           <em class="text-gradient not-italic">Compound</em>
         </h1>
         <p class="text-slate-300 text-lg leading-relaxed max-w-md mb-8">
-          A gated dual-structure estate in prime Beverlywood â€” 5 bedrooms, heated pool,
+          A gated dual-structure estate in prime Beverlywood — 5 bedrooms, heated pool,
           steam sauna, and a fully independent guest house. Curated luxury furnishings included.
         </p>
         <div class="flex flex-wrap gap-6 mb-10 items-end">
@@ -423,11 +423,11 @@ const jsonLd = [
   <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• DIVERSE PHOTO STRIP -->
   <section class="grid grid-cols-5 gap-px bg-midnight-950">
     {[
-      { src: property.images.aerial[0], alt: '9432 Oakmore Rd aerial drone view â€” gated compound Beverlywood' },
-      { src: property.images.outdoor[0], alt: 'Heated pool & spa â€” 9432 Oakmore Rd luxury rental LA' },
-      { src: property.images.kitchen[0], alt: "Chef's kitchen with dual ovens â€” 9432 Oakmore Rd" },
-      { src: property.images.primarySuite[0], alt: 'Primary suite with steam sauna â€” 9432 Oakmore Rd' },
-      { src: property.images.guestHouse[0], alt: 'Private guest house ADU â€” 9432 Oakmore Rd Beverlywood' },
+      { src: property.images.aerial[0], alt: '9432 Oakmore Rd aerial drone view — gated compound Beverlywood' },
+      { src: property.images.outdoor[0], alt: 'Heated pool & spa — 9432 Oakmore Rd luxury rental LA' },
+      { src: property.images.kitchen[0], alt: "Chef's kitchen with dual ovens — 9432 Oakmore Rd" },
+      { src: property.images.primarySuite[0], alt: 'Primary suite with steam sauna — 9432 Oakmore Rd' },
+      { src: property.images.guestHouse[0], alt: 'Private guest house ADU — 9432 Oakmore Rd Beverlywood' },
     ].map(({ src, alt }) => (
       <a href="/gallery" class="overflow-hidden block aspect-video">
         <img
@@ -453,9 +453,9 @@ const jsonLd = [
         </h2>
         <p class="text-slate-300 leading-relaxed mb-6 text-base">{property.description}</p>
         <p class="text-slate-400 leading-relaxed text-sm mb-6">
-          Delivered fully furnished with curated luxury furnishings â€” every room staged,
+          Delivered fully furnished with curated luxury furnishings — every room staged,
           every detail considered. Arrive with nothing but your schedule.
-          Positioned on a quiet tree-lined street in the coveted 90035 corridor â€”
+          Positioned on a quiet tree-lined street in the coveted 90035 corridor —
           minutes from Century City, Beverly Hills, Fox Studios, and Cedars-Sinai.
         </p>
         <div class="grid grid-cols-2 gap-3 mb-10 text-xs">
@@ -525,12 +525,12 @@ const jsonLd = [
             ['Security Deposit', '$34,999', false],
             ['Minimum Lease Term', '30 Days', false],
             ['Preferred Lease', '3â€“12 Months', false],
-            ['Furnished', 'Fully Furnished â€” curated luxury', false],
+            ['Furnished', 'Fully Furnished — curated luxury', false],
             ['Pets', 'Considered with conditions', false],
             ['Parking', 'Gated driveway + EV charging station', false],
             ['Utilities', 'Tenant responsible', false],
             ['Pool Maintenance', 'Tenant responsible', false],
-            ['Guest House', 'Included â€” not separately sublet', false],
+            ['Guest House', 'Included — not separately sublet', false],
           ].map(([label, value, highlight]) => (
             <div class={`px-8 py-5 flex justify-between items-center ${highlight ? 'bg-amber-400/5' : ''}`}>
               <span class="text-slate-400 text-sm">{label}</span>
@@ -639,7 +639,7 @@ const jsonLd = [
 
             <!-- Key stats -->
             <div class="space-y-2 text-xs text-slate-500">
-              <p class="flex justify-between"><span>Zip Code</span><span class="text-white">90035 â€” Prime West LA</span></p>
+              <p class="flex justify-between"><span>Zip Code</span><span class="text-white">90035 — Prime West LA</span></p>
               <p class="flex justify-between"><span>Neighborhood</span><span class="text-white">Beverlywood</span></p>
               <p class="flex justify-between"><span>County</span><span class="text-white">Los Angeles</span></p>
               <p class="flex justify-between"><span>Lot Size</span><span class="text-white">7,283 sq ft</span></p>
@@ -660,7 +660,7 @@ const jsonLd = [
       <a href="/gallery" class="overflow-hidden block aspect-square">
         <img
           src={src}
-          alt={`9432 Oakmore Rd interior photo ${i+1} â€” luxury rental Los Angeles`}
+          alt={`9432 Oakmore Rd interior photo ${i+1} — luxury rental Los Angeles`}
           class="w-full h-full object-cover opacity-70 hover:opacity-100 hover:scale-110 transition-all duration-700"
           loading="lazy"
         />
@@ -669,7 +669,7 @@ const jsonLd = [
   </section>
   <div class="bg-midnight-950 text-center py-8 border-t border-white/5">
     <a href="/gallery" class="text-amber-400 text-xs tracking-[0.3em] uppercase hover:text-amber-300 transition-colors">
-      View Full Gallery â€” 50+ Photos â†’
+      View Full Gallery — 50+ Photos â†’
     </a>
   </div>
 

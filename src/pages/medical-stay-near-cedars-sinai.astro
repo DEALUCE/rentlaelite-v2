@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": "Private Medical-Stay Residence Near Cedars-Sinai — 9432 Oakmore Rd",
+    "description": "A private, gated residence for families during extended treatment at Cedars-Sinai Medical Center — 15 minutes door-to-door. Fully furnished 5BR compound with detached guest house for visiting family or private nursing staff, kosher kitchen, and 30-day to 12-month terms.",
+    "url": "https://sevennova.ai/medical-stay-near-cedars-sinai",
+    "price": "34999",
+    "priceCurrency": "USD",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9432 & 9430 Oakmore Rd",
+      "addressLocality": "Los Angeles",
+      "addressRegion": "CA",
+      "postalCode": "90035",
+      "addressCountry": "US"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How far is the residence from Cedars-Sinai Medical Center?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "9432 Oakmore Rd is approximately 15 minutes door-to-door from Cedars-Sinai Medical Center — close enough for daily treatment schedules and family visits, while removed enough to offer a genuinely private, restorative environment in residential Beverlywood."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the residence accommodate private nursing or care staff?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The detached 400 sq ft guest house — with its own private entrance, full bath, kitchenette, and climate control — is suited to live-in nursing staff, a care coordinator, or visiting family members who need independent quarters. The main residence offers five bedrooms across 4,092 sq ft."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the home suitable for observant Jewish families during a medical stay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Distinctly so. The kitchen is configured for kosher use with dual sinks and dual ovens, the property sits inside the Los Angeles Community Eruv, and Young Israel of Century City (0.4 mi) and Beth Jacob Congregation (0.7 mi) are within walking distance. Families maintaining observance through a treatment period will find the infrastructure already in place."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What lease terms are available for medical stays?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Terms begin at 30 days and extend month-to-month through 12 months or longer, accommodating treatment plans that evolve. The residence is offered at $34,999 per month, fully furnished and move-in ready — beds dressed, kitchen equipped, utilities active. Third-party and family-office billing arrangements are accommodated."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Private Medical-Stay Residence Near Cedars-Sinai | Gated Beverlywood Compound — 15 Min"
+  description="A private gated residence for families during extended treatment at Cedars-Sinai — 15 minutes door-to-door. 5BR furnished compound, guest house for care staff, kosher kitchen, 30-day to 12-month terms. Daniel Issak, DRE# 02037760."
+  canonical="https://sevennova.ai/medical-stay-near-cedars-sinai"
+  jsonLd={jsonLd}
+>
+  <section class="relative py-28 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">Private Medical Stay · 15 Minutes to Cedars-Sinai</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        A Private Residence<br /><em class="text-gradient">Near Cedars-Sinai</em>
+      </h1>
+      <p class="speakable text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+        When treatment brings a family to Los Angeles, where they stay shapes how they endure it. 9432 Oakmore Rd is a gated, fully furnished residence 15 minutes from Cedars-Sinai Medical Center — five bedrooms, a detached guest house for care staff or visiting family, a kosher-configured kitchen, and the quiet of residential Beverlywood. Terms from 30 days through extended treatment timelines.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+14242725935" class="px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Speak With the Broker — 424-272-5935</a>
+        <a href="/luxury-rental" class="px-8 py-4 border border-amber-400 text-amber-400 font-bold tracking-widest uppercase text-sm hover:bg-amber-400 hover:text-midnight-950 transition-colors">The Residence</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Built for the Realities of a Treatment Period</h2>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <p>Extended treatment reorganizes a family's life around appointment schedules, recovery windows, and the need for normalcy between them. A hotel room cannot hold that life. This residence can: a full chef's kitchen for dietary requirements, in-home laundry, five private bedrooms so visiting family rotate without friction, a heated pool and garden for recovery days, and gated entry with Ring camera coverage so the household controls who arrives.</p>
+        <p>The detached guest house matters most. Its private entrance, kitchenette, full bath, and separate climate zone give a live-in nurse, care coordinator, or arriving relative genuine independence — present when needed, private when not. The guest house is separately metered and suits long assignments.</p>
+        <p>Every detail is handled before arrival: beds dressed, kitchen equipped, utilities and gigabit internet active. A family lands at LAX — 20 minutes away — and is home the same hour.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">The Geography of Care</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        {[
+          ['15 min', 'Cedars-Sinai'],
+          ['15 min', 'Century City Medical'],
+          ['20 min', 'UCLA Health'],
+          ['20 min', 'LAX'],
+        ].map(([val, label]) => (
+          <div class="bg-midnight-900 p-5 border border-amber-400/10">
+            <p class="font-display text-2xl text-amber-400">{val}</p>
+            <p class="text-xs text-slate-500 tracking-widest uppercase mt-1">{label}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-slate-400 text-sm mt-8 leading-relaxed">Beverlywood sits in the corridor between the Westside's major medical centers. Daily treatment at Cedars-Sinai is a 15-minute drive without freeway dependence — a meaningful difference across a 90-day protocol.</p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">For Observant Families</h2>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <p>Cedars-Sinai draws observant Jewish patients from across the country and abroad. Most temporary housing asks those families to improvise. This residence does not: the kitchen is configured for kashrut with dual sinks and dual ovens, the property sits inside the Los Angeles Community Eruv, and Young Israel of Century City is an eight-minute walk. The Pico-Robertson kosher corridor — markets, restaurants, Shabbat catering — is five minutes by car.</p>
+        <p>For a family sustaining observance through a difficult season, the infrastructure is simply already here. See the <a href="/kosher-kitchen-luxury-rental-los-angeles" class="text-amber-400 hover:underline">kosher residence guide</a> for the full detail.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl text-white mb-6">A Discreet Conversation</h2>
+      <p class="text-slate-300 mb-8 max-w-2xl mx-auto">Medical-stay inquiries are handled directly by the broker, with discretion. Family offices, patient-services coordinators, and care managers welcome. Same-day documentation.</p>
+      <p class="text-slate-500 text-sm mb-8">Daniel Issak · DRE #02037760 · Real Estate Source Inc.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="tel:+14242725935" class="px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Call 424-272-5935</a>
+        <a href="https://wa.me/14242725935?text=Medical%20stay%20inquiry%20near%20Cedars-Sinai" target="_blank" rel="noopener noreferrer" class="px-8 py-4 border border-green-500/40 bg-green-500/10 text-green-400 font-bold tracking-widest uppercase text-sm hover:bg-green-500/20 transition-colors">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</Layout>

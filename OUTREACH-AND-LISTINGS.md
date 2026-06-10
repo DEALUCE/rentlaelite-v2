@@ -183,3 +183,52 @@ A discreet gated luxury compound in Beverlywood, ZIP 90035 — five minutes to B
 - [ ] GSC URL Inspection → submit `/luxury-rental` + 2 new spokes for indexing
 
 Each email sent ≈ 1 referring domain potential. Each directory listing ≈ 1 dofollow link. Together = 8–10 referring domains, which is the threshold the backlinks agent identified for ranking on mid-tail keywords in 4–6 weeks.
+
+---
+
+## 8. SOCIAL POST PACK — "FIFA Window Booked" Announcement
+
+### LinkedIn (Daniel Issak profile)
+
+> The FIFA World Cup 2026 housing window at our Beverlywood compound is officially booked — secured ahead of the tournament.
+>
+> What worked: not a portal listing. A dedicated property site engineered for how delegation-scale tenants actually search — 40+ intent-specific pages, full structured data, AI-search readiness.
+>
+> The same engine now points at Super Bowl LXI (Feb 14, 2027 at SoFi) and the LA28 Games. Reservations for both windows are open.
+>
+> Agents: if you carry a listing that warrants its own engine, the case study is on the site.
+>
+> #LuxuryRealEstate #LosAngeles #SuperBowlLXI #LA28
+
+### Instagram (caption)
+
+> BOOKED ✅ — the FIFA World Cup 2026 window at 9432 Oakmore Rd.
+> Next windows now reserving:
+> 🏈 Super Bowl LXI — Feb 14, 2027, SoFi Stadium
+> 🥇 LA28 Olympic Games — July 2028
+> Gated Beverlywood compound · 5BR + guest house · fully furnished
+> Link in bio · 424-272-5935
+
+### X / Twitter
+
+> FIFA 2026 window: booked ahead of kickoff.
+> Now reserving: Super Bowl LXI (Feb 2027) + LA28 Games.
+> Gated 5BR compound, 18 min from SoFi. sevennova.ai/luxury-rental
+
+---
+
+## 9. PRESS RELEASE DRAFT
+
+FOR IMMEDIATE RELEASE
+
+**Beverlywood Luxury Compound Books FIFA World Cup 2026 Housing Window Ahead of Tournament; Opens Reservations for Super Bowl LXI and LA28**
+
+LOS ANGELES — 9432 Oakmore Rd, a gated five-bedroom luxury compound in the Beverlywood district of Los Angeles, has secured its FIFA World Cup 2026 housing booking in advance of the tournament, listing broker Daniel Issak (DRE #02037760, Real Estate Source Inc.) announced.
+
+The booking arrives as Los Angeles enters three consecutive years of global events — the FIFA World Cup (2026), Super Bowl LXI at SoFi Stadium (February 14, 2027), and the 2028 Olympic & Paralympic Games — a calendar that has concentrated demand for delegation-scale private housing on the Westside.
+
+Rather than relying on rental portals, the property was marketed through a dedicated listing platform built by SevenNova.ai, with more than forty intent-specific landing pages, comprehensive structured data, and optimization for AI-driven search. Reservations for the Super Bowl LXI window and the LA28 Games period are now open.
+
+Media contact: Daniel Issak · 424-272-5935 · dan.issak@gmail.com
+
+*Send to: The Real Deal LA, Beverly Hills Courier, LA Business Journal, Urbanize LA.*

@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Case Study: How 9432 Oakmore Rd Booked Its FIFA World Cup 2026 Window",
+    "description": "How a single Beverlywood luxury listing secured its FIFA World Cup 2026 booking ahead of the tournament — the dedicated-site strategy, search architecture, and AI-search optimization behind it, by SevenNova.ai.",
+    "author": { "@type": "Person", "name": "Daniel Issak", "identifier": "DRE# 02037760" },
+    "publisher": { "@type": "Organization", "name": "SevenNova.ai" },
+    "mainEntityOfPage": "https://sevennova.ai/case-study-fifa-booking"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What did the FIFA booking strategy for 9432 Oakmore Rd consist of?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A dedicated property site rather than a portal listing: 40+ intent-specific landing pages (event, kosher, gated-compound, corporate, stadium-proximity), ten structured-data schema types, AI-search optimization for ChatGPT and Perplexity citation, instant indexing via IndexNow, and a free zoning calculator as a link asset. The FIFA 2026 window booked in advance of the tournament."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can SevenNova build the same system for my listing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. SevenNova builds dedicated listing sites for luxury agents and owners — static-architecture sites with full schema coverage, AI-search readiness, and event-window targeting. Listing sites start at $3,500; ongoing SEO management from $1,500/month. Contact Daniel Issak at 424-272-5935."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Case Study: Booking the FIFA 2026 Window | SevenNova Listing-Site Strategy"
+  description="How a dedicated listing site booked 9432 Oakmore Rd's FIFA World Cup 2026 window in advance — 40+ intent pages, 10 schema types, AI-search optimization. SevenNova builds the same for luxury agents from $3,500."
+  canonical="https://sevennova.ai/case-study-fifa-booking"
+  jsonLd={jsonLd}
+>
+  <section class="relative py-28 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">Case Study · SevenNova Listing Intelligence</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        The FIFA Window<br /><em class="text-gradient">Booked Before Kickoff</em>
+      </h1>
+      <p class="speakable text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+        9432 Oakmore Rd — a $34,999/month gated compound in Beverlywood — secured its FIFA World Cup 2026 booking ahead of the tournament. Not through a portal. Through a dedicated listing site engineered for how tenants actually search: 40+ intent-specific pages, ten structured-data schemas, AI-search citation readiness, and instant indexing. This is the system, documented.
+      </p>
+      <a href="/services" class="inline-block px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Build This for Your Listing</a>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">The Problem With Portals</h2>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <p>On Zillow, a $34,999/month listing is one card among thousands, rendered in the same template as a $2,400 apartment — no narrative control, no event targeting, no way to address the kosher family, the security-minded delegation, and the relocating executive on their own terms. Aggregators monetize attention; they do not differentiate inventory.</p>
+        <p>The alternative: give the property its own engine. A dedicated site where each tenant profile lands on a page built for their exact search — and where the listing, not the portal, captures the inquiry.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">The System</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-slate-300">
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Intent Architecture</h3>
+          <p class="text-sm">40+ landing pages, each owning one search: FIFA housing, kosher kitchen, gated compound, stadium proximity, corporate relocation, insurance placement, medical stay. One property, every door.</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Structured Data Depth</h3>
+          <p class="text-sm">Ten schema types — RealEstateListing, Event, FAQPage, Person with verified DRE credentials, VideoObject, Speakable — the machine-readable layer Google and AI assistants actually consume.</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">AI-Search Readiness</h3>
+          <p class="text-sm">Citation-formatted fact passages, llms.txt, full AI-crawler access, question-formatted headings — built for the queries asked in ChatGPT and Perplexity, not just typed into Google.</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Performance Discipline</h3>
+          <p class="text-sm">Static architecture, sub-second loads, hero imagery compressed 96% without visible loss, instant Bing/Yandex indexing via IndexNow on every publish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">The Result — and the Sequel</h2>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <p>The FIFA World Cup 2026 window booked before the tournament opened. The same engine now points at the next demand windows without rebuilding anything: Super Bowl LXI (February 2027), awards season (annually), the LA28 Games — plus the year-round streams an event calendar never touches: insurance placements, medical stays near Cedars-Sinai, production housing beside a Fox lot entering a $1.5 billion expansion.</p>
+        <p>An aggregator listing expires with its window. An owned engine compounds.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl text-white mb-6">For Agents &amp; Owners</h2>
+      <p class="text-slate-300 mb-8 max-w-2xl mx-auto">SevenNova builds this system for luxury listings: dedicated sites from $3,500, ongoing search management from $1,500/month. One conversation determines whether your listing warrants it.</p>
+      <p class="text-slate-500 text-sm mb-8">Daniel Issak · DRE #02037760 · Real Estate Source Inc.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="tel:+14242725935" class="px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Call 424-272-5935</a>
+        <a href="/services" class="px-8 py-4 border border-amber-400 text-amber-400 font-bold tracking-widest uppercase text-sm hover:bg-amber-400 hover:text-midnight-950 transition-colors">Services & Pricing</a>
+      </div>
+    </div>
+  </section>
+</Layout>

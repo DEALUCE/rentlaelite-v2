@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "2028 Olympic & Paralympic Games — Los Angeles",
+    "description": "Los Angeles hosts the 2028 Olympic and Paralympic Games — the third of three consecutive mega-event years for the region after the FIFA World Cup (2026) and Super Bowl LXI (2027). Venues span the LA basin including the SoFi Stadium corridor.",
+    "startDate": "2028-07-14T09:00:00-07:00",
+    "endDate": "2028-07-30T22:00:00-07:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Los Angeles",
+      "address": { "@type": "PostalAddress", "addressLocality": "Los Angeles", "addressRegion": "CA", "addressCountry": "US" }
+    },
+    "organizer": { "@type": "Organization", "name": "LA28", "url": "https://la28.org" },
+    "offers": {
+      "@type": "Offer",
+      "name": "Executive Housing for the 2028 Games — 9432 Oakmore Rd",
+      "description": "Fully furnished 5BR gated luxury compound in Beverlywood, central to the LA28 venue map. $34,999/month, 30-day minimum, for the Games window.",
+      "price": "34999",
+      "priceCurrency": "USD",
+      "validFrom": "2028-06-01",
+      "validThrough": "2028-09-15",
+      "url": "https://sevennova.ai/olympics-2028-housing-los-angeles",
+      "availability": "https://schema.org/LimitedAvailability"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "When are the 2028 Olympic Games in Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The LA28 Olympic Games run July 14–30, 2028, followed by the Paralympic Games August 15–27, 2028. Combined with arrival, training, and departure periods, the practical housing window spans June through September 2028 — the longest sustained demand window of LA's three consecutive mega-event years."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why book Olympic housing two years in advance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sponsor hospitality programs, national Olympic committees, and broadcast operations contract housing 12-24 months ahead — the FIFA World Cup 2026 window at this property booked well before the tournament. Gated, delegation-scale residences near the Westside venue corridor are structurally scarce; early reservation locks both availability and terms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is 9432 Oakmore Rd relative to LA28 venues?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beverlywood sits centrally in the LA28 geography: approximately 18 minutes to the SoFi Stadium corridor in Inglewood, 20 minutes to downtown venues, 25 minutes to Santa Monica, and 20 minutes to LAX — without dependence on a single freeway. The gated compound houses an 8-12 person delegation with parking for four vehicles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the terms for the Games window?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "30-day minimum at $34,999 per month, fully furnished. Multi-month reservations spanning the Olympic and Paralympic periods are accommodated, as are committee, sponsor, and broadcaster billing arrangements. The property's FIFA 2026 window booked in advance — the 2028 window is expected to follow the same pattern."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="LA28 Olympics Housing Los Angeles | Gated Executive Compound — July 2028 Games"
+  description="2028 Olympic & Paralympic Games housing — gated 5BR furnished compound central to the LA28 venue map. Delegation-scale, guest house, 30-day minimum, $34,999/mo. Reserving now. Daniel Issak, DRE# 02037760."
+  canonical="https://sevennova.ai/olympics-2028-housing-los-angeles"
+  jsonLd={jsonLd}
+>
+  <section class="relative py-28 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">LA28 · July 2028 · Reserving Now</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        Olympic Games Housing<br /><em class="text-gradient">Los Angeles 2028</em>
+      </h1>
+      <p class="speakable text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+        The 2028 Olympic Games (July 14–30) and Paralympic Games (August 15–27) close Los Angeles's three consecutive mega-event years. 9432 Oakmore Rd — a gated, fully furnished 5-bedroom compound with detached guest house, central to the LA28 venue geography — is reserving the Games window now. The property's FIFA 2026 window booked in advance; 2028 is expected to follow.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+14242725935" class="px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Reserve the Games Window</a>
+        <a href="/luxury-rental" class="px-8 py-4 border border-amber-400 text-amber-400 font-bold tracking-widest uppercase text-sm hover:bg-amber-400 hover:text-midnight-950 transition-colors">The Residence</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">The Longest Window of the Decade</h2>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <p>Unlike a single game date, the Games occupy a season: training arrivals in June, the Olympic fortnight in July, the Paralympic period through late August, departures into September. For sponsors, committees, broadcasters, and family delegations, that is a 90-120 day housing requirement — precisely the term structure this residence is built around.</p>
+        <p>The compound houses a full delegation: five bedrooms in the main residence, a sixth independent quarters in the detached guest house, parking for four vehicles behind the gate, and private meeting space a hotel block cannot offer. Beverlywood's position — 18 minutes to the Inglewood venue corridor, 20 to downtown, 25 to Santa Monica — covers the venue map without committing to any single congestion zone.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mt-10">
+        {[
+          ['Jul 14–30', 'Olympic Games 2028'],
+          ['Aug 15–27', 'Paralympic Games'],
+          ['18 min', 'Inglewood Corridor'],
+          ['20 min', 'LAX'],
+        ].map(([val, label]) => (
+          <div class="bg-midnight-950 p-5 border border-amber-400/10">
+            <p class="font-display text-2xl text-amber-400">{val}</p>
+            <p class="text-xs text-slate-500 tracking-widest uppercase mt-1">{label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Three Years, Three Windows — A Track Record</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-slate-300">
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">2026 — FIFA World Cup</h3>
+          <p class="text-sm">Booked in advance of the tournament. The window validated delegation-scale demand for gated Westside housing.</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">2027 — Super Bowl LXI</h3>
+          <p class="text-sm">February 14, 2027 at SoFi Stadium. <a href="/super-bowl-2027-housing-los-angeles" class="text-amber-400 hover:underline">Reservations open</a>.</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">2028 — The Games</h3>
+          <p class="text-sm">The longest and deepest window of the three. Early reservations hold both availability and terms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl text-white mb-6">Reserve 2028 Early</h2>
+      <p class="text-slate-300 mb-8 max-w-2xl mx-auto">Committees, sponsor programs, broadcast operations, and family offices: the Games window books by conversation, not by form. Documentation same-day.</p>
+      <p class="text-slate-500 text-sm mb-8">Daniel Issak · DRE #02037760 · Real Estate Source Inc.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="tel:+14242725935" class="px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Call 424-272-5935</a>
+        <a href="https://wa.me/14242725935?text=LA28%20Olympics%20housing%20inquiry" target="_blank" rel="noopener noreferrer" class="px-8 py-4 border border-green-500/40 bg-green-500/10 text-green-400 font-bold tracking-widest uppercase text-sm hover:bg-green-500/20 transition-colors">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</Layout>

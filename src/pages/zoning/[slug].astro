@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import UnitCalculator from '../../components/UnitCalculator.astro';
 import zonesData from '../../data/zones.json';
 
 export function getStaticPaths() {
@@ -86,6 +87,12 @@ const jsonLd = [
       </div>
       <p class="text-slate-300 leading-relaxed">{zone.developer_note}</p>
       <p class="text-slate-500 text-sm mt-6">Simplified by-right calculation per LAMC Title 12. Height district, FAR, setbacks, parking, and overlay zones modify the real envelope — architectural analysis required for a final count. Source: <a href={citation.url} class="text-amber-400 hover:underline" rel="nofollow">{citation.source} {citation.section}</a>.</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <UnitCalculator preselectZone={zone.code} />
     </div>
   </section>
 

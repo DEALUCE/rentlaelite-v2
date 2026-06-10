@@ -1,0 +1,132 @@
+---
+// Interactive LA zoning unit calculator.
+// Density formulas mirror worker/src/orchestrator.ts maxUnitsByRightCalc (LAMC Title 12).
+// Fee estimate mirrors worker/src/entitlement.ts estimatePermitFees.
+interface Props {
+  preselectZone?: string;
+}
+const { preselectZone = '' } = Astro.props;
+---
+
+<div class="bg-midnight-950 border border-amber-400/20 p-8" id="unit-calc" data-preselect={preselectZone}>
+  <p class="text-amber-400 text-xs tracking-[0.3em] uppercase mb-2">Interactive Tool</p>
+  <h3 class="font-display text-2xl text-white mb-6">LA Unit Count Calculator</h3>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+    <div>
+      <label for="calc-zone" class="block text-slate-400 text-xs tracking-widest uppercase mb-2">Zone</label>
+      <select id="calc-zone" class="w-full bg-midnight-900 border border-white/10 text-white px-4 py-3 focus:border-amber-400 outline-none">
+        <option value="">Select zone…</option>
+        <option value="R1">R1 — Single Family</option>
+        <option value="R1.5">R1.5</option>
+        <option value="RD1.5">RD1.5</option>
+        <option value="RD2">RD2</option>
+        <option value="RD3">RD3</option>
+        <option value="RD4">RD4</option>
+        <option value="RD5">RD5</option>
+        <option value="RD6">RD6</option>
+        <option value="R2">R2 — Two Family</option>
+        <option value="R3">R3 — Multiple Dwelling</option>
+        <option value="R4">R4 — High Density</option>
+        <option value="R5">R5 — Maximum Density</option>
+      </select>
+    </div>
+    <div>
+      <label for="calc-lot" class="block text-slate-400 text-xs tracking-widest uppercase mb-2">Lot Size (sq ft)</label>
+      <input id="calc-lot" type="number" min="1000" max="500000" placeholder="7500" class="w-full bg-midnight-900 border border-white/10 text-white px-4 py-3 focus:border-amber-400 outline-none" />
+    </div>
+    <div>
+      <label for="calc-toc" class="block text-slate-400 text-xs tracking-widest uppercase mb-2">TOC Tier (optional)</label>
+      <select id="calc-toc" class="w-full bg-midnight-900 border border-white/10 text-white px-4 py-3 focus:border-amber-400 outline-none">
+        <option value="0">Not in TOC area / unknown</option>
+        <option value="1">Tier 1 (+22.5%)</option>
+        <option value="2">Tier 2 (+32.5%)</option>
+        <option value="3">Tier 3 (+50%)</option>
+        <option value="4">Tier 4 (+80%)</option>
+      </select>
+    </div>
+  </div>
+
+  <button id="calc-btn" class="w-full md:w-auto px-10 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Calculate Units</button>
+
+  <div id="calc-result" class="hidden mt-8 border-t border-amber-400/20 pt-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center mb-6">
+      <div class="bg-midnight-900 p-6 border border-amber-400/10">
+        <p id="res-byright" class="font-display text-4xl text-amber-400">—</p>
+        <p class="text-xs text-slate-500 tracking-widest uppercase mt-2">Units By-Right</p>
+      </div>
+      <div class="bg-midnight-900 p-6 border border-amber-400/10">
+        <p id="res-toc" class="font-display text-4xl text-white">—</p>
+        <p class="text-xs text-slate-500 tracking-widest uppercase mt-2">With TOC Bonus</p>
+      </div>
+      <div class="bg-midnight-900 p-6 border border-amber-400/10">
+        <p id="res-fees" class="font-display text-4xl text-white">—</p>
+        <p class="text-xs text-slate-500 tracking-widest uppercase mt-2">Est. Permit Fees</p>
+      </div>
+    </div>
+    <p id="res-note" class="text-slate-400 text-sm mb-6"></p>
+    <div class="bg-amber-400/10 border border-amber-400/30 p-6 text-center">
+      <p class="text-white mb-4">This is the simplified by-right math. The full SevenNova report resolves the exact TOC tier, ED1 eligibility, FAR, height district, hazard overlays, and entitlement pathways for your specific parcel.</p>
+      <a href="/zoning-report" class="inline-block px-8 py-3 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Get Full Parcel Report — Free</a>
+    </div>
+  </div>
+
+  <p class="text-slate-600 text-xs mt-6">Simplified per LAMC Title 12 base density. Excludes ADU/SB 9 bonuses (R1 shown with SB 9 ceiling), height district, FAR, setback, and parking constraints. Not legal or architectural advice — verify with a full parcel analysis.</p>
+</div>
+
+<script is:inline>
+(function () {
+  // Mirrors worker/src/orchestrator.ts maxUnitsByRightCalc
+  function unitsByRight(zone, lot) {
+    if (zone === 'R1') return 2; // house + SB 9 second unit
+    if (zone === 'R1.5') return Math.max(3, Math.floor(lot / 1200));
+    if (zone === 'RD1.5' || zone === 'RD2' || zone === 'RD3') return Math.floor(lot / 1200);
+    if (zone === 'RD4') return Math.floor(lot / 1600);
+    if (zone === 'RD5') return Math.floor(lot / 2000);
+    if (zone === 'RD6') return Math.floor(lot / 2400);
+    if (zone === 'R2') return Math.floor(lot / 1500);
+    if (zone === 'R3') return Math.floor(lot / 800);
+    if (zone === 'R4') return Math.floor(lot / 400);
+    if (zone === 'R5') return Math.floor(lot / 200);
+    return null;
+  }
+  var TOC_BONUS = { 1: 0.225, 2: 0.325, 3: 0.5, 4: 0.8 };
+  var TOC_AFF = { 1: 8, 2: 11, 3: 15, 4: 20 };
+  // Mirrors worker/src/entitlement.ts estimatePermitFees (ministerial pathway)
+  function permitFees(units) { return Math.round(8500 + units * 1200); }
+
+  var root = document.getElementById('unit-calc');
+  if (!root) return;
+  var zoneSel = document.getElementById('calc-zone');
+  var pre = root.getAttribute('data-preselect');
+  if (pre) {
+    for (var i = 0; i < zoneSel.options.length; i++) {
+      if (zoneSel.options[i].value === pre) { zoneSel.selectedIndex = i; break; }
+    }
+  }
+
+  document.getElementById('calc-btn').addEventListener('click', function () {
+    var zone = zoneSel.value;
+    var lot = parseInt(document.getElementById('calc-lot').value, 10);
+    var tier = parseInt(document.getElementById('calc-toc').value, 10);
+    if (!zone || !lot || lot < 1000) {
+      alert('Select a zone and enter a lot size of at least 1,000 sq ft.');
+      return;
+    }
+    var base = unitsByRight(zone, lot);
+    if (base === null || base < 1) {
+      alert('Lot too small for this zone’s density minimum.');
+      return;
+    }
+    var tocUnits = tier > 0 ? Math.floor(base * (1 + TOC_BONUS[tier])) : base;
+    document.getElementById('res-byright').textContent = base;
+    document.getElementById('res-toc').textContent = tier > 0 ? tocUnits : 'n/a';
+    document.getElementById('res-fees').textContent = '$' + permitFees(tier > 0 ? tocUnits : base).toLocaleString();
+    var note = zone + ' zone, ' + lot.toLocaleString() + ' sq ft lot → ' + base + ' units by-right (LAMC Title 12).';
+    if (tier > 0) note += ' TOC Tier ' + tier + ' adds ' + (TOC_BONUS[tier] * 100) + '% → ' + tocUnits + ' units, requiring ' + TOC_AFF[tier] + '% affordable set-aside.';
+    if (zone === 'R1') note = 'R1: one primary dwelling; SB 9 allows a second unit on most parcels. ADU + JADU can add up to 2 more rentable units under state law.';
+    document.getElementById('res-note').textContent = note;
+    document.getElementById('calc-result').classList.remove('hidden');
+  });
+})();
+</script>

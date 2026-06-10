@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import UnitCalculator from '../../components/UnitCalculator.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "LA Zoning Unit Count Calculator",
+    "description": "Free calculator: enter any Los Angeles residential zone (R1-R5, RD1.5-RD6) and lot size to compute by-right unit count, TOC bonus units, and estimated permit fees per LAMC Title 12.",
+    "url": "https://sevennova.ai/zoning/unit-calculator",
+    "applicationCategory": "Real Estate",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SevenNova.ai" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate how many units I can build on my LA lot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Divide your lot square footage by the zone's per-unit minimum under LAMC Title 12: R2 = 1,500 sq ft/unit, R3 = 800, R4 = 400, R5 = 200, RD1.5-RD3 = 1,200, RD4 = 1,600, RD5 = 2,000, RD6 = 2,400. R1 allows one primary dwelling plus SB 9 and ADU additions. TOC bonuses add 22.5% to 80% near transit. This calculator does the math instantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this unit calculation final for development purposes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This is the simplified by-right density math. Height district, FAR, setbacks, parking, hazard overlays (flood, liquefaction, landslide), HPOZ status, and specific plans modify the real buildable envelope. A SevenNova full parcel report resolves all of these for the exact address — free at sevennova.ai/zoning-report."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="LA Zoning Unit Calculator — How Many Units Can You Build? | Free Tool"
+  description="Free LA zoning calculator: enter zone (R1-R5, RD1.5-RD6) + lot size → instant by-right unit count, TOC bonus units, permit fee estimate. LAMC Title 12 density math."
+  canonical="https://sevennova.ai/zoning/unit-calculator"
+  jsonLd={jsonLd}
+>
+  <section class="relative py-24 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">Free Tool · LAMC Title 12</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        How Many Units Can You Build<br /><em class="text-gradient">On Your LA Lot?</em>
+      </h1>
+      <p class="speakable text-slate-300 text-lg mb-4 max-w-2xl mx-auto leading-relaxed">
+        Enter your zone and lot size — get the by-right unit count, TOC bonus ceiling, and estimated permit fees instantly. Density math per LAMC Title 12: R2 = 1 unit per 1,500 sq ft, R3 = 800, R4 = 400, R5 = 200, RD zones from 1,200 to 2,400.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <UnitCalculator />
+    </div>
+  </section>
+
+  <section class="py-16 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Zone-by-Zone Guides</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {['r1', 'r2', 'r3', 'r4', 'r5', 'rd1-5', 'rd2', 'rd3', 'rd4', 'rd5', 'rd6'].map((z) => (
+          <a href={`/zoning/${z}-zone-los-angeles`} class="block bg-midnight-900 px-4 py-3 border border-amber-400/10 hover:border-amber-400/40 text-center text-white font-display uppercase tracking-widest text-sm transition-colors">
+            {z.replace('-5', '.5').toUpperCase()}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

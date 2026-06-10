@@ -81,6 +81,16 @@ const jsonLd = [
         "priceCurrency": "USD",
         "validFrom": "2026-05-01",
         "validThrough": "2026-08-31",
+        "availability": "https://schema.org/SoldOut",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": property.priceSummer, "priceCurrency": "USD", "unitText": "MON" }
+      },
+      {
+        "@type": "Offer",
+        "name": "Super Bowl LXI Window — February 2027",
+        "price": property.priceSummer,
+        "priceCurrency": "USD",
+        "validFrom": "2027-01-01",
+        "validThrough": "2027-03-01",
         "availability": "https://schema.org/LimitedAvailability",
         "priceSpecification": { "@type": "UnitPriceSpecification", "price": property.priceSummer, "priceCurrency": "USD", "unitText": "MON" }
       }
@@ -285,11 +295,11 @@ const jsonLd = [
 >
 
   <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• FIFA BANNER -->
-  <a href="/fifa-world-cup-2026-los-angeles-rental" class="block relative overflow-hidden group">
+  <a href="/super-bowl-2027-housing-los-angeles" class="block relative overflow-hidden group">
     <div class="relative h-20 md:h-28">
       <img
         src="/images/fifa-2026-la.jpg"
-        alt="FIFA World Cup 2026 Los Angeles — luxury housing available"
+        alt="Super Bowl LXI 2027 Los Angeles — luxury housing reservations open"
         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-midnight-950/90 via-midnight-950/60 to-midnight-950/40"></div>
@@ -298,14 +308,14 @@ const jsonLd = [
           <div class="flex items-center gap-4">
             <span class="w-2 h-2 bg-amber-400 rounded-full animate-pulse shrink-0"></span>
             <div>
-              <p class="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase">Summer 2026 · FIFA World Cup Window</p>
-              <p class="text-white text-xs md:text-sm tracking-wide mt-0.5 hidden sm:block">Limited summer availability — secure your dates · Extended stay rates available</p>
+              <p class="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase">FIFA 2026 Window — Booked · Next: Super Bowl LXI</p>
+              <p class="text-white text-xs md:text-sm tracking-wide mt-0.5 hidden sm:block">February 14, 2027 at SoFi Stadium — reserve the game window now · Fall 2026 dates open</p>
             </div>
           </div>
           <div class="flex items-center gap-3 shrink-0">
-            <span class="hidden md:block text-slate-400 text-xs">$34,999/mo Summer Rate</span>
+            <span class="hidden md:block text-slate-400 text-xs">$34,999/mo · 30-Day Min</span>
             <span class="text-amber-400 text-xs font-semibold tracking-widest uppercase border border-amber-400/40 px-3 py-1.5 group-hover:bg-amber-400 group-hover:text-midnight-950 transition-colors">
-              Inquire Now â†’
+              Reserve 2027 →
             </span>
           </div>
         </div>
@@ -317,7 +327,7 @@ const jsonLd = [
   <div class="bg-amber-400 text-midnight-950 py-2.5 px-4 text-center z-50 relative">
     <p class="text-xs font-semibold tracking-[0.3em] uppercase flex items-center justify-center gap-3">
       <span class="w-1.5 h-1.5 bg-midnight-950 rounded-full animate-pulse"></span>
-      Summer 2026 · $34,999/mo · FIFA World Cup Window — Extended Stay Rates Available
+      FIFA 2026 Window Booked · Now Reserving Fall 2026 + Super Bowl LXI Feb 2027 · $34,999/mo
       <span class="w-1.5 h-1.5 bg-midnight-950 rounded-full animate-pulse"></span>
     </p>
   </div>
@@ -792,10 +802,10 @@ const jsonLd = [
         <h2 class="font-display text-3xl md:text-4xl text-white">Same Property — <em class="text-gradient">Different Angles</em></h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <a href="/fifa-world-cup-2026-los-angeles-rental" class="block bg-midnight-950 p-6 border border-amber-400/10 hover:border-amber-400/40 transition-colors">
+        <a href="/super-bowl-2027-housing-los-angeles" class="block bg-midnight-950 p-6 border border-amber-400/10 hover:border-amber-400/40 transition-colors">
           <p class="text-amber-400 text-xs tracking-widest uppercase mb-2">Event-Driven</p>
-          <h3 class="font-display text-lg text-white mb-2">FIFA World Cup 2026 Housing</h3>
-          <p class="text-slate-400 text-sm">18 min to SoFi Stadium. Summer 2026 executive housing window.</p>
+          <h3 class="font-display text-lg text-white mb-2">Super Bowl LXI 2027 Housing</h3>
+          <p class="text-slate-400 text-sm">Feb 14, 2027 at SoFi. FIFA window booked — reserve the next one.</p>
         </a>
         <a href="/kosher-kitchen-luxury-rental-los-angeles" class="block bg-midnight-950 p-6 border border-amber-400/10 hover:border-amber-400/40 transition-colors">
           <p class="text-amber-400 text-xs tracking-widest uppercase mb-2">Observant Families</p>

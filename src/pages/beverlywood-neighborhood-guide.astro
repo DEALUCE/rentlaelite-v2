@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Beverlywood Neighborhood Guide — Living in LA's Quiet Luxury Corridor",
+    "description": "Complete guide to the Beverlywood neighborhood of Los Angeles: location, housing character, schools, synagogues, kosher corridor, commute times, and rental market context for ZIP 90035.",
+    "author": { "@type": "Person", "name": "Daniel Issak", "identifier": "DRE# 02037760" },
+    "publisher": { "@type": "Organization", "name": "The Issak Group" },
+    "mainEntityOfPage": "https://sevennova.ai/beverlywood-neighborhood-guide"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where is Beverlywood located in Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beverlywood is a residential neighborhood in the Westside region of Los Angeles, ZIP code 90035, directly south of Beverly Hills. It is bounded roughly by Pico Boulevard to the north, Robertson Boulevard to the east, and Hillcrest Country Club to the west. The neighborhood is approximately 10 minutes from Beverly Hills proper and 15 minutes from Century City."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is Beverlywood popular with observant Jewish families?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beverlywood sits inside the Los Angeles Community Eruv and within walking distance of multiple Orthodox synagogues, including Young Israel of Century City, Beth Jacob Congregation, and B'nai David-Judea. The adjacent Pico-Robertson corridor is the largest kosher commercial district in Los Angeles, with kosher restaurants, bakeries, butchers, and markets within a 5-minute drive."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical commute times from Beverlywood?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From Beverlywood (90035): Beverly Hills 10 minutes, Century City 15 minutes, Cedars-Sinai 15 minutes, Fox Studios 12 minutes, SoFi Stadium 18 minutes via the 405, LAX 20 minutes, Downtown LA 25-35 minutes depending on traffic."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Beverlywood Neighborhood Guide | Living in LA's Quiet Luxury Corridor — 90035"
+  description="Beverlywood neighborhood guide: location, housing character, synagogues, kosher corridor, commute times, and the 90035 rental market. By Daniel Issak, DRE# 02037760."
+  canonical="https://sevennova.ai/luxury-rental/beverlywood-neighborhood-guide"
+  jsonLd={jsonLd}
+>
+  <section class="relative py-28 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">Neighborhood Guide · ZIP 90035</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        Beverlywood<br /><em class="text-gradient">Neighborhood Guide</em>
+      </h1>
+      <p class="speakable text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+        Beverlywood is a residential Westside Los Angeles neighborhood in ZIP 90035, directly south of Beverly Hills. Known for tree-lined streets, strict architectural standards maintained by the Beverlywood Homes Association, walkable synagogue access inside the LA Community Eruv, and the adjacent Pico-Robertson kosher corridor. Commutes: Beverly Hills 10 min, Century City 15 min, SoFi Stadium 18 min, LAX 20 min.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Location &amp; Character</h2>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <p>Beverlywood occupies the corridor between Pico Boulevard and Hillcrest Country Club, directly Beverly Hills adjacent. The neighborhood was developed in the 1940s with single-family homes on consistent lot sizes, and the Beverlywood Homes Association — one of the oldest homeowner associations in Los Angeles — still enforces architectural standards and funds a contracted private security patrol for the area.</p>
+        <p>The result is a neighborhood that reads quieter and more uniform than the flashier streets north of Pico: mature trees, set-back homes, low through-traffic, and a residential feel that families and privacy-minded executives specifically seek out. Housing stock runs from original 1940s traditional homes to substantially rebuilt modern properties, including gated compounds like 9432 Oakmore Rd.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">The Jewish Community Infrastructure</h2>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <p>Beverlywood and the adjacent Pico-Robertson corridor form the center of observant Jewish life on the LA Westside. The neighborhood sits inside the Los Angeles Community Eruv, and walking-distance synagogues include Young Israel of Century City (9317 W Pico Blvd), Beth Jacob Congregation (9030 W Olympic Blvd), B'nai David-Judea (8906 W Pico Blvd), and Chabad of Beverlywood (9011 W Pico Blvd).</p>
+        <p>The Pico Boulevard kosher corridor — one of the largest in the United States — includes restaurants, bakeries, and markets such as Jeff's Gourmet, Pat's, La Gondola, Got Kosher, Glatt Mart, Western Kosher, and Pico Glatt Mart. Jewish day schools in the area include Hillel Hebrew Academy and Harkham Hillel, with Shalhevet High School and YULA within a short drive.</p>
+        <p>For rental tenants who require a kosher kitchen and Shabbat walkability, this infrastructure is the reason 90035 properties command a dedicated tenant demand stream that neighboring ZIP codes do not. See our <a href="/kosher-kitchen-luxury-rental-los-angeles" class="text-amber-400 hover:underline">kosher kitchen luxury rental guide</a> for property-level specifics.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Commute Map</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        {[
+          ['Beverly Hills', '10 min'],
+          ['Century City', '15 min'],
+          ['Cedars-Sinai', '15 min'],
+          ['Fox Studios', '12 min'],
+          ['SoFi Stadium', '18 min'],
+          ['LAX', '20 min'],
+          ['Santa Monica', '25 min'],
+          ['Downtown LA', '30 min'],
+        ].map(([place, time]) => (
+          <div class="bg-midnight-950 p-5 border border-amber-400/10">
+            <p class="font-display text-2xl text-amber-400">{time}</p>
+            <p class="text-xs text-slate-500 tracking-widest uppercase mt-1">{place}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Renting in Beverlywood</h2>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <p>Rental inventory in Beverlywood is thin by design — the neighborhood is dominated by owner-occupied single-family homes, and the Homes Association standards limit the apartment stock that defines neighboring areas. When furnished luxury rentals do come available, they serve three demand streams: executive relocation (Century City and studio-adjacent employers), observant families needing Eruv and synagogue access, and event-driven demand like the FIFA World Cup 2026 window at SoFi Stadium.</p>
+        <p>The current featured listing in the neighborhood is <a href="/luxury-rental" class="text-amber-400 hover:underline">9432 Oakmore Rd</a> — a gated dual-structure compound with 5 bedrooms, heated pool, kosher kitchen, and detached guest house at $34,999/month. For market context, see the <a href="/beverly-hills-market-report" class="text-amber-400 hover:underline">2026 market report</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl text-white mb-6">Questions About Beverlywood?</h2>
+      <p class="text-slate-300 mb-8">Daniel Issak · DRE #02037760 · Real Estate Source Inc.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="tel:+14242725935" class="px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Call 424-272-5935</a>
+        <a href="/luxury-rental" class="px-8 py-4 border border-amber-400 text-amber-400 font-bold tracking-widest uppercase text-sm hover:bg-amber-400 hover:text-midnight-950 transition-colors">View Featured Listing</a>
+      </div>
+    </div>
+  </section>
+</Layout>

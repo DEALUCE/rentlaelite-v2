@@ -230,10 +230,10 @@ const jsonLd = [
       },
       {
         "@type": "Question",
-        "name": "How far is 9432 Oakmore Rd from SoFi Stadium?",
+        "name": "How far is 9432 Oakmore Rd from the FIFA 2026 host stadiums?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "9432 Oakmore Rd is 18 minutes (approximately 11 miles) from SoFi Stadium in Inglewood via the 405 freeway. The property is also 25 minutes from the Rose Bowl in Pasadena, the second Los Angeles FIFA World Cup 2026 host venue."
+          "text": "9432 Oakmore Rd is 18 minutes (approximately 11 miles) from SoFi Stadium in Inglewood via the 405 freeway, and 25 minutes from the Rose Bowl in Pasadena — the two Los Angeles FIFA World Cup 2026 host venues."
         }
       },
       {
@@ -327,13 +327,16 @@ const jsonLd = [
 
     <!-- Ken Burns background -->
     <div class="absolute inset-0 z-0">
-      <img
-        src={property.images.hero}
-        alt="9432 Oakmore Rd aerial — gated luxury compound Beverlywood Los Angeles 90035"
-        class="w-full h-full object-cover animate-ken-burns origin-center"
-        loading="eager"
-        fetchpriority="high"
-      />
+      <picture>
+        <source srcset={property.images.hero.replace('.jpg', '.webp')} type="image/webp" />
+        <img
+          src={property.images.hero}
+          alt="9432 Oakmore Rd aerial — gated luxury compound Beverlywood Los Angeles 90035"
+          class="w-full h-full object-cover animate-ken-burns origin-center"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </picture>
       <div class="absolute inset-0 bg-gradient-to-r from-midnight-950/95 via-midnight-950/60 to-midnight-950/20"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-midnight-950 via-transparent to-transparent"></div>
     </div>

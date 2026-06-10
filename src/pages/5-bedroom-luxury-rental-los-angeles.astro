@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": "5 Bedroom Luxury Rental Los Angeles — 9432 Oakmore Rd Beverlywood",
+    "description": "Fully furnished 5-bedroom, 6-bathroom luxury rental in Los Angeles. Gated compound with detached guest house, heated pool, kosher kitchen, EV charging. 4,492 sq ft combined. $34,999/month, 30-day minimum.",
+    "url": "https://sevennova.ai/luxury-rental/5-bedroom-luxury-rental-los-angeles",
+    "price": "34999",
+    "priceCurrency": "USD",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9432 & 9430 Oakmore Rd",
+      "addressLocality": "Los Angeles",
+      "addressRegion": "CA",
+      "postalCode": "90035",
+      "addressCountry": "US"
+    },
+    "numberOfRooms": 5,
+    "floorSize": { "@type": "QuantitativeValue", "value": 4492, "unitCode": "FTK" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How are the 5 bedrooms configured at 9432 Oakmore Rd?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The main residence has 5 bedrooms across 4,092 sq ft, including a primary suite with steam sauna and spa-style bath. The detached 400 sq ft guest house adds a sixth independent sleeping space with its own kitchen and full bath — useful for staff, in-laws, or guests requiring separation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does a 5-bedroom luxury rental cost in Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Furnished 5-bedroom luxury rentals on the LA Westside typically range from $20,000 to $80,000+ per month depending on neighborhood, lot security, and amenities. 9432 Oakmore Rd in Beverlywood is offered at $34,999/month fully furnished with a 30-day minimum — positioned at the value end for a gated dual-structure property."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the 5-bedroom rental suitable for multi-generational families?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The dual-structure layout is specifically suited to multi-generational living: grandparents or adult children can occupy the self-contained guest house with private entrance while the family uses the 5-bedroom main residence. The kosher kitchen, walking-distance synagogues, and gated lot serve observant multi-generational households."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="5 Bedroom Luxury Rental Los Angeles | Gated Compound + Guest House — $34,999/mo"
+  description="Furnished 5BR/6BA luxury rental in Los Angeles — gated Beverlywood compound, 4,492 sq ft, heated pool, kosher kitchen, detached guest house. $34,999/month, 30-day minimum. Call 424-272-5935."
+  canonical="https://sevennova.ai/luxury-rental/5-bedroom-luxury-rental-los-angeles"
+  jsonLd={jsonLd}
+>
+  <section class="relative py-28 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">5 BR · 6 BA · 4,492 Sq Ft · Furnished</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        5 Bedroom Luxury Rental<br /><em class="text-gradient">Los Angeles</em>
+      </h1>
+      <p class="speakable text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+        9432 Oakmore Rd, Beverlywood Los Angeles 90035 — a fully furnished 5-bedroom, 6-bathroom gated compound totaling 4,492 sq ft with a detached guest house as a sixth independent living space. Heated pool, steam sauna, kosher kitchen, EV charging. $34,999/month, 30-day minimum lease.
+      </p>
+      <a href="/luxury-rental" class="inline-block px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">View Full Listing</a>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Bedroom Configuration</h2>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <p>The main residence runs 4,092 sq ft across two levels. The primary suite anchors the upper floor with a steam sauna, spa-style bath, and hardwood flooring. Four additional bedrooms split between family rooms and convertible office space — two on the upper level, two on the main level off the Italian porcelain great room.</p>
+        <p>The detached guest house adds a genuinely independent sixth sleeping space: 400 sq ft with private entrance, kitchenette, full bath, and its own HVAC zone. Households use it for live-in staff, security personnel, visiting in-laws, or a separated home office. The guest house electric is separately metered.</p>
+        <p>Five-bedroom furnished inventory at this configuration — gated, dual-structure, kosher kitchen — is rare on the Westside. Most 5BR rentals are single-structure homes without guest quarters; most gated compounds at this bedroom count list above $50,000/month in Beverly Hills proper or the Hollywood Hills.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Who Needs Five Bedrooms</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-slate-300">
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Relocating Families</h3>
+          <p class="text-sm">School-year or multi-year corporate relocation with children — each child gets a bedroom, parents keep an office, guest house absorbs visitors.</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Multi-Generational Households</h3>
+          <p class="text-sm">Grandparents in the guest house with privacy and a private entrance; family in the main residence. Walking-distance synagogues serve observant households.</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Production &amp; Talent Groups</h3>
+          <p class="text-sm">Cast or creative teams on LA production cycles — 5 private bedrooms plus staff quarters beats block-booking hotel suites on both cost and privacy.</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">FIFA 2026 Delegations</h3>
+          <p class="text-sm">Federation staff and sponsor teams needing 30-90 day group housing 18 minutes from SoFi Stadium with gated security and on-site parking for 4 vehicles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl text-white mb-6">Tour the 5-Bedroom Compound</h2>
+      <p class="text-slate-300 mb-8">Daniel Issak · DRE #02037760 · Real Estate Source Inc.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="tel:+14242725935" class="px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Call 424-272-5935</a>
+        <a href="/apply" class="px-8 py-4 border border-amber-400 text-amber-400 font-bold tracking-widest uppercase text-sm hover:bg-amber-400 hover:text-midnight-950 transition-colors">Apply to Rent</a>
+        <a href="/gallery" class="px-8 py-4 border border-slate-600 text-slate-300 font-bold tracking-widest uppercase text-sm hover:border-amber-400 hover:text-amber-400 transition-colors">View 57 Photos</a>
+      </div>
+    </div>
+  </section>
+</Layout>

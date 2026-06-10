@@ -1,19 +1,19 @@
-/** @type {import('tailwindcss').Config} */
+﻿/** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
         midnight: {
-          950: '#020617',
-          900: '#0f172a',
-          800: '#1e293b',
-          700: '#334155',
+          950: '#08080a',
+          900: '#0f0f12',
+          800: '#1a1820',
+          700: '#2a2830',
         },
         amber: {
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b',
+          300: '#d4b47a',
+          400: '#c9a864',
+          500: '#b8975a',
         },
       },
       fontFamily: {

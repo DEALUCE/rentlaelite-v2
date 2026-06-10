@@ -5,12 +5,16 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "deploy": "astro build && wrangler pages deploy dist --project-name rentlaelite-v2 --branch master"
   },
   "dependencies": {
-    "astro": "^4.16.0",
-    "@astrojs/tailwind": "^5.1.0",
     "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.16.0",
     "tailwindcss": "^3.4.13"
+  },
+  "devDependencies": {
+    "wrangler": "^4.94.0"
   }
 }

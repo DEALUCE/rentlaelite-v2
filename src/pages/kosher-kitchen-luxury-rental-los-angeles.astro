@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": "Kosher Kitchen Luxury Rental Los Angeles — 9432 Oakmore Rd Beverlywood",
+    "description": "Luxury furnished rental with a true kosher kitchen in Los Angeles — dual sinks, dual ovens, fully separated meat/dairy preparation zones. 9432 Oakmore Rd, Beverlywood 90035. Walking distance to Young Israel of Century City and Beth Jacob Congregation. 5BR/6BA, $34,999/month.",
+    "url": "https://sevennova.ai/luxury-rental/kosher-kitchen-luxury-rental-los-angeles",
+    "price": "34999",
+    "priceCurrency": "USD",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9432 & 9430 Oakmore Rd",
+      "addressLocality": "Los Angeles",
+      "addressRegion": "CA",
+      "postalCode": "90035",
+      "addressCountry": "US"
+    },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Dual Sinks (meat/dairy separation)", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Dual Ovens", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Walking Distance to Synagogue", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Inside LA Eruv", "value": true }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is the kitchen at 9432 Oakmore Rd kosher?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The chef's kitchen at 9432 Oakmore Rd is configured for kosher use with dual sinks and dual ovens, allowing complete separation of meat and dairy preparation. The kitchen design supports both year-round kashrut observance and Pesach (Passover) changeover for observant tenants."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which synagogues are walking distance from the property?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "9432 Oakmore Rd is walking distance to multiple Orthodox synagogues: Young Israel of Century City (0.4 mi / 8-min walk), Beth Jacob Congregation (0.7 mi / 14-min walk), and B'nai David-Judea (1.0 mi). The property sits inside the Los Angeles Community Eruv covering the Pico-Robertson and Beverlywood corridors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are kosher restaurants nearby?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The Pico Boulevard kosher corridor is a 5-minute drive (1.2 mi) and includes Pat's, Jeff's Gourmet, Pico Cafe, La Gondola, and Got Kosher. The Robertson Boulevard kosher strip is also 5 minutes away. Whole Foods Beverly Hills, Cambridge Farms Market, and Glatt Mart kosher grocers are within 10 minutes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the rental available for Pesach (Passover)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Pesach rentals are available with a 30-day minimum lease. Tenants are welcome to kasher the kitchen and bring Pesach-specific cookware. The dual-oven, dual-sink configuration makes Pesach changeover straightforward. Contact the broker directly to discuss Pesach rates and timing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the monthly rate for the kosher kitchen luxury rental?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The standard rate is $34,999/month with a 30-day minimum lease. Preferred lease terms are 3 to 12 months. Summer 2026 / FIFA World Cup window rate is $34,999/month. The property is fully furnished and tenant pays utilities."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Kosher Kitchen Luxury Rental Los Angeles | 9432 Oakmore Rd Beverlywood 90035"
+  description="Luxury furnished rental with a true kosher kitchen — dual sinks, dual ovens, full meat/dairy separation. 9432 Oakmore Rd Beverlywood 90035. Walking distance to Young Israel of Century City and Beth Jacob Congregation. Inside LA Eruv. 5BR/6BA, $34,999/mo."
+  canonical="https://sevennova.ai/luxury-rental/kosher-kitchen-luxury-rental-los-angeles"
+  jsonLd={jsonLd}
+>
+  <section class="relative py-28 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">Kosher · Beverlywood 90035 · Inside LA Eruv</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        Kosher Kitchen<br /><em class="text-gradient">Luxury Rental Los Angeles</em>
+      </h1>
+      <p class="speakable text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+        9432 Oakmore Rd, Beverlywood Los Angeles 90035 — a fully furnished 5-bedroom luxury rental with a true kosher kitchen featuring dual sinks and dual ovens for complete meat/dairy separation. Walking distance to Young Israel of Century City (0.4 mi) and Beth Jacob Congregation (0.7 mi). Inside the LA Community Eruv. $34,999/month, 30-day minimum lease.
+      </p>
+      <a href="/luxury-rental" class="inline-block px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">View Full Listing</a>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">The Kitchen — Designed for Kashrut</h2>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <p>The chef's kitchen at 9432 Oakmore Rd was built with kosher observance in mind. Dual sinks (one designated meat, one dairy) and dual ovens give a halachically clear separation of food preparation zones. The double-thickness counters allow for two simultaneous meal preps without contact between the surfaces. The pantry has divided shelving for parve, meat, and dairy storage with separate labeled drawers.</p>
+        <p>The dishwasher is positioned to be designated for one designation (typically dairy in observant households), and a secondary dish sink supports the second. Tenants taking a long-term lease are welcome to install a second dishwasher at their cost — the cabinetry has been pre-plumbed for it.</p>
+        <p>For Pesach changeover, the kitchen design makes kashering relatively simple: the granite counters are heat-resistant, the metal sinks accept boiling-water purification, and the oven self-clean cycle reaches the temperatures required for halachic kashering. Tenants are welcome to bring or store Pesach-specific cookware and dishware.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Walking Distance — Beverlywood Shul Map</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-slate-300">
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Young Israel of Century City</h3>
+          <p class="text-sm">0.4 mi · 8-min walk · Orthodox</p>
+          <p class="text-sm mt-2">9317 W Pico Blvd, Los Angeles CA 90035</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Beth Jacob Congregation</h3>
+          <p class="text-sm">0.7 mi · 14-min walk · Modern Orthodox</p>
+          <p class="text-sm mt-2">9030 W Olympic Blvd, Beverly Hills CA 90211</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">B'nai David-Judea</h3>
+          <p class="text-sm">1.0 mi · 19-min walk · Modern Orthodox</p>
+          <p class="text-sm mt-2">8906 W Pico Blvd, Los Angeles CA 90035</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Chabad of Beverlywood</h3>
+          <p class="text-sm">1.1 mi · 21-min walk · Chabad-Lubavitch</p>
+          <p class="text-sm mt-2">9011 W Pico Blvd, Los Angeles CA 90035</p>
+        </div>
+      </div>
+      <p class="text-sm text-slate-500 mt-6">The property sits inside the Los Angeles Community Eruv (LACE) which covers the Beverlywood, Pico-Robertson, and Beverly Hills South corridors. Confirm current Eruv status weekly at the Eruv hotline before Shabbat.</p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Kosher Food Corridor — Pico &amp; Robertson</h2>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <p>9432 Oakmore Rd sits at the intersection of the two largest kosher commercial corridors in Los Angeles. Pico Boulevard (5-min drive, 1.2 mi south) is home to dozens of kosher restaurants and bakeries: Pat's, Jeff's Gourmet, Pico Cafe, La Gondola, Got Kosher, La Brea Bagel, and Sassi. Robertson Boulevard (5-min drive, 1.0 mi east) covers the upscale kosher strip with Tierra Sur, Bibi's Bakery, and Western Kosher.</p>
+        <p>Kosher grocers within 10 minutes: Whole Foods Beverly Hills (full kosher meat section, 5 mi), Glatt Mart (full kosher market, 1.5 mi), Western Kosher (1.0 mi), Cambridge Farms Market (1.7 mi), Pico Glatt Mart (1.3 mi). Premium kosher butchers: Western Kosher and Glatt Mart both offer same-day cuts.</p>
+        <p>For Shabbat catering and pre-cooked meals, the Pico corridor offers Sunday-Friday pickup from multiple shops with delivery to Beverlywood. Several caterers maintain pre-Shabbat hot meal pickup programs aligned to candle-lighting times.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl text-white mb-6">Inquire About This Kosher Luxury Rental</h2>
+      <p class="text-slate-300 mb-8">Daniel Issak · DRE #02037760 · Real Estate Source Inc.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="tel:+14242725935" class="px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Call 424-272-5935</a>
+        <a href="/apply" class="px-8 py-4 border border-amber-400 text-amber-400 font-bold tracking-widest uppercase text-sm hover:bg-amber-400 hover:text-midnight-950 transition-colors">Apply to Rent</a>
+        <a href="/luxury-rental" class="px-8 py-4 border border-slate-600 text-slate-300 font-bold tracking-widest uppercase text-sm hover:border-amber-400 hover:text-amber-400 transition-colors">Full Property</a>
+      </div>
+    </div>
+  </section>
+</Layout>

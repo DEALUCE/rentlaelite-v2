@@ -1,0 +1,130 @@
+{
+  "captured_at": "2026-05-27T17:15:02.811324+00:00",
+  "pages": {
+    "/luxury-rental": {
+      "title": "Furnished Rental Los Angeles 90035 | 9432 Oakmore Rd Gated Compound — FIFA 2026 Housing $34,999/mo",
+      "canonical": "https://sevennova.ai/luxury-rental",
+      "description_first_120": "Furnished luxury rental in Los Angeles 90035 — gated 5BR compound with heated pool, guest house, kosher kitchen, EV char",
+      "h1": "9432 Oakmore Compound",
+      "schema_types": [
+        "Answer",
+        "BreadcrumbList",
+        "City",
+        "EntryPoint",
+        "FAQPage",
+        "GeoCoordinates",
+        "ListItem",
+        "LocalBusiness",
+        "LocationFeatureSpecification",
+        "LodgingBusiness",
+        "Neighborhood",
+        "Offer",
+        "Organization",
+        "Person",
+        "PostalAddress",
+        "QuantitativeValue",
+        "Question",
+        "RealEstateAgent",
+        "RealEstateListing",
+        "SearchAction",
+        "SpeakableSpecification",
+        "UnitPriceSpecification",
+        "VideoObject",
+        "WebPage",
+        "WebSite"
+      ],
+      "body_size_bytes": 112832,
+      "body_sha256_short": "f586c6a0fd7aaa9b",
+      "upload_date": "2025-01-22T08:00:00-08:00",
+      "start_date": null,
+      "end_date": null,
+      "mojibake_em_dash_count": 0
+    },
+    "/kosher-kitchen-luxury-rental-los-angeles": {
+      "title": "Kosher Kitchen Luxury Rental Los Angeles | 9432 Oakmore Rd Beverlywood 90035",
+      "canonical": "https://sevennova.ai/luxury-rental/kosher-kitchen-luxury-rental-los-angeles",
+      "description_first_120": "Luxury furnished rental with a true kosher kitchen — dual sinks, dual ovens, full meat/dairy separation. 9432 Oakmore Rd",
+      "h1": "Kosher Kitchen Luxury Rental Los Angeles",
+      "schema_types": [
+        "Answer",
+        "FAQPage",
+        "LocationFeatureSpecification",
+        "PostalAddress",
+        "Question",
+        "RealEstateListing"
+      ],
+      "body_size_bytes": 36353,
+      "body_sha256_short": "6e3527e397179100",
+      "upload_date": null,
+      "start_date": null,
+      "end_date": null,
+      "mojibake_em_dash_count": 0
+    },
+    "/gated-compound-rental-los-angeles": {
+      "title": "Gated Compound Rental Los Angeles | 9432 Oakmore Rd Beverlywood — $34,999/mo",
+      "canonical": "https://sevennova.ai/luxury-rental/gated-compound-rental-los-angeles",
+      "description_first_120": "Gated dual-structure luxury compound for rent in Los Angeles. 5BR main residence + detached 400 sq ft guest house on sin",
+      "h1": "Gated Compound Rental Los Angeles",
+      "schema_types": [
+        "Answer",
+        "FAQPage",
+        "LocationFeatureSpecification",
+        "PostalAddress",
+        "Question",
+        "RealEstateListing"
+      ],
+      "body_size_bytes": 36566,
+      "body_sha256_short": "9c39a37f89cac451",
+      "upload_date": null,
+      "start_date": null,
+      "end_date": null,
+      "mojibake_em_dash_count": 0
+    },
+    "/beverly-hills-luxury-rentals": {
+      "title": "Beverly Hills Luxury Homes for Rent | Market Guide &amp; Pricing 2026 — The Issak Group",
+      "canonical": "https://sevennova.ai/luxury-rental/beverly-hills-luxury-rentals",
+      "description_first_120": "Beverly Hills luxury homes for rent — market guide covering 90210, Beverlywood, Century City, Bel Air, Holmby Hills, Tro",
+      "h1": "Beverly Hills Luxury Homes for Rent",
+      "schema_types": [
+        "Answer",
+        "City",
+        "FAQPage",
+        "Neighborhood",
+        "Organization",
+        "Question",
+        "RealEstateAgent"
+      ],
+      "body_size_bytes": 40415,
+      "body_sha256_short": "e927d0b8f53e2eb4",
+      "upload_date": null,
+      "start_date": null,
+      "end_date": null,
+      "mojibake_em_dash_count": 0
+    },
+    "/fifa-world-cup-2026-los-angeles-rental": {
+      "title": "FIFA World Cup 2026 Los Angeles Luxury Housing | 9432 Oakmore Rd — $34,999/mo",
+      "canonical": "https://sevennova.ai/fifa-world-cup-2026-los-angeles-rental/",
+      "description_first_120": "Luxury housing for FIFA World Cup 2026 Los Angeles. Fully furnished 5BR gated estate — 15 min from SoFi Stadium, 5 min f",
+      "h1": "FIFA World Cup 2026 Los Angeles Housing",
+      "schema_types": [
+        "Answer",
+        "Event",
+        "FAQPage",
+        "GeoCoordinates",
+        "LocationFeatureSpecification",
+        "LodgingBusiness",
+        "Offer",
+        "Organization",
+        "Place",
+        "PostalAddress",
+        "Question"
+      ],
+      "body_size_bytes": 54209,
+      "body_sha256_short": "793601e1f960d9ca",
+      "upload_date": null,
+      "start_date": "2026-06-11T16:00:00-07:00",
+      "end_date": "2026-07-19T22:00:00-07:00",
+      "mojibake_em_dash_count": 0
+    }
+  }
+}

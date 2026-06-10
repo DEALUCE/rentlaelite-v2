@@ -173,20 +173,114 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Beverly Hills Luxury Rental | 9432 Oakmore Rd",
+    "name": "Furnished Rental Los Angeles 90035 — 9432 Oakmore Rd Gated Compound",
     "speakable": {
       "@type": "SpeakableSpecification",
       "cssSelector": ["h1", ".speakable"]
     },
     "url": "https://sevennova.ai/luxury-rental"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Daniel Issak",
+    "jobTitle": "Real Estate Broker",
+    "identifier": "DRE# 02037760",
+    "telephone": property.agent.phone,
+    "email": property.agent.email,
+    "url": "https://sevennova.ai/luxury-rental",
+    "image": "https://sevennova.ai/luxury-rental/images/DJI_20250122125313_0947_D.jpg",
+    "worksFor": {
+      "@type": "RealEstateAgent",
+      "name": "Real Estate Source Inc.",
+      "identifier": "DRE# 01869619"
+    },
+    "sameAs": [
+      "https://www.dre.ca.gov/licensees/LicResults.aspx?LicenseType=B&LicenseNumber=02037760",
+      "https://www.linkedin.com/in/danielissak",
+      "https://sevennova.ai/luxury-rental/about"
+    ],
+    "knowsAbout": [
+      "Beverly Hills luxury real estate",
+      "Beverlywood luxury rentals",
+      "Gated compound rentals Los Angeles",
+      "FIFA World Cup 2026 executive housing",
+      "Kosher kitchen luxury rentals"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is 9432 Oakmore Rd available for FIFA World Cup 2026 housing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. 9432 Oakmore Rd is available for FIFA World Cup 2026 executive housing from May 1, 2026 through August 31, 2026 at $34,999/month with a 30-day minimum lease. The property is 18 minutes from SoFi Stadium and 25 minutes from the Rose Bowl, the two Los Angeles host venues."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the Beverlywood rental have a kosher kitchen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The chef's kitchen at 9432 Oakmore Rd is configured for kosher use with dual sinks and dual ovens, allowing separation of meat and dairy preparation. The property sits in the Beverlywood 90035 corridor within walking distance of Young Israel of Century City (0.4 mi) and Beth Jacob Congregation (0.7 mi)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How far is 9432 Oakmore Rd from SoFi Stadium?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "9432 Oakmore Rd is 18 minutes (approximately 11 miles) from SoFi Stadium in Inglewood via the 405 freeway. The property is also 25 minutes from the Rose Bowl in Pasadena, the second Los Angeles FIFA World Cup 2026 host venue."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the minimum lease term at 9432 Oakmore Rd?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The minimum lease term is 30 days. Preferred terms are 3 to 12 months. Standard monthly rate is $34,999. Summer 2026 / FIFA World Cup window rate is $34,999/month with limited availability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the property include EV charging?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. 9432 Oakmore Rd includes a Level 2 EV charging station (240V) on the gated property. The home also features multi-zone smart-home HVAC, Ring security, automatic gated entry, and gigabit fiber internet."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SevenNova — Beverly Hills Luxury Rentals",
+    "url": "https://sevennova.ai/luxury-rental",
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Issak Group",
+      "url": "https://sevennova.ai/luxury-rental"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://sevennova.ai/luxury-rental?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
   }
 ];
 ---
 
 <PropertySchema />
 <Layout
-  title="Beverly Hills Luxury Rental | 9432 Oakmore Rd — FIFA World Cup 2026 Housing $34,999/mo"
-  description="Beverly Hills luxury rental — fully furnished gated 5BR compound, 15 min from SoFi Stadium. FIFA World Cup 2026 housing window: $34,999/mo. Heated pool, detached guest house, Beverly Hills adjacent. Call 424-272-5935."
+  title="Furnished Rental Los Angeles 90035 | 9432 Oakmore Rd Gated Compound — FIFA 2026 Housing $34,999/mo"
+  description="Furnished luxury rental in Los Angeles 90035 — gated 5BR compound with heated pool, guest house, kosher kitchen, EV charging. 15 min from SoFi Stadium. FIFA World Cup 2026 executive housing window: $34,999/mo, 30-day minimum. Call 424-272-5935."
+  canonical="https://sevennova.ai/luxury-rental"
   jsonLd={jsonLd}
 >
 
@@ -204,8 +298,8 @@ const jsonLd = [
           <div class="flex items-center gap-4">
             <span class="w-2 h-2 bg-amber-400 rounded-full animate-pulse shrink-0"></span>
             <div>
-              <p class="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase">Summer 2026 Â· FIFA World Cup Window</p>
-              <p class="text-white text-xs md:text-sm tracking-wide mt-0.5 hidden sm:block">Limited summer availability — secure your dates Â· Extended stay rates available</p>
+              <p class="text-amber-400 text-xs font-bold tracking-[0.3em] uppercase">Summer 2026 · FIFA World Cup Window</p>
+              <p class="text-white text-xs md:text-sm tracking-wide mt-0.5 hidden sm:block">Limited summer availability — secure your dates · Extended stay rates available</p>
             </div>
           </div>
           <div class="flex items-center gap-3 shrink-0">
@@ -223,7 +317,7 @@ const jsonLd = [
   <div class="bg-amber-400 text-midnight-950 py-2.5 px-4 text-center z-50 relative">
     <p class="text-xs font-semibold tracking-[0.3em] uppercase flex items-center justify-center gap-3">
       <span class="w-1.5 h-1.5 bg-midnight-950 rounded-full animate-pulse"></span>
-      Summer 2026 Â· $34,999/mo Â· FIFA World Cup Window — Extended Stay Rates Available
+      Summer 2026 · $34,999/mo · FIFA World Cup Window — Extended Stay Rates Available
       <span class="w-1.5 h-1.5 bg-midnight-950 rounded-full animate-pulse"></span>
     </p>
   </div>
@@ -250,21 +344,26 @@ const jsonLd = [
       <div class="animate-fade-up">
         <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4 flex items-center gap-3">
           <span class="w-8 h-px bg-amber-400"></span>
-          Beverlywood Â· Los Angeles, CA 90035
+          Beverlywood · Los Angeles, CA 90035
         </p>
         <!-- Fully Furnished Badge -->
         <div class="inline-flex items-center gap-2.5 border border-amber-400 bg-amber-400/15 px-4 py-2 mb-6 amber-glow-hover">
           <svg class="w-4 h-4 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-          <span class="text-amber-400 text-sm font-bold tracking-widest uppercase">Fully Furnished Â· Move-In Ready</span>
+          <span class="text-amber-400 text-sm font-bold tracking-widest uppercase">Fully Furnished · Move-In Ready</span>
         </div>
         <h1 class="font-display text-5xl md:text-7xl leading-[1.05] mb-6">
           <span class="text-white">9432</span><br />
           <span class="text-white">Oakmore</span><br />
           <em class="text-gradient not-italic">Compound</em>
         </h1>
-        <p class="text-slate-300 text-lg leading-relaxed max-w-md mb-8">
-          A gated dual-structure estate in prime Beverlywood — 5 bedrooms, heated pool,
-          steam sauna, and a fully independent guest house. Curated luxury furnishings included.
+        <p class="speakable text-slate-300 text-lg leading-relaxed max-w-md mb-8">
+          9432 Oakmore Rd, Beverlywood Los Angeles CA 90035 — a fully furnished 5-bedroom, 6-bathroom
+          gated compound of 4,492 sq ft at $34,999/month, 30-day minimum lease. Heated pool, steam
+          sauna, kosher kitchen with dual sinks and dual ovens, detached 400 sq ft guest house, EV
+          charging, smart-home HVAC. 10 minutes to Beverly Hills, 18 minutes to SoFi Stadium,
+          20 minutes to LAX. Walking distance to Young Israel of Century City and Beth Jacob
+          Congregation. Available for FIFA World Cup 2026 executive housing. Listed by Daniel Issak,
+          DRE #02037760, Real Estate Source Inc.
         </p>
         <div class="flex flex-wrap gap-6 mb-10 items-end">
           {[
@@ -311,7 +410,7 @@ const jsonLd = [
       <div class="hidden lg:block">
         <div class="glass rounded-none p-8 amber-glow max-w-sm ml-auto animate-fade-in">
           <p class="text-amber-400 text-xs tracking-[0.3em] uppercase mb-1">Schedule a Private Showing</p>
-          <p class="text-slate-500 text-xs mb-6">24-hr response guaranteed Â· Fully furnished, move-in ready</p>
+          <p class="text-slate-500 text-xs mb-6">24-hr response guaranteed · Fully furnished, move-in ready</p>
           <form class="space-y-4" name="hero-inquiry" method="POST" action="/contact">
             <input type="hidden" name="form-name" value="hero-inquiry" />
             <input
@@ -337,8 +436,8 @@ const jsonLd = [
               class="w-full bg-midnight-950/60 border border-slate-700 text-slate-400 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors"
             >
               <option value="">Intended Stay</option>
-              <option value="30-days">30â€“60 Days</option>
-              <option value="60-days">60â€“90 Days</option>
+              <option value="30-days">30–60 Days</option>
+              <option value="60-days">60–90 Days</option>
               <option value="6-months">6 Months</option>
               <option value="12-months">12+ Months</option>
             </select>
@@ -378,7 +477,7 @@ const jsonLd = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-midnight-800/30">
         {[
-          { icon: 'â—ˆ', label: 'DRE Licensed Agent', sub: 'Daniel Issak Â· #02037760' },
+          { icon: 'â—ˆ', label: 'DRE Licensed Agent', sub: 'Daniel Issak · #02037760' },
           { icon: 'â—‰', label: 'MLS Verified', sub: 'MLS# 25594215' },
           { icon: 'â—ˆ', label: '24-Hr Response', sub: 'Direct agent contact' },
           { icon: 'â—‰', label: 'Real Estate Source Inc.', sub: 'Brokerage DRE #01869619' },
@@ -514,7 +613,7 @@ const jsonLd = [
       <div class="glass border border-amber-400/10 overflow-hidden">
         <!-- Table header -->
         <div class="bg-amber-400/5 border-b border-amber-400/10 px-8 py-4 flex justify-between items-center">
-          <span class="text-amber-400 text-xs tracking-widest uppercase">9432 Oakmore Rd Â· Los Angeles CA 90035</span>
+          <span class="text-amber-400 text-xs tracking-widest uppercase">9432 Oakmore Rd · Los Angeles CA 90035</span>
           <span class="text-slate-500 text-xs">MLS# {property.mlsNumber}</span>
         </div>
 
@@ -524,7 +623,7 @@ const jsonLd = [
             ['Monthly Rent', '$34,999/mo', true],
             ['Security Deposit', '$34,999', false],
             ['Minimum Lease Term', '30 Days', false],
-            ['Preferred Lease', '3â€“12 Months', false],
+            ['Preferred Lease', '3–12 Months', false],
             ['Furnished', 'Fully Furnished — curated luxury', false],
             ['Pets', 'Considered with conditions', false],
             ['Parking', 'Gated driveway + EV charging station', false],
@@ -543,7 +642,7 @@ const jsonLd = [
 
         <!-- Table footer -->
         <div class="bg-midnight-950/60 px-8 py-6 flex flex-col sm:flex-row gap-4 justify-between items-center border-t border-amber-400/10">
-          <p class="text-slate-500 text-xs">By appointment only Â· 24-hr notice required Â· Agent accompanies all showings</p>
+          <p class="text-slate-500 text-xs">By appointment only · 24-hr notice required · Agent accompanies all showings</p>
           <div class="flex gap-3 shrink-0">
             <a href="https://calendly.com/theissakgroup/30min" target="_blank" rel="noopener noreferrer" class="bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase px-8 py-3.5 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">
               Book a Showing
@@ -597,7 +696,7 @@ const jsonLd = [
           <div>
             <p class="text-amber-400 text-xs tracking-widest uppercase mb-5 flex items-center gap-2">
               <svg class="w-3 h-3" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
-              Live Intelligence Â· 90035
+              Live Intelligence · 90035
             </p>
 
             <!-- Drive time table -->
@@ -682,7 +781,39 @@ const jsonLd = [
   <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• 2026 EXECUTIVE TIMELINE -->
   <ExecutiveTimeline />
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• FINAL CTA -->
+  <!-- INTERNAL LINK HUB -->
+  <section class="py-20 bg-midnight-900 border-y border-amber-400/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-3">Explore By Intent</p>
+        <h2 class="font-display text-3xl md:text-4xl text-white">Same Property — <em class="text-gradient">Different Angles</em></h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="/fifa-world-cup-2026-los-angeles-rental" class="block bg-midnight-950 p-6 border border-amber-400/10 hover:border-amber-400/40 transition-colors">
+          <p class="text-amber-400 text-xs tracking-widest uppercase mb-2">Event-Driven</p>
+          <h3 class="font-display text-lg text-white mb-2">FIFA World Cup 2026 Housing</h3>
+          <p class="text-slate-400 text-sm">18 min to SoFi Stadium. Summer 2026 executive housing window.</p>
+        </a>
+        <a href="/kosher-kitchen-luxury-rental-los-angeles" class="block bg-midnight-950 p-6 border border-amber-400/10 hover:border-amber-400/40 transition-colors">
+          <p class="text-amber-400 text-xs tracking-widest uppercase mb-2">Observant Families</p>
+          <h3 class="font-display text-lg text-white mb-2">Kosher Kitchen Luxury Rental</h3>
+          <p class="text-slate-400 text-sm">Dual sinks, dual ovens. Walking distance to Young Israel of Century City.</p>
+        </a>
+        <a href="/gated-compound-rental-los-angeles" class="block bg-midnight-950 p-6 border border-amber-400/10 hover:border-amber-400/40 transition-colors">
+          <p class="text-amber-400 text-xs tracking-widest uppercase mb-2">Privacy &amp; Security</p>
+          <h3 class="font-display text-lg text-white mb-2">Gated Compound Rental LA</h3>
+          <p class="text-slate-400 text-sm">Dual-structure. Automatic gate. Ring camera coverage. Guest house included.</p>
+        </a>
+        <a href="/luxury-rental-beverlywood" class="block bg-midnight-950 p-6 border border-amber-400/10 hover:border-amber-400/40 transition-colors">
+          <p class="text-amber-400 text-xs tracking-widest uppercase mb-2">Geographic</p>
+          <h3 class="font-display text-lg text-white mb-2">Luxury Rental Beverlywood</h3>
+          <p class="text-slate-400 text-sm">90035 corridor. Beverly Hills adjacent. 5-min to Pico-Robertson.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
   <section class="py-28 bg-midnight-950 border-t border-white/5">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4 flex items-center justify-center gap-3">
@@ -698,7 +829,7 @@ const jsonLd = [
         Minimum 30-day stay. Contact Daniel Issak directly to arrange a private showing.
       </p>
       <p class="text-amber-400/70 text-xs tracking-widest uppercase mb-10">
-        $34,999/mo Â· Fully Furnished Â· 30-Day Minimum Â· Gated Â· Heated Pool Â· Guest House Included
+        $34,999/mo · Fully Furnished · 30-Day Minimum · Gated · Heated Pool · Guest House Included
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="https://calendly.com/theissakgroup/30min" target="_blank" rel="noopener noreferrer" class="bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase px-10 py-5 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">
@@ -718,7 +849,7 @@ const jsonLd = [
         </a>
       </div>
       <p class="text-slate-600 text-xs mt-8">
-        Daniel Issak Â· DRE #02037760 Â· Real Estate Source, Inc. Â· DRE #01869619
+        Daniel Issak · DRE #02037760 · Real Estate Source, Inc. · DRE #01869619
       </p>
     </div>
   </section>

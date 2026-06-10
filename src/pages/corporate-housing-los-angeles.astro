@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+import property from '../data/property.json';
+const { agent } = property;
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Accommodation",
+    "name": "Corporate Housing Los Angeles 9432 Oakmore Rd Beverlywood",
+    "description": "Premier corporate housing in Los Angeles. Fully furnished 5BR gated compound in Beverlywood, Beverly Hills adjacent. Executive relocation and extended stay from 34999 per month. 30-day minimum.",
+    "url": "https://sevennova.ai/luxury-rental/corporate-housing-los-angeles",
+    "address": {"@type": "PostalAddress","streetAddress": "9432 Oakmore Rd","addressLocality": "Los Angeles","addressRegion": "CA","postalCode": "90035","addressCountry": "US"},
+    "geo": {"@type": "GeoCoordinates","latitude": 34.05303,"longitude": -118.38756},
+    "numberOfBedrooms": 5,
+    "numberOfBathroomsTotal": 6,
+    "offers": {"@type": "Offer","price": "34999","priceCurrency": "USD","availability": "https://schema.org/InStock"}
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question","name": "What is the best corporate housing in Los Angeles?","acceptedAnswer": {"@type": "Answer","text": "9432 Oakmore Rd in Beverlywood offers premier corporate housing - fully furnished gated 5BR compound with heated pool, detached guest house, EV charging. Beverly Hills adjacent, 30-day minimum, 34999 per month. Contact Daniel Issak at 424-272-5935."}},
+      {"@type": "Question","name": "Does the corporate housing include furniture?","acceptedAnswer": {"@type": "Answer","text": "Yes. 9432 Oakmore Rd is fully furnished with curated luxury pieces throughout. Every room is staged and move-in ready including kitchen equipment."}},
+      {"@type": "Question","name": "What is the minimum lease for corporate housing in LA?","acceptedAnswer": {"@type": "Answer","text": "30-day minimum. Preferred lease is 3-12 months. Corporate and executive relocation arrangements welcome. Contact Daniel Issak at 424-272-5935."}},
+      {"@type": "Question","name": "How close is this corporate housing to Beverly Hills?","acceptedAnswer": {"@type": "Answer","text": "9432 Oakmore Rd is 10 minutes from Beverly Hills (4.1 mi), 8 minutes from Century City (3.2 mi), 7 minutes from Fox Studios, 9 minutes from Cedars-Sinai."}}
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem","position": 1,"name": "The Issak Group","item": "https://sevennova.ai/luxury-rental"},
+      {"@type": "ListItem","position": 2,"name": "Corporate Housing Los Angeles","item": "https://sevennova.ai/luxury-rental/corporate-housing-los-angeles"}
+    ]
+  }
+];
+---
+
+<Layout
+  title="Corporate Housing Los Angeles | Fully Furnished 5BR Beverly Hills Adjacent | $34,999/mo"
+  description="Premier corporate housing in Los Angeles - fully furnished gated 5BR compound in Beverlywood, Beverly Hills adjacent. Executive relocation, extended stay. 30-day minimum, $34,999/mo. Call 424-272-5935."
+  canonical="https://sevennova.ai/luxury-rental/corporate-housing-los-angeles"
+  jsonLd={jsonLd}
+>
+
+  <div class="bg-amber-400 text-midnight-950 py-2.5 px-4 text-center">
+    <p class="text-xs font-semibold tracking-[0.3em] uppercase">Corporate Housing - Beverly Hills Adjacent - Move-In Ready - 30-Day Minimum</p>
+  </div>
+
+  <section class="relative h-screen min-h-[700px] flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src={property.images.hero} alt="Corporate housing Los Angeles 9432 Oakmore Rd gated luxury compound Beverlywood" class="w-full h-full object-cover animate-ken-burns origin-center" loading="eager" fetchpriority="high" />
+      <div class="absolute inset-0 bg-gradient-to-r from-midnight-950/95 via-midnight-950/60 to-midnight-950/20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-midnight-950 via-transparent to-transparent"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4 flex items-center gap-3">
+        <span class="w-8 h-px bg-amber-400"></span>
+        Corporate Housing - Los Angeles CA 90035
+      </p>
+      <div class="inline-flex items-center gap-2.5 border border-amber-400 bg-amber-400/15 px-4 py-2 mb-6">
+        <span class="text-amber-400 text-sm font-bold tracking-widest uppercase">Fully Furnished - Move-In Ready - 30-Day Minimum</span>
+      </div>
+      <h1 class="font-display text-5xl md:text-7xl leading-[1.05] mb-6">
+        <span class="text-white">Corporate</span><br />
+        <span class="text-white">Housing</span><br />
+        <em class="text-gradient not-italic">Los Angeles</em>
+      </h1>
+      <p class="text-slate-300 text-lg leading-relaxed max-w-xl mb-8">
+        The definitive executive residence for corporate relocations and extended stays in Los Angeles.
+        5 bedrooms, heated pool, detached guest house - Beverly Hills adjacent.
+      </p>
+      <div class="flex flex-wrap gap-6 mb-10 items-end">
+        <div class="text-center">
+          <p class="font-display text-3xl text-amber-400">5</p>
+          <p class="text-xs text-slate-500 tracking-widest uppercase">Beds</p>
+        </div>
+        <div class="text-center">
+          <p class="font-display text-3xl text-amber-400">6</p>
+          <p class="text-xs text-slate-500 tracking-widest uppercase">Baths</p>
+        </div>
+        <div class="text-center">
+          <p class="font-display text-3xl text-amber-400">4492</p>
+          <p class="text-xs text-slate-500 tracking-widest uppercase">Sq Ft</p>
+        </div>
+        <div class="w-px bg-midnight-700 self-stretch"></div>
+        <div>
+          <p class="font-display text-3xl text-white">$34,999</p>
+          <p class="text-xs text-amber-400/70 tracking-widest uppercase">Per Month</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://calendly.com/theissakgroup/30min" target="_blank" rel="noopener noreferrer" class="bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">Schedule Corporate Tour</a>
+        <a href="tel:4242725935" class="border border-slate-600 text-slate-300 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 hover:text-amber-400 transition-all duration-300">Call 424-272-5935</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-midnight-900 border-y border-white/5 py-6">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-midnight-800/30">
+        <div class="glass-light px-6 py-4 flex items-center gap-4">
+          <span class="text-amber-400 text-xl shrink-0">&#9672;</span>
+          <div><p class="text-white text-xs font-semibold">DRE Licensed Agent</p><p class="text-slate-500 text-xs mt-0.5">Daniel Issak #02037760</p></div>
+        </div>
+        <div class="glass-light px-6 py-4 flex items-center gap-4">
+          <span class="text-amber-400 text-xl shrink-0">&#9673;</span>
+          <div><p class="text-white text-xs font-semibold">MLS Verified</p><p class="text-slate-500 text-xs mt-0.5">MLS# 25594215</p></div>
+        </div>
+        <div class="glass-light px-6 py-4 flex items-center gap-4">
+          <span class="text-amber-400 text-xl shrink-0">&#9672;</span>
+          <div><p class="text-white text-xs font-semibold">Corporate Leases</p><p class="text-slate-500 text-xs mt-0.5">30-day minimum</p></div>
+        </div>
+        <div class="glass-light px-6 py-4 flex items-center gap-4">
+          <span class="text-amber-400 text-xl shrink-0">&#9673;</span>
+          <div><p class="text-white text-xs font-semibold">Beverly Hills Adjacent</p><p class="text-slate-500 text-xs mt-0.5">Beverlywood 90035</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-28 bg-midnight-950">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div>
+        <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4 flex items-center gap-3">
+          <span class="w-8 h-px bg-amber-400"></span>
+          Why Executives Choose This Property
+        </p>
+        <h2 class="font-display text-4xl md:text-5xl text-white mb-8 leading-tight">Built for<br /><em class="text-gradient">Executive Life</em></h2>
+        <p class="text-slate-300 leading-relaxed mb-6">
+          9432 Oakmore Rd is the only fully furnished gated compound in Beverlywood available for corporate lease.
+          Designed for executives who demand privacy, space, and proximity to LA business corridor.
+        </p>
+        <div class="grid grid-cols-1 gap-3 mb-10 text-xs">
+          <div class="flex items-center gap-2 text-slate-400"><span class="w-1 h-1 bg-amber-400 rounded-full shrink-0"></span>Fully furnished - no setup, no vendors, just arrive</div>
+          <div class="flex items-center gap-2 text-slate-400"><span class="w-1 h-1 bg-amber-400 rounded-full shrink-0"></span>Gated compound - privacy and security for principals</div>
+          <div class="flex items-center gap-2 text-slate-400"><span class="w-1 h-1 bg-amber-400 rounded-full shrink-0"></span>Detached guest house - host staff or board members</div>
+          <div class="flex items-center gap-2 text-slate-400"><span class="w-1 h-1 bg-amber-400 rounded-full shrink-0"></span>EV charging on-site - Tesla, Rivian, BMW ready</div>
+          <div class="flex items-center gap-2 text-slate-400"><span class="w-1 h-1 bg-amber-400 rounded-full shrink-0"></span>Smart home multi-zone HVAC</div>
+          <div class="flex items-center gap-2 text-slate-400"><span class="w-1 h-1 bg-amber-400 rounded-full shrink-0"></span>Corporate lease accepted - company name on lease</div>
+          <div class="flex items-center gap-2 text-slate-400"><span class="w-1 h-1 bg-amber-400 rounded-full shrink-0"></span>30-day minimum - flexible for project-based relocation</div>
+        </div>
+        <a href="https://calendly.com/theissakgroup/30min" target="_blank" rel="noopener noreferrer" class="bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase px-7 py-3.5 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">Book a Private Tour</a>
+      </div>
+      <div class="relative">
+        <img src={property.images.outdoor[0]} alt="Corporate housing Los Angeles heated pool at 9432 Oakmore Rd" class="w-full aspect-[4/3] object-cover" loading="lazy" />
+        <div class="absolute -bottom-6 -left-6 glass p-5 w-52">
+          <p class="font-display text-3xl text-amber-400">4,492</p>
+          <p class="text-xs text-slate-400 tracking-widest uppercase mt-1">Sq Ft Combined</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-midnight-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <h2 class="font-display text-4xl text-white">Executive <em class="text-gradient">Proximity</em></h2>
+        <p class="text-slate-500 text-sm mt-3">Drive times from 9432 Oakmore Rd, Beverlywood 90035</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-midnight-800/50">
+        <div class="glass-light p-6"><p class="text-white text-sm font-medium">Century City</p><p class="text-amber-400 font-display text-2xl mt-2">8 min</p><p class="text-slate-600 text-xs">3.2 mi</p></div>
+        <div class="glass-light p-6"><p class="text-white text-sm font-medium">Beverly Hills</p><p class="text-amber-400 font-display text-2xl mt-2">10 min</p><p class="text-slate-600 text-xs">4.1 mi</p></div>
+        <div class="glass-light p-6"><p class="text-white text-sm font-medium">Fox Studios</p><p class="text-amber-400 font-display text-2xl mt-2">7 min</p><p class="text-slate-600 text-xs">2.8 mi</p></div>
+        <div class="glass-light p-6"><p class="text-white text-sm font-medium">Cedars-Sinai</p><p class="text-amber-400 font-display text-2xl mt-2">9 min</p><p class="text-slate-600 text-xs">3.5 mi</p></div>
+        <div class="glass-light p-6"><p class="text-white text-sm font-medium">Sony Pictures</p><p class="text-amber-400 font-display text-2xl mt-2">12 min</p><p class="text-slate-600 text-xs">4.8 mi</p></div>
+        <div class="glass-light p-6"><p class="text-white text-sm font-medium">Santa Monica</p><p class="text-amber-400 font-display text-2xl mt-2">15 min</p><p class="text-slate-600 text-xs">7.2 mi</p></div>
+        <div class="glass-light p-6"><p class="text-white text-sm font-medium">West Hollywood</p><p class="text-amber-400 font-display text-2xl mt-2">12 min</p><p class="text-slate-600 text-xs">5.1 mi</p></div>
+        <div class="glass-light p-6"><p class="text-white text-sm font-medium">LAX Airport</p><p class="text-amber-400 font-display text-2xl mt-2">20 min</p><p class="text-slate-600 text-xs">9.3 mi</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-28 bg-midnight-950 border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-4xl md:text-5xl text-white mb-4">Ready to <em class="text-gradient">Move In</em></h2>
+      <p class="text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed">9432 Oakmore Rd is available now, fully furnished. Corporate leases accepted. Contact Daniel Issak directly.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://calendly.com/theissakgroup/30min" target="_blank" rel="noopener noreferrer" class="bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase px-10 py-5 hover:bg-amber-300 transition-all duration-300 amber-glow-hover">Book Corporate Tour</a>
+        <a href="https://wa.me/14242725935" target="_blank" rel="noopener noreferrer" class="border border-green-500/40 bg-green-500/10 text-green-400 text-xs tracking-widest uppercase px-10 py-5 hover:bg-green-500/20 transition-all duration-300">WhatsApp Daniel</a>
+        <a href="tel:4242725935" class="border border-slate-600 text-slate-300 text-xs tracking-widest uppercase px-10 py-5 hover:border-amber-400 hover:text-amber-400 transition-all duration-300">Call 424-272-5935</a>
+      </div>
+      <p class="text-slate-600 text-xs mt-8">Daniel Issak - DRE #02037760 - Real Estate Source, Inc. - DRE #01869619</p>
+    </div>
+  </section>
+
+</Layout>

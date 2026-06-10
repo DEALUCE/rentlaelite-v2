@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": "Gated Compound Rental Los Angeles — 9432 Oakmore Rd Beverlywood",
+    "description": "Gated dual-structure luxury compound for rent in Los Angeles. 5BR/6BA main residence + 400 sq ft detached guest house on a single secured lot. Beverly Hills adjacent. Automatic gate, Ring security, EV charging, heated pool. $34,999/month, 30-day minimum.",
+    "url": "https://sevennova.ai/luxury-rental/gated-compound-rental-los-angeles",
+    "price": "34999",
+    "priceCurrency": "USD",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9432 & 9430 Oakmore Rd",
+      "addressLocality": "Los Angeles",
+      "addressRegion": "CA",
+      "postalCode": "90035",
+      "addressCountry": "US"
+    },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Automatic Gated Entry", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Detached Guest House", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Ring Security System", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Heated Pool & Spa", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "EV Charging (Level 2)", "value": true }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What makes 9432 Oakmore Rd a true gated compound?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "9432 Oakmore Rd is a dual-structure secured compound consisting of a 4,092 sq ft 5-bedroom main residence and a fully independent 400 sq ft detached guest house on a single fenced lot with automatic gated entry. The configuration is rare in Los Angeles — most luxury rentals are single-structure homes without the gated dual-residence layout."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What security features does the compound have?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The property has an automatic driveway gate, perimeter fencing, Ring camera system covering all entry points, motion-activated lighting, smart locks on all exterior doors, and a separate locked entry on the detached guest house. The Beverlywood corridor benefits from the Beverlywood Homes Association private patrol coverage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the guest house fully independent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The 400 sq ft detached guest house has its own private entrance, full bathroom, kitchenette, and HVAC zone. It can house staff, security, family members requiring separate space, or visiting guests. Some tenants use it as a private home office. The guest house electric is separately metered."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the rental rate for a gated compound in Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "9432 Oakmore Rd is offered at $34,999/month with a 30-day minimum lease. Comparable gated compound rentals in Beverly Hills and the Hollywood Hills typically range from $25,000 to $80,000/month depending on size, location, and amenities. This property's combination of Beverlywood location, dual-structure layout, and full furnishings positions it at the value end of the gated-compound segment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is the compound located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "9432 Oakmore Rd is in the Beverlywood neighborhood of Los Angeles, ZIP 90035, directly Beverly Hills adjacent. The location is 10 minutes from Beverly Hills, 15 minutes from Century City, 18 minutes from SoFi Stadium in Inglewood, and 20 minutes from LAX. The Pico-Robertson kosher corridor is 5 minutes away."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Gated Compound Rental Los Angeles | 9432 Oakmore Rd Beverlywood — $34,999/mo"
+  description="Gated dual-structure luxury compound for rent in Los Angeles. 5BR main residence + detached 400 sq ft guest house on single secured lot. Automatic gate, Ring security, heated pool, EV charging. Beverly Hills adjacent. $34,999/mo, 30-day minimum."
+  canonical="https://sevennova.ai/luxury-rental/gated-compound-rental-los-angeles"
+  jsonLd={jsonLd}
+>
+  <section class="relative py-28 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">Gated · Secured · Beverly Hills Adjacent</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        Gated Compound<br /><em class="text-gradient">Rental Los Angeles</em>
+      </h1>
+      <p class="speakable text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+        9432 Oakmore Rd, Beverlywood Los Angeles 90035 — a gated dual-structure luxury compound with a 5-bedroom 4,092 sq ft main residence and a detached 400 sq ft guest house on a single secured lot. Automatic driveway gate, Ring camera system, perimeter fencing, EV charging. $34,999/month, 30-day minimum lease.
+      </p>
+      <a href="/luxury-rental" class="inline-block px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">View Full Listing</a>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">What "Gated Compound" Actually Means Here</h2>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <p>The phrase "gated compound" is often misused for single-structure homes with a driveway gate. 9432 Oakmore Rd is the real thing: a single fenced lot containing two independent residences. The main house is a 5-bedroom, 4,092 sq ft residence. The second structure is a fully self-contained 400 sq ft guest house with its own kitchen, bathroom, climate zone, and locking entry.</p>
+        <p>The lot is enclosed by perimeter fencing with a single automatic vehicle gate. Inside the gate, vehicles park on a private courtyard. The two structures share a landscaped garden with a heated pool and spa positioned between them. This configuration is the standard for celebrity rentals in Bel-Air and Beverly Hills Flats — it is unusual in Beverlywood and unusual at this rent point.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Security Layers</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-slate-300">
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Perimeter</h3>
+          <p class="text-sm">Continuous perimeter fencing, automatic vehicle gate, pedestrian access via keyed gate, no street-side line-of-sight into residences.</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Camera Coverage</h3>
+          <p class="text-sm">Ring camera system covers gate, driveway, front door, side gate, rear yard, and guest house entry. Live feed via app, motion alerts, 60-day rolling archive.</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Access Control</h3>
+          <p class="text-sm">Smart locks on main residence and guest house, individual access codes per occupant, full audit log of entries via the app.</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Neighborhood Patrol</h3>
+          <p class="text-sm">Beverlywood Homes Association maintains a contracted private patrol covering the immediate corridor 24/7 with rapid-response capability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Who Rents Gated Compounds in LA</h2>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <p><strong class="text-white">Tech and finance executives on rotation.</strong> Three-to-twelve-month assignments at LA-based firms (Snap, Disney, Activision, William Morris, CAA) frequently require the privacy of a gated property combined with a guest house for staff or family. 9432 Oakmore Rd's smart-home stack and Level 2 EV charger are calibrated for this tenant.</p>
+        <p><strong class="text-white">Entertainment industry talent.</strong> Pre-release film cycles, residency-style music projects, and prestige TV productions require accommodations with anti-paparazzi protection (no street line-of-sight, gated entry, perimeter camera coverage). The guest house allows for assistants or security personnel to live on-site without sharing the main residence.</p>
+        <p><strong class="text-white">FIFA World Cup 2026 official delegations.</strong> Team support staff, federation officials, and corporate sponsors looking for executive housing 18 minutes from SoFi Stadium need gated security for a 30-90 day window. The lot's parking capacity (4 cars on-property plus the guest house) suits delegation-scale stays.</p>
+        <p><strong class="text-white">High-net-worth families relocating to Los Angeles.</strong> A gated dual-structure layout supports multi-generational living, dedicated staff quarters, or a private home-office buildout. The Beverlywood corridor is favored by observant Jewish families requiring walking-distance synagogues, kosher kitchens, and Eruv coverage.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl text-white mb-6">Inquire About This Gated Compound</h2>
+      <p class="text-slate-300 mb-8">Daniel Issak · DRE #02037760 · Real Estate Source Inc.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="tel:+14242725935" class="px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Call 424-272-5935</a>
+        <a href="/apply" class="px-8 py-4 border border-amber-400 text-amber-400 font-bold tracking-widest uppercase text-sm hover:bg-amber-400 hover:text-midnight-950 transition-colors">Apply to Rent</a>
+        <a href="/luxury-rental" class="px-8 py-4 border border-slate-600 text-slate-300 font-bold tracking-widest uppercase text-sm hover:border-amber-400 hover:text-amber-400 transition-colors">Full Property</a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+import property from '../data/property.json';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Super Bowl LXI — Los Angeles",
+    "description": "Super Bowl LXI at SoFi Stadium in Inglewood, Los Angeles on February 14, 2027. The NFL's biggest stage returns to SoFi as part of LA's three consecutive mega-event years: FIFA World Cup 2026, Super Bowl LXI 2027, and the 2028 Olympic & Paralympic Games.",
+    "startDate": "2027-02-14T15:00:00-08:00",
+    "endDate": "2027-02-14T22:00:00-08:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "SoFi Stadium",
+      "address": { "@type": "PostalAddress", "streetAddress": "1001 Stadium Dr", "addressLocality": "Inglewood", "addressRegion": "CA", "postalCode": "90301", "addressCountry": "US" }
+    },
+    "organizer": { "@type": "Organization", "name": "NFL", "url": "https://www.nfl.com" },
+    "offers": {
+      "@type": "Offer",
+      "name": "Executive Housing Near Super Bowl LXI — 9432 Oakmore Rd",
+      "description": "Fully furnished 5BR gated luxury compound 18 minutes from SoFi Stadium. $34,999/month, 30-day minimum, for the Super Bowl LXI window.",
+      "price": "34999",
+      "priceCurrency": "USD",
+      "validFrom": "2027-01-01",
+      "validThrough": "2027-03-01",
+      "url": "https://sevennova.ai/super-bowl-2027-housing-los-angeles",
+      "availability": "https://schema.org/LimitedAvailability"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "When is Super Bowl LXI and where is it played?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Super Bowl LXI is scheduled for February 14, 2027 at SoFi Stadium in Inglewood, California — the second Super Bowl at SoFi this decade. It is the centerpiece of Los Angeles's three consecutive mega-event years: FIFA World Cup 2026, Super Bowl LXI 2027, and the 2028 Olympic and Paralympic Games."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How far is 9432 Oakmore Rd from SoFi Stadium for Super Bowl week?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "18 minutes (approximately 11 miles) via the 405 freeway. The Beverlywood location keeps guests out of Inglewood game-week congestion while staying within a 20-minute drive of the stadium, 10 minutes of Beverly Hills, and 20 minutes of LAX."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What lease terms apply for Super Bowl LXI housing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "30-day minimum lease at $34,999/month, fully furnished. The January-February 2027 window suits NFL corporate hospitality teams, sponsor delegations, media crews on assignment, and team-adjacent staff requiring weeks of secure housing rather than hotel blocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why book a gated compound instead of hotels for Super Bowl week?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Group economics and privacy. A 5-bedroom gated compound with detached guest house houses an 8-12 person delegation with parking for 4 vehicles, private meeting space, full kitchen, and Ring-monitored gated security — at a fraction of equivalent luxury hotel-block cost during peak Super Bowl pricing, with none of the lobby exposure."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Super Bowl LXI 2027 Housing Los Angeles | Luxury Rental Near SoFi Stadium — Feb 14, 2027"
+  description="Super Bowl LXI housing — Feb 14, 2027 at SoFi Stadium. Fully furnished gated 5BR compound 18 min from the stadium, Beverly Hills adjacent. $34,999/mo, 30-day minimum. Corporate delegations welcome. Call 424-272-5935."
+  canonical="https://sevennova.ai/super-bowl-2027-housing-los-angeles"
+  jsonLd={jsonLd}
+>
+  <section class="relative py-28 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">February 14, 2027 · SoFi Stadium · 18 Min Away</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        Super Bowl LXI Housing<br /><em class="text-gradient">Los Angeles 2027</em>
+      </h1>
+      <p class="speakable text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+        Super Bowl LXI comes to SoFi Stadium on February 14, 2027. 9432 Oakmore Rd, Beverlywood — a fully furnished, gated 5-bedroom compound with detached guest house — sits 18 minutes from the stadium and 10 from Beverly Hills. $34,999/month, 30-day minimum. Built for sponsor delegations, corporate hospitality teams, and media on extended assignment.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+14242725935" class="px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Reserve the Window — 424-272-5935</a>
+        <a href="/luxury-rental" class="px-8 py-4 border border-amber-400 text-amber-400 font-bold tracking-widest uppercase text-sm hover:bg-amber-400 hover:text-midnight-950 transition-colors">Full Property</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Three Mega-Events. Three Years. One Stadium Corridor.</h2>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <p>Los Angeles hosts the FIFA World Cup in 2026, Super Bowl LXI in 2027, and the Olympic &amp; Paralympic Games in 2028 — three consecutive years of global-event demand concentrated on the SoFi/Westside corridor. Executive housing inventory near the stadium that is genuinely gated, furnished, and delegation-scale is structurally scarce.</p>
+        <p>The Super Bowl window is the sharpest of the three: a single game date (February 14, 2027) pulls two team organizations, the NFL's corporate apparatus, every major sponsor's hospitality program, and thousands of credentialed media into a 3-6 week occupancy window. Hotel blocks price accordingly. A private gated compound at $34,999/month with a 30-day term beats equivalent luxury hotel-block spend while giving a delegation private meeting space, parking, and zero lobby exposure.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mt-10">
+        {[
+          ['18 min', 'To SoFi Stadium'],
+          ['Feb 14', 'Super Bowl LXI 2027'],
+          ['5 + GH', 'Bedrooms + Guest House'],
+          ['4 cars', 'Gated Parking'],
+        ].map(([val, label]) => (
+          <div class="bg-midnight-950 p-5 border border-amber-400/10">
+            <p class="font-display text-2xl text-amber-400">{val}</p>
+            <p class="text-xs text-slate-500 tracking-widest uppercase mt-1">{label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Who Books Super Bowl Compounds</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-slate-300">
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Sponsor Hospitality Programs</h3>
+          <p class="text-sm">Brand activation teams running 2-4 week LA programs need a base of operations with meeting space — not 12 scattered hotel rooms.</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Media on Assignment</h3>
+          <p class="text-sm">Network crews arrive weeks early. A furnished compound with gigabit fiber and workspace beats per-diem hotel economics on any stay over 14 days.</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">Team-Adjacent Staff &amp; Family</h3>
+          <p class="text-sm">Front-office, family, and security details requiring gated privacy within 20 minutes of the stadium.</p>
+        </div>
+        <div class="bg-midnight-900 p-6 border border-amber-400/10">
+          <h3 class="font-display text-xl text-amber-400 mb-2">UHNW Game-Week Guests</h3>
+          <p class="text-sm">Private parties who want Beverly Hills adjacency, a heated pool, steam sauna, and a chef-ready kitchen for game-week entertaining.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl text-white mb-6">Lock February 2027 Now</h2>
+      <p class="text-slate-300 mb-8">Daniel Issak · DRE #02037760 · Real Estate Source Inc.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="tel:+14242725935" class="px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Call 424-272-5935</a>
+        <a href="/apply" class="px-8 py-4 border border-amber-400 text-amber-400 font-bold tracking-widest uppercase text-sm hover:bg-amber-400 hover:text-midnight-950 transition-colors">Reserve / Apply</a>
+        <a href="/fifa-world-cup-2026-los-angeles-rental" class="px-8 py-4 border border-slate-600 text-slate-300 font-bold tracking-widest uppercase text-sm hover:border-amber-400 hover:text-amber-400 transition-colors">FIFA 2026 Window</a>
+      </div>
+    </div>
+  </section>
+</Layout>

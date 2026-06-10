@@ -1,0 +1,144 @@
+{
+  "_source": "SevenNova orchestrator — LAMC Title 12 base density rules (simplified, by-right only, no ADU bonus). Mirrors worker/src/orchestrator.ts maxUnitsByRightCalc.",
+  "_citation": {
+    "source": "LAMC",
+    "section": "Title 12 — Zoning Regulations",
+    "url": "https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-161100"
+  },
+  "toc_bonus": { "1": 22.5, "2": 32.5, "3": 50, "4": 80 },
+  "toc_affordable_pct": { "1": 8, "2": 11, "3": 15, "4": 20 },
+  "zones": [
+    {
+      "slug": "r1-zone-los-angeles",
+      "code": "R1",
+      "name": "R1 — One-Family Dwelling Zone",
+      "category": "Single-Family Residential",
+      "density_rule": "1 primary dwelling per lot. SB 9 (2021) allows a second unit and/or urban lot split on most R1 parcels, and California ADU law adds an ADU + JADU.",
+      "units_formula": "2 units typical ceiling by-right (house + SB 9 second unit), plus ADU/JADU under state law",
+      "example_lot": 7500,
+      "example_units": 2,
+      "typical_use": "Single-family homes, SB 9 duplex conversions, ADU additions",
+      "developer_note": "R1 is where SB 9 lot splits and ADU strategies create value. A standard R1 lot can often support a main house, an ADU, and a JADU — three rentable units where zoning maps say one."
+    },
+    {
+      "slug": "r2-zone-los-angeles",
+      "code": "R2",
+      "name": "R2 — Two-Family Dwelling Zone",
+      "category": "Low-Density Multifamily",
+      "density_rule": "1 unit per 1,500 sq ft of lot area under LAMC Title 12.",
+      "units_formula": "lot sq ft ÷ 1,500",
+      "example_lot": 7500,
+      "example_units": 5,
+      "typical_use": "Duplexes, small multifamily, owner-occupied + rental combinations",
+      "developer_note": "R2 lots near transit can stack TOC bonuses on top of base density. A 7,500 sq ft R2 lot in a TOC Tier 3 area supports 7 units by-right + bonus."
+    },
+    {
+      "slug": "r3-zone-los-angeles",
+      "code": "R3",
+      "name": "R3 — Multiple Dwelling Zone",
+      "category": "Medium-Density Multifamily",
+      "density_rule": "1 unit per 800 sq ft of lot area under LAMC Title 12.",
+      "units_formula": "lot sq ft ÷ 800",
+      "example_lot": 7500,
+      "example_units": 9,
+      "typical_use": "Apartment buildings, condo developments, small-lot subdivisions",
+      "developer_note": "R3 is LA's workhorse multifamily zone. With TOC Tier 4 (+80%), a 7,500 sq ft R3 lot reaches 16 units — the math that drives most Westside apartment development."
+    },
+    {
+      "slug": "r4-zone-los-angeles",
+      "code": "R4",
+      "name": "R4 — Multiple Dwelling Zone (High Density)",
+      "category": "High-Density Multifamily",
+      "density_rule": "1 unit per 400 sq ft of lot area under LAMC Title 12.",
+      "units_formula": "lot sq ft ÷ 400",
+      "example_lot": 7500,
+      "example_units": 18,
+      "typical_use": "Mid-rise apartments, mixed-income projects, ED1 100%-affordable developments",
+      "developer_note": "R4 + ED1 (100% affordable) unlocks ministerial approval with the +80% state density bonus — no Planning Commission hearing, 6-14 month timelines instead of 2-4 years."
+    },
+    {
+      "slug": "r5-zone-los-angeles",
+      "code": "R5",
+      "name": "R5 — Multiple Dwelling Zone (Maximum Density)",
+      "category": "Maximum-Density Multifamily",
+      "density_rule": "1 unit per 200 sq ft of lot area under LAMC Title 12.",
+      "units_formula": "lot sq ft ÷ 200",
+      "example_lot": 7500,
+      "example_units": 37,
+      "typical_use": "High-rise residential, downtown towers, transit-adjacent density",
+      "developer_note": "R5 is concentrated in Downtown, Century City, and along major corridors. Base density is rarely the constraint — height districts and FAR govern the real envelope."
+    },
+    {
+      "slug": "rd1-5-zone-los-angeles",
+      "code": "RD1.5",
+      "name": "RD1.5 — Restricted Density Multiple Dwelling",
+      "category": "Restricted Multifamily",
+      "density_rule": "1 unit per 1,200 sq ft of lot area under LAMC Title 12.",
+      "units_formula": "lot sq ft ÷ 1,200",
+      "example_lot": 7500,
+      "example_units": 6,
+      "typical_use": "Townhomes, small-lot apartments, duplex-to-fourplex infill",
+      "developer_note": "RD zones were designed to step down density between R3 corridors and R1 neighborhoods. RD1.5 at 1,200 sq ft/unit often pencils for townhome product where R2's 1,500 doesn't."
+    },
+    {
+      "slug": "rd2-zone-los-angeles",
+      "code": "RD2",
+      "name": "RD2 — Restricted Density Multiple Dwelling",
+      "category": "Restricted Multifamily",
+      "density_rule": "1 unit per 1,200 sq ft of lot area under LAMC Title 12 (shares RD1.5's per-unit minimum; differs in lot-area minimums).",
+      "units_formula": "lot sq ft ÷ 1,200",
+      "example_lot": 7500,
+      "example_units": 6,
+      "typical_use": "Small multifamily, townhome rows",
+      "developer_note": "RD2 parcels cluster in Mid-City and the Valley. Same per-unit density math as RD1.5 — value differences come from lot minimums and neighborhood context."
+    },
+    {
+      "slug": "rd3-zone-los-angeles",
+      "code": "RD3",
+      "name": "RD3 — Restricted Density Multiple Dwelling",
+      "category": "Restricted Multifamily",
+      "density_rule": "1 unit per 1,200 sq ft of lot area under LAMC Title 12.",
+      "units_formula": "lot sq ft ÷ 1,200",
+      "example_lot": 7500,
+      "example_units": 6,
+      "typical_use": "Low-rise multifamily, courtyard apartments",
+      "developer_note": "RD3 reads like RD1.5/RD2 on density but typically carries larger minimum lot sizes — check the specific tract before underwriting unit count."
+    },
+    {
+      "slug": "rd4-zone-los-angeles",
+      "code": "RD4",
+      "name": "RD4 — Restricted Density Multiple Dwelling",
+      "category": "Restricted Multifamily",
+      "density_rule": "1 unit per 1,600 sq ft of lot area under LAMC Title 12.",
+      "units_formula": "lot sq ft ÷ 1,600",
+      "example_lot": 7500,
+      "example_units": 4,
+      "typical_use": "Small apartment buildings, fourplexes",
+      "developer_note": "RD4's 1,600 sq ft/unit makes fourplexes the natural product on standard lots — a configuration lenders underwrite as residential, not commercial."
+    },
+    {
+      "slug": "rd5-zone-los-angeles",
+      "code": "RD5",
+      "name": "RD5 — Restricted Density Multiple Dwelling",
+      "category": "Restricted Multifamily",
+      "density_rule": "1 unit per 2,000 sq ft of lot area under LAMC Title 12.",
+      "units_formula": "lot sq ft ÷ 2,000",
+      "example_lot": 7500,
+      "example_units": 3,
+      "typical_use": "Triplexes, low-density infill",
+      "developer_note": "RD5 sits one notch above duplex density. Triplex product on a 7,500 sq ft lot — often the highest count achievable without discretionary review."
+    },
+    {
+      "slug": "rd6-zone-los-angeles",
+      "code": "RD6",
+      "name": "RD6 — Restricted Density Multiple Dwelling",
+      "category": "Restricted Multifamily",
+      "density_rule": "1 unit per 2,400 sq ft of lot area under LAMC Title 12.",
+      "units_formula": "lot sq ft ÷ 2,400",
+      "example_lot": 7500,
+      "example_units": 3,
+      "typical_use": "Duplex/triplex transition zones",
+      "developer_note": "RD6 is the gentlest multifamily step above single-family — duplex-scale product that neighborhood councils rarely contest."
+    }
+  ]
+}

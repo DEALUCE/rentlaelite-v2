@@ -1,0 +1,151 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import zonesData from '../../data/zones.json';
+
+export function getStaticPaths() {
+  return zonesData.zones.map((zone) => ({ params: { slug: zone.slug }, props: { zone } }));
+}
+
+const { zone } = Astro.props;
+const tocBonus = zonesData.toc_bonus;
+const tocAffordable = zonesData.toc_affordable_pct;
+const citation = zonesData._citation;
+
+const exampleWithToc = (tier) =>
+  Math.floor(zone.example_units * (1 + tocBonus[tier] / 100));
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": `${zone.name} — Density Rules, Unit Math & Development Pathways`,
+    "description": `${zone.code} zoning in Los Angeles: ${zone.density_rule} Unit calculations, TOC bonus tables, and entitlement pathways for developers and investors.`,
+    "author": { "@type": "Person", "name": "Daniel Issak", "identifier": "DRE# 02037760" },
+    "publisher": { "@type": "Organization", "name": "SevenNova.ai" },
+    "mainEntityOfPage": `https://sevennova.ai/zoning/${zone.slug}`
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `How many units can you build on a ${zone.code} lot in Los Angeles?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `${zone.density_rule} On a typical ${zone.example_lot.toLocaleString()} sq ft lot, that is approximately ${zone.example_units} units by-right. TOC bonuses can raise this 22.5% to 80% near transit. Final unit count requires architectural analysis of height, FAR, setbacks, and parking.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `What is the TOC bonus for ${zone.code} zoning?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Transit Oriented Communities (TOC) bonuses apply by tier: Tier 1 adds 22.5% more units (8% affordable required), Tier 2 adds 32.5% (11% affordable), Tier 3 adds 50% (15% affordable), Tier 4 adds 80% (20% affordable). On a ${zone.example_lot.toLocaleString()} sq ft ${zone.code} lot, Tier 4 raises ${zone.example_units} by-right units to approximately ${exampleWithToc(4)}.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `How do I check the exact zoning for a specific Los Angeles parcel?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run a SevenNova zoning report — it pulls live parcel data from ZIMAS, the LA County Assessor, FEMA flood maps, and seismic hazard layers, then computes by-right units, TOC bonuses, and entitlement pathways for the exact lot. Free at sevennova.ai/zoning-report."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title={`${zone.code} Zoning Los Angeles — Density, Unit Count & TOC Bonus | SevenNova`}
+  description={`${zone.code} zone LA: ${zone.density_rule} Example: ${zone.example_lot.toLocaleString()} sq ft lot ≈ ${zone.example_units} units by-right, up to ${exampleWithToc(4)} with TOC Tier 4. Free parcel-level zoning report.`}
+  canonical={`https://sevennova.ai/zoning/${zone.slug}`}
+  jsonLd={jsonLd}
+>
+  <section class="relative py-24 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">{zone.category} · LAMC Title 12</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        {zone.code} Zoning<br /><em class="text-gradient">Los Angeles</em>
+      </h1>
+      <p class="speakable text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+        {zone.name}. {zone.density_rule} On a {zone.example_lot.toLocaleString()} sq ft lot this allows approximately {zone.example_units} units by-right, rising to roughly {exampleWithToc(4)} units with a TOC Tier 4 bonus. Typical use: {zone.typical_use}.
+      </p>
+      <a href="/zoning-report" class="inline-block px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Free Parcel Zoning Report</a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Unit Math</h2>
+      <div class="bg-midnight-950 border border-amber-400/10 p-8 mb-8">
+        <p class="text-amber-400 font-mono text-lg mb-2">{zone.units_formula}</p>
+        <p class="text-slate-400 text-sm">Example: {zone.example_lot.toLocaleString()} sq ft lot → <span class="text-white font-semibold">{zone.example_units} units by-right</span></p>
+      </div>
+      <p class="text-slate-300 leading-relaxed">{zone.developer_note}</p>
+      <p class="text-slate-500 text-sm mt-6">Simplified by-right calculation per LAMC Title 12. Height district, FAR, setbacks, parking, and overlay zones modify the real envelope — architectural analysis required for a final count. Source: <a href={citation.url} class="text-amber-400 hover:underline" rel="nofollow">{citation.source} {citation.section}</a>.</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">TOC Bonus Table — {zone.code}</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-slate-300 text-sm">
+          <thead>
+            <tr class="border-b border-amber-400/20 text-amber-400 uppercase tracking-widest text-xs">
+              <th class="py-3 pr-6">TOC Tier</th>
+              <th class="py-3 pr-6">Density Bonus</th>
+              <th class="py-3 pr-6">Affordable Req.</th>
+              <th class="py-3">Example: {zone.example_lot.toLocaleString()} sq ft lot</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[1, 2, 3, 4].map((tier) => (
+              <tr class="border-b border-white/5">
+                <td class="py-3 pr-6 text-white">Tier {tier}</td>
+                <td class="py-3 pr-6">+{tocBonus[tier]}%</td>
+                <td class="py-3 pr-6">{tocAffordable[tier]}% of units</td>
+                <td class="py-3 text-white font-semibold">≈ {exampleWithToc(tier)} units</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-slate-500 text-sm mt-6">TOC tier is parcel-specific — determined by distance to major transit stops. A SevenNova zoning report resolves the exact tier for any address.</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-midnight-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-white mb-8">Beyond By-Right: Entitlement Pathways</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-slate-300">
+        <div class="bg-midnight-950 p-6 border border-amber-400/10">
+          <h3 class="font-display text-lg text-amber-400 mb-2">Standard By-Right</h3>
+          <p class="text-sm">6–14 months. No hearing. Full parking. Units capped at base zoning shown above.</p>
+        </div>
+        <div class="bg-midnight-950 p-6 border border-amber-400/10">
+          <h3 class="font-display text-lg text-amber-400 mb-2">TOC By-Right</h3>
+          <p class="text-sm">Ministerial approval near transit with affordable set-aside. Parking reductions included.</p>
+        </div>
+        <div class="bg-midnight-950 p-6 border border-amber-400/10">
+          <h3 class="font-display text-lg text-amber-400 mb-2">ED1 (100% Affordable)</h3>
+          <p class="text-sm">Ministerial fast-track + state density bonus stacking up to +80%. The deepest unit count available without a hearing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl text-white mb-4">Check Any LA Parcel in 60 Seconds</h2>
+      <p class="text-slate-300 mb-8 max-w-2xl mx-auto">SevenNova pulls ZIMAS, Assessor, FEMA, and seismic data for the exact lot — then computes by-right units, TOC tier, ED1 eligibility, and a full entitlement pathway analysis.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="/zoning-report" class="px-8 py-4 bg-amber-400 text-midnight-950 font-bold tracking-widest uppercase text-sm hover:bg-amber-300 transition-colors">Run Free Zoning Report</a>
+        <a href="/beverlywood-neighborhood-guide" class="px-8 py-4 border border-slate-600 text-slate-300 font-bold tracking-widest uppercase text-sm hover:border-amber-400 hover:text-amber-400 transition-colors">Neighborhood Guides</a>
+      </div>
+    </div>
+  </section>
+</Layout>

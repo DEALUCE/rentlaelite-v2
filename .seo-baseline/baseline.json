@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-05-27T17:15:02.811324+00:00",
+  "captured_at": "2026-06-10T16:09:45.541186+00:00",
   "pages": {
     "/luxury-rental": {
       "title": "Furnished Rental Los Angeles 90035 | 9432 Oakmore Rd Gated Compound — FIFA 2026 Housing $34,999/mo",
@@ -33,8 +33,8 @@
         "WebPage",
         "WebSite"
       ],
-      "body_size_bytes": 112832,
-      "body_sha256_short": "f586c6a0fd7aaa9b",
+      "body_size_bytes": 114226,
+      "body_sha256_short": "72526dbc129051d9",
       "upload_date": "2025-01-22T08:00:00-08:00",
       "start_date": null,
       "end_date": null,
@@ -42,7 +42,7 @@
     },
     "/kosher-kitchen-luxury-rental-los-angeles": {
       "title": "Kosher Kitchen Luxury Rental Los Angeles | 9432 Oakmore Rd Beverlywood 90035",
-      "canonical": "https://sevennova.ai/luxury-rental/kosher-kitchen-luxury-rental-los-angeles",
+      "canonical": "https://sevennova.ai/kosher-kitchen-luxury-rental-los-angeles",
       "description_first_120": "Luxury furnished rental with a true kosher kitchen — dual sinks, dual ovens, full meat/dairy separation. 9432 Oakmore Rd",
       "h1": "Kosher Kitchen Luxury Rental Los Angeles",
       "schema_types": [
@@ -53,8 +53,8 @@
         "Question",
         "RealEstateListing"
       ],
-      "body_size_bytes": 36353,
-      "body_sha256_short": "6e3527e397179100",
+      "body_size_bytes": 36355,
+      "body_sha256_short": "00cec6801b69767d",
       "upload_date": null,
       "start_date": null,
       "end_date": null,
@@ -62,7 +62,7 @@
     },
     "/gated-compound-rental-los-angeles": {
       "title": "Gated Compound Rental Los Angeles | 9432 Oakmore Rd Beverlywood — $34,999/mo",
-      "canonical": "https://sevennova.ai/luxury-rental/gated-compound-rental-los-angeles",
+      "canonical": "https://sevennova.ai/gated-compound-rental-los-angeles",
       "description_first_120": "Gated dual-structure luxury compound for rent in Los Angeles. 5BR main residence + detached 400 sq ft guest house on sin",
       "h1": "Gated Compound Rental Los Angeles",
       "schema_types": [
@@ -73,8 +73,8 @@
         "Question",
         "RealEstateListing"
       ],
-      "body_size_bytes": 36566,
-      "body_sha256_short": "9c39a37f89cac451",
+      "body_size_bytes": 36568,
+      "body_sha256_short": "29064cc725afc4ab",
       "upload_date": null,
       "start_date": null,
       "end_date": null,
@@ -82,7 +82,7 @@
     },
     "/beverly-hills-luxury-rentals": {
       "title": "Beverly Hills Luxury Homes for Rent | Market Guide &amp; Pricing 2026 — The Issak Group",
-      "canonical": "https://sevennova.ai/luxury-rental/beverly-hills-luxury-rentals",
+      "canonical": "https://sevennova.ai/beverly-hills-luxury-rentals",
       "description_first_120": "Beverly Hills luxury homes for rent — market guide covering 90210, Beverlywood, Century City, Bel Air, Holmby Hills, Tro",
       "h1": "Beverly Hills Luxury Homes for Rent",
       "schema_types": [
@@ -94,8 +94,8 @@
         "Question",
         "RealEstateAgent"
       ],
-      "body_size_bytes": 40415,
-      "body_sha256_short": "e927d0b8f53e2eb4",
+      "body_size_bytes": 40417,
+      "body_sha256_short": "c4f560102609577a",
       "upload_date": null,
       "start_date": null,
       "end_date": null,
@@ -119,8 +119,8 @@
         "PostalAddress",
         "Question"
       ],
-      "body_size_bytes": 54209,
-      "body_sha256_short": "793601e1f960d9ca",
+      "body_size_bytes": 54239,
+      "body_sha256_short": "8f67072e8a200bfb",
       "upload_date": null,
       "start_date": "2026-06-11T16:00:00-07:00",
       "end_date": "2026-07-19T22:00:00-07:00",

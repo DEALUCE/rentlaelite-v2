@@ -391,7 +391,7 @@ const jsonLd = [
           ))}
           <div class="hidden sm:block w-px bg-midnight-700 self-stretch"></div>
           <div>
-            <p class="font-display text-3xl text-white">{property.priceSummerDisplay}</p>
+            <p class="font-display text-4xl font-semibold text-white">{property.priceSummerDisplay}</p>
             <p class="text-xs text-amber-400/70 tracking-widest uppercase">Summer / FIFA Rate</p>
             <p class="text-xs text-slate-600 mt-0.5">Call for off-season pricing</p>
           </div>
@@ -479,7 +479,7 @@ const jsonLd = [
     </div>
 
     <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-bounce">
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden lg:flex flex-col items-center gap-2 scroll-cue">
       <p class="text-slate-600 text-xs tracking-widest uppercase">Discover</p>
       <svg class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
@@ -497,7 +497,7 @@ const jsonLd = [
           { icon: 'â—ˆ', label: '24-Hr Response', sub: 'Direct agent contact' },
           { icon: 'â—‰', label: 'Real Estate Source Inc.', sub: 'Brokerage DRE #01869619' },
         ].map(({ icon, label, sub }) => (
-          <div class="glass-light px-6 py-4 flex items-center gap-4">
+          <div class="glass-light px-6 py-6 md:py-4 flex items-center gap-4">
             <span class="text-amber-400 text-xl shrink-0">{icon}</span>
             <div>
               <p class="text-white text-xs font-semibold">{label}</p>
@@ -535,19 +535,19 @@ const jsonLd = [
   </section>
 
   <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• DIVERSE PHOTO STRIP -->
-  <section class="grid grid-cols-5 gap-px bg-midnight-950">
+  <section class="grid grid-cols-2 md:grid-cols-5 gap-px bg-midnight-950">
     {[
       { src: property.images.aerial[0], alt: '9432 Oakmore Rd aerial drone view — gated compound Beverlywood' },
       { src: property.images.outdoor[0], alt: 'Heated pool & spa — 9432 Oakmore Rd luxury rental LA' },
       { src: property.images.kitchen[0], alt: "Chef's kitchen with dual ovens — 9432 Oakmore Rd" },
       { src: property.images.primarySuite[0], alt: 'Primary suite with steam sauna — 9432 Oakmore Rd' },
       { src: property.images.guestHouse[0], alt: 'Private guest house ADU — 9432 Oakmore Rd Beverlywood' },
-    ].map(({ src, alt }) => (
-      <a href="/gallery" class="overflow-hidden block aspect-video">
+    ].map(({ src, alt }, i) => (
+      <a href="/gallery" class={`overflow-hidden block aspect-video group ${i === 0 ? 'col-span-2 md:col-span-1' : ''}`}>
         <img
           src={src}
           alt={alt}
-          class="w-full h-full object-cover opacity-75 hover:opacity-100 hover:scale-105 transition-all duration-700"
+          class="w-full h-full object-cover opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
           loading="lazy"
         />
       </a>

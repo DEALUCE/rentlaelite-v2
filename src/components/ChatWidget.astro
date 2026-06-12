@@ -21,7 +21,7 @@
   <div
     id="chat-panel"
     class="fixed bottom-44 md:bottom-28 right-5 z-[60] w-[340px] md:w-[380px] h-[520px] glass border border-amber-400/25 flex flex-col shadow-2xl transition-all duration-300 origin-bottom-right"
-    style="display:none; transform: scale(0.95); opacity: 0;"
+    style="display:none; transform: scale(0.9) translateY(16px); opacity: 0;"
   >
     <!-- Header -->
     <div class="flex items-center gap-3 p-4 border-b border-amber-400/10 shrink-0">
@@ -111,7 +111,7 @@
     isOpen = true;
     panel.style.display = 'flex';
     requestAnimationFrame(() => {
-      panel.style.transform = 'scale(1)';
+      panel.style.transform = 'scale(1) translateY(0)';
       panel.style.opacity = '1';
     });
     iconOpen.classList.add('hidden');
@@ -121,7 +121,7 @@
 
   function closeChat() {
     isOpen = false;
-    panel.style.transform = 'scale(0.95)';
+    panel.style.transform = 'scale(0.9) translateY(16px)';
     panel.style.opacity = '0';
     setTimeout(() => { panel.style.display = 'none'; }, 200);
     iconOpen.classList.remove('hidden');

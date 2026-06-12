@@ -151,6 +151,24 @@ const { title, description, canonical, image, jsonLd } = Astro.props;
     </div>
 
     <script is:inline>
+      // GA4 conversion events: phone, WhatsApp, Calendly, form submits
+      (function () {
+        function track(name, params) {
+          if (typeof gtag === 'function') gtag('event', name, params || {});
+        }
+        document.addEventListener('click', function (e) {
+          var a = e.target.closest && e.target.closest('a');
+          if (!a || !a.href) return;
+          if (a.href.indexOf('tel:') === 0) track('phone_call_click', { link_url: a.href });
+          else if (a.href.indexOf('wa.me') !== -1) track('whatsapp_click', { page_path: location.pathname });
+          else if (a.href.indexOf('calendly.com') !== -1) track('book_tour_click', { page_path: location.pathname });
+        });
+        document.addEventListener('submit', function (e) {
+          var f = e.target;
+          if (f && f.tagName === 'FORM') track('lead_form_submit', { form_name: f.getAttribute('name') || f.id || 'unknown', page_path: location.pathname });
+        });
+      })();
+
       (function () {
         var sections = document.querySelectorAll('main section');
         if (!('IntersectionObserver' in window)) return;

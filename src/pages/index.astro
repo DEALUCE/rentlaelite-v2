@@ -286,13 +286,13 @@ const jsonLd = [
 ];
 ---
 
-<PropertySchema />
 <Layout
-  title="Furnished Rental Los Angeles 90035 | 9432 Oakmore Rd Gated Compound â€” FIFA 2026 Housing $34,999/mo"
-  description="Furnished luxury rental in Los Angeles 90035 â€” gated 5BR compound with heated pool, guest house, kosher kitchen, EV charging. 15 min from SoFi Stadium. FIFA World Cup 2026 executive housing window: $34,999/mo, 30-day minimum. Call 424-272-5935."
+  title="Furnished Rental Los Angeles 90035 | 9432 Oakmore Rd Gated Compound — Super Bowl LXI 2027 Housing $34,999/mo"
+  description="Furnished luxury rental in Los Angeles 90035 — gated 5BR compound with heated pool, guest house, kosher kitchen, EV charging. 18 min from SoFi Stadium. Now reserving Fall 2026 + Super Bowl LXI (Feb 2027): $34,999/mo, 30-day minimum. Call 424-272-5935."
   canonical="https://sevennova.ai/luxury-rental"
   jsonLd={jsonLd}
 >
+  <PropertySchema />
 
   <!-- Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â FIFA BANNER -->
   <a href="/super-bowl-2027-housing-los-angeles" class="block relative overflow-hidden group">
@@ -338,13 +338,18 @@ const jsonLd = [
     <!-- Ken Burns background -->
     <div class="absolute inset-0 z-0">
       <picture>
-        <source srcset={property.images.hero.replace('.jpg', '.webp')} type="image/webp" />
+        <source
+          srcset="/images/hero-768.webp 768w, /images/hero-1280.webp 1280w, /images/hero-1920.webp 1920w"
+          sizes="100vw"
+          type="image/webp"
+        />
         <img
           src={property.images.hero}
           alt="9432 Oakmore Rd aerial â€” gated luxury compound Beverlywood Los Angeles 90035"
           class="w-full h-full object-cover animate-ken-burns origin-center"
           loading="eager"
           fetchpriority="high"
+          decoding="async"
         />
       </picture>
       <div class="absolute inset-0 bg-gradient-to-r from-midnight-950/80 via-midnight-950/50 to-midnight-950/20"></div>
@@ -393,7 +398,7 @@ const jsonLd = [
           <div>
             <p class="font-display text-4xl font-semibold text-white">{property.priceSummerDisplay}</p>
             <p class="text-xs text-amber-400/70 tracking-widest uppercase">Summer / FIFA Rate</p>
-            <p class="text-xs text-slate-600 mt-0.5">Call for off-season pricing</p>
+            <p class="text-xs text-slate-400 mt-0.5">Call for off-season pricing</p>
           </div>
         </div>
         <div class="flex flex-wrap items-center gap-3">
@@ -441,6 +446,7 @@ const jsonLd = [
             />
             <select
               name="lease-length"
+              aria-label="Intended stay length"
               class="w-full bg-midnight-950/60 border border-slate-700 text-slate-400 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors"
             >
               <option value="">Intended Stay</option>
@@ -480,7 +486,7 @@ const jsonLd = [
 
     <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden lg:flex flex-col items-center gap-2 scroll-cue">
-      <p class="text-slate-600 text-xs tracking-widest uppercase">Discover</p>
+      <p class="text-slate-400 text-xs tracking-widest uppercase">Discover</p>
       <svg class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
       </svg>

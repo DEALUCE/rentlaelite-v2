@@ -51,14 +51,14 @@ const totalPhotos = sections.reduce((sum, s) => sum + s.images.length, 0);
         </h2>
         <div class={`grid gap-2 ${images.length === 1 ? 'grid-cols-1 max-w-xl' : images.length === 2 ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4'}`}>
           {images.map((src, i) => (
-            <div class="overflow-hidden bg-charcoal/5 group">
+            <button type="button" class="overflow-hidden bg-charcoal/5 group block w-full cursor-zoom-in lightbox-trigger" data-src={src} data-alt={`9432 Oakmore Rd ${label.toLowerCase()} photo ${i + 1}`}>
               <img
                 src={src}
                 alt={`9432 Oakmore Rd ${label.toLowerCase()} — luxury rental Los Angeles 90035 photo ${i + 1}`}
                 class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
-            </div>
+            </button>
           ))}
         </div>
       </div>
@@ -77,4 +77,48 @@ const totalPhotos = sections.reduce((sum, s) => sum + s.images.length, 0);
       </a>
     </div>
   </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-[80] hidden items-center justify-center bg-midnight-950/95 p-4" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button type="button" id="lb-close" aria-label="Close" class="absolute top-4 right-4 text-white/60 hover:text-amber-400 text-3xl leading-none px-3 py-1">&times;</button>
+    <button type="button" id="lb-prev" aria-label="Previous photo" class="absolute left-2 md:left-6 text-white/60 hover:text-amber-400 text-4xl px-3 py-2">&#8249;</button>
+    <img id="lb-img" src="" alt="" class="max-h-[88vh] max-w-[92vw] object-contain shadow-2xl" />
+    <button type="button" id="lb-next" aria-label="Next photo" class="absolute right-2 md:right-6 text-white/60 hover:text-amber-400 text-4xl px-3 py-2">&#8250;</button>
+    <p id="lb-count" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/50 text-xs tracking-widest"></p>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var triggers = Array.prototype.slice.call(document.querySelectorAll('.lightbox-trigger'));
+      var box = document.getElementById('lightbox');
+      var img = document.getElementById('lb-img');
+      var count = document.getElementById('lb-count');
+      var idx = 0;
+      function show(i) {
+        idx = (i + triggers.length) % triggers.length;
+        img.src = triggers[idx].dataset.src;
+        img.alt = triggers[idx].dataset.alt;
+        count.textContent = (idx + 1) + ' / ' + triggers.length;
+        box.classList.remove('hidden');
+        box.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        box.classList.add('hidden');
+        box.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+      triggers.forEach(function (t, i) { t.addEventListener('click', function () { show(i); }); });
+      document.getElementById('lb-close').addEventListener('click', close);
+      document.getElementById('lb-prev').addEventListener('click', function () { show(idx - 1); });
+      document.getElementById('lb-next').addEventListener('click', function () { show(idx + 1); });
+      box.addEventListener('click', function (e) { if (e.target === box) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (box.classList.contains('hidden')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(idx - 1);
+        if (e.key === 'ArrowRight') show(idx + 1);
+      });
+    })();
+  </script>
 </Layout>

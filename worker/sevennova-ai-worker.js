@@ -1962,7 +1962,9 @@ var RENTLAELITE_ROUTES = /* @__PURE__ */ new Set([
   "/executive-rental-beverly-hills",
   "/luxury-rental-near-sofi-stadium",
   "/furnished-monthly-rental-los-angeles",
-  "/beverlywood-90035-luxury-homes-for-rent"
+  "/beverlywood-90035-luxury-homes-for-rent",
+  "/pico-robertson-kosher-rental",
+  "/luxury-rental-near-lax"
   // /zoning-report is owned by the SevenNova Next.js app â€” do not proxy to rentlaelite.
 ]);
 var RENTLAELITE_BASE = "https://rentlaelite-v2.pages.dev";

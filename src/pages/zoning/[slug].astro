@@ -155,4 +155,21 @@ const jsonLd = [
       </div>
     </div>
   </section>
+
+  <!-- All-zones cross-links -->
+  <section class="py-14 bg-midnight-900 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-6 flex items-center gap-3">
+        <span class="w-8 h-px bg-amber-400"></span>
+        All LA Residential Zones
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <a href="/zoning" class="text-xs tracking-widest uppercase border border-amber-400/40 text-amber-400 px-4 py-2 hover:border-amber-400 transition-colors">Zoning Guide Hub</a>
+        {zonesData.zones.filter((z) => z.slug !== zone.slug).map((z) => (
+          <a href={`/zoning/${z.slug}`} class="text-xs tracking-widest uppercase border border-white/10 text-slate-400 px-4 py-2 hover:border-amber-400/40 hover:text-amber-400 transition-colors">{z.code}</a>
+        ))}
+        <a href="/zoning/unit-calculator" class="text-xs tracking-widest uppercase border border-white/10 text-slate-400 px-4 py-2 hover:border-amber-400/40 hover:text-amber-400 transition-colors">Unit Calculator</a>
+      </div>
+    </div>
+  </section>
 </Layout>

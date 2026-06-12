@@ -1,0 +1,105 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import zonesData from '../../data/zones.json';
+
+const zones = zonesData.zones;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Los Angeles Residential Zoning Guide — R1 to R5 and RD Zones Explained",
+    "description": "Complete guide to LA residential zoning codes: density rules, by-right unit math, and TOC bonuses for R1, R2, R3, R4, R5, and RD1.5–RD6 zones.",
+    "author": { "@type": "Person", "name": "Daniel Issak", "identifier": "DRE# 02037760" },
+    "publisher": { "@type": "Organization", "name": "SevenNova.ai" },
+    "mainEntityOfPage": "https://sevennova.ai/zoning"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Los Angeles Residential Zoning Codes",
+    "itemListElement": zones.map((z, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": z.name,
+      "url": `https://sevennova.ai/zoning/${z.slug}`
+    }))
+  }
+];
+---
+
+<Layout
+  title="LA Zoning Guide | R1–R5 & RD Zones — Density Rules + Unit Calculator"
+  description="Los Angeles residential zoning explained: R1, R2, R3, R4, R5 and RD1.5–RD6 density rules, by-right unit math per lot size, TOC bonus tiers, and a free parcel-level unit calculator."
+  jsonLd={jsonLd}
+>
+  <section class="relative py-24 bg-midnight-950">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">Developer & Investor Reference</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        Los Angeles<br /><em class="text-gradient">Residential Zoning Guide</em>
+      </h1>
+      <p class="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
+        Every LA residential zone from R1 to R5 and the RD series — density rules,
+        by-right unit math, and TOC bonus tiers. Verify any parcel in seconds with
+        the free unit calculator.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/zoning/unit-calculator" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">Unit Calculator</a>
+        <a href="/zoning-report" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">Free Parcel Report</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 pb-8">
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-amber-400/20 text-left">
+            <th class="py-4 pr-4 text-amber-400 text-xs tracking-widest uppercase">Zone</th>
+            <th class="py-4 pr-4 text-amber-400 text-xs tracking-widest uppercase">Density Rule</th>
+            <th class="py-4 pr-4 text-amber-400 text-xs tracking-widest uppercase hidden md:table-cell">Example Lot</th>
+            <th class="py-4 text-amber-400 text-xs tracking-widest uppercase">By-Right Units</th>
+          </tr>
+        </thead>
+        <tbody>
+          {zones.map((z) => (
+            <tr class="border-b border-white/5 hover:bg-midnight-900/60 transition-colors">
+              <td class="py-4 pr-4">
+                <a href={`/zoning/${z.slug}`} class="text-white font-medium hover:text-amber-400 transition-colors">{z.code}</a>
+              </td>
+              <td class="py-4 pr-4 text-slate-400">{z.density_rule}</td>
+              <td class="py-4 pr-4 text-slate-500 hidden md:table-cell">{z.example_lot.toLocaleString()} sq ft</td>
+              <td class="py-4 text-amber-400 font-medium">{z.example_units}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-midnight-800/40">
+      {zones.map((z) => (
+        <a href={`/zoning/${z.slug}`} class="glass-light p-6 group hover:border-amber-400/25 transition-all duration-300 block">
+          <p class="text-amber-400 text-xs tracking-widest uppercase mb-2">{z.code}</p>
+          <p class="text-white text-sm font-medium group-hover:text-amber-400 transition-colors">{z.name}</p>
+          <p class="text-slate-500 text-xs mt-2 leading-relaxed">{z.typical_use}</p>
+          <span class="text-amber-400 text-xs tracking-widest uppercase mt-3 inline-block opacity-60 group-hover:opacity-100 transition-opacity">Full Guide →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 py-16 text-center">
+    <div class="glass p-8">
+      <h2 class="font-display text-2xl text-white mb-4">Know Your Parcel Before You Buy or Build</h2>
+      <p class="text-slate-400 text-sm leading-relaxed mb-6">
+        Zoning code alone doesn't tell the whole story — TOC tiers, specific plans, HPOZ overlays,
+        and hazard maps all change what you can build. The SevenNova zoning report pulls live
+        ZIMAS and Assessor data for any LA parcel.
+      </p>
+      <a href="/zoning-report" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 inline-block hover:bg-amber-300 transition-colors">Run a Free Zoning Report</a>
+    </div>
+  </section>
+</Layout>

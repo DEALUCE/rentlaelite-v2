@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": "Pico-Robertson Kosher Luxury Rental — Walk to Shul | 9432 Oakmore Rd",
+    "description": "Luxury furnished rental adjacent to Pico-Robertson: kosher kitchen with dual sinks and dual ovens, walking distance to Young Israel of Century City and Beth Jacob Congregation. 5BR gated compound, $34,999/month.",
+    "url": "https://sevennova.ai/pico-robertson-kosher-rental",
+    "price": "34999",
+    "priceCurrency": "USD",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9432 Oakmore Rd",
+      "addressLocality": "Los Angeles",
+      "addressRegion": "CA",
+      "postalCode": "90035",
+      "addressCountry": "US"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is there a luxury rental within walking distance of Pico-Robertson synagogues?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. 9432 Oakmore Rd in Beverlywood (90035) is within walking distance of Young Israel of Century City and Beth Jacob Congregation, inside the community eruv. The fully furnished 5-bedroom gated compound rents at $34,999/month with a 30-day minimum."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the rental have a kosher kitchen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The chef's kitchen is built for kosher use: dual sinks, dual ovens, and abundant separate prep and storage space for meat and dairy. The detached guest house adds a second full kitchen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes Pico-Robertson ideal for observant families visiting Los Angeles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pico-Robertson is the center of observant Jewish life in Los Angeles — dozens of synagogues, kosher restaurants and markets along Pico Blvd, established eruv, and walkable Shabbat distances. Beverlywood, immediately south, offers quiet residential streets within the same community."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  image="/images/kitchen-2.jpg"
+  title="Pico-Robertson Kosher Luxury Rental | Walk to Shul — 5BR Compound"
+  description="Kosher luxury rental adjacent to Pico-Robertson: dual-sink dual-oven kosher kitchen, walking distance to Young Israel and Beth Jacob, inside the eruv. Furnished 5BR gated compound, $34,999/mo, 30-day minimum."
+  jsonLd={jsonLd}
+>
+  <section class="relative py-28 bg-midnight-950 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight-950 via-midnight-900 to-midnight-950"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">Walk to Shul · Inside the Eruv · Kosher Kitchen</p>
+      <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-6">
+        Pico-Robertson<br /><em class="text-gradient">Kosher Luxury Rental</em>
+      </h1>
+      <p class="speakable text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+        9432 Oakmore Rd sits in Beverlywood, steps from the Pico-Robertson community —
+        walking distance to Young Israel of Century City and Beth Jacob Congregation,
+        with a true dual-sink, dual-oven kosher kitchen. Fully furnished, $34,999/month.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://calendly.com/theissakgroup/30min" target="_blank" rel="noopener noreferrer" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">Book a Private Tour</a>
+        <a href="/kosher-kitchen-luxury-rental-los-angeles" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">Kosher Kitchen Details</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-midnight-900 py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-xs tracking-widest uppercase text-amber-400 mb-8 text-center">Community Within Reach</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { title: 'Shabbat Walkable', items: ['Young Israel of Century City', 'Beth Jacob Congregation', 'Inside the community eruv', 'Quiet tree-lined streets', 'Flat, stroller-friendly walks'] },
+          { title: 'Kosher Living', items: ['Dual sinks · dual ovens', 'Separate meat/dairy prep + storage', 'Second full kitchen in guest house', 'Pico Blvd kosher markets minutes away', 'Kosher restaurants on Pico corridor'] },
+          { title: 'Family Comfort', items: ['5 bedrooms · 6 bathrooms', 'Heated pool & spa', 'Gated driveway, Ring security', 'Detached guest house for guests/staff', 'Fully furnished, move-in ready'] },
+        ].map(({ title, items }) => (
+          <div class="glass p-7">
+            <p class="text-amber-400 text-xs tracking-widest uppercase mb-4">{title}</p>
+            <ul class="space-y-2">
+              {items.map(item => (
+                <li class="flex gap-3 text-sm text-slate-400">
+                  <span class="text-amber-400 shrink-0">→</span>{item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 py-20">
+    <h2 class="font-display text-2xl text-white mb-8 text-center">Pico-Robertson Rental — FAQ</h2>
+    <div class="space-y-4">
+      {[
+        { q: 'Is the rental within walking distance of Pico-Robertson synagogues?', a: 'Yes — Young Israel of Century City and Beth Jacob Congregation are both walkable from 9432 Oakmore Rd, and the property sits inside the community eruv.' },
+        { q: 'Does it have a kosher kitchen?', a: 'Dual sinks, dual ovens, and separate prep/storage space; the detached guest house adds a second full kitchen for additional separation.' },
+        { q: 'What are the lease terms?', a: '$34,999/month fully furnished, 30-day minimum, terms to 12+ months. Standard California lease through Daniel Issak, DRE #02037760.' },
+      ].map(({ q, a }) => (
+        <details class="glass group">
+          <summary class="cursor-pointer list-none p-5 flex justify-between items-center gap-4">
+            <span class="text-white text-sm font-medium">{q}</span>
+            <span class="text-amber-400 group-open:rotate-45 transition-transform text-lg shrink-0">+</span>
+          </summary>
+          <p class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">{a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <RelatedLinks heading="Beverlywood & Community" links={[
+    { label: 'Kosher Kitchen Luxury Rental', href: '/kosher-kitchen-luxury-rental-los-angeles', sub: 'Full kosher kitchen specification' },
+    { label: 'Beverlywood Neighborhood Guide', href: '/beverlywood-neighborhood-guide', sub: 'Schools, dining, synagogues, commutes' },
+    { label: 'Furnished Rental LA 90035', href: '/furnished-rental-los-angeles-90035', sub: 'The 90035 ZIP code page' },
+    { label: 'Furnished Monthly Rental LA', href: '/furnished-monthly-rental-los-angeles', sub: '30/60/90-day terms' },
+    { label: 'The Property', href: '/property', sub: 'Full specs and amenities' },
+    { label: 'Photo Gallery', href: '/gallery', sub: '57 professional photos' },
+  ]} />
+</Layout>

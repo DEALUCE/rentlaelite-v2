@@ -50,14 +50,34 @@ The Issak Group offers AI-powered real estate marketing services for luxury agen
 - AI search visibility (ChatGPT, Perplexity, Gemini, Claude citations)
 - Starting from $3,500 for listing sites | $1,500/mo SEO retainer
 
+## Availability (as of June 2026)
+
+- FIFA World Cup 2026 window: BOOKED (see /case-study-fifa-booking)
+- Now reserving: Fall 2026 dates and Super Bowl LXI window (February 2027)
+- Standard monthly rate: $34,999/month, 30-day minimum lease
+
 ## Key Pages
 
-- /                                              — Homepage
+- /luxury-rental                                 — Homepage
 - /property                                      — Full property specs and amenities
 - /gallery                                       — 57 professional photos in 13 categories
-- /fifa-world-cup-2026-los-angeles-rental        — FIFA World Cup 2026 housing (summer rate $34,999/mo)
+- /super-bowl-2027-housing-los-angeles           — Super Bowl LXI Feb 2027 housing (now reserving)
+- /furnished-monthly-rental-los-angeles          — 30/60/90-day furnished monthly leases
+- /fifa-world-cup-2026-los-angeles-rental        — FIFA World Cup 2026 housing (window booked)
+- /case-study-fifa-booking                       — How the FIFA window was booked
+- /olympics-2028-housing-los-angeles             — LA28 Olympics executive housing
+- /awards-season-housing-los-angeles             — Awards season (Oscars/Grammys) stays
+- /corporate-housing-los-angeles                 — Corporate and relocation housing
+- /executive-rental-beverly-hills                — Executive furnished housing
+- /insurance-housing-los-angeles                 — Insurance / ALE displacement housing
+- /medical-stay-near-cedars-sinai                — Medical stays near Cedars-Sinai
+- /production-housing-los-angeles                — Film/TV production housing
+- /kosher-kitchen-luxury-rental-los-angeles      — Kosher kitchen, walk to Pico-Robertson shuls
 - /beverly-hills-luxury-rentals                  — Beverly Hills luxury rental market overview + FAQ
 - /beverly-hills-market-report                   — 2026 Beverly Hills luxury rental market data
+- /beverlywood-neighborhood-guide                — Beverlywood neighborhood guide
+- /beverlywood-90035-luxury-homes-for-rent       — Beverlywood 90035 homes for rent
+- /furnished-rental-los-angeles-90035            — Furnished rental ZIP 90035
 - /services                                      — Real estate SEO and AI marketing services
 - /results                                       — Site technical metrics and SEO proof
 - /faq                                           — Tenant FAQ

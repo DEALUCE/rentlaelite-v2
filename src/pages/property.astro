@@ -6,9 +6,9 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Accommodation",
-    "name": "9432 Oakmore Rd — Luxury 5BR Compound | Beverlywood LA 90035",
+    "name": "9432 Oakmore Rd â€” Luxury 5BR Compound | Beverlywood LA 90035",
     "description": property.description,
-    "url": "https://sevennova.ai/luxury-rental/property/",
+    "url": "https://sevennova.ai/property/",
     "image": [
       `https://sevennova.ai/luxury-rental${property.images.hero}`,
       `https://sevennova.ai/luxury-rental${property.images.exterior[0]}`,
@@ -48,15 +48,15 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sevennova.ai/luxury-rental/" },
-      { "@type": "ListItem", "position": 2, "name": "Property", "item": "https://sevennova.ai/luxury-rental/property/" }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sevennova.ai/" },
+      { "@type": "ListItem", "position": 2, "name": "Property", "item": "https://sevennova.ai/property/" }
     ]
   }
 ];
 ---
 
 <Layout
-  title={`Beverlywood Luxury Compound | 5BR Rental LA 90035 — ${property.priceDisplay}`}
+  title={`Beverlywood Luxury Compound | 5BR Rental LA 90035 â€” ${property.priceDisplay}`}
   description="5 beds, 6 baths, 4,092 sq ft + detached guest house. Heated pool, steam sauna, chef's kitchen, smart home. Beverlywood / Beverly Hills Adjacent. MLS# 25594215."
   jsonLd={jsonLd}
 >
@@ -64,7 +64,7 @@ const jsonLd = [
   <section class="relative h-[55vh] min-h-[420px] flex items-end bg-midnight-950 overflow-hidden">
     <img
       src={property.images.aerial[1]}
-      alt="Gated 5-bedroom luxury compound aerial view — Beverlywood Los Angeles"
+      alt="Gated 5-bedroom luxury compound aerial view â€” Beverlywood Los Angeles"
       class="absolute inset-0 w-full h-full object-cover opacity-55"
       loading="eager"
       fetchpriority="high"
@@ -73,12 +73,12 @@ const jsonLd = [
     <div class="relative z-10 max-w-7xl mx-auto px-6 pb-12 w-full">
       <nav class="text-xs text-white/30 mb-4">
         <a href="/" class="hover:text-amber-400 transition-colors">Home</a>
-        <span class="mx-2">›</span>
+        <span class="mx-2">â€º</span>
         <span class="text-white/60">Property</span>
       </nav>
-      <p class="text-amber-400 text-xs tracking-[0.3em] uppercase mb-2">MLS# {property.mlsNumber} · APN {property.apn}</p>
+      <p class="text-amber-400 text-xs tracking-[0.3em] uppercase mb-2">MLS# {property.mlsNumber} Â· APN {property.apn}</p>
       <h1 class="font-display text-white text-4xl md:text-5xl">Beverlywood Luxury Compound</h1>
-      <p class="text-white/60 mt-2">{property.address.neighborhood} · {property.address.city}, {property.address.state} {property.address.zip} · <em class="text-white/40 not-italic text-xs">Address upon qualified inquiry</em></p>
+      <p class="text-white/60 mt-2">{property.address.neighborhood} Â· {property.address.city}, {property.address.state} {property.address.zip} Â· <em class="text-white/40 not-italic text-xs">Address upon qualified inquiry</em></p>
     </div>
   </section>
 
@@ -167,7 +167,7 @@ const jsonLd = [
           {[...property.images.aerial, ...property.images.exterior].map((src, i) => (
             <img
               src={src}
-              alt={`Beverlywood luxury rental ${i < 4 ? 'aerial drone' : 'exterior'} view — LA 90035`}
+              alt={`Beverlywood luxury rental ${i < 4 ? 'aerial drone' : 'exterior'} view â€” LA 90035`}
               class="w-full aspect-video object-cover"
               loading="lazy"
             />
@@ -193,7 +193,7 @@ const jsonLd = [
             <a href="/gallery">
               <img
                 src={src}
-                alt={`Luxury rental interior — Los Angeles photo ${i + 1}`}
+                alt={`Luxury rental interior â€” Los Angeles photo ${i + 1}`}
                 class="w-full aspect-[4/3] object-cover hover:opacity-90 transition-opacity"
                 loading="lazy"
               />
@@ -209,7 +209,7 @@ const jsonLd = [
           {property.images.outdoor.map((src, i) => (
             <img
               src={src}
-              alt={`Heated pool and outdoor area — Beverlywood luxury rental photo ${i + 1}`}
+              alt={`Heated pool and outdoor area â€” Beverlywood luxury rental photo ${i + 1}`}
               class="w-full aspect-[4/3] object-cover"
               loading="lazy"
             />
@@ -220,7 +220,7 @@ const jsonLd = [
       <!-- Guest House -->
       <div class="bg-midnight-900 text-white p-8">
         <h2 class="font-display text-2xl mb-2">Detached Guest House</h2>
-        <p class="text-white/50 text-sm mb-6">~{property.guestHouse.sqft} sq ft · Private entrance · Included in lease</p>
+        <p class="text-white/50 text-sm mb-6">~{property.guestHouse.sqft} sq ft Â· Private entrance Â· Included in lease</p>
         <ul class="space-y-2 mb-6">
           {property.guestHouse.features.map((f) => (
             <li class="flex items-center gap-3 text-sm text-white/70">
@@ -234,7 +234,7 @@ const jsonLd = [
           {property.images.guestHouse.map((src, i) => (
             <img
               src={src}
-              alt={`Guest house — luxury rental Los Angeles photo ${i + 1}`}
+              alt={`Guest house â€” luxury rental Los Angeles photo ${i + 1}`}
               class="w-full aspect-square object-cover"
               loading="lazy"
             />
@@ -275,7 +275,7 @@ const jsonLd = [
     <aside class="space-y-6">
       <div class="bg-midnight-900 text-white p-6 sticky top-28">
         <p class="font-display text-amber-400 text-2xl mb-1">{property.priceDisplay}</p>
-        <p class="text-white/40 text-xs mb-1">Summer / FIFA Rate · May–Aug 2026</p>
+        <p class="text-white/40 text-xs mb-1">Summer / FIFA Rate Â· Mayâ€“Aug 2026</p>
         <p class="text-white/30 text-xs mb-6">Utilities & maintenance not included</p>
         <dl class="space-y-3 text-sm mb-6">
           {[
@@ -313,7 +313,7 @@ const jsonLd = [
 
       <div class="border border-slate-700 p-6 bg-midnight-900 text-sm">
         <p class="text-xs tracking-widest uppercase text-slate-500 mb-4">Location</p>
-        <p class="font-medium text-white">Beverlywood · Beverly Hills Adjacent</p>
+        <p class="font-medium text-white">Beverlywood Â· Beverly Hills Adjacent</p>
         <p class="text-slate-400">{property.address.city}, {property.address.state} {property.address.zip}</p>
         <p class="text-slate-500 text-xs mt-2">Address provided upon qualified inquiry</p>
         <ul class="mt-4 space-y-1">
@@ -330,7 +330,7 @@ const jsonLd = [
         <p class="text-xs tracking-widest uppercase text-slate-500 mb-4">Quick Links</p>
         <nav class="space-y-2">
           {[['Gallery', '/gallery'], ['About Agent', '/about'], ['Contact', '/contact']].map(([label, href]) => (
-            <a href={href} class="block text-slate-400 hover:text-amber-400 transition-colors">→ {label}</a>
+            <a href={href} class="block text-slate-400 hover:text-amber-400 transition-colors">â†’ {label}</a>
           ))}
         </nav>
       </div>

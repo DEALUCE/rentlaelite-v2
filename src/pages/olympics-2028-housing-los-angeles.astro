@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+import RelatedLinks from '../components/RelatedLinks.astro';
 const jsonLd = [
   {
     "@context": "https://schema.org",
@@ -147,4 +148,6 @@ const jsonLd = [
       </div>
     </div>
   </section>
+
+  <RelatedLinks heading="Event-Driven Housing" links={[{"label": "Super Bowl LXI 2027 Housing", "href": "/super-bowl-2027-housing-los-angeles", "sub": "Reserve the February 2027 window"}, {"label": "FIFA 2026 Rental (Booked)", "href": "/fifa-world-cup-2026-los-angeles-rental", "sub": "Case study \u2014 the FIFA window"}, {"label": "Awards Season Housing", "href": "/awards-season-housing-los-angeles", "sub": "Oscars, Grammys, Emmys stays"}, {"label": "Luxury Rental Near SoFi", "href": "/luxury-rental-near-sofi-stadium", "sub": "18 minutes to SoFi Stadium"}]} />
 </Layout>

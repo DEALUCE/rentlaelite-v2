@@ -4,7 +4,10 @@ interface Props {
   description: string;
   canonical?: string;
   image?: string;
+  imageAlt?: string;
   type?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
 }
 
 const {
@@ -12,12 +15,33 @@ const {
   description,
   canonical,
   image = '/images/DJI_20250122125313_0947_D.jpg',
+  imageAlt = '9432 Oakmore Rd — Luxury Gated Compound Beverlywood Los Angeles',
   type = 'website',
+  publishedTime,
+  modifiedTime,
 } = Astro.props;
 
-const siteUrl = 'https://sevennova.ai/luxury-rental';
+const siteUrl = 'https://sevennova.ai';
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
 const ogImage = image.startsWith('http') ? image : new URL(image, siteUrl).href;
+
+// Auto breadcrumb schema for all non-home pages
+const pathname = Astro.url.pathname.replace(/\/$/, '');
+const breadcrumb = pathname && pathname !== '/luxury-rental'
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sevennova.ai/luxury-rental' },
+        ...pathname.split('/').filter(Boolean).map((seg, i, arr) => ({
+          '@type': 'ListItem',
+          position: i + 2,
+          name: seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+          item: siteUrl + '/' + arr.slice(0, i + 1).join('/'),
+        })),
+      ],
+    }
+  : null;
 
 const keywords = [
   'Beverly Hills luxury rental', 'Beverly Hills luxury home for rent',
@@ -54,7 +78,9 @@ const keywords = [
 <meta property="og:image" content={ogImage} />
 <meta property="og:image:width" content="1280" />
 <meta property="og:image:height" content="720" />
-<meta property="og:image:alt" content="9432 Oakmore Rd — Luxury Gated Compound Beverlywood Los Angeles" />
+<meta property="og:image:alt" content={imageAlt} />
+{publishedTime && <meta property="article:published_time" content={publishedTime} />}
+{modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
 <meta property="og:site_name" content="The Issak Group | Beverly Hills Luxury Real Estate" />
 <meta property="og:locale" content="en_US" />
 
@@ -63,7 +89,9 @@ const keywords = [
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
-<meta name="twitter:image:alt" content="9432 Oakmore Rd — Luxury Rental Beverlywood LA" />
+<meta name="twitter:image:alt" content={imageAlt} />
+
+{breadcrumb && <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />}
 
 <!-- Geo -->
 <meta name="geo.region" content="US-CA" />

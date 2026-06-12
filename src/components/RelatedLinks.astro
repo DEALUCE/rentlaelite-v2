@@ -1,0 +1,25 @@
+---
+interface Props {
+  heading?: string;
+  links: { label: string; href: string; sub?: string }[];
+}
+const { heading = 'Explore More', links } = Astro.props;
+---
+
+<section class="py-16 bg-midnight-900 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6">
+    <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-8 flex items-center gap-3">
+      <span class="w-8 h-px bg-amber-400"></span>
+      {heading}
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-midnight-800/40">
+      {links.map(({ label, href, sub }) => (
+        <a href={href} class="glass-light p-6 group hover:border-amber-400/25 transition-all duration-300 block">
+          <p class="text-white text-sm font-medium group-hover:text-amber-400 transition-colors">{label}</p>
+          {sub && <p class="text-slate-500 text-xs mt-1.5">{sub}</p>}
+          <span class="text-amber-400 text-xs tracking-widest uppercase mt-3 inline-block opacity-60 group-hover:opacity-100 transition-opacity">View →</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+import RelatedLinks from '../components/RelatedLinks.astro';
 const jsonLd = [
   {
     "@context": "https://schema.org",
@@ -135,4 +136,6 @@ const jsonLd = [
       </div>
     </div>
   </section>
+
+  <RelatedLinks heading="Specialized Housing" links={[{"label": "Corporate Housing LA", "href": "/corporate-housing-los-angeles", "sub": "Executive relocation and corporate leases"}, {"label": "Executive Rental Beverly Hills", "href": "/executive-rental-beverly-hills", "sub": "C-suite furnished housing"}, {"label": "Production Housing LA", "href": "/production-housing-los-angeles", "sub": "Film and TV production stays"}, {"label": "Insurance / ALE Housing", "href": "/insurance-housing-los-angeles", "sub": "Additional Living Expense placements"}, {"label": "Kosher Kitchen Luxury Rental", "href": "/kosher-kitchen-luxury-rental-los-angeles", "sub": "Dual sinks, dual ovens, walk to shul"}]} />
 </Layout>

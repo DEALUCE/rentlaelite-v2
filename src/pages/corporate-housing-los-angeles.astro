@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
 import property from '../data/property.json';
 const { agent } = property;
 const jsonLd = [
@@ -8,7 +9,7 @@ const jsonLd = [
     "@type": "Accommodation",
     "name": "Corporate Housing Los Angeles 9432 Oakmore Rd Beverlywood",
     "description": "Premier corporate housing in Los Angeles. Fully furnished 5BR gated compound in Beverlywood, Beverly Hills adjacent. Executive relocation and extended stay from 34999 per month. 30-day minimum.",
-    "url": "https://sevennova.ai/luxury-rental/corporate-housing-los-angeles",
+    "url": "https://sevennova.ai/corporate-housing-los-angeles",
     "address": {"@type": "PostalAddress","streetAddress": "9432 Oakmore Rd","addressLocality": "Los Angeles","addressRegion": "CA","postalCode": "90035","addressCountry": "US"},
     "geo": {"@type": "GeoCoordinates","latitude": 34.05303,"longitude": -118.38756},
     "numberOfBedrooms": 5,
@@ -30,7 +31,7 @@ const jsonLd = [
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type": "ListItem","position": 1,"name": "The Issak Group","item": "https://sevennova.ai/luxury-rental"},
-      {"@type": "ListItem","position": 2,"name": "Corporate Housing Los Angeles","item": "https://sevennova.ai/luxury-rental/corporate-housing-los-angeles"}
+      {"@type": "ListItem","position": 2,"name": "Corporate Housing Los Angeles","item": "https://sevennova.ai/corporate-housing-los-angeles"}
     ]
   }
 ];
@@ -184,4 +185,6 @@ const jsonLd = [
     </div>
   </section>
 
+
+  <RelatedLinks heading="Specialized Housing" links={[{"label": "Executive Rental Beverly Hills", "href": "/executive-rental-beverly-hills", "sub": "C-suite furnished housing"}, {"label": "Production Housing LA", "href": "/production-housing-los-angeles", "sub": "Film and TV production stays"}, {"label": "Medical Stay Near Cedars-Sinai", "href": "/medical-stay-near-cedars-sinai", "sub": "Recovery and treatment housing"}, {"label": "Insurance / ALE Housing", "href": "/insurance-housing-los-angeles", "sub": "Additional Living Expense placements"}, {"label": "Kosher Kitchen Luxury Rental", "href": "/kosher-kitchen-luxury-rental-los-angeles", "sub": "Dual sinks, dual ovens, walk to shul"}]} />
 </Layout>

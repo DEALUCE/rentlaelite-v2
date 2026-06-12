@@ -19,11 +19,29 @@ const sections = [
 ];
 
 const totalPhotos = sections.reduce((sum, s) => sum + s.images.length, 0);
+
+const galleryJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ImageGallery',
+  name: '9432 Oakmore Rd Photo Gallery — Luxury Rental Beverlywood Los Angeles',
+  url: 'https://sevennova.ai/gallery',
+  about: { '@type': 'Residence', name: '9432 Oakmore Rd, Los Angeles CA 90035' },
+  image: sections.flatMap(({ label, images }) =>
+    images.map((src, i) => ({
+      '@type': 'ImageObject',
+      contentUrl: `https://sevennova.ai${src}`,
+      name: `9432 Oakmore Rd ${label} photo ${i + 1}`,
+      description: `${label} — 9432 Oakmore Rd luxury gated compound, Beverlywood Los Angeles 90035`,
+      representativeOfPage: label === 'Aerial Views' && i === 0,
+    }))
+  ),
+};
 ---
 
 <Layout
   title="Photo Gallery | 9432 Oakmore Rd Luxury Rental Beverlywood LA"
   description={`${totalPhotos}+ professional photos of 9432 Oakmore Rd — aerial drone shots, interior, pool, chef's kitchen, primary suite, and detached guest house. Beverlywood, LA 90035.`}
+  jsonLd={galleryJsonLd}
 >
   <section class="bg-charcoal py-20 text-center">
     <p class="text-gold text-xs tracking-[0.3em] uppercase mb-3">9432 Oakmore Rd · Los Angeles, CA 90035</p>

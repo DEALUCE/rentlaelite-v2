@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+import RelatedLinks from '../components/RelatedLinks.astro';
 const jsonLd = [
   {
     "@context": "https://schema.org",
@@ -127,4 +128,6 @@ const jsonLd = [
       </div>
     </div>
   </section>
+
+  <RelatedLinks heading="Beverly Hills & Beverlywood Guide" links={[{"label": "Beverly Hills Luxury Rentals", "href": "/beverly-hills-luxury-rentals", "sub": "Executive homes for lease in the Beverly Hills corridor"}, {"label": "Beverly Hills Market Report", "href": "/beverly-hills-market-report", "sub": "Current luxury rental pricing and demand data"}, {"label": "Luxury Rental Beverlywood", "href": "/luxury-rental-beverlywood", "sub": "The gated compound at 9432 Oakmore Rd"}, {"label": "Beverlywood 90035 Homes for Rent", "href": "/beverlywood-90035-luxury-homes-for-rent", "sub": "Luxury homes for rent in ZIP 90035"}, {"label": "Furnished Rental LA 90035", "href": "/furnished-rental-los-angeles-90035", "sub": "Fully furnished, 30-day minimum"}]} />
 </Layout>

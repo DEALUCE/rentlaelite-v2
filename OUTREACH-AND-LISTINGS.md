@@ -4,22 +4,24 @@
 
 ---
 
-## 1. EMAIL: Bedford Housing — FIFA 2026 LA Guide Pitch
+## 1. EMAIL: Bedford Housing — 2026–2027 LA Luxury Rental Guide Pitch
 
 **To:** editor@bedfordhousing.com OR press@bedfordhousing.com
-**Subject:** Featured property for your FIFA World Cup 2026 LA housing guide
+**Subject:** Featured property for your 2026–2027 LA luxury rental guide
 
 Hi team,
 
-I run point on luxury executive housing in the Beverlywood / Beverly Hills adjacent corridor and noticed your "Ultimate Guide to Temporary Housing for FIFA World Cup 2026 in Los Angeles" is the most thorough piece on the topic currently ranking.
+I run point on luxury executive housing in the Beverlywood / Beverly Hills adjacent corridor and noticed your coverage of executive housing in Los Angeles is among the most thorough currently ranking.
 
-I have a property I'd like you to consider for inclusion: 9432 Oakmore Rd, Beverlywood 90035. It is a fully furnished, gated 5BR / 6BA compound with a detached guest house, heated pool, kosher kitchen, EV charging, and Ring camera coverage — positioned 18 minutes from SoFi Stadium and 25 minutes from the Rose Bowl, the two LA host venues.
+I have a property I'd like you to consider for inclusion: 9432 Oakmore Rd, Beverlywood 90035. It is a fully furnished, gated 5BR / 6BA compound with a detached guest house, heated pool, kosher kitchen, EV charging, and Ring camera coverage — positioned 18 minutes from SoFi Stadium and 25 minutes from the Rose Bowl.
 
-Three things make it relevant to your guide's audience:
+The FIFA 2026 window is fully booked. The property is now available for Fall 2026 and the Super Bowl LXI window (February 14, 2027 at SoFi Stadium) — an underserved demand pocket given LA's 3-year event cycle.
 
-1. **Genuinely gated.** Not just a driveway gate on a single-structure house — perimeter fencing, automatic vehicle gate, separate guest house entry, full Ring camera coverage. Suits federation officials and corporate sponsors with security requirements.
-2. **30-day minimum, available the full June–July 2026 window** at $34,999/month. Most comparable luxury rentals are 7-night minimums on Airbnb at 3–5× that effective rate, which doesn't work for delegation-length stays.
-3. **Kosher kitchen + walking distance to Young Israel of Century City and Beth Jacob Congregation** — relevant to observant delegation members from competing nations.
+Three things make it relevant to your audience:
+
+1. **Genuinely gated.** Not just a driveway gate on a single-structure house — perimeter fencing, automatic vehicle gate, separate guest house entry, full Ring camera coverage. Suits corporate sponsors, executive relocations, and security-sensitive tenants.
+2. **30-day minimum, Fall 2026 available now** at $34,999/month fully furnished, or $23,950/month unfurnished annual. Most comparable luxury rentals are 7-night minimums on Airbnb at 3–5× that effective rate, which doesn't work for extended-stay executives.
+3. **Kosher kitchen + walking distance to Young Israel of Century City and Beth Jacob Congregation** — relevant to observant Jewish families and executives.
 
 Full listing: https://sevennova.ai/luxury-rental
 Direct media kit / photos available on request.
@@ -32,16 +34,18 @@ DRE #02037760 · Real Estate Source, Inc. (DRE #01869619)
 
 ---
 
-## 2. EMAIL: Nightfall Group — FIFA 2026 Villa Rentals Page Pitch
+## 2. EMAIL: Nightfall Group — Fall 2026 + Super Bowl LXI Villa Rentals Pitch
 
 **To:** info@nightfallgroup.com OR sales@nightfallgroup.com
-**Subject:** Inclusion request — gated Beverlywood compound for your FIFA 2026 villa rentals page
+**Subject:** Inclusion request — gated Beverlywood compound, Fall 2026 + Super Bowl LXI available
 
 Hello,
 
-Your "Los Angeles Villa Rentals for the 2026 FIFA World Cup" page is one of the few currently ranking for executive-stay queries. I'd like to be considered for inclusion.
+Your Los Angeles villa rentals page is one of the few currently ranking for executive-stay queries. I'd like to be considered for inclusion.
 
-The property is 9432 Oakmore Rd, Beverlywood 90035 — a gated dual-structure compound (5BR main residence + detached 400 sq ft guest house) on a single secured lot. 18 minutes to SoFi Stadium. Fully furnished, $34,999/month, 30-day minimum.
+The property is 9432 Oakmore Rd, Beverlywood 90035 — a gated dual-structure compound (5BR main residence + detached 400 sq ft guest house) on a single secured lot. 18 minutes to SoFi Stadium. Fully furnished, $34,999/month, 30-day minimum. Unfurnished annual option also available at $23,950/month.
+
+FIFA 2026 window is fully booked. Now available: Fall 2026 and the Super Bowl LXI window (January–February 2027 at SoFi Stadium).
 
 Why it fits your inventory:
 
@@ -51,7 +55,7 @@ Why it fits your inventory:
 - 4,492 sq ft combined living space
 - Inside the Beverlywood Homes Association private patrol coverage
 
-If you handle inventory placement on commission or referral, I can work with whatever structure you prefer. If editorial only, I'm happy to provide a media kit.
+Co-op commission: 5% of first year's rent to the tenant's representing broker. If you handle inventory placement on commission or referral, I can work with whatever structure you prefer. If editorial only, I'm happy to provide a media kit.
 
 Full property: https://sevennova.ai/luxury-rental
 Gated-compound angle: https://sevennova.ai/gated-compound-rental-los-angeles
@@ -65,15 +69,15 @@ DRE #02037760
 ## 3. EMAIL: Beverly Hills Courier — Lifestyle Editorial Pitch
 
 **To:** editorial@bhcourier.com OR via web submission form
-**Subject:** Story idea — Where FIFA 2026 delegations will actually stay in Beverly Hills
+**Subject:** Story idea — The Beverly Hills executive rental layer for Super Bowl LXI and LA28
 
 Hi,
 
-A short pitch. With FIFA World Cup 2026 less than 14 months out (and SoFi Stadium hosting 8 matches plus the Rose Bowl hosting), executive housing demand in the Beverly Hills corridor is already showing — agents are receiving inbound from federations, sponsors, and security details now.
+A short pitch. With Super Bowl LXI confirmed at SoFi Stadium (February 14, 2027) and LA28 following in summer 2028, the Beverly Hills corridor is entering three consecutive years of delegation-scale housing demand. The FIFA 2026 executive housing window has already closed — booked out earlier this year.
 
-The interesting tension: most luxury rentals here are 7-night minimums on Airbnb/VRBO at effective monthly rates of $80K–$150K. Delegation-length stays of 30–60 days don't work at that pricing or under LA's short-term rental rules. The gap is being filled by direct-broker furnished leases at the $30K–$50K/month tier with proper 30-day minimums.
+The interesting tension: most luxury rentals here are 7-night minimums on Airbnb/VRBO at effective monthly rates of $80K–$150K. Delegation-length stays of 30–60 days don't work at that pricing or under LA's short-term rental rules. The gap is being filled by direct-broker furnished leases at the $23K–$35K/month tier with proper 30-day minimums.
 
-I'd be happy to be a source for a piece on this — the executive housing layer of the 2026 tournament that isn't being covered yet. I represent a property at 9432 Oakmore Rd that fits the pattern (gated, furnished, 30-day minimum, $34,999/mo) and have visibility into 8–10 similar listings across Beverlywood, Holmby Hills, and the Beverly Hills Flats.
+I'd be happy to be a source for a piece on this — the executive housing layer of the 2027 Super Bowl and LA28 Games that isn't being covered yet. I represent a property at 9432 Oakmore Rd that fits the pattern (gated, furnished, 30-day minimum, $34,999/mo; unfurnished annual also at $23,950/mo) and have visibility into 8–10 similar listings across Beverlywood, Holmby Hills, and the Beverly Hills Flats.
 
 Daniel Issak
 The Issak Group · DRE #02037760
@@ -90,18 +94,19 @@ The Issak Group · DRE #02037760
 Gated 5BR/6BA dual-structure compound on a single secured lot in Beverlywood, Los Angeles. Fully furnished, heated pool, kosher kitchen, detached guest house. 30-day minimum lease. $34,999/month.
 
 **Long Description (~800 chars):**
-A rare gated dual-structure luxury rental in prime Beverlywood, Los Angeles (90035). The property consists of a 4,092 sq ft 5-bedroom main residence plus a fully independent 400 sq ft detached guest house — both on a single perimeter-fenced lot with automatic vehicle gate and Ring camera coverage. Features include a heated in-ground pool and spa, steam sauna in the primary suite, a chef's kitchen with dual sinks and dual ovens (kosher-compatible), Level 2 EV charging, gigabit fiber, and multi-zone smart-home HVAC. Position is 10 minutes to Beverly Hills, 15 minutes to Century City, 18 minutes to SoFi Stadium, and 20 minutes to LAX. Inside the LA Eruv with walking distance to Young Israel of Century City. Fully furnished with curated luxury interiors. $34,999/month, 30-day minimum lease, available for FIFA World Cup 2026 executive housing window.
+A rare gated dual-structure luxury rental in prime Beverlywood, Los Angeles (90035). The property consists of a 4,092 sq ft 5-bedroom main residence plus a fully independent 400 sq ft detached guest house — both on a single perimeter-fenced lot with automatic vehicle gate and Ring camera coverage. Features include a heated in-ground pool and spa, steam sauna in the primary suite, a chef's kitchen with dual sinks and dual ovens (kosher-compatible), Level 2 EV charging, gigabit fiber, and multi-zone smart-home HVAC. Position is 10 minutes to Beverly Hills, 15 minutes to Century City, 18 minutes to SoFi Stadium, and 20 minutes to LAX. Inside the LA Eruv with walking distance to Young Israel of Century City. Fully furnished with curated luxury interiors. $34,999/month, 30-day minimum lease. Available Fall 2026 and Super Bowl LXI window (January–February 2027). Unfurnished annual also available at $23,950/month.
 
 **Bedrooms:** 5 (main) + 1 (guest house) = 6 total sleeping spaces
 **Bathrooms:** 6 (5 full + 1 half)
 **Sq Ft:** 4,092 (main) + 400 (guest house) = 4,492 combined
 **Furnished:** Yes — fully furnished
-**Lease Type:** Monthly · 30-day minimum
-**Rate:** $34,999/month
+**Lease Type:** Monthly · 30-day minimum; unfurnished annual also available
+**Rate:** $34,999/month (furnished) · $23,950/month (unfurnished annual)
 **Amenities:** Heated Pool, Spa, Sauna, Gated, Guest House, EV Charging, Smart Home, Ring Security, Kosher Kitchen, Fiber Internet
+**Co-op Commission:** 5% of first year's rent to tenant's representing broker
 
 **Listing Website (REQUIRED):** https://sevennova.ai/luxury-rental
-**Agent Site:** https://sevennova.ai/luxury-rental/about
+**Agent Site:** https://sevennova.ai/luxury-rental
 
 ---
 
@@ -123,16 +128,19 @@ Position is favorable: 5 minutes to the Pico-Robertson kosher corridor, 10 minut
 Designed for:
 - Executive relocation / 90-day rotations
 - Entertainment production residencies
-- FIFA World Cup 2026 executive housing (June–July 2026)
+- Fall 2026 corporate housing / extended executive stays
+- Super Bowl LXI (February 2027) housing window
 - Observant Jewish families requiring kosher kitchen + Eruv coverage
 - Talent / privacy-sensitive tenants requiring gated security
 
-Lease terms: 30-day minimum, 3–12 months preferred. Rate $34,999/month. Security deposit equal to one month's rent. Tenant pays utilities (electricity, gas, water, internet, pool service, gardener). Pets considered on case-by-case basis.
+Lease terms: 30-day minimum, 3–12 months preferred. Furnished rate $34,999/month; unfurnished annual rate $23,950/month. Security deposit equal to one month's rent. Tenant pays utilities (electricity, gas, water, internet, pool service, gardener). Pets considered on case-by-case basis.
+
+Co-op commission: 5% of first year's rent to tenant's representing broker.
 
 **Bedrooms:** 5+1 (with guest house)
 **Bathrooms:** 6
 **Sq Ft:** 4,492 (combined)
-**Rate:** $34,999/month
+**Rate:** $34,999/month (furnished) · $23,950/month (unfurnished annual)
 **Minimum Stay:** 30 days
 **Property Type:** Single-family — Gated Compound
 **Furnished:** Yes
@@ -148,7 +156,7 @@ Lease terms: 30-day minimum, 3–12 months preferred. Rate $34,999/month. Securi
 **Headline:** Gated Dual-Structure Luxury Compound in Beverlywood Los Angeles — Furnished Lease $34,999/Month
 
 **Property Overview (~600 chars):**
-A discreet gated luxury compound in Beverlywood, ZIP 90035 — five minutes to Beverly Hills, fifteen to Century City, eighteen to SoFi Stadium. The property is a true dual-structure compound: a 4,092 sq ft 5-bedroom main residence and a fully independent 400 sq ft detached guest house, both on a single perimeter-fenced lot with automatic vehicle gate and Ring camera coverage. Fully furnished with curated luxury interiors. Heated pool and spa, steam sauna, chef's kitchen with dual sinks and dual ovens, Level 2 EV charging, smart-home HVAC, gigabit fiber. Available for furnished lease at $34,999/month, 30-day minimum.
+A discreet gated luxury compound in Beverlywood, ZIP 90035 — five minutes to Beverly Hills, fifteen to Century City, eighteen to SoFi Stadium. The property is a true dual-structure compound: a 4,092 sq ft 5-bedroom main residence and a fully independent 400 sq ft detached guest house, both on a single perimeter-fenced lot with automatic vehicle gate and Ring camera coverage. Fully furnished with curated luxury interiors. Heated pool and spa, steam sauna, chef's kitchen with dual sinks and dual ovens, Level 2 EV charging, smart-home HVAC, gigabit fiber. Available for furnished lease at $34,999/month, 30-day minimum. Fall 2026 and Super Bowl LXI window (January–February 2027) now reserving.
 
 **Key Specs:**
 - 5 bedrooms · 6 bathrooms · 4,492 sq ft combined
@@ -158,7 +166,8 @@ A discreet gated luxury compound in Beverlywood, ZIP 90035 — five minutes to B
 - Kosher-capable chef's kitchen · dual sinks · dual ovens
 - Level 2 EV charging · smart-home HVAC · Ring camera coverage
 - Beverlywood Homes Association patrol coverage
-- $34,999/month · 30-day minimum lease · fully furnished
+- $34,999/month furnished · $23,950/month unfurnished annual · 30-day minimum lease
+- Co-op commission: 5% of first year's rent to tenant's broker
 
 **Listing URL:** https://sevennova.ai/luxury-rental
 **Direct Inquiry:** Daniel Issak · DRE #02037760 · 424-272-5935
@@ -167,7 +176,7 @@ A discreet gated luxury compound in Beverlywood, ZIP 90035 — five minutes to B
 
 ## 7. PRESS NOTE — for any inbound editorial inquiry
 
-> 9432 Oakmore Rd is a gated dual-structure luxury compound in Beverlywood Los Angeles (90035), offered for furnished lease at $34,999/month, 30-day minimum. Listing agent: Daniel Issak, DRE #02037760, Real Estate Source, Inc. (DRE #01869619). Press contact: dan.issak@gmail.com / 424-272-5935. Full press kit (photos, floor plan, drone footage) available on request.
+> 9432 Oakmore Rd is a gated dual-structure luxury compound in Beverlywood Los Angeles (90035), offered for furnished lease at $34,999/month or unfurnished annual at $23,950/month, 30-day minimum. FIFA 2026 window booked. Now reserving Fall 2026 and Super Bowl LXI (February 2027). Listing agent: Daniel Issak, DRE #02037760, Real Estate Source, Inc. (DRE #01869619). Press contact: dan.issak@gmail.com / 424-272-5935. Full press kit (photos, floor plan, drone footage) available on request.
 
 ---
 

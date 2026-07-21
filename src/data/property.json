@@ -8,13 +8,13 @@
     "neighborhood": "Beverlywood / Pico-Robertson",
     "crossStreet": "S Beverly Dr"
   },
-  "price": 34999.99,
-  "priceDisplay": "$34,999/mo",
-  "priceOffSeason": 34999,
-  "priceOffSeasonDisplay": "$34,999/mo",
-  "priceSummer": 34999.99,
-  "priceSummerDisplay": "$34,999/mo",
-  "summerWindow": "May – Aug 2026 · FIFA World Cup Window",
+  "price": 23950,
+  "priceDisplay": "$23,950/mo",
+  "priceOffSeason": 23950,
+  "priceOffSeasonDisplay": "$23,950/mo",
+  "priceSummer": 23950,
+  "priceSummerDisplay": "$23,950/mo",
+  "summerWindow": "FIFA 2026 Booked · Now Reserving Fall 2026 + Super Bowl LXI 2027",
   "beds": 5,
   "baths": 6,
   "bathsDisplay": "6 (5 full, 1 half)",
@@ -37,13 +37,13 @@
     "description": "Full video walkthrough of 9432 Oakmore Rd, Los Angeles CA 90035 — a gated 5-bedroom luxury compound in Beverlywood with heated pool, detached guest house, steam sauna, and chef's kitchen."
   },
   "leaseTerms": {
-    "minimum": "30 days",
-    "preferred": "3–12 months",
-    "securityDeposit": "$34,999",
+    "minimum": "6 months",
+    "preferred": "12 months",
+    "securityDeposit": "$23,950",
     "availableDate": "By appointment",
     "monthToMonth": false,
     "petsConsidered": true,
-    "furnished": "Fully Furnished — curated luxury furnishings included"
+    "furnished": "Unfurnished — furnishings by separate written agreement"
   },
   "tenantPays": [
     "Electricity", "Gas", "Water", "Sewer", "Trash",

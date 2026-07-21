@@ -7,9 +7,9 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "RealEstateListing",
     "name": "Pico-Robertson Kosher Luxury Rental — Walk to Shul | 9432 Oakmore Rd",
-    "description": "Luxury furnished rental adjacent to Pico-Robertson: kosher kitchen with dual sinks and dual ovens, walking distance to Young Israel of Century City and Beth Jacob Congregation. 5BR gated compound, $34,999/month.",
+    "description": "Luxury furnished rental adjacent to Pico-Robertson: kosher kitchen with dual sinks and dual ovens, walking distance to Young Israel of Century City and Beth Jacob Congregation. 5BR gated compound, $23,950/month.",
     "url": "https://sevennova.ai/pico-robertson-kosher-rental",
-    "price": "34999",
+    "price": "23950",
     "priceCurrency": "USD",
     "address": {
       "@type": "PostalAddress",
@@ -29,7 +29,7 @@ const jsonLd = [
         "name": "Is there a luxury rental within walking distance of Pico-Robertson synagogues?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. 9432 Oakmore Rd in Beverlywood (90035) is within walking distance of Young Israel of Century City and Beth Jacob Congregation, inside the community eruv. The fully furnished 5-bedroom gated compound rents at $34,999/month with a 30-day minimum."
+          "text": "Yes. 9432 Oakmore Rd in Beverlywood (90035) is within walking distance of Young Israel of Century City and Beth Jacob Congregation, inside the community eruv. The offered unfurnished (furnishings by separate written agreement) 5-bedroom gated compound rents at $23,950/month with a 6-month minimum."
         }
       },
       {
@@ -37,7 +37,7 @@ const jsonLd = [
         "name": "Does the rental have a kosher kitchen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The chef's kitchen is built for kosher use: dual sinks, dual ovens, and abundant separate prep and storage space for meat and dairy. The detached guest house adds a second full kitchen."
+          "text": "The chef’s kitchen is built for kosher use: dual sinks, dual ovens, and abundant separate prep and storage space for meat and dairy. The detached guest house adds a second full kitchen."
         }
       },
       {
@@ -56,7 +56,7 @@ const jsonLd = [
 <Layout
   image="/images/kitchen-2.jpg"
   title="Pico-Robertson Kosher Luxury Rental | Walk to Shul — 5BR Compound"
-  description="Kosher luxury rental adjacent to Pico-Robertson: dual-sink dual-oven kosher kitchen, walking distance to Young Israel and Beth Jacob, inside the eruv. Furnished 5BR gated compound, $34,999/mo, 30-day minimum."
+  description="Kosher luxury rental adjacent to Pico-Robertson: dual-sink dual-oven kosher kitchen, walking distance to Young Israel and Beth Jacob, inside the eruv. Furnished 5BR gated compound, $23,950/mo, 6-month minimum."
   jsonLd={jsonLd}
 >
   <section class="relative py-28 bg-midnight-950 overflow-hidden">
@@ -69,7 +69,7 @@ const jsonLd = [
       <p class="speakable text-slate-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
         9432 Oakmore Rd sits in Beverlywood, steps from the Pico-Robertson community —
         walking distance to Young Israel of Century City and Beth Jacob Congregation,
-        with a true dual-sink, dual-oven kosher kitchen. Fully furnished, $34,999/month.
+        with a true dual-sink, dual-oven kosher kitchen. offered unfurnished (furnishings by separate written agreement), $23,950/month.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="https://calendly.com/theissakgroup/30min" target="_blank" rel="noopener noreferrer" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">Book a Private Tour</a>
@@ -85,7 +85,7 @@ const jsonLd = [
         {[
           { title: 'Shabbat Walkable', items: ['Young Israel of Century City', 'Beth Jacob Congregation', 'Inside the community eruv', 'Quiet tree-lined streets', 'Flat, stroller-friendly walks'] },
           { title: 'Kosher Living', items: ['Dual sinks · dual ovens', 'Separate meat/dairy prep + storage', 'Second full kitchen in guest house', 'Pico Blvd kosher markets minutes away', 'Kosher restaurants on Pico corridor'] },
-          { title: 'Family Comfort', items: ['5 bedrooms · 6 bathrooms', 'Heated pool & spa', 'Gated driveway, Ring security', 'Detached guest house for guests/staff', 'Fully furnished, move-in ready'] },
+          { title: 'Family Comfort', items: ['5 bedrooms · 6 bathrooms', 'Heated pool & spa', 'Gated driveway, Ring security', 'Detached guest house for guests/staff', 'offered unfurnished (furnishings by separate written agreement), move-in ready'] },
         ].map(({ title, items }) => (
           <div class="glass p-7">
             <p class="text-amber-400 text-xs tracking-widest uppercase mb-4">{title}</p>
@@ -108,7 +108,7 @@ const jsonLd = [
       {[
         { q: 'Is the rental within walking distance of Pico-Robertson synagogues?', a: 'Yes — Young Israel of Century City and Beth Jacob Congregation are both walkable from 9432 Oakmore Rd, and the property sits inside the community eruv.' },
         { q: 'Does it have a kosher kitchen?', a: 'Dual sinks, dual ovens, and separate prep/storage space; the detached guest house adds a second full kitchen for additional separation.' },
-        { q: 'What are the lease terms?', a: '$34,999/month fully furnished, 30-day minimum, terms to 12+ months. Standard California lease through Daniel Issak, DRE #02037760.' },
+        { q: 'What are the lease terms?', a: '$23,950/month offered unfurnished (furnishings by separate written agreement), 6-month minimum, terms to 12+ months. Standard California lease through Daniel Issak, DRE #02037760.' },
       ].map(({ q, a }) => (
         <details class="glass group">
           <summary class="cursor-pointer list-none p-5 flex justify-between items-center gap-4">

@@ -382,7 +382,7 @@ const { agent } = property;
         <div class="section-label">About the Property</div>
         <p class="description">{property.description}</p>
         <p class="description" style="margin-top:10px; color:#6b7280; font-size:12px;">
-          Fully furnished with curated luxury furnishings. Private gated driveway, EV charging, Ring security system, smart lighting, and blackout shades throughout.
+          Offered unfurnished — furnishings available by separate written agreement. Private gated driveway, EV charging, Ring security system, smart lighting, and blackout shades throughout.
         </p>
       </div>
       <div>
@@ -430,11 +430,11 @@ const { agent } = property;
       <div class="section-label">Lease Terms</div>
       <div class="terms-grid">
         {[
-          ['Monthly Rate (Summer/FIFA)', property.priceDisplay],
-          ['Monthly Rate (Off-Season)', property.priceOffSeasonDisplay],
+          ['Monthly Rate (Annual Lease)', property.priceDisplay],
+          ['Lease Type', 'Unfurnished Annual'],
           ['Minimum Lease', property.leaseTerms.minimum],
           ['Security Deposit', property.leaseTerms.securityDeposit],
-          ['Furnished', 'Fully Furnished'],
+          ['Furnished', 'By separate written agreement'],
           ['Pets', 'Considered w/ conditions'],
           ['Short-Term', 'Not permitted'],
           ['Availability', 'By appointment'],

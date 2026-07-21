@@ -26,7 +26,7 @@ const jsonLd = [
         "name": "What is the average rent for a luxury home in Beverly Hills in 2026?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The average monthly rent for a luxury home (4,000+ sq ft) in the Beverly Hills corridor in 2026 is approximately $32,500/month. Properties in 90210 proper average $45,000â€“$75,000+/month, while Beverly Hills adjacent neighborhoods like Beverlywood (90035) average $20,000â€“$35,000/month for comparable square footage."
+          "text": "The average monthly rent for a luxury home (4,000+ sq ft) in the Beverly Hills corridor in 2026 is approximately $32,500/month. Properties in 90210 proper average $45,000–$75,000+/month, while Beverly Hills adjacent neighborhoods like Beverlywood (90035) average $20,000–$35,000/month for comparable square footage."
         }
       },
       {
@@ -34,7 +34,7 @@ const jsonLd = [
         "name": "How has the 2026 FIFA World Cup affected Beverly Hills rental prices?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The 2026 FIFA World Cup, with Los Angeles as a host city for matches in Juneâ€“July 2026, has driven an estimated 35â€“45% spike in luxury rental demand for the Juneâ€“August 2026 window. Properties with minimum 30-day lease terms are seeing accelerated leasing timelines as executives, team delegations, and international visitors secure housing months in advance."
+          "text": "The 2026 FIFA World Cup, with Los Angeles as a host city for matches in June–July 2026, drove an estimated 35–45% spike in luxury rental demand for the May–August 2026 window. The FIFA 2026 window at 9432 Oakmore Rd is fully booked. The property is now reserving Fall 2026 and Super Bowl LXI (February 2027)."
         }
       },
       {
@@ -42,7 +42,7 @@ const jsonLd = [
         "name": "How long does it take to rent a luxury home in Beverly Hills?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Well-priced luxury rentals in the Beverly Hills corridor average 18â€“22 days on market in 2026. Properties priced at or below market value with professional photography and dedicated listing sites lease in under 10 days. Overpriced properties or those with poor online presentation average 45+ days."
+          "text": "Well-priced luxury rentals in the Beverly Hills corridor average 18–22 days on market in 2026. Properties priced at or below market value with professional photography and dedicated listing sites lease in under 10 days. Overpriced properties or those with poor online presentation average 45+ days."
         }
       },
       {
@@ -50,7 +50,7 @@ const jsonLd = [
         "name": "What is the rental price per square foot in Beverly Hills?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Beverly Hills luxury rental price per square foot ranges from $7.50 to $18/month depending on location and finishes. 90210 flats average $12â€“$18/sq ft/month. Beverlywood and Beverly Hills adjacent (90035) average $7.50â€“$9/sq ft/month â€” representing significant value for comparable amenities."
+          "text": "Beverly Hills luxury rental price per square foot ranges from $7.50 to $18/month depending on location and finishes. 90210 flats average $12–$18/sq ft/month. Beverlywood and Beverly Hills adjacent (90035) average $7.50–$9/sq ft/month — representing significant value for comparable amenities."
         }
       }
     ]
@@ -58,28 +58,28 @@ const jsonLd = [
 ];
 
 const neighborhoods = [
-  { name: '90210 â€” Beverly Hills Flats', avgRent: '$45Kâ€“$75K+', pricePerSqFt: '$12â€“$18', dom: '14â€“18 days', inventory: 'Very Low' },
-  { name: 'Bel Air / Holmby Hills', avgRent: '$50Kâ€“$150K+', pricePerSqFt: '$14â€“$22', dom: '21â€“30 days', inventory: 'Extremely Low' },
-  { name: 'Beverlywood (90035)', avgRent: '$20Kâ€“$35K', pricePerSqFt: '$7.50â€“$9', dom: '18â€“22 days', inventory: 'Low' },
-  { name: 'Century City (90067)', avgRent: '$22Kâ€“$45K', pricePerSqFt: '$9â€“$13', dom: '16â€“20 days', inventory: 'Low' },
-  { name: 'Trousdale Estates', avgRent: '$60Kâ€“$200K+', pricePerSqFt: '$16â€“$28', dom: '25â€“40 days', inventory: 'Ultra Low' },
+  { name: '90210 — Beverly Hills Flats', avgRent: '$45K–$75K+', pricePerSqFt: '$12–$18', dom: '14–18 days', inventory: 'Very Low' },
+  { name: 'Bel Air / Holmby Hills', avgRent: '$50K–$150K+', pricePerSqFt: '$14–$22', dom: '21–30 days', inventory: 'Extremely Low' },
+  { name: 'Beverlywood (90035)', avgRent: '$20K–$35K', pricePerSqFt: '$7.50–$9', dom: '18–22 days', inventory: 'Low' },
+  { name: 'Century City (90067)', avgRent: '$22K–$45K', pricePerSqFt: '$9–$13', dom: '16–20 days', inventory: 'Low' },
+  { name: 'Trousdale Estates', avgRent: '$60K–$200K+', pricePerSqFt: '$16–$28', dom: '25–40 days', inventory: 'Ultra Low' },
 ];
 
 const stats = [
   { value: '$32,500', label: 'Avg luxury rent', sub: '4,000+ sq ft, BH corridor 2026' },
-  { value: '+9%', label: 'YoY rent growth', sub: '2025 â†’ 2026, luxury tier' },
+  { value: '+9%', label: 'YoY rent growth', sub: '2025 → 2026, luxury tier' },
   { value: '21 days', label: 'Avg days on market', sub: 'Well-priced luxury rentals' },
-  { value: '+40%', label: 'FIFA demand spike', sub: 'Juneâ€“Aug 2026 window' },
+  { value: '+40%', label: 'FIFA demand spike', sub: 'June–Aug 2026 window' },
   { value: '<50', label: 'Active listings', sub: 'Luxury $15K+/mo at any time' },
-  { value: '4%', label: 'Vacancy rate', sub: '90035â€“90210 luxury corridor' },
+  { value: '4%', label: 'Vacancy rate', sub: '90035–90210 luxury corridor' },
 ];
 
 const demandDrivers = [
-  { icon: 'ðŸŽ¬', title: 'Entertainment Industry', text: 'Fox Studios, Netflix, Paramount, and CAA headquarters within 10 minutes. Studio executives and talent routinely lease in the Beverly Hills corridor for production cycles.' },
-  { icon: 'âš½', title: '2026 FIFA World Cup', text: 'Los Angeles is a host city for the 2026 FIFA World Cup (Juneâ€“July 2026). Team delegations, FIFA officials, sponsors, and international high-net-worth fans are driving an estimated 35â€“45% surge in luxury rental demand for the Juneâ€“August window.' },
-  { icon: 'ðŸ’»', title: 'Tech Executive Housing', text: 'Silicon Beach expansion â€” Google, Amazon, Apple, and Snap have major LA presences. Tech executives from Santa Monica, Playa Vista, and Century City cluster in Beverly Hills adjacent neighborhoods.' },
-  { icon: 'ðŸ¥', title: 'Medical / Corporate Housing', text: 'Cedars-Sinai Medical Center (top 10 US hospital) drives significant demand from medical professionals, international patients, and their families seeking luxury furnished housing within minutes.' },
-  { icon: 'âœˆï¸', title: 'International Demand', text: 'LA\'s role as gateway to Pacific markets sustains demand from Middle Eastern, Asian, and European UHNW individuals seeking Beverly Hills-area corporate housing during US visits.' },
+  { icon: '🎬', title: 'Entertainment Industry', text: 'Fox Studios, Netflix, Paramount, and CAA headquarters within 10 minutes. Studio executives and talent routinely lease in the Beverly Hills corridor for production cycles.' },
+  { icon: 'âš½', title: '2026 FIFA World Cup', text: 'Los Angeles is a host city for the 2026 FIFA World Cup (June–July 2026). Team delegations, FIFA officials, sponsors, and international high-net-worth fans are driving an estimated 35–45% surge in luxury rental demand for the June–August window.' },
+  { icon: '💻', title: 'Tech Executive Housing', text: 'Silicon Beach expansion — Google, Amazon, Apple, and Snap have major LA presences. Tech executives from Santa Monica, Playa Vista, and Century City cluster in Beverly Hills adjacent neighborhoods.' },
+  { icon: '🏥', title: 'Medical / Corporate Housing', text: 'Cedars-Sinai Medical Center (top 10 US hospital) drives significant demand from medical professionals, international patients, and their families seeking luxury furnished housing within minutes.' },
+  { icon: '✈️', title: 'International Demand', text: 'LA\'s role as gateway to Pacific markets sustains demand from Middle Eastern, Asian, and European UHNW individuals seeking Beverly Hills-area corporate housing during US visits.' },
 ];
 ---
 
@@ -94,23 +94,23 @@ const demandDrivers = [
   <section class="relative py-24 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-midnight-950 via-midnight-900 to-midnight-950"></div>
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">The Issak Group Â· Market Intelligence</p>
+      <p class="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">The Issak Group · Market Intelligence</p>
       <h1 class="font-display text-4xl md:text-5xl text-white leading-tight mb-4">
         Beverly Hills Luxury Rental<br />
         <span class="text-gradient">Market Report 2026</span>
       </h1>
-      <p class="text-slate-400 text-sm mb-2">Last updated: April 2026 Â· Data covers 90210, 90035, 90067, 90024, 90077</p>
+      <p class="text-slate-400 text-sm mb-2">Last updated: April 2026 · Data covers 90210, 90035, 90067, 90024, 90077</p>
       <p class="text-slate-300 text-lg max-w-2xl mx-auto mt-6 leading-relaxed">
-        Average luxury rents up 9% year-over-year. Inventory at historic lows. FIFA World Cup driving an unprecedented 40% demand spike for the Juneâ€“August 2026 window.
+        Average luxury rents up 9% year-over-year. Inventory at historic lows. FIFA World Cup driving an unprecedented 40% demand spike for the June–August 2026 window.
       </p>
     </div>
   </section>
 
   <section class="max-w-4xl mx-auto px-6 pt-4 pb-10">
     <div class="space-y-5 text-slate-300 leading-relaxed">
-      <h2 class="font-display text-3xl text-white mb-6">Market Context â€” What Is Driving the Westside</h2>
-      <p>The structural story of the Beverly Hillsâ€“adjacent luxury rental market through 2028 is event concentration. Los Angeles hosts three consecutive years of global events â€” the FIFA World Cup (2026), Super Bowl LXI at SoFi Stadium (February 14, 2027), and the 2028 Olympic &amp; Paralympic Games â€” each pulling delegations, sponsors, broadcasters, and event-adjacent executives into 30-to-120-day housing requirements that hotel inventory does not serve at delegation scale. The FIFA window at our own featured listing booked in advance of the tournament.</p>
-      <p>Beneath the event layer sits durable employment-anchored demand: Fox has advanced a $1.5 billion expansion of its Century City studio lot â€” nine new soundstages and more than two million square feet of production facilities â€” deepening production-cycle housing demand in the Pico corridor for the rest of the decade. Cedars-Sinai and Century City sustain year-round medical and corporate extended stays, while the Beverlywoodâ€“Pico-Robertson corridor carries a community-specific tenant stream â€” kosher kitchens, Eruv coverage, walkable synagogues â€” that neighboring ZIP codes cannot substitute.</p>
+      <h2 class="font-display text-3xl text-white mb-6">Market Context — What Is Driving the Westside</h2>
+      <p>The structural story of the Beverly Hills–adjacent luxury rental market through 2028 is event concentration. Los Angeles hosts three consecutive years of global events — the FIFA World Cup (2026), Super Bowl LXI at SoFi Stadium (February 14, 2027), and the 2028 Olympic &amp; Paralympic Games — each pulling delegations, sponsors, broadcasters, and event-adjacent executives into 30-to-120-day housing requirements that hotel inventory does not serve at delegation scale. The FIFA window at our own featured listing booked in advance of the tournament.</p>
+      <p>Beneath the event layer sits durable employment-anchored demand: Fox has advanced a $1.5 billion expansion of its Century City studio lot — nine new soundstages and more than two million square feet of production facilities — deepening production-cycle housing demand in the Pico corridor for the rest of the decade. Cedars-Sinai and Century City sustain year-round medical and corporate extended stays, while the Beverlywood–Pico-Robertson corridor carries a community-specific tenant stream — kosher kitchens, Eruv coverage, walkable synagogues — that neighboring ZIP codes cannot substitute.</p>
       <p>Supply remains the constraint. Single-family neighborhoods like Beverlywood are dominated by owner-occupants, homeowner-association standards limit conversion, and genuinely gated, furnished, delegation-scale inventory is counted in single digits at any given moment. The full report below details neighborhood-level pricing, per-square-foot comparisons, and days-on-market trends across 90210, 90035, 90067, 90024, and 90077.</p>
     </div>
   </section>
@@ -118,17 +118,17 @@ const demandDrivers = [
   <!-- Email gate -->
   <section id="report-gate" class="max-w-xl mx-auto px-6 pb-10">
     <div class="glass border border-amber-400/30 p-8 text-center">
-      <p class="text-amber-400 text-xs tracking-widest uppercase mb-3">Free Â· Instant Access</p>
+      <p class="text-amber-400 text-xs tracking-widest uppercase mb-3">Free · Instant Access</p>
       <h2 class="font-display text-2xl text-white mb-2">Get the Full Report</h2>
       <p class="text-slate-400 text-sm mb-6 leading-relaxed">Enter your email to unlock all data: neighborhood comparison, price-per-sq-ft tables, FIFA demand analysis, and days-on-market trends.</p>
       <form id="gate-form" class="flex flex-col sm:flex-row gap-3">
         <input type="email" id="gate-email" required placeholder="your@email.com" class="flex-1 bg-midnight-900 border border-slate-700 text-white placeholder-slate-600 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors" />
         <button type="submit" id="gate-btn" class="bg-amber-400 text-midnight-950 font-semibold text-xs tracking-widest uppercase px-6 py-3 hover:bg-amber-300 transition-colors whitespace-nowrap">
-          Unlock Report â†’
+          Unlock Report →
         </button>
       </form>
       <p id="gate-error" class="hidden text-red-400 text-xs mt-3"></p>
-      <p class="text-slate-600 text-xs mt-4">No spam. You'll also receive the property brochure for 9432 Oakmore Rd.</p>
+      <p class="text-slate-600 text-xs mt-4">No spam. You’ll also receive the property brochure for 9432 Oakmore Rd.</p>
     </div>
   </section>
 
@@ -152,13 +152,13 @@ const demandDrivers = [
     <div class="glass p-8 md:p-10">
       <h2 class="font-display text-2xl text-white mb-5">Beverly Hills Luxury Rental Market Overview</h2>
       <p class="text-slate-300 leading-relaxed mb-4">
-        The Beverly Hills luxury rental market encompasses properties priced at $15,000/month and above across ZIP codes 90210, 90035, 90067, 90024, and 90077 â€” spanning Beverly Hills proper, Beverlywood, Century City, Westwood, and Bel Air. In 2026, this market is defined by historically low inventory (fewer than 50 active luxury listings at any given time), strong institutional demand, and the extraordinary external demand driver of the 2026 FIFA World Cup.
+        The Beverly Hills luxury rental market encompasses properties priced at $15,000/month and above across ZIP codes 90210, 90035, 90067, 90024, and 90077 — spanning Beverly Hills proper, Beverlywood, Century City, Westwood, and Bel Air. In 2026, this market is defined by historically low inventory (fewer than 50 active luxury listings at any given time), strong institutional demand, and the extraordinary external demand driver of the 2026 FIFA World Cup.
       </p>
       <p class="text-slate-400 leading-relaxed mb-4">
-        Average monthly rent for a luxury home of 4,000+ square feet in the Beverly Hills corridor reached approximately <strong class="text-white">$32,500/month</strong> in Q1 2026 â€” a 9% increase over Q1 2025. Price per square foot ranges from $7.50/month in Beverlywood to $18+/month in the 90210 flats.
+        Average monthly rent for a luxury home of 4,000+ square feet in the Beverly Hills corridor reached approximately <strong class="text-white">$32,500/month</strong> in Q1 2026 — a 9% increase over Q1 2025. Price per square foot ranges from $7.50/month in Beverlywood to $18+/month in the 90210 flats.
       </p>
       <p class="text-slate-400 leading-relaxed">
-        Well-priced, professionally presented properties are leasing in an average of <strong class="text-white">18â€“22 days</strong>. Properties with dedicated listing websites, professional photography, and schema-optimized SEO consistently lease faster than MLS-only listings, particularly in the executive and corporate housing segments where decision-makers search on mobile with high intent.
+        Well-priced, professionally presented properties are leasing in an average of <strong class="text-white">18–22 days</strong>. Properties with dedicated listing websites, professional photography, and schema-optimized SEO consistently lease faster than MLS-only listings, particularly in the executive and corporate housing segments where decision-makers search on mobile with high intent.
       </p>
     </div>
   </section>
@@ -229,19 +229,19 @@ const demandDrivers = [
         {[
           {
             q: 'What is the average rent for a luxury home in Beverly Hills in 2026?',
-            a: 'Approximately $32,500/month for 4,000+ sq ft in the Beverly Hills corridor. 90210 proper averages $45Kâ€“$75K+/month. Beverlywood (90035) offers $20Kâ€“$35K/month for comparable square footage at better value.'
+            a: 'Approximately $32,500/month for 4,000+ sq ft in the Beverly Hills corridor. 90210 proper averages $45K–$75K+/month. Beverlywood (90035) offers $20K–$35K/month for comparable square footage at better value.'
           },
           {
             q: 'How has the 2026 FIFA World Cup affected Beverly Hills rental prices?',
-            a: 'An estimated 35â€“45% demand spike for the Juneâ€“August 2026 window. Team delegations, executives, and international visitors are securing housing months in advance. Properties with 30-day minimum lease terms are leasing at record pace.'
+            a: 'An estimated 35–45% demand spike for the June–August 2026 window drove accelerated leasing timelines. The FIFA 2026 window at 9432 Oakmore Rd is fully booked. The property is now reserving Fall 2026 and Super Bowl LXI (February 2027).'
           },
           {
             q: 'How long does it take to rent a luxury home in Beverly Hills?',
-            a: '18â€“22 days average for well-priced properties. Listings with dedicated websites, professional photography, and SEO-optimized pages lease under 10 days. Overpriced or poorly presented properties average 45+ days.'
+            a: '18–22 days average for well-priced properties. Listings with dedicated websites, professional photography, and SEO-optimized pages lease under 10 days. Overpriced or poorly presented properties average 45+ days.'
           },
           {
             q: 'What is the rental price per square foot in Beverly Hills?',
-            a: '$7.50â€“$18/sq ft/month depending on location. 90210 flats: $12â€“$18/sq ft. Beverlywood (90035): $7.50â€“$9/sq ft â€” strong value for executive tenants seeking Beverly Hills proximity.'
+            a: '$7.50–$18/sq ft/month depending on location. 90210 flats: $12–$18/sq ft. Beverlywood (90035): $7.50–$9/sq ft — strong value for executive tenants seeking Beverly Hills proximity.'
           },
         ].map(({ q, a }) => (
           <details class="glass group">
@@ -263,7 +263,7 @@ const demandDrivers = [
     <div class="max-w-xl mx-auto px-6">
       <p class="text-xs tracking-widest uppercase text-amber-400 mb-4">Featured Listing</p>
       <h2 class="font-display text-3xl text-white mb-4">See the market leader</h2>
-      <p class="text-slate-400 mb-8 text-sm">9432 Oakmore Rd â€” 5BR gated compound, Beverly Hills adjacent, $34,999/month.</p>
+      <p class="text-slate-400 mb-8 text-sm">9432 Oakmore Rd — 5BR gated compound, Beverly Hills adjacent. Unfurnished annual from $23,950/month.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/property" class="bg-amber-400 text-midnight-950 text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-amber-300 transition-colors amber-glow-hover">View Property</a>
         <a href="/contact" class="border border-amber-400/40 text-amber-400 text-xs tracking-widest uppercase px-8 py-4 hover:border-amber-400 transition-colors">Schedule Showing</a>
@@ -284,7 +284,7 @@ const demandDrivers = [
       const email = document.getElementById('gate-email').value.trim();
       const btn = document.getElementById('gate-btn');
       const errEl = document.getElementById('gate-error');
-      btn.textContent = 'Unlockingâ€¦';
+      btn.textContent = 'Unlocking…';
       btn.disabled = true;
       try {
         await fetch('/api/contact', {
@@ -295,14 +295,14 @@ const demandDrivers = [
         localStorage.setItem(GATE_KEY, '1');
         unlock();
       } catch {
-        errEl.textContent = 'Error â€” please try again.';
+        errEl.textContent = 'Error — please try again.';
         errEl.classList.remove('hidden');
-        btn.textContent = 'Unlock Report â†’';
+        btn.textContent = 'Unlock Report →';
         btn.disabled = false;
       }
     });
   })();
 </script>
 
-  <RelatedLinks heading="Beverly Hills & Beverlywood Guide" links={[{"label": "Beverly Hills Luxury Rentals", "href": "/beverly-hills-luxury-rentals", "sub": "Executive homes for lease in the Beverly Hills corridor"}, {"label": "Luxury Rental Beverlywood", "href": "/luxury-rental-beverlywood", "sub": "The gated compound at 9432 Oakmore Rd"}, {"label": "Beverlywood Neighborhood Guide", "href": "/beverlywood-neighborhood-guide", "sub": "Schools, dining, synagogues, and commute times"}, {"label": "Beverlywood 90035 Homes for Rent", "href": "/beverlywood-90035-luxury-homes-for-rent", "sub": "Luxury homes for rent in ZIP 90035"}, {"label": "Furnished Rental LA 90035", "href": "/furnished-rental-los-angeles-90035", "sub": "Fully furnished, 30-day minimum"}]} />
+  <RelatedLinks heading="Beverly Hills & Beverlywood Guide" links={[{"label": "Beverly Hills Luxury Rentals", "href": "/beverly-hills-luxury-rentals", "sub": "Executive homes for lease in the Beverly Hills corridor"}, {"label": "Luxury Rental Beverlywood", "href": "/luxury-rental-beverlywood", "sub": "The gated compound at 9432 Oakmore Rd"}, {"label": "Beverlywood Neighborhood Guide", "href": "/beverlywood-neighborhood-guide", "sub": "Schools, dining, synagogues, and commute times"}, {"label": "Beverlywood 90035 Homes for Rent", "href": "/beverlywood-90035-luxury-homes-for-rent", "sub": "Luxury homes for rent in ZIP 90035"}, {"label": "Furnished Rental LA 90035", "href": "/furnished-rental-los-angeles-90035", "sub": "Luxury rental — 6-month minimum"}]} />
 </Layout>

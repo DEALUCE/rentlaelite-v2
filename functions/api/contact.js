@@ -108,7 +108,7 @@ function brochureHtml(name) {
 
   <tr><td style="padding:32px 40px">
     <p style="color:#e2e8f0;font-size:15px;line-height:1.6">Hi ${firstName},</p>
-    <p style="color:#94a3b8;font-size:14px;line-height:1.7">Thank you for your inquiry. Here are the full property details for the Oakmore compound — one of the best-positioned luxury rentals for the FIFA 2026 window in Los Angeles.</p>
+    <p style="color:#94a3b8;font-size:14px;line-height:1.7">Thank you for your inquiry. Here are the full property details for the Oakmore compound — one of Beverlywood's premier luxury rental compounds for the 2026–2027 LA event cycle.</p>
   </td></tr>
 
   <tr><td style="padding:0 40px">
@@ -139,7 +139,7 @@ function brochureHtml(name) {
       </td></tr>
       <tr><td style="padding:8px 0">
         <span style="color:#94a3b8;font-size:12px">Available</span>
-        <span style="color:#e2e8f0;font-size:12px;float:right">May – Aug 2026 · FIFA Window</span>
+        <span style="color:#e2e8f0;font-size:12px;float:right">Fall 2026 + Super Bowl LXI (Feb 2027)</span>
       </td></tr>
     </table>
   </td></tr>
@@ -149,9 +149,9 @@ function brochureHtml(name) {
   </td></tr>
 
   <tr><td style="padding:0 40px 32px;text-align:center">
-    <a href="https://master.rentlaelite-v2.pages.dev/brief" style="display:inline-block;background:#f59e0b;color:#0a0e1a;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:16px 32px;margin-bottom:12px">View One-Page Brief →</a>
+    <a href="https://sevennova.ai/brief" style="display:inline-block;background:#f59e0b;color:#0a0e1a;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:16px 32px;margin-bottom:12px">View One-Page Brief →</a>
     <br>
-    <a href="https://master.rentlaelite-v2.pages.dev" style="display:inline-block;color:#f59e0b;text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase">Full Property Website</a>
+    <a href="https://sevennova.ai/luxury-rental" style="display:inline-block;color:#f59e0b;text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase">Full Property Website</a>
   </td></tr>
 
   <tr><td style="background:#111827;padding:24px 40px;border-top:1px solid #1e3a5f">
